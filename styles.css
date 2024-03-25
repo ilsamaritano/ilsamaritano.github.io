@@ -5,44 +5,74 @@
     box-sizing: border-box;
 }
 
-/* Global Styles */
-body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    background-color: #f5f5f5;
-}
-
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-}
-
-header {
+/* Stile della barra laterale */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 250px;
     background-color: #333;
     color: #fff;
-    padding: 20px 0;
-    text-align: center;
+    padding-top: 20px;
+    overflow-y: auto;
+    z-index: 1000;
+    transition: transform 0.3s ease;
 }
 
-header h1 {
+.sidebar.closed {
+    transform: translateX(-100%);
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar li {
     margin-bottom: 10px;
 }
 
-header img {
-    border-radius: 50%;
-    width: 150px;
-    height: 150px;
-    object-fit: cover;
-}
-
-section {
-    margin: 40px 0;
-}
-
-footer {
-    background-color: #333;
+.sidebar a {
+    display: block;
+    padding: 10px 20px;
     color: #fff;
-    text-align: center;
-    padding: 20px 0;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.sidebar a:hover {
+    background-color: #555;
+}
+
+/* Stile del contenuto principale */
+.main-content {
+    margin-left: 250px;
+    /* Larghezza della barra laterale */
+    padding: 20px;
+    transition: margin-left 0.3s ease;
+}
+
+.sidebar.closed+.main-content {
+    margin-left: 0;
+}
+
+/* Media query per la risposta */
+@media screen and (max-width: 768px) {
+    .sidebar {
+        width: 200px;
+    }
+
+    .main-content {
+        margin-left: 200px;
+    }
+
+    .sidebar.closed {
+        transform: translateX(-200px);
+    }
+
+    .sidebar.closed+.main-content {
+        margin-left: 0;
+    }
 }
