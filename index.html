@@ -1,95 +1,135 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="it">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Website</title>
-    <!-- Bootstrap CSS -->
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Custom styles for this template -->
-    <link href="styles.css" rel="stylesheet">
+    <title>CV di Vincenzo Sammartino</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1, h2 {
+            color: #2c3e50;
+        }
+        h2 {
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 5px;
+        }
+        .contact-info {
+            margin-bottom: 20px;
+        }
+        .section {
+            margin-bottom: 30px;
+        }
+        .item {
+            margin-bottom: 15px;
+        }
+        .item h3 {
+            margin-bottom: 5px;
+        }
+        .item p {
+            margin: 0;
+        }
+        .date {
+            font-style: italic;
+            color: #7f8c8d;
+        }
+    </style>
 </head>
-
 <body>
-
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container">
-            <a class="navbar-brand" href="#">My Website</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
-                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarResponsive">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="#">Home</a>
-                    </li>
-                    <!-- <li class="nav-item">
-                        <a class="nav-link" href="#">Teaching</a>
-                    </li> -->
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Research</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Publications</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Contact</a>
-                    </li>
-                </ul>
-            </div>
+    <header>
+        <h1>Vincenzo Sammartino</h1>
+        <div class="contact-info">
+            <p>Pisa, Italia | 366 540 9504 | 0009-0002-4632-1179</p>
+            <p>Email: <a href="mailto:vincesammartino@gmail.com">vincesammartino@gmail.com</a></p>
+            <p>LinkedIn: <a href="https://www.linkedin.com/in/vincenzo-sammartino">vincenzo-sammartino</a> | GitHub: <a href="https://github.com/ilsamaritano">ilsamaritano</a></p>
         </div>
-    </nav>
+    </header>
 
-    <!-- Page Content -->
-    <div class="container-fluid">
-        <div class="row">
-            <!-- Sidebar -->
-            <nav id="sidebar" class="col-md-3 col-lg-2 d-md-block bg-light sidebar">
-                <div class="sidebar-sticky">
-                    <ul class="nav flex-column">
-                        <li class="nav-item">
-                            <a class="nav-link active" href="#">Home</a>
-                        </li>
-                        <!-- <li class="nav-item">
-                            <a class="nav-link" href="#">Teaching</a>
-                        </li> -->
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">About</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Research</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Publications</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Contact</a>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
-            <!-- End of Sidebar -->
-
-            <!-- Main Content -->
-            <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
-                <!-- Your main content here -->
-                <h1>Welcome to My Website</h1>
-                <p>This is the main content area where you can showcase your content.</p>
-            </main>
-            <!-- End of Main Content -->
+    <section class="section">
+        <h2>Istruzione</h2>
+        <div class="item">
+            <h3>Master & Job, Associazione Eraclito 2000</h3>
+            <p class="date">Febbraio - Maggio 2024</p>
+            <p>Master su StartUp e AI con focus su Soft Skills, Sostenibilità, Etica, Impresa, Start Up, Innovazione ed Educazione Finanziaria.</p>
         </div>
-    </div>
+        <div class="item">
+            <h3>Laurea Magistrale in Informatica Umanistica, Università di Pisa</h3>
+            <p class="date">Settembre 2022 - Febbraio 2024</p>
+            <p>Voto finale: 110/110 e Lode. Tesi: Protezione dei Dati Personali su Servizi Web.</p>
+        </div>
+        <div class="item">
+            <h3>Laurea Triennale in Informatica Umanistica, Università di Pisa</h3>
+            <p class="date">Settembre 2019 - Settembre 2022</p>
+            <p>Votazione finale: 109/110. Tesi: Sentiment analysis - effetto del dominio e del genere testuale sulle prestazioni di un classificatore.</p>
+        </div>
+    </section>
 
-    <!-- Bootstrap core JavaScript -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <section class="section">
+        <h2>Esperienza Lavorativa</h2>
+        <div class="item">
+            <h3>Tutor per Studenti con DSA, Università di Pisa</h3>
+            <p class="date">Novembre 2023 - Febbraio 2024</p>
+        </div>
+        <div class="item">
+            <h3>Tutor Accademico, Università di Pisa</h3>
+            <p class="date">Ottobre - Dicembre 2022</p>
+        </div>
+        <div class="item">
+            <h3>Counselor, Università di Pisa</h3>
+            <p class="date">Dicembre 2021 - Ottobre 2022</p>
+            <p>Servizio di orientamento e tutorato per gli studenti del dipartimento.</p>
+        </div>
+    </section>
+
+    <section class="section">
+        <h2>Attività di Ricerca</h2>
+        <div class="item">
+            <h3>Contratto di Ricerca, Università di Siena</h3>
+            <p class="date">Maggio 2024 - Dicembre 2024</p>
+            <p>Trascrizione e codifica di un corpus del periodo tra il cinquecento e il seicento in inglese nel linguaggio XML seguendo lo standard TEI.</p>
+        </div>
+        <div class="item">
+            <h3>Borsa di Ricerca, Università di Pisa - Dipartimento di Informatica</h3>
+            <p class="date">Marzo 2024 - Settembre 2024</p>
+            <p>Realizzazione di sistemi informatici distribuiti in ottemperanza al GDPR e ricerca su sistemi di decomposizione di database.</p>
+        </div>
+    </section>
+
+    <section class="section">
+        <h2>Competenze Informatiche</h2>
+        <p><strong>Sviluppo Web:</strong> HTML, CSS, JavaScript, Bootstrap</p>
+        <p><strong>Coding:</strong> Python, JavaScript, JQuery, R, C++, PHP</p>
+        <p><strong>Database:</strong> SQL, NoSQL (MongoDB), GraphDB (ArangoDB)</p>
+        <p><strong>Analisi Dati:</strong> Python (Pandas, NumPy, Scikit-Learn), R</p>
+        <p><strong>ML / NN:</strong> Keras, TensorFlow, XGBoost</p>
+        <p><strong>NLP:</strong> Python (NLTK, SpaCy, Stanza, BERT)</p>
+        <p><strong>DevOps:</strong> Docker, Git</p>
+        <p><strong>Altri:</strong> XML, XSLT, Markdown, LaTeX, AJAX</p>
+    </section>
+
+    <section class="section">
+        <h2>Lingue</h2>
+        <p><strong>Italiano:</strong> Madrelingua</p>
+        <p><strong>Inglese:</strong> C1 (Lettura, Scrittura, Espressione Orale, Linguaggio Tecnico)</p>
+    </section>
+
+    <section class="section">
+        <h2>Pubblicazioni</h2>
+        <div class="item">
+            <h3>Journal Articles</h3>
+            <p>V. Sammartino and F. Baiardi, "Database Decomposition to satisfy the Least Privilege Principle in Healthcare," ARIS2 - Advanced Research on Information Systems Security, vol. 4, pp. 46–68, 2024.</p>
+        </div>
+        <div class="item">
+            <h3>Conference Proceedings</h3>
+            <p>F. Baiardi, C. Comella, and V. Sammartino, "Satisfying Least Privilege Through Database Decomposition," 20th International Conference on the Design of Reliable Communication Networks (DRCN), Montreal, QC, Canada, 2024.</p>
+            <p>F. Baiardi, S. Ruggieri, and V. Sammartino, "Anticipating Disasters through a Security Twin," DOD 2024 International Workshop on Dynamics of Disasters: Hybrid Threats, Vienna, Austria, 2024.</p>
+        </div>
+    </section>
 </body>
-
 </html>
