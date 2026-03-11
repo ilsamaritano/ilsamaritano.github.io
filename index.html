@@ -220,11 +220,9 @@
   .fade-in{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease;}
   .fade-in.visible{opacity:1;transform:translateY(0)}
 
-  /* Hero-stats (3 box) visibile SOLO su mobile;
-     su desktop l'equivalente è il banner #metrics (4 box) */
-  @media(min-width:901px){
-    .hero-stats{display:none}
-  }
+  /* .hero-stats (3 box) soppresso globalmente:
+     unico banner statistiche = #metrics (4 box), visibile su tutti i breakpoint */
+  .hero-stats{display:none!important}
 
   /* ═══════════════════════════════════════════
      RESPONSIVE — MOBILE FIXES
@@ -243,12 +241,8 @@
     .nav-links,.nav-badge{display:none}
     .hamburger{display:flex}
 
-    /* ── FIX 1: Elimina il blocco metriche duplicato.
-       Le stesse tre statistiche (Citations / H-Index / Papers)
-       sono già presenti nel .hero-stats all'interno dell'hero.
-       La sezione #metrics (4 card) viene nascosta su mobile
-       per evitare la ridondanza visiva segnalata. ── */
-    #metrics{display:none}
+    /* ── FIX 1: #metrics è ora l'unico banner statistiche (4 box).
+       .hero-stats (3 box) è soppresso globalmente via regola dedicata. ── */
 
     /* ── FIX 2: Hero name — scaling fluido, zero overflow.
        Il clamp originale aveva 2.8rem come floor, sufficiente
