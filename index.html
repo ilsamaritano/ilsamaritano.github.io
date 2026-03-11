@@ -71,10 +71,7 @@
   .btn-primary:hover{box-shadow:var(--glow);transform:translateY(-2px);background:#33eeff;}
   .btn-ghost{border:1px solid var(--border);color:var(--text);background:transparent;}
   .btn-ghost:hover{border-color:var(--accent);color:var(--accent);box-shadow:var(--glow);transform:translateY(-2px);}
-  .hero-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-radius:4px;margin-top:40px;}
-  .hero-stat{background:var(--surface);padding:20px 16px;text-align:center;}
-  .hero-stat-num{font-family:'Syne',sans-serif;font-weight:800;font-size:1.8rem;color:var(--accent);display:block;line-height:1;}
-  .hero-stat-label{font-size:.6rem;color:var(--muted);letter-spacing:.1em;text-transform:uppercase;margin-top:4px;display:block;}
+
   .hero-visual{position:relative;display:flex;justify-content:center;align-items:center;}
   .photo-frame{position:relative;width:280px;height:280px;}
   .photo-frame img{width:100%;height:100%;object-fit:cover;border-radius:4px;filter:grayscale(30%)contrast(1.05);}
@@ -220,10 +217,6 @@
   .fade-in{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease;}
   .fade-in.visible{opacity:1;transform:translateY(0)}
 
-  /* .hero-stats (3 box) soppresso globalmente:
-     unico banner statistiche = #metrics (4 box), visibile su tutti i breakpoint */
-  .hero-stats{display:none!important}
-
   /* ═══════════════════════════════════════════
      RESPONSIVE — MOBILE FIXES
      ═══════════════════════════════════════════ */
@@ -242,7 +235,7 @@
     .hamburger{display:flex}
 
     /* ── FIX 1: #metrics è ora l'unico banner statistiche (4 box).
-       .hero-stats (3 box) è soppresso globalmente via regola dedicata. ── */
+
 
     /* ── FIX 2: Hero name — scaling fluido, zero overflow.
        Il clamp originale aveva 2.8rem come floor, sufficiente
@@ -286,11 +279,7 @@
       padding:7px 14px;
     }
 
-    /* — Hero stats: numeri e label scalati — */
-    .photo-frame{width:200px;height:200px}
-    .hero-stat-num{font-size:1.4rem}
-    .hero-stat-label{font-size:.55rem}
-    .hero-stats{margin-top:28px}
+    /* — Hero stats: rimossi dal DOM — */
 
     /* — Pub citations badge: torna nel flusso su mobile
        per evitare sovrapposizioni con il titolo — */
@@ -324,10 +313,9 @@
       font-size:.58rem;
     }
 
-    /* Grid a colonna singola */
+    /* grid a colonna singola */
     #skills .skills-grid{grid-template-columns:1fr}
     #projects .proj-grid{grid-template-columns:1fr}
-    .hero-stats{grid-template-columns:repeat(3,1fr)}
 
     /* Info card: label sopra, valore sotto
        (su schermi molto stretti il flex row causa overflow) */
@@ -394,20 +382,7 @@
           <a href="https://github.com/ilsamaritano" target="_blank" class="btn btn-ghost">GitHub</a>
           <a href="https://www.linkedin.com/in/vincenzo-sammartino-0339191a1" target="_blank" class="btn btn-ghost">LinkedIn</a>
         </div>
-        <div class="hero-stats">
-          <div class="hero-stat">
-            <span class="hero-stat-num" id="cnt-cit">37</span>
-            <span class="hero-stat-label">Citations</span>
-          </div>
-          <div class="hero-stat">
-            <span class="hero-stat-num" id="cnt-h">4</span>
-            <span class="hero-stat-label">H-Index</span>
-          </div>
-          <div class="hero-stat">
-            <span class="hero-stat-num" id="cnt-pub">23</span>
-            <span class="hero-stat-label">Papers</span>
-          </div>
-        </div>
+
       </div>
       <div class="hero-visual">
         <div class="hero-orbit"></div>
@@ -858,11 +833,11 @@
         <p style="color:var(--muted);font-size:.82rem;margin-top:24px;line-height:1.8;max-width:400px">Open to research collaborations, visiting positions, and industry partnerships in the areas of AI, cybersecurity, and digital twin architectures.</p>
       </div>
       <div class="contact-links">
-        <a href="/cdn-cgi/l/email-protection#92e4fbfcf1f7e1f3fffff3e0e6fbfcfdd2f5fff3fbfebcf1fdff" class="contact-link">
+        <a href="mailto:vincesammartino@gmail.com" class="contact-link">
           <div class="contact-link-icon">✉</div>
           <div class="contact-link-text">
             <div class="contact-link-label">Email</div>
-            <div class="contact-link-val"><span class="__cf_email__" data-cfemail="e197888f828492808c8c809395888f8ea1868c80888dcf828e8c">[email&#160;protected]</span></div>
+            <div class="contact-link-val">vincesammartino@gmail.com</div>
           </div>
           <div class="contact-link-arrow">→</div>
         </a>
@@ -1034,4 +1009,19 @@ function animCount(el,target,dur=1500){
     el.textContent=Math.floor(start);
   },16);
 }
-const statsObs
+const statsObs=new IntersectionObserver(entries=>{
+  if(entries[0].isIntersecting){
+    // Anima i metric-num nel banner #metrics (4 box)
+    const nums = document.querySelectorAll('.metric-num');
+    const targets = [37, 4, 23, 3];
+    nums.forEach((el, i) => {
+      if(i < targets.length) animCount(el, targets[i]);
+    });
+    statsObs.disconnect();
+  }
+},{threshold:.5});
+const metricsSection = document.querySelector('#metrics');
+if(metricsSection) statsObs.observe(metricsSection);
+</script>
+</body>
+</html>
