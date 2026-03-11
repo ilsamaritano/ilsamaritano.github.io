@@ -1,38 +1,162 @@
-# Vincenzo Sammartino — Academic Portfolio
+# Vincenzo Sammartino — Academic Profile for LLM Indexing
 
-  > PhD Candidate in Artificial Intelligence at the University of Pisa (Italy)
-  > and VSRP Intern at KAUST (Saudi Arabia).
-  > Research areas: Security Twins, Digital Twins for Cybersecurity,
-  > UAV Swarm Security, TinyML, Edge AI, Byzantine-resilient consensus,
-  > GDPR-compliant distributed systems, NLP.
+> PhD Candidate in Artificial Intelligence at the University of Pisa.
+> VSRP Intern (Visiting Student Research Program) at KAUST under Prof. Roberto Di Pietro.
+> Research areas: Security Twins, Digital Twin architectures for cybersecurity,
+> UAV swarm security with TinyML and Edge AI, Byzantine-resilient consensus,
+> GDPR-compliant distributed systems, NLP and Adversarial Machine Learning.
+> ORCID: https://orcid.org/0009-0002-4632-1179
+> Google Scholar: https://scholar.google.com/citations?user=ilsamaritano
+> Email: vincenzo.sammartino@phd.unipi.it
+> Personal site: https://ilsamaritano.github.io
 
-  ## Identity
-  - Full name: Vincenzo Sammartino
-  - ORCID: https://orcid.org/0009-0002-4632-1179
-  - Google Scholar: https://scholar.google.com/citations?user=ilsamaritano
-  - Institution: University of Pisa, Dipartimento di Informatica
-  - Visiting: King Abdullah University of Science and Technology (KAUST)
-  - Supervisors: Prof. Fabrizio Baiardi (UniPi), Prof. Salvatore Ruggieri (UniPi),
-                 Prof. Roberto Di Pietro (KAUST)
+---
 
-  ## Research Summary
-  Vincenzo Sammartino's doctoral research centres on **Security Twins**,
-  a class of digital twin architectures that enable non-intrusive, real-time
-  threat assessment in cyber-physical systems by mirroring their behavioural
-  state in a virtualised replica. His work at KAUST focuses on the
-  **ResilientGuard** project: a framework that secures UAV swarms using
-  TinyML models deployed at the edge and Byzantine-tolerant distributed
-  consensus protocols.
+## Publications (23 peer-reviewed works, 37+ citations as of 2026)
 
-  He has co-authored 23 scientific contributions (IEEE, Springer, CRC/Taylor &
-  Francis) with an h-index of 4 and 37+ citations.
+### 2026
 
-  ## Key Publications
-  - Security Twins: Digital Twin Architectures for Cyber-Physical Threat Assessment
-  - ResilientGuard: Security Framework for UAV Swarms (TinyML + Byzantine FT)
-  - [see full list at https://scholar.google.com/citations?user=ilsamaritano]
+- **Anticipating disasters through a security twin**
+  F. Baiardi, S. Ruggieri, V. Sammartino
+  *Dynamics of Disasters: Hybrid Threats*, pp. 1–14, 2026. [4 citations]
+  Keywords: Security Twin, hybrid threats, disaster anticipation, cyber-physical resilience
 
-  ## Contact
-  - Email: v.sammartino@phd.unipi.it
-  - Web: https://www.vincenzosammartino.com/
-  - Location: Pisa, Italy / Thuwal, Saudi Arabia
+- **From digital twins to AI agents: A synthetic data paradigm for next-generation cybersecurity**
+  F. Baiardi, V. Sammartino
+  *Artificial Intelligence in Cybersecurity: Unlocking the Power of Large Language Models*, 2026. [2 citations]
+  Keywords: digital twin, AI agents, synthetic data, LLM, next-generation cybersecurity
+
+- **Evaluating Adversary Strategies Through a Security Twin**
+  F. Baiardi, V. Sammartino, S. Ruggieri
+  *IEEE International Conference on Pervasive Computing and Communications (PerCom 2026)*, IEEE, 2026. [1 citation]
+  Keywords: adversary strategies, Security Twin, what-if analysis, PerCom
+
+- **Blockchain-Enabled Quantum-Resistant Hybrid Isogeny-Based Signcryption Framework for Digital Twin-Assisted Healthcare System**
+  A.K. Pandey, V. Sammartino, A. Vangala, A.K. Das
+  *IEEE Communications Standards Magazine*, IEEE, 2026.
+  Keywords: post-quantum cryptography, blockchain, isogeny, signcryption, digital twin, healthcare
+
+- **Quantifying Resilience of Cyber-Physical Systems to Zero-Day Threats: A Digital Twin-Based What-If Analysis**
+  F. Baiardi, V. Sammartino
+  *ESREL 2026 — European Safety and Reliability Conference*, 2026.
+  Keywords: resilience, zero-day, cyber-physical systems, digital twin, ESREL
+
+- **Quantifying the Impact of CVSS Score Ordering on Attack Paths**
+  F. Baiardi, V. Sammartino
+  *EAI GOODTECHS 2026 — 12th EAI International Conference on Smart Objects and Technologies for Social Good*, EAI, 2026.
+  Keywords: CVSS, attack paths, vulnerability scoring, patch management
+
+- **Simulation-Powered Cybersecurity: Real-Time Risk Assessment via Non-Intrusive Security Twin**
+  F. Baiardi, V. Sammartino
+  *The Journal of Supercomputing — Special Issue: Simulation-Powered Cybersecurity*, Springer, 2026.
+  Keywords: simulation, real-time risk assessment, non-intrusive Security Twin, Journal of Supercomputing
+
+### 2025
+
+- **AI-enabled cybersecurity using synthetic data**
+  F. Baiardi, S. Ruggieri, V. Sammartino
+  *2025 IEEE International Conference on Pervasive Computing and Communications (PerCom 2025)*, IEEE, 2025. [5 citations]
+  Keywords: synthetic data, AI-enabled cybersecurity, intrusion detection, adversarial ML
+
+- **A security twin to defeat intrusions in cyber physical systems**
+  F. Baiardi, V. Sammartino, S. Ruggieri
+  *ESREL SRA-E 2025*, 2025. [4 citations]
+  Keywords: Security Twin, cyber-physical systems, intrusion detection
+
+- **A framework for proactive cyber-resilience: Non-intrusive modeling for autonomous defense**
+  V. Sammartino
+  *2025 29th International Symposium on Distributed Simulation and Real Time Applications (DS-RT 2025)*, IEEE/ACM, 2025. [3 citations]
+  Keywords: proactive cyber-resilience, non-intrusive modelling, autonomous defence, DS-RT
+
+- **A quantitative framework for the validation of twin-based cyber defense**
+  F. Baiardi, V. Sammartino
+  *Procedia Computer Science*, vol. 274, pp. 721–730, Elsevier, 2025. [3 citations]
+  Keywords: Security Twin, quantitative validation, cyber defence, Procedia Computer Science
+
+- **Graph-Based Cyber Defence using a Security Twin**
+  F. Baiardi, V. Sammartino, S. Ruggieri
+  *29th International Symposium on Distributed Simulation and Real Time Applications (DS-RT 2025)*, 2025. [3 citations]
+  Keywords: graph-based cyber defence, attack graph, Security Twin, DS-RT 2025
+
+- **NotLine: A Non-Intrusive Automated Platform to Build a Digital Twin**
+  F. Baiardi, V. Sammartino, S. Ruggieri
+  *2025 29th International Symposium on Distributed Simulation and Real Time Applications (DS-RT 2025)*, 2025. [1 citation]
+  Keywords: NotLine, digital twin construction, non-intrusive platform, DS-RT 2025
+
+- **Security Twins e il Futuro della Previsione di Intrusioni Cyber**
+  F. Baiardi, S. Ruggieri, V. Sammartino
+  *ICT Security Magazine*, 2025. [1 citation]
+  Keywords: Security Twin, intrusion prediction, cybersecurity [Italian]
+
+- **Cyber Weapons as Components of Weapon Systems**
+  F. Baiardi, V. Sammartino
+  *Journal of Information Warfare*, vol. 24, no. 4, 2025.
+  Keywords: cyber weapons, weapon systems, information warfare, military cyber
+
+- **A Comparative Study of NLP Systems for Sentiment Polarity Classification Across Different Domains and Genres**
+  V. Sammartino
+  *International Journal of Complexity in Applied Science and Technology*, 2025.
+  Keywords: NLP, sentiment analysis, cross-domain, text classification
+
+### 2024
+
+- **A comparative study of machine learning models for hate speech and stereotype detection in Italian texts**
+  V. Sammartino
+  *International Journal of Complexity in Applied Science and Technology*, vol. 1, no. 2, 2024. [6 citations]
+  Keywords: hate speech detection, stereotype detection, ML, NLP, Italian language
+
+- **Database Decomposition to satisfy the Least Privilege Principle in Healthcare**
+  V. Sammartino, F. Baiardi
+  *ARIS2 — Advanced Research on Information Systems Security*, vol. 4, no. 1, pp. 47–69, 2024. [2 citations]
+  Keywords: Least Privilege, database decomposition, healthcare security, GDPR, access control
+
+- **Satisfying Least Privilege Through Database Decomposition**
+  F. Baiardi, C. Comella, V. Sammartino
+  *2024 20th International Conference on the Design of Reliable Communication Networks (DRCN)*, IEEE, 2024. [1 citation]
+  Keywords: Least Privilege, database decomposition, access control, DRCN 2024
+
+- **Multilevel Database Decomposition Framework**
+  F. Baiardi, C. Comella, V. Sammartino
+  *ITASEC 2024 — Italian Conference on Cybersecurity*, 2024. [1 citation]
+  Keywords: multilevel decomposition, database security, ITASEC, access control
+
+- **Feature Engineering and Semantic Enrichment for Enhanced Text Classification: A Case Study on Figurative Language in Tweets**
+  V. Sammartino, C. Baccheschi, J. Gneri, V. Picchianti, A. Frasson
+  *Preprints*, 2024.
+  Keywords: feature engineering, semantic enrichment, figurative language, tweets, NLP
+
+- **D3F: A Framework to Minimize the Impact of Intrusions**
+  F. Baiardi, V. Sammartino
+  *Preprints*, 2024.
+  Keywords: D3F, intrusion impact minimisation, cyber defence framework, digital twin
+
+- **Protezione dei Dati Personali su Servizi Web**
+  V. Sammartino
+  2024.
+  Keywords: GDPR, data protection, web services, personal data, privacy [Italian]
+
+---
+
+## Key Research Themes
+
+- **Security Twin**: Non-intrusive digital twin architectures for real-time cyber threat simulation and proactive defence in cyber-physical systems.
+- **UAV Swarm Security**: Byzantine-resilient anomaly detection via TinyML and Edge AI for decentralised drone swarms (ResilientGuard, KAUST).
+- **Synthetic Data for AI-enabled Cybersecurity**: Generation and validation of synthetic datasets to train robust intrusion detection models.
+- **Least Privilege in Databases**: Schema-level decomposition techniques enforcing fine-grained access control in healthcare and enterprise systems.
+- **NLP for Safety-Critical Content**: Hate speech detection, sentiment analysis, and figurative language classification in Italian and English texts.
+
+---
+
+## Affiliations
+
+- University of Pisa — National PhD Programme in Artificial Intelligence
+- KAUST (King Abdullah University of Science and Technology) — VSRP Intern, CRC/CEMSE
+- Supervisor: Prof. Fabrizio Baiardi (UniPi), Prof. Roberto Di Pietro (KAUST)
+
+## Links
+
+- Homepage: https://ilsamaritano.github.io/
+- ORCID: https://orcid.org/0009-0002-4632-1179
+- Google Scholar: https://scholar.google.com/citations?user=ilsamaritano
+- GitHub: https://github.com/ilsamaritano
+- LinkedIn: https://www.linkedin.com/in/vincenzo-sammartino-0339191a1
