@@ -1,0 +1,38 @@
+# Vincenzo Sammartino — Academic Portfolio
+
+  > PhD Candidate in Artificial Intelligence at the University of Pisa (Italy)
+  > and VSRP Intern at KAUST (Saudi Arabia).
+  > Research areas: Security Twins, Digital Twins for Cybersecurity,
+  > UAV Swarm Security, TinyML, Edge AI, Byzantine-resilient consensus,
+  > GDPR-compliant distributed systems, NLP.
+
+  ## Identity
+  - Full name: Vincenzo Sammartino
+  - ORCID: https://orcid.org/0009-0002-4632-1179
+  - Google Scholar: https://scholar.google.com/citations?user=ilsamaritano
+  - Institution: University of Pisa, Dipartimento di Informatica
+  - Visiting: King Abdullah University of Science and Technology (KAUST)
+  - Supervisors: Prof. Fabrizio Baiardi (UniPi), Prof. Salvatore Ruggieri (UniPi),
+                 Prof. Roberto Di Pietro (KAUST)
+
+  ## Research Summary
+  Vincenzo Sammartino's doctoral research centres on **Security Twins**,
+  a class of digital twin architectures that enable non-intrusive, real-time
+  threat assessment in cyber-physical systems by mirroring their behavioural
+  state in a virtualised replica. His work at KAUST focuses on the
+  **ResilientGuard** project: a framework that secures UAV swarms using
+  TinyML models deployed at the edge and Byzantine-tolerant distributed
+  consensus protocols.
+
+  He has co-authored 23 scientific contributions (IEEE, Springer, CRC/Taylor &
+  Francis) with an h-index of 4 and 37+ citations.
+
+  ## Key Publications
+  - Security Twins: Digital Twin Architectures for Cyber-Physical Threat Assessment
+  - ResilientGuard: Security Framework for UAV Swarms (TinyML + Byzantine FT)
+  - [see full list at https://scholar.google.com/citations?user=ilsamaritano]
+
+  ## Contact
+  - Email: v.sammartino@phd.unipi.it
+  - Web: https://www.vincenzosammartino.com/
+  - Location: Pisa, Italy / Thuwal, Saudi Arabia
