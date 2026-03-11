@@ -1,143 +1,1467 @@
 <!DOCTYPE html>
-<html lang="it">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vincenzo Sammartino - Landing Page</title>
-    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Raleway', sans-serif;
-            line-height: 1.6;
-            color: #333;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        h1, h2 {
-            color: #2c3e50;
-        }
-        h2 {
-            border-bottom: 2px solid #3498db;
-            padding-bottom: 5px;
-        }
-        .contact-info {
-            margin-bottom: 20px;
-        }
-        .section {
-            margin-bottom: 30px;
-        }
-        .item {
-            margin-bottom: 15px;
-        }
-        .item h3 {
-            margin-bottom: 5px;
-        }
-        .item p {
-            margin: 0;
-        }
-        .date {
-            font-style: italic;
-            color: #7f8c8d;
-        }
-        a {
-            color: #3498db;
-            text-decoration: none;
-        }
-        a:hover {
-            text-decoration: underline;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vincenzo Sammartino — AI Researcher & PhD Candidate</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;600;700;800&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #060810;
+    --surface: #0d1120;
+    --surface2: #111827;
+    --accent: #00e5ff;
+    --accent2: #7c3aed;
+    --accent3: #10b981;
+    --text: #e2e8f0;
+    --muted: #64748b;
+    --border: rgba(0,229,255,0.12);
+    --glow: 0 0 30px rgba(0,229,255,0.25);
+    --glow2: 0 0 30px rgba(124,58,237,0.25);
+  }
+
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+
+  html{scroll-behavior:smooth;font-size:16px}
+
+  body{
+    background:var(--bg);
+    color:var(--text);
+    font-family:'DM Mono',monospace;
+    overflow-x:hidden;
+    cursor:none;
+  }
+
+  /* CUSTOM CURSOR */
+  .cursor{
+    position:fixed;width:12px;height:12px;
+    background:var(--accent);border-radius:50%;
+    pointer-events:none;z-index:9999;
+    transform:translate(-50%,-50%);
+    transition:transform .1s,width .2s,height .2s,opacity .2s;
+    mix-blend-mode:screen;
+  }
+  .cursor-ring{
+    position:fixed;width:40px;height:40px;
+    border:1px solid rgba(0,229,255,0.5);
+    border-radius:50%;pointer-events:none;z-index:9998;
+    transform:translate(-50%,-50%);
+    transition:transform .25s cubic-bezier(.25,.46,.45,.94),width .3s,height .3s;
+  }
+  body:hover .cursor{opacity:1}
+
+  /* CANVAS BG */
+  #neural-canvas{
+    position:fixed;top:0;left:0;width:100%;height:100%;
+    z-index:0;opacity:0.4;pointer-events:none;
+  }
+
+  /* NOISE OVERLAY */
+  body::before{
+    content:'';position:fixed;inset:0;z-index:1;
+    background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+    pointer-events:none;opacity:0.5;
+  }
+
+  /* LAYOUT */
+  .wrap{max-width:1200px;margin:0 auto;padding:0 24px;position:relative;z-index:2}
+
+  /* ═══ NAV ═══ */
+  nav{
+    position:fixed;top:0;left:0;right:0;z-index:100;
+    padding:16px 0;
+    backdrop-filter:blur(20px);
+    background:rgba(6,8,16,0.7);
+    border-bottom:1px solid var(--border);
+    transition:all .3s;
+  }
+  nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px}
+  .nav-logo{
+    font-family:'Syne',sans-serif;font-weight:800;font-size:1.1rem;
+    color:var(--accent);letter-spacing:-.02em;white-space:nowrap;
+  }
+  .nav-logo span{color:var(--text);opacity:.5}
+  .nav-links{
+    display:flex;gap:24px;list-style:none;
+    font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;
+  }
+  .nav-links a{
+    color:var(--muted);text-decoration:none;
+    transition:color .2s;position:relative;
+  }
+  .nav-links a::after{
+    content:'';position:absolute;left:0;bottom:-4px;
+    width:0;height:1px;background:var(--accent);
+    transition:width .3s;
+  }
+  .nav-links a:hover{color:var(--accent)}
+  .nav-links a:hover::after{width:100%}
+  .nav-badge{
+    font-size:.65rem;padding:4px 10px;
+    border:1px solid var(--accent);color:var(--accent);
+    border-radius:2px;letter-spacing:.1em;
+    animation:pulse-border 2s infinite;
+  }
+  @keyframes pulse-border{
+    0%,100%{box-shadow:0 0 0 0 rgba(0,229,255,.3)}
+    50%{box-shadow:0 0 0 6px rgba(0,229,255,.0)}
+  }
+  .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px}
+  .hamburger span{width:24px;height:1.5px;background:var(--accent);transition:.3s;display:block}
+
+  /* ═══ HERO ═══ */
+  #hero{
+    min-height:100vh;display:flex;align-items:center;
+    padding:100px 0 60px;position:relative;
+    overflow:hidden;
+  }
+  .hero-grid{
+    display:grid;grid-template-columns:1fr 1fr;
+    gap:60px;align-items:center;
+  }
+  .hero-eyebrow{
+    font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;
+    color:var(--accent);margin-bottom:20px;
+    display:flex;align-items:center;gap:12px;
+  }
+  .hero-eyebrow::before{content:'//';opacity:.5}
+  .hero-name{
+    font-family:'Syne',sans-serif;font-weight:800;
+    font-size:clamp(2.8rem,6vw,5rem);line-height:.95;
+    letter-spacing:-.04em;margin-bottom:8px;
+    color:var(--text);
+  }
+  .hero-name .first{display:block;color:var(--text)}
+  .hero-name .last{
+    display:block;
+    background:linear-gradient(135deg,var(--accent),var(--accent2));
+    -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+    background-clip:text;
+  }
+  .hero-title{
+    font-size:.85rem;color:var(--muted);margin:20px 0 32px;
+    line-height:1.8;max-width:480px;
+  }
+  .hero-title .typed-cursor{
+    display:inline-block;width:2px;height:1em;
+    background:var(--accent);animation:blink 1s step-end infinite;
+    vertical-align:text-bottom;margin-left:2px;
+  }
+  @keyframes blink{0%,100%{opacity:1}50%{opacity:0}}
+  .hero-cta{
+    display:flex;gap:16px;flex-wrap:wrap;margin-top:8px;
+  }
+  .btn{
+    display:inline-flex;align-items:center;gap:8px;
+    padding:12px 24px;font-family:'Space Mono',monospace;
+    font-size:.75rem;letter-spacing:.08em;
+    text-decoration:none;border-radius:2px;
+    transition:all .25s;position:relative;overflow:hidden;
+    cursor:none;
+  }
+  .btn-primary{
+    background:var(--accent);color:var(--bg);
+    font-weight:700;
+  }
+  .btn-primary:hover{
+    box-shadow:var(--glow);transform:translateY(-2px);
+    background:#33eeff;
+  }
+  .btn-ghost{
+    border:1px solid var(--border);color:var(--text);
+    background:transparent;
+  }
+  .btn-ghost:hover{
+    border-color:var(--accent);color:var(--accent);
+    box-shadow:var(--glow);transform:translateY(-2px);
+  }
+  .hero-stats{
+    display:grid;grid-template-columns:repeat(3,1fr);
+    gap:1px;background:var(--border);
+    border:1px solid var(--border);
+    border-radius:4px;margin-top:40px;
+  }
+  .hero-stat{
+    background:var(--surface);padding:20px 16px;text-align:center;
+  }
+  .hero-stat-num{
+    font-family:'Syne',sans-serif;font-weight:800;
+    font-size:1.8rem;color:var(--accent);
+    display:block;line-height:1;
+  }
+  .hero-stat-label{
+    font-size:.6rem;color:var(--muted);letter-spacing:.1em;
+    text-transform:uppercase;margin-top:4px;display:block;
+  }
+  .hero-visual{
+    position:relative;display:flex;
+    justify-content:center;align-items:center;
+  }
+  .photo-frame{
+    position:relative;width:280px;height:280px;
+  }
+  .photo-frame img{
+    width:100%;height:100%;object-fit:cover;
+    border-radius:4px;filter:grayscale(30%)contrast(1.05);
+  }
+  .photo-border{
+    position:absolute;inset:-12px;
+    border:1px solid var(--accent);border-radius:4px;
+    opacity:.4;animation:rotate-slow 20s linear infinite;
+  }
+  .photo-border2{
+    position:absolute;inset:-24px;
+    border:1px solid var(--accent2);border-radius:4px;
+    opacity:.2;animation:rotate-slow 30s linear infinite reverse;
+  }
+  @keyframes rotate-slow{
+    0%{transform:rotate(0deg)}
+    100%{transform:rotate(360deg)}
+  }
+  .photo-scan{
+    position:absolute;top:0;left:0;right:0;height:2px;
+    background:linear-gradient(90deg,transparent,var(--accent),transparent);
+    animation:scan 3s ease-in-out infinite;
+    mix-blend-mode:screen;
+  }
+  @keyframes scan{
+    0%{top:0;opacity:1}
+    100%{top:100%;opacity:0}
+  }
+  .photo-tag{
+    position:absolute;bottom:-40px;right:-20px;
+    font-size:.62rem;color:var(--accent);
+    border:1px solid var(--border);
+    background:var(--surface);
+    padding:6px 12px;letter-spacing:.08em;
+    border-radius:2px;
+  }
+  .hero-orbit{
+    position:absolute;
+    width:420px;height:420px;
+    border:1px dashed rgba(0,229,255,.06);
+    border-radius:50%;
+    animation:rotate-slow 40s linear infinite;
+  }
+  .hero-orbit::before{
+    content:'';position:absolute;top:-4px;left:50%;
+    transform:translateX(-50%);
+    width:8px;height:8px;border-radius:50%;
+    background:var(--accent);
+    box-shadow:0 0 12px var(--accent);
+  }
+
+  /* ═══ SECTION BASE ═══ */
+  section{padding:100px 0;position:relative;z-index:2}
+  .section-tag{
+    font-size:.65rem;color:var(--accent);letter-spacing:.2em;
+    text-transform:uppercase;margin-bottom:12px;
+    display:flex;align-items:center;gap:8px;
+  }
+  .section-tag::before{content:'[ ';opacity:.5}
+  .section-tag::after{content:' ]';opacity:.5}
+  .section-title{
+    font-family:'Syne',sans-serif;font-weight:800;
+    font-size:clamp(1.8rem,4vw,3rem);
+    line-height:1.05;letter-spacing:-.03em;
+    margin-bottom:48px;
+  }
+  .section-divider{
+    border:none;border-top:1px solid var(--border);
+    margin-bottom:80px;
+  }
+
+  /* ═══ ABOUT ═══ */
+  #about .grid{
+    display:grid;grid-template-columns:1.5fr 1fr;
+    gap:80px;align-items:start;
+  }
+  .about-bio{
+    font-size:.95rem;line-height:1.9;color:#94a3b8;
+  }
+  .about-bio p{margin-bottom:20px}
+  .about-bio strong{color:var(--text)}
+  .research-interests{
+    display:flex;flex-direction:column;gap:8px;margin-top:32px;
+  }
+  .ri-item{
+    display:flex;align-items:center;gap:12px;
+    padding:10px 16px;
+    border:1px solid var(--border);
+    border-radius:2px;
+    font-size:.78rem;letter-spacing:.05em;
+    transition:all .2s;
+    background:var(--surface);
+  }
+  .ri-item:hover{
+    border-color:var(--accent);
+    background:rgba(0,229,255,.05);
+    transform:translateX(4px);
+  }
+  .ri-dot{
+    width:6px;height:6px;border-radius:50%;
+    background:var(--accent);flex-shrink:0;
+    box-shadow:0 0 8px var(--accent);
+  }
+  .info-card{
+    background:var(--surface);
+    border:1px solid var(--border);
+    border-radius:4px;padding:28px;
+  }
+  .info-row{
+    display:flex;justify-content:space-between;
+    align-items:flex-start;gap:16px;
+    padding:14px 0;
+    border-bottom:1px solid var(--border);
+    font-size:.78rem;
+  }
+  .info-row:last-child{border-bottom:none}
+  .info-key{color:var(--muted);letter-spacing:.05em;flex-shrink:0}
+  .info-val{color:var(--text);text-align:right}
+  .info-val a{color:var(--accent);text-decoration:none}
+
+  /* ═══ PUBLICATIONS METRICS ═══ */
+  #metrics{padding:60px 0}
+  .metrics-grid{
+    display:grid;grid-template-columns:repeat(4,1fr);
+    gap:1px;background:var(--border);
+    border:1px solid var(--border);border-radius:4px;
+  }
+  .metric-card{
+    background:var(--surface);padding:36px 24px;text-align:center;
+    position:relative;overflow:hidden;
+  }
+  .metric-card::after{
+    content:'';position:absolute;inset:0;
+    background:linear-gradient(135deg,rgba(0,229,255,.03),transparent);
+  }
+  .metric-num{
+    font-family:'Syne',sans-serif;font-weight:800;
+    font-size:3rem;color:var(--accent);display:block;
+    line-height:1;counter-reset:num;
+  }
+  .metric-num.purple{color:var(--accent2)}
+  .metric-num.green{color:var(--accent3)}
+  .metric-label{
+    font-size:.65rem;color:var(--muted);letter-spacing:.12em;
+    text-transform:uppercase;margin-top:8px;display:block;
+  }
+
+  /* ═══ TIMELINE ═══ */
+  #experience .timeline{
+    position:relative;padding-left:32px;
+  }
+  #experience .timeline::before{
+    content:'';position:absolute;left:0;top:0;bottom:0;
+    width:1px;background:linear-gradient(to bottom,var(--accent),var(--accent2),transparent);
+  }
+  .tl-entry{
+    position:relative;margin-bottom:48px;
+    opacity:0;transform:translateX(-20px);
+    transition:all .6s cubic-bezier(.25,.46,.45,.94);
+  }
+  .tl-entry.visible{opacity:1;transform:translateX(0)}
+  .tl-dot{
+    position:absolute;left:-37px;top:6px;
+    width:10px;height:10px;border-radius:50%;
+    background:var(--accent);
+    box-shadow:0 0 12px var(--accent);
+    border:2px solid var(--bg);
+  }
+  .tl-dot.purple{background:var(--accent2);box-shadow:0 0 12px var(--accent2)}
+  .tl-date{
+    font-size:.65rem;color:var(--accent);letter-spacing:.1em;
+    text-transform:uppercase;margin-bottom:6px;
+  }
+  .tl-title{
+    font-family:'Syne',sans-serif;font-weight:700;
+    font-size:1rem;margin-bottom:4px;
+  }
+  .tl-org{
+    font-size:.75rem;color:var(--muted);margin-bottom:10px;
+  }
+  .tl-desc{
+    font-size:.8rem;color:#64748b;line-height:1.7;
+  }
+  .tl-tags{
+    display:flex;flex-wrap:wrap;gap:6px;margin-top:12px;
+  }
+  .tag{
+    font-size:.6rem;padding:3px 10px;
+    border:1px solid var(--border);
+    border-radius:2px;color:var(--muted);
+    letter-spacing:.08em;text-transform:uppercase;
+    transition:.2s;
+  }
+  .tag:hover{border-color:var(--accent);color:var(--accent)}
+  .tag.accent{border-color:rgba(0,229,255,.3);color:var(--accent)}
+
+  /* ═══ PUBLICATIONS ═══ */
+  #publications .pub-filter{
+    display:flex;gap:8px;flex-wrap:wrap;margin-bottom:40px;
+  }
+  .filter-btn{
+    padding:8px 18px;font-family:'Space Mono',monospace;font-size:.68rem;
+    letter-spacing:.08em;text-transform:uppercase;
+    border:1px solid var(--border);background:transparent;
+    color:var(--muted);border-radius:2px;cursor:none;
+    transition:all .2s;
+  }
+  .filter-btn:hover,.filter-btn.active{
+    border-color:var(--accent);color:var(--accent);
+    background:rgba(0,229,255,.05);
+  }
+  .pub-list{display:flex;flex-direction:column;gap:12px}
+  .pub-card{
+    border:1px solid var(--border);border-radius:4px;
+    background:var(--surface);padding:20px 24px;
+    transition:all .25s;position:relative;overflow:hidden;
+    opacity:0;transform:translateY(16px);
+    cursor:default;
+  }
+  .pub-card.visible{opacity:1;transform:translateY(0)}
+  .pub-card::before{
+    content:'';position:absolute;left:0;top:0;bottom:0;
+    width:3px;background:var(--accent);
+    transform:scaleY(0);transform-origin:bottom;
+    transition:transform .3s;
+  }
+  .pub-card:hover{
+    border-color:rgba(0,229,255,.25);
+    background:rgba(13,17,32,0.95);
+    transform:translateX(4px);
+  }
+  .pub-card:hover::before{transform:scaleY(1)}
+  .pub-year{
+    font-size:.6rem;color:var(--accent);letter-spacing:.12em;
+    text-transform:uppercase;margin-bottom:6px;
+  }
+  .pub-title{
+    font-family:'Syne',sans-serif;font-weight:600;
+    font-size:.9rem;line-height:1.4;margin-bottom:8px;
+    color:var(--text);
+  }
+  .pub-venue{
+    font-size:.72rem;color:var(--muted);margin-bottom:8px;
+    font-style:italic;
+  }
+  .pub-authors{font-size:.72rem;color:#475569}
+  .pub-citations{
+    position:absolute;top:20px;right:20px;
+    font-size:.6rem;color:var(--accent);
+    border:1px solid rgba(0,229,255,.2);
+    padding:2px 8px;border-radius:2px;
+  }
+  .pub-type-header{
+    font-family:'Syne',sans-serif;font-weight:700;
+    font-size:1rem;color:var(--muted);
+    letter-spacing:.1em;text-transform:uppercase;
+    padding:24px 0 16px;
+    border-bottom:1px solid var(--border);
+    margin-bottom:20px;
+    display:flex;align-items:center;gap:12px;
+  }
+  .pub-type-header::before{
+    content:'';width:8px;height:8px;border-radius:50%;
+    background:var(--accent);flex-shrink:0;
+  }
+
+  /* ═══ SKILLS ═══ */
+  #skills .skills-grid{
+    display:grid;grid-template-columns:repeat(3,1fr);
+    gap:24px;
+  }
+  .skill-group{
+    background:var(--surface);
+    border:1px solid var(--border);
+    border-radius:4px;padding:24px;
+    transition:all .3s;
+    opacity:0;transform:translateY(20px);
+  }
+  .skill-group.visible{opacity:1;transform:translateY(0)}
+  .skill-group:hover{
+    border-color:var(--accent);
+    box-shadow:var(--glow);
+  }
+  .skill-group-title{
+    font-size:.65rem;color:var(--accent);letter-spacing:.15em;
+    text-transform:uppercase;margin-bottom:16px;
+    display:flex;align-items:center;gap:8px;
+  }
+  .skill-group-title::before{
+    content:'';flex:1;height:1px;background:var(--border);
+  }
+  .skill-pills{display:flex;flex-wrap:wrap;gap:6px}
+  .skill-pill{
+    font-size:.68rem;padding:4px 12px;
+    border:1px solid var(--border);border-radius:2px;
+    color:var(--muted);letter-spacing:.05em;
+    transition:.2s;
+  }
+  .skill-pill:hover{
+    border-color:var(--accent);color:var(--accent);
+    background:rgba(0,229,255,.05);
+  }
+
+  /* ═══ PROJECTS ═══ */
+  #projects .proj-grid{
+    display:grid;grid-template-columns:repeat(3,1fr);
+    gap:20px;
+  }
+  .proj-card{
+    background:var(--surface);border:1px solid var(--border);
+    border-radius:4px;padding:24px;
+    transition:all .3s;
+    opacity:0;transform:translateY(20px);
+    text-decoration:none;color:var(--text);
+    display:block;
+    position:relative;overflow:hidden;
+  }
+  .proj-card.visible{opacity:1;transform:translateY(0)}
+  .proj-card::after{
+    content:'↗';position:absolute;top:20px;right:20px;
+    font-size:1rem;color:var(--accent);opacity:0;
+    transition:.2s;transform:translateY(4px);
+  }
+  .proj-card:hover{
+    border-color:var(--accent);
+    box-shadow:var(--glow);
+    transform:translateY(-4px);
+  }
+  .proj-card:hover::after{opacity:1;transform:translateY(0)}
+  .proj-icon{
+    width:40px;height:40px;border-radius:8px;
+    background:linear-gradient(135deg,rgba(0,229,255,.15),rgba(124,58,237,.15));
+    display:flex;align-items:center;justify-content:center;
+    font-size:1.2rem;margin-bottom:16px;
+    border:1px solid var(--border);
+  }
+  .proj-name{
+    font-family:'Syne',sans-serif;font-weight:700;
+    font-size:.95rem;margin-bottom:8px;
+  }
+  .proj-desc{font-size:.75rem;color:var(--muted);line-height:1.6}
+
+  /* ═══ CONTACT ═══ */
+  #contact{
+    background:var(--surface);
+    border-top:1px solid var(--border);
+    border-bottom:1px solid var(--border);
+  }
+  .contact-grid{
+    display:grid;grid-template-columns:1fr 1fr;
+    gap:80px;align-items:center;
+  }
+  .contact-heading{
+    font-family:'Syne',sans-serif;font-weight:800;
+    font-size:clamp(2rem,4vw,3.5rem);
+    line-height:1;letter-spacing:-.04em;
+  }
+  .contact-heading span{
+    background:linear-gradient(135deg,var(--accent),var(--accent2));
+    -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+    background-clip:text;
+  }
+  .contact-links{
+    display:flex;flex-direction:column;gap:12px;
+  }
+  .contact-link{
+    display:flex;align-items:center;gap:16px;
+    padding:16px 20px;
+    border:1px solid var(--border);border-radius:4px;
+    text-decoration:none;color:var(--text);
+    transition:all .2s;font-size:.82rem;
+    background:rgba(6,8,16,.5);
+  }
+  .contact-link:hover{
+    border-color:var(--accent);
+    background:rgba(0,229,255,.05);
+    transform:translateX(8px);
+  }
+  .contact-link-icon{
+    width:36px;height:36px;border-radius:4px;
+    background:rgba(0,229,255,.1);
+    display:flex;align-items:center;justify-content:center;
+    font-size:1rem;flex-shrink:0;
+    border:1px solid rgba(0,229,255,.2);
+  }
+  .contact-link-text{flex:1}
+  .contact-link-label{font-size:.6rem;color:var(--muted);letter-spacing:.1em;text-transform:uppercase}
+  .contact-link-val{font-size:.78rem;color:var(--text)}
+  .contact-link-arrow{color:var(--muted);font-size:.8rem;transition:.2s}
+  .contact-link:hover .contact-link-arrow{color:var(--accent)}
+
+  /* ═══ FOOTER ═══ */
+  footer{
+    padding:40px 0;text-align:center;
+    font-size:.68rem;color:var(--muted);
+    letter-spacing:.08em;z-index:2;position:relative;
+  }
+  footer a{color:var(--accent);text-decoration:none}
+
+  /* GLITCH EFFECT */
+  .glitch{position:relative}
+  .glitch::before,.glitch::after{
+    content:attr(data-text);
+    position:absolute;left:0;top:0;
+    width:100%;overflow:hidden;
+  }
+  .glitch::before{
+    color:var(--accent);animation:glitch1 4s infinite;
+    clip-path:polygon(0 0,100% 0,100% 35%,0 35%);
+  }
+  .glitch::after{
+    color:var(--accent2);animation:glitch2 4s infinite;
+    clip-path:polygon(0 65%,100% 65%,100% 100%,0 100%);
+  }
+  @keyframes glitch1{
+    0%,90%,100%{transform:translateX(0)}
+    92%{transform:translateX(-3px)}
+    94%{transform:translateX(3px)}
+    96%{transform:translateX(0)}
+  }
+  @keyframes glitch2{
+    0%,90%,100%{transform:translateX(0)}
+    93%{transform:translateX(2px)}
+    95%{transform:translateX(-2px)}
+    97%{transform:translateX(0)}
+  }
+
+  /* SCROLLBAR */
+  ::-webkit-scrollbar{width:4px}
+  ::-webkit-scrollbar-track{background:var(--bg)}
+  ::-webkit-scrollbar-thumb{background:var(--accent);border-radius:2px}
+
+  /* MOBILE MENU */
+  .mobile-menu{
+    display:none;position:fixed;inset:0;z-index:99;
+    background:rgba(6,8,16,.97);backdrop-filter:blur(20px);
+    flex-direction:column;align-items:center;justify-content:center;
+    gap:32px;
+  }
+  .mobile-menu.open{display:flex}
+  .mobile-menu a{
+    font-family:'Syne',sans-serif;font-weight:700;
+    font-size:1.6rem;color:var(--muted);text-decoration:none;
+    transition:.2s;
+  }
+  .mobile-menu a:hover{color:var(--accent)}
+  .mobile-close{
+    position:absolute;top:24px;right:24px;
+    background:none;border:none;color:var(--accent);
+    font-size:1.5rem;cursor:pointer;
+  }
+
+  /* ═══ RESPONSIVE ═══ */
+  @media(max-width:900px){
+    .hero-grid{grid-template-columns:1fr;gap:40px}
+    .hero-visual{order:-1}
+    .photo-frame{width:200px;height:200px}
+    .hero-orbit{display:none}
+    #about .grid{grid-template-columns:1fr}
+    #skills .skills-grid{grid-template-columns:repeat(2,1fr)}
+    #projects .proj-grid{grid-template-columns:repeat(2,1fr)}
+    .contact-grid{grid-template-columns:1fr}
+    .metrics-grid{grid-template-columns:repeat(2,1fr)}
+    .nav-links,.nav-badge{display:none}
+    .hamburger{display:flex}
+  }
+  @media(max-width:600px){
+    #skills .skills-grid{grid-template-columns:1fr}
+    #projects .proj-grid{grid-template-columns:1fr}
+    .hero-stats{grid-template-columns:repeat(3,1fr)}
+    .metrics-grid{grid-template-columns:repeat(2,1fr)}
+    section{padding:70px 0}
+  }
+
+  /* FADE IN ANIMATION CLASS */
+  .fade-in{
+    opacity:0;transform:translateY(24px);
+    transition:opacity .7s ease,transform .7s ease;
+  }
+  .fade-in.visible{opacity:1;transform:translateY(0)}
+</style>
 </head>
 <body>
-    <header>
-        <h1>Vincenzo Sammartino</h1>
-        <div class="contact-info">
-            <p>Pisa, Italia | <a href="https://orcid.org/0009-0002-4632-1179" target="_blank">0009-0002-4632-1179</a></p>
-            <p>Email: <a href="mailto:vincesammartino@gmail.com">vincesammartino@gmail.com</a></p>
-            <p>LinkedIn: <a href="vincenzo-sammartino-0339191a1/" target="_blank">vincenzo-sammartino</a> | GitHub: <a href="https://github.com/ilsamaritano" target="_blank">ilsamaritano</a></p>
-        </div>
-    </header>
 
-    <section class="section">
-        <h2>Istruzione</h2>
-        <div class="item">
-            <h3>Master & Job, Associazione Eraclito 2000</h3>
-            <p class="date">Febbraio - Maggio 2024</p>
-            <p>Master su StartUp e AI con focus su Soft Skills, Sostenibilità, Etica, Impresa, Start Up, Innovazione ed Educazione Finanziaria.</p>
-        </div>
-        <div class="item">
-            <h3>Laurea Magistrale in Informatica Umanistica, Università di Pisa</h3>
-            <p class="date">Settembre 2022 - Febbraio 2024</p>
-            <p>Voto finale: 110/110 e Lode. Tesi: Protezione dei Dati Personali su Servizi Web.</p>
-        </div>
-        <div class="item">
-            <h3>Laurea Triennale in Informatica Umanistica, Università di Pisa</h3>
-            <p class="date">Settembre 2019 - Settembre 2022</p>
-            <p>Votazione finale: 109/110. Tesi: Sentiment analysis - effetto del dominio e del genere testuale sulle prestazioni di un classificatore.</p>
-        </div>
-    </section>
+<canvas id="neural-canvas"></canvas>
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursor-ring"></div>
 
-    <section class="section">
-        <h2>Esperienza Lavorativa</h2>
-        <div class="item">
-            <h3>Tutor per Studenti con DSA, Università di Pisa</h3>
-            <p class="date">Novembre 2023 - Febbraio 2024</p>
-        </div>
-        <div class="item">
-            <h3>Tutor Accademico, Università di Pisa</h3>
-            <p class="date">Ottobre - Dicembre 2022</p>
-        </div>
-        <div class="item">
-            <h3>Counselor, Università di Pisa</h3>
-            <p class="date">Dicembre 2021 - Ottobre 2022</p>
-            <p>Servizio di orientamento e tutorato per gli studenti del dipartimento.</p>
-        </div>
-    </section>
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobile-menu">
+  <button class="mobile-close" id="mobile-close" style="cursor:pointer">✕</button>
+  <a href="#about" onclick="closeMobileMenu()">About</a>
+  <a href="#experience" onclick="closeMobileMenu()">Experience</a>
+  <a href="#publications" onclick="closeMobileMenu()">Publications</a>
+  <a href="#projects" onclick="closeMobileMenu()">Projects</a>
+  <a href="#skills" onclick="closeMobileMenu()">Skills</a>
+  <a href="#contact" onclick="closeMobileMenu()">Contact</a>
+</div>
 
-    <section class="section">
-        <h2>Attività di Ricerca</h2>
-        <div class="item">
-            <h3>Contratto di Ricerca, Università di Siena</h3>
-            <p class="date">Maggio 2024 - Dicembre 2024</p>
-            <p>Trascrizione e codifica di un corpus del periodo tra il cinquecento e il seicento in inglese nel linguaggio XML seguendo lo standard TEI.</p>
-        </div>
-        <div class="item">
-            <h3>Borsa di Ricerca, Università di Pisa - Dipartimento di Informatica</h3>
-            <p class="date">Marzo 2024 - Settembre 2024</p>
-            <p>Realizzazione di sistemi informatici distribuiti in ottemperanza al GDPR e ricerca su sistemi di decomposizione di database.</p>
-        </div>
-    </section>
+<!-- NAV -->
+<nav>
+  <div class="wrap">
+    <div class="nav-logo">VS<span>.</span></div>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#experience">Research</a></li>
+      <li><a href="#publications">Publications</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <span class="nav-badge">PhD Candidate @ UniPi</span>
+    <div class="hamburger" id="hamburger">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</nav>
 
-    <section class="section">
-        <h2>Competenze Informatiche</h2>
-        <p><strong>Sviluppo Web:</strong> HTML, CSS, JavaScript, Bootstrap</p>
-        <p><strong>Coding:</strong> Python, JavaScript, JQuery, R, C++, PHP</p>
-        <p><strong>Database:</strong> SQL, NoSQL (MongoDB), GraphDB (ArangoDB)</p>
-        <p><strong>Analisi Dati:</strong> Python (Pandas, NumPy, Scikit-Learn), R</p>
-        <p><strong>ML / NN:</strong> Keras, TensorFlow, XGBoost</p>
-        <p><strong>NLP:</strong> Python (NLTK, SpaCy, Stanza, BERT)</p>
-        <p><strong>DevOps:</strong> Docker, Git</p>
-        <p><strong>Altri:</strong> XML, XSLT, Markdown, LaTeX, AJAX</p>
-    </section>
-
-    <section class="section">
-        <h2>Lingue</h2>
-        <p><strong>Italiano:</strong> Madrelingua</p>
-        <p><strong>Inglese:</strong> C1 (Lettura, Scrittura, Espressione Orale, Linguaggio Tecnico)</p>
-    </section>
-
-    <section class="section">
-        <h2>Pubblicazioni</h2>
-        <div class="item">
-            <h3>Journal Articles</h3>
-            <p>V. Sammartino and F. Baiardi, "Database Decomposition to satisfy the Least Privilege Principle in Healthcare," ARIS2 - Advanced Research on Information Systems Security, vol. 4, pp. 46–68, 2024.</p>
+<!-- HERO -->
+<section id="hero">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div class="hero-left">
+        <div class="hero-eyebrow">PhD Candidate · AI Researcher</div>
+        <h1 class="hero-name glitch" data-text="Vincenzo Sammartino">
+          <span class="first">Vincenzo</span>
+          <span class="last">Sammartino</span>
+        </h1>
+        <p class="hero-title">
+          <span id="typed-text"></span><span class="typed-cursor"></span>
+        </p>
+        <div class="hero-cta">
+          <a href="#publications" class="btn btn-primary">Publications</a>
+          <a href="https://github.com/ilsamaritano" target="_blank" class="btn btn-ghost">GitHub</a>
+          <a href="https://www.linkedin.com/in/vincenzo-sammartino-0339191a1" target="_blank" class="btn btn-ghost">LinkedIn</a>
         </div>
-        <div class="item">
-            <h3>Conference Proceedings</h3>
-            <p>F. Baiardi, C. Comella, and V. Sammartino, "Satisfying Least Privilege Through Database Decomposition," 20th International Conference on the Design of Reliable Communication Networks (DRCN), Montreal, QC, Canada, 2024.</p>
-            <p>F. Baiardi, S. Ruggieri, and V. Sammartino, "Anticipating Disasters through a Security Twin," DOD 2024 International Workshop on Dynamics of Disasters: Hybrid Threats, Vienna, Austria, 2024.</p>
+        <div class="hero-stats">
+          <div class="hero-stat">
+            <span class="hero-stat-num" id="cnt-cit">37</span>
+            <span class="hero-stat-label">Citations</span>
+          </div>
+          <div class="hero-stat">
+            <span class="hero-stat-num" id="cnt-h">4</span>
+            <span class="hero-stat-label">H-Index</span>
+          </div>
+          <div class="hero-stat">
+            <span class="hero-stat-num" id="cnt-pub">23</span>
+            <span class="hero-stat-label">Papers</span>
+          </div>
         </div>
-    </section>
+      </div>
+      <div class="hero-visual">
+        <div class="hero-orbit"></div>
+        <div class="photo-frame">
+          <img src="https://avatars.githubusercontent.com/u/ilsamaritano?s=400" 
+               onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22280%22 height=%22280%22 viewBox=%220 0 280 280%22%3E%3Crect fill=%22%230d1120%22 width=%22280%22 height=%22280%22/%3E%3Ccircle cx=%22140%22 cy=%22110%22 r=%2250%22 fill=%22%231e293b%22/%3E%3Cellipse cx=%22140%22 cy=%22230%22 rx=%2290%22 ry=%2270%22 fill=%22%221e293b%22/%3E%3Ctext x=%22140%22 y=%22160%22 text-anchor=%22middle%22 fill=%22%2300e5ff%22 font-family=%22monospace%22 font-size=%2216%22%3EVS%3C/text%3E%3C/svg%3E'"
+               alt="Vincenzo Sammartino">
+          <div class="photo-scan"></div>
+          <div class="photo-border"></div>
+          <div class="photo-border2"></div>
+          <div class="photo-tag">KAUST · UniPi · 2026</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- METRICS BAR -->
+<section id="metrics" style="padding:0 0 80px">
+  <div class="wrap fade-in">
+    <div class="metrics-grid">
+      <div class="metric-card">
+        <span class="metric-num">37</span>
+        <span class="metric-label">Total Citations</span>
+      </div>
+      <div class="metric-card">
+        <span class="metric-num purple">4</span>
+        <span class="metric-label">H-Index</span>
+      </div>
+      <div class="metric-card">
+        <span class="metric-num green">23</span>
+        <span class="metric-label">Publications</span>
+      </div>
+      <div class="metric-card">
+        <span class="metric-num">3+</span>
+        <span class="metric-label">Years Research</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="wrap">
+    <div class="section-tag">About</div>
+    <h2 class="section-title">Researcher.<br>Engineer.<br>Builder.</h2>
+    <div class="grid">
+      <div>
+        <div class="about-bio">
+          <p>I am a <strong>PhD candidate in Artificial Intelligence</strong> at the University of Pisa, working at the intersection of cybersecurity, AI, and distributed systems. My doctoral research focuses on <strong>Security Twins</strong> — digital twin architectures for real-time, non-intrusive threat assessment in cyber-physical systems.</p>
+          <p>Currently serving as a <strong>Visiting PhD Student (VSRP Intern)</strong> at <strong>KAUST</strong> (King Abdullah University of Science and Technology) under the supervision of Prof. Roberto Di Pietro, where I contribute to the <em>ResilientGuard</em> project on UAV swarm security leveraging TinyML and Edge AI paradigms.</p>
+          <p>My research spans <strong>Digital Twins for Cybersecurity</strong>, adversarial AI, Byzantine-resilient consensus mechanisms, and GDPR-compliant database architectures. I have co-authored 23 scientific contributions — including IEEE and Springer proceedings, CRC/Taylor &amp; Francis book chapters, and peer-reviewed journal articles.</p>
+        </div>
+        <div class="research-interests">
+          <div class="ri-item"><div class="ri-dot"></div>Digital Twin & Security Twin Architectures</div>
+          <div class="ri-item"><div class="ri-dot"></div>UAV Swarm Security & TinyML / Edge AI</div>
+          <div class="ri-item"><div class="ri-dot"></div>Cyber-Physical Systems Resilience</div>
+          <div class="ri-item"><div class="ri-dot"></div>AI-enabled Cybersecurity & Synthetic Data</div>
+          <div class="ri-item"><div class="ri-dot"></div>GDPR-compliant Distributed Systems</div>
+          <div class="ri-item"><div class="ri-dot"></div>Natural Language Processing & Sentiment Analysis</div>
+        </div>
+      </div>
+      <div>
+        <div class="info-card">
+          <div class="info-row">
+            <span class="info-key">Position</span>
+            <span class="info-val">PhD Candidate, AI</span>
+          </div>
+          <div class="info-row">
+            <span class="info-key">Institution</span>
+            <span class="info-val">University of Pisa</span>
+          </div>
+          <div class="info-row">
+            <span class="info-key">Visiting</span>
+            <span class="info-val">KAUST, Saudi Arabia</span>
+          </div>
+          <div class="info-row">
+            <span class="info-key">Supervisor</span>
+            <span class="info-val">Prof. F. Baiardi</span>
+          </div>
+          <div class="info-row">
+            <span class="info-key">Co-supervisor</span>
+            <span class="info-val">Prof. S. Ruggieri</span>
+          </div>
+          <div class="info-row">
+            <span class="info-key">ORCID</span>
+            <span class="info-val"><a href="https://orcid.org/0009-0002-4632-1179" target="_blank">0009-0002-4632-1179</a></span>
+          </div>
+          <div class="info-row">
+            <span class="info-key">Location</span>
+            <span class="info-val">Pisa, Italy / Thuwal, KSA</span>
+          </div>
+          <div class="info-row">
+            <span class="info-key">Email</span>
+            <span class="info-val"><a href="mailto:vincesammartino@gmail.com">vincesammartino@gmail.com</a></span>
+          </div>
+          <div class="info-row">
+            <span class="info-key">Scholar</span>
+            <span class="info-val"><a href="https://scholar.google.com/citations?user=ilsamaritano" target="_blank">Google Scholar ↗</a></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE / RESEARCH TIMELINE -->
+<section id="experience">
+  <div class="wrap">
+    <div class="section-tag">Research & Experience</div>
+    <h2 class="section-title">Timeline</h2>
+    <div class="timeline">
+
+      <div class="tl-entry">
+        <div class="tl-dot"></div>
+        <div class="tl-date">Jan 2026 — Jun 2026</div>
+        <div class="tl-title">Visiting PhD Student — VSRP Intern</div>
+        <div class="tl-org">King Abdullah University of Science and Technology (KAUST) · Thuwal, Saudi Arabia</div>
+        <div class="tl-desc">Research on <em>ResilientGuard</em>: security framework for UAV swarms. Development of a decentralised anomaly-detection framework based on TinyML/Edge AI models. Design and simulation of distributed consensus mechanisms against Byzantine attacks and internal threats.</div>
+        <div class="tl-tags">
+          <span class="tag accent">UAV Security</span>
+          <span class="tag accent">TinyML</span>
+          <span class="tag">Edge AI</span>
+          <span class="tag">Byzantine Fault Tolerance</span>
+          <span class="tag">KAUST</span>
+        </div>
+      </div>
+
+      <div class="tl-entry">
+        <div class="tl-dot"></div>
+        <div class="tl-date">Sep 2024 — Present</div>
+        <div class="tl-title">PhD Candidate in Artificial Intelligence</div>
+        <div class="tl-org">Università di Pisa · Pisa, Italy</div>
+        <div class="tl-desc">National PhD Programme in Artificial Intelligence. Research focused on Security Twins, non-intrusive cyber-physical systems modelling, and AI-enabled cybersecurity via synthetic data generation and adversarial simulation.</div>
+        <div class="tl-tags">
+          <span class="tag accent">Digital Twin</span>
+          <span class="tag accent">Cybersecurity</span>
+          <span class="tag">AI</span>
+          <span class="tag">PhD</span>
+        </div>
+      </div>
+
+      <div class="tl-entry">
+        <div class="tl-dot purple"></div>
+        <div class="tl-date">Jun 2025 — Dec 2025</div>
+        <div class="tl-title">Digital Twin Engineer — Infrastructure Modeling</div>
+        <div class="tl-org">Consorzio Metis</div>
+        <div class="tl-desc">Collection and analysis of structural/operational data for the construction of precise digital models of existing infrastructure. Integration of IoT sensors for real-time monitoring and synchronisation between digital model and physical environment. Simulation for predictive failure analysis and proactive optimisation.</div>
+        <div class="tl-tags">
+          <span class="tag">IoT</span>
+          <span class="tag">Digital Twin</span>
+          <span class="tag">Infrastructure</span>
+          <span class="tag">Simulation</span>
+        </div>
+      </div>
+
+      <div class="tl-entry">
+        <div class="tl-dot purple"></div>
+        <div class="tl-date">Mar 2024 — Sep 2024</div>
+        <div class="tl-title">Research Fellow — Distributed Systems & GDPR</div>
+        <div class="tl-org">Università di Pisa — Dipartimento di Informatica</div>
+        <div class="tl-desc">Research on GDPR-compliant distributed information systems. Database decomposition for least-privilege confinement. Digital Twin application in AI/Cybersecurity contexts.</div>
+        <div class="tl-tags">
+          <span class="tag">GDPR</span>
+          <span class="tag">Database</span>
+          <span class="tag">Distributed Systems</span>
+        </div>
+      </div>
+
+      <div class="tl-entry">
+        <div class="tl-dot"></div>
+        <div class="tl-date">Dec 2022 — Dec 2023</div>
+        <div class="tl-title">Research Fellow — Platform Development</div>
+        <div class="tl-org">Università di Pisa — Dipartimento di Informatica</div>
+        <div class="tl-desc">Development of the <em>StudentInForma</em> platform (Python, SQL, HTML, CSS): a questionnaire compilation and response-processing system with focus on cybersecurity hardening against web-based attack vectors.</div>
+        <div class="tl-tags">
+          <span class="tag">Python</span>
+          <span class="tag">SQL</span>
+          <span class="tag">Cybersecurity</span>
+          <span class="tag">Full-Stack</span>
+        </div>
+      </div>
+
+      <div class="tl-entry">
+        <div class="tl-dot purple"></div>
+        <div class="tl-date">Oct 2021 — May 2022</div>
+        <div class="tl-title">Research Internship — NLP & Computational Linguistics</div>
+        <div class="tl-org">Istituto di Linguistica Computazionale "A. Zampolli" — CNR Pisa</div>
+        <div class="tl-desc">Sentiment analysis research: domain and genre effects on classifiers based on n-gram features and deep learning (word embeddings). Technologies: Scikit-Learn, BERT, Python.</div>
+        <div class="tl-tags">
+          <span class="tag">NLP</span>
+          <span class="tag">Sentiment Analysis</span>
+          <span class="tag">BERT</span>
+          <span class="tag">CNR</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PUBLICATIONS -->
+<section id="publications">
+  <div class="wrap">
+    <div class="section-tag">Publications</div>
+    <h2 class="section-title">Research Output</h2>
+
+    <div class="pub-filter">
+      <button class="filter-btn active" data-filter="all">All (23)</button>
+      <button class="filter-btn" data-filter="conference">Conference</button>
+      <button class="filter-btn" data-filter="journal">Journal</button>
+      <button class="filter-btn" data-filter="book">Book Chapters</button>
+      <button class="filter-btn" data-filter="preprint">Preprints</button>
+    </div>
+
+    <div class="pub-list" id="pub-list">
+
+      <div class="pub-type-header" data-type="book">Book Chapters</div>
+
+      <div class="pub-card" data-type="book">
+        <div class="pub-year">2026 · Book Chapter</div>
+        <div class="pub-title">From Digital Twins to AI Agents: A Synthetic Data Paradigm for Next-Generation Cybersecurity</div>
+        <div class="pub-venue">Artificial Intelligence in Cybersecurity: Unlocking the Power of Large Language Models · CRC/Taylor &amp; Francis</div>
+        <div class="pub-authors">F. Baiardi and V. Sammartino</div>
+        <div class="pub-citations">2 citations</div>
+      </div>
+
+      <div class="pub-type-header" data-type="journal">Journal Articles</div>
+
+      <div class="pub-card" data-type="journal">
+        <div class="pub-year">2026 · Journal</div>
+        <div class="pub-title">Simulation-Powered Cybersecurity: Real-Time Risk Assessment via Non-Intrusive Security Twin</div>
+        <div class="pub-venue">The Journal of Supercomputing — Special Issue</div>
+        <div class="pub-authors">F. Baiardi and V. Sammartino</div>
+      </div>
+
+      <div class="pub-card" data-type="journal">
+        <div class="pub-year">2025 · Journal</div>
+        <div class="pub-title">Cyber Weapons: Components of Weapon Systems</div>
+        <div class="pub-venue">Journal of Information Warfare, vol. 24, issue 4</div>
+        <div class="pub-authors">F. Baiardi and V. Sammartino</div>
+        <div class="pub-citations">— </div>
+      </div>
+
+      <div class="pub-card" data-type="journal">
+        <div class="pub-year">2025 · Journal</div>
+        <div class="pub-title">A Comparative Study of NLP Systems for Sentiment Polarity Classification Across Different Domains and Genres</div>
+        <div class="pub-venue">International Journal of Complexity in Applied Science and Technology</div>
+        <div class="pub-authors">Vincenzo Sammartino</div>
+      </div>
+
+      <div class="pub-card" data-type="journal">
+        <div class="pub-year">2024 · Journal</div>
+        <div class="pub-title">Database Decomposition to Satisfy the Least Privilege Principle in Healthcare</div>
+        <div class="pub-venue">ARIS2 — Advanced Research on Information Systems Security, vol. 4, pp. 46–68</div>
+        <div class="pub-authors">V. Sammartino and F. Baiardi · DOI: 10.56394/aris2.v4i1.43</div>
+        <div class="pub-citations">2 citations</div>
+      </div>
+
+      <div class="pub-card" data-type="journal">
+        <div class="pub-year">2024 · Journal</div>
+        <div class="pub-title">A Comparative Study of Machine Learning Models for Hate Speech and Stereotype Detection in Italian Texts</div>
+        <div class="pub-venue">International Journal of Complexity in Applied Science and Technology, vol. 1, issue 2, pp. 155–176</div>
+        <div class="pub-authors">Vincenzo Sammartino</div>
+        <div class="pub-citations">6 citations</div>
+      </div>
+
+      <div class="pub-type-header" data-type="conference">Conference Proceedings</div>
+
+      <div class="pub-card" data-type="conference">
+        <div class="pub-year">2026 · Conference</div>
+        <div class="pub-title">Evaluating Adversary Strategies Through a Security Twin</div>
+        <div class="pub-venue">IEEE International Conference on Pervasive Computing and Communications (PerCom Workshops 2026)</div>
+        <div class="pub-authors">F. Baiardi, V. Sammartino, S. Ruggieri</div>
+        <div class="pub-citations">1 citation</div>
+      </div>
+
+      <div class="pub-card" data-type="conference">
+        <div class="pub-year">2026 · Conference</div>
+        <div class="pub-title">Quantifying Resilience of Cyber-Physical Systems to Zero-Day Threats: A Digital Twin-Based What-If Analysis</div>
+        <div class="pub-venue">European Safety and Reliability Conference (ESREL 2026)</div>
+        <div class="pub-authors">F. Baiardi and V. Sammartino</div>
+      </div>
+
+      <div class="pub-card" data-type="conference">
+        <div class="pub-year">2026 · Conference</div>
+        <div class="pub-title">Quantifying the Impact of CVSS Score Ordering on Attack Paths</div>
+        <div class="pub-venue">12th EAI International Conference on Smart Objects and Technologies (GOODTECHS 2026)</div>
+        <div class="pub-authors">F. Baiardi and V. Sammartino</div>
+      </div>
+
+      <div class="pub-card" data-type="conference">
+        <div class="pub-year">2025 · Conference</div>
+        <div class="pub-title">AI-enabled Cybersecurity using Synthetic Data</div>
+        <div class="pub-venue">23rd IEEE International Conference on Pervasive Computing and Communications (PerCom 2025), Washington DC</div>
+        <div class="pub-authors">F. Baiardi, S. Ruggieri, V. Sammartino</div>
+        <div class="pub-citations">5 citations</div>
+      </div>
+
+      <div class="pub-card" data-type="conference">
+        <div class="pub-year">2025 · Conference</div>
+        <div class="pub-title">A Security Twin to Defeat Intrusions in Cyber Physical Systems</div>
+        <div class="pub-venue">ESREL SRA-E 2025, Stavanger, Norway</div>
+        <div class="pub-authors">F. Baiardi, V. Sammartino, S. Ruggieri</div>
+        <div class="pub-citations">4 citations</div>
+      </div>
+
+      <div class="pub-card" data-type="conference">
+        <div class="pub-year">2025 · Conference</div>
+        <div class="pub-title">A Framework for Proactive Cyber-Resilience: Non-intrusive Modeling for Autonomous Defense</div>
+        <div class="pub-venue">29th International Symposium on Distributed Simulation and Real Time Applications (DS-RT 2025)</div>
+        <div class="pub-authors">V. Sammartino</div>
+        <div class="pub-citations">3 citations</div>
+      </div>
+
+      <div class="pub-card" data-type="conference">
+        <div class="pub-year">2025 · Conference</div>
+        <div class="pub-title">Graph-Based Cyber Defence using a Security Twin</div>
+        <div class="pub-venue">29th International Symposium on Distributed Simulation and Real Time Applications (DS-RT 2025)</div>
+        <div class="pub-authors">F. Baiardi, V. Sammartino, S. Ruggieri</div>
+        <div class="pub-citations">3 citations</div>
+      </div>
+
+      <div class="pub-card" data-type="conference">
+        <div class="pub-year">2025 · Conference</div>
+        <div class="pub-title">NotLine: A Non-Intrusive Automated Platform to Build a Digital Twin</div>
+        <div class="pub-venue">29th International Symposium on Distributed Simulation and Real Time Applications (DS-RT 2025)</div>
+        <div class="pub-authors">F. Baiardi, V. Sammartino, S. Ruggieri</div>
+        <div class="pub-citations">1 citation</div>
+      </div>
+
+      <div class="pub-card" data-type="conference">
+        <div class="pub-year">2025 · Proceedings</div>
+        <div class="pub-title">A Quantitative Framework for the Validation of Twin-Based Cyber Defense</div>
+        <div class="pub-venue">Procedia Computer Science, vol. 274, pp. 721–730</div>
+        <div class="pub-authors">F. Baiardi and V. Sammartino</div>
+        <div class="pub-citations">3 citations</div>
+      </div>
+
+      <div class="pub-card" data-type="conference">
+        <div class="pub-year">2024 · Conference</div>
+        <div class="pub-title">Anticipating Disasters through a Security Twin</div>
+        <div class="pub-venue">Springer Optimization and Its Applications — DoD 2024, Vienna, Austria</div>
+        <div class="pub-authors">F. Baiardi, S. Ruggieri, V. Sammartino</div>
+        <div class="pub-citations">4 citations</div>
+      </div>
+
+      <div class="pub-card" data-type="conference">
+        <div class="pub-year">2024 · Conference</div>
+        <div class="pub-title">Satisfying Least Privilege Through Database Decomposition</div>
+        <div class="pub-venue">20th International Conference on Design of Reliable Communication Networks (DRCN), Montreal, Canada</div>
+        <div class="pub-authors">F. Baiardi, C. Comella, V. Sammartino</div>
+        <div class="pub-citations">1 citation</div>
+      </div>
+
+      <div class="pub-card" data-type="conference">
+        <div class="pub-year">2024 · Conference</div>
+        <div class="pub-title">Multilevel Database Decomposition Framework</div>
+        <div class="pub-venue">ITASEC: Italian Conference of Cybersecurity, Salerno · CEUR Workshop Proceedings</div>
+        <div class="pub-authors">F. Baiardi, C. Comella, V. Sammartino</div>
+        <div class="pub-citations">1 citation</div>
+      </div>
+
+      <div class="pub-type-header" data-type="preprint">Preprints & Manuscripts</div>
+
+      <div class="pub-card" data-type="preprint">
+        <div class="pub-year">2024 · Preprint</div>
+        <div class="pub-title">Feature Engineering and Semantic Enrichment for Enhanced Text Classification: A Case Study on Figurative Language in Tweets</div>
+        <div class="pub-venue">Preprints</div>
+        <div class="pub-authors">V. Sammartino, C. Baccheschi, J. Gneri, V. Picchianti, A. Frasson</div>
+      </div>
+
+      <div class="pub-card" data-type="preprint">
+        <div class="pub-year">2024 · Preprint</div>
+        <div class="pub-title">D3F: A Framework to Minimize the Impact of Intrusions</div>
+        <div class="pub-venue">Preprints</div>
+        <div class="pub-authors">F. Baiardi and V. Sammartino</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="wrap">
+    <div class="section-tag">Projects</div>
+    <h2 class="section-title">Built Things</h2>
+    <div class="proj-grid">
+
+      <a href="https://www.broly.it/" target="_blank" class="proj-card">
+        <div class="proj-icon">🛒</div>
+        <div class="proj-name">Broly.it</div>
+        <div class="proj-desc">Full-stack proprietary e-commerce platform with dynamic catalogue management, shopping cart, and secure payment gateway integration. Mobile-optimised UX/UI.</div>
+      </a>
+
+      <a href="#" class="proj-card">
+        <div class="proj-icon">🔒</div>
+        <div class="proj-name">StudentInForma</div>
+        <div class="proj-desc">Academic questionnaire platform built in Python, SQL, HTML/CSS with cyber-hardening against web attack vectors (SQL injection, XSS, CSRF).</div>
+      </a>
+
+      <a href="https://github.com/ilsamaritano/TextAnalytics" target="_blank" class="proj-card">
+        <div class="proj-icon">🧠</div>
+        <div class="proj-name">Text Analytics</div>
+        <div class="proj-desc">Text analysis pipeline leveraging neural networks and BERT-based transformers for classification tasks including sentiment analysis and hate speech detection.</div>
+      </a>
+
+      <a href="https://github.com/ilsamaritano/datamining1" target="_blank" class="proj-card">
+        <div class="proj-icon">📊</div>
+        <div class="proj-name">Data Mining Suite</div>
+        <div class="proj-desc">Projects covering classification, regression, clustering, and advanced feature engineering techniques using Scikit-Learn, XGBoost, and Python analytics stack.</div>
+      </a>
+
+      <a href="https://github.com/ilsamaritano/ProgettoSviluppoServiziWeb" target="_blank" class="proj-card">
+        <div class="proj-icon">📚</div>
+        <div class="proj-name">Library Web App</div>
+        <div class="proj-desc">Angular-based web application functioning as a full library management system — catalogue, loans, reservations, and administrative back-end.</div>
+      </a>
+
+      <a href="https://github.com/ilsamaritano" target="_blank" class="proj-card">
+        <div class="proj-icon">🌐</div>
+        <div class="proj-name">Web Scrapers</div>
+        <div class="proj-desc">Automated data-extraction algorithms targeting Amazon, Twitter, and generic web sources. Python-based with custom parsing and anti-bot bypass strategies.</div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="wrap">
+    <div class="section-tag">Technical Skills</div>
+    <h2 class="section-title">Capabilities</h2>
+    <div class="skills-grid">
+
+      <div class="skill-group">
+        <div class="skill-group-title">Machine Learning / AI</div>
+        <div class="skill-pills">
+          <span class="skill-pill">TensorFlow</span>
+          <span class="skill-pill">Keras</span>
+          <span class="skill-pill">Scikit-Learn</span>
+          <span class="skill-pill">XGBoost</span>
+          <span class="skill-pill">BERT</span>
+          <span class="skill-pill">TinyML</span>
+          <span class="skill-pill">Edge AI</span>
+        </div>
+      </div>
+
+      <div class="skill-group">
+        <div class="skill-group-title">NLP & Text</div>
+        <div class="skill-pills">
+          <span class="skill-pill">NLTK</span>
+          <span class="skill-pill">SpaCy</span>
+          <span class="skill-pill">Stanza</span>
+          <span class="skill-pill">Transformers</span>
+          <span class="skill-pill">Word Embeddings</span>
+          <span class="skill-pill">Sentiment Analysis</span>
+        </div>
+      </div>
+
+      <div class="skill-group">
+        <div class="skill-group-title">Programming</div>
+        <div class="skill-pills">
+          <span class="skill-pill">Python</span>
+          <span class="skill-pill">JavaScript</span>
+          <span class="skill-pill">R</span>
+          <span class="skill-pill">C++</span>
+          <span class="skill-pill">PHP</span>
+          <span class="skill-pill">SQL</span>
+        </div>
+      </div>
+
+      <div class="skill-group">
+        <div class="skill-group-title">Data & Databases</div>
+        <div class="skill-pills">
+          <span class="skill-pill">Pandas</span>
+          <span class="skill-pill">NumPy</span>
+          <span class="skill-pill">MongoDB</span>
+          <span class="skill-pill">ArangoDB</span>
+          <span class="skill-pill">GraphDB</span>
+          <span class="skill-pill">NoSQL</span>
+        </div>
+      </div>
+
+      <div class="skill-group">
+        <div class="skill-group-title">Web & DevOps</div>
+        <div class="skill-pills">
+          <span class="skill-pill">HTML5</span>
+          <span class="skill-pill">CSS3</span>
+          <span class="skill-pill">Angular</span>
+          <span class="skill-pill">Bootstrap</span>
+          <span class="skill-pill">Docker</span>
+          <span class="skill-pill">Git</span>
+        </div>
+      </div>
+
+      <div class="skill-group">
+        <div class="skill-group-title">Research & Standards</div>
+        <div class="skill-pills">
+          <span class="skill-pill">XML-TEI</span>
+          <span class="skill-pill">XSLT</span>
+          <span class="skill-pill">LaTeX</span>
+          <span class="skill-pill">GDPR</span>
+          <span class="skill-pill">Digital Twin</span>
+          <span class="skill-pill">Markdown</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="wrap">
+    <div class="contact-grid">
+      <div>
+        <div class="section-tag">Contact</div>
+        <h2 class="contact-heading">Let's<br><span>collaborate.</span></h2>
+        <p style="color:var(--muted);font-size:.82rem;margin-top:24px;line-height:1.8;max-width:400px">Open to research collaborations, visiting positions, and industry partnerships in the areas of AI, cybersecurity, and digital twin architectures.</p>
+      </div>
+      <div class="contact-links">
+        <a href="mailto:vincesammartino@gmail.com" class="contact-link">
+          <div class="contact-link-icon">✉</div>
+          <div class="contact-link-text">
+            <div class="contact-link-label">Email</div>
+            <div class="contact-link-val">vincesammartino@gmail.com</div>
+          </div>
+          <div class="contact-link-arrow">→</div>
+        </a>
+        <a href="https://github.com/ilsamaritano" target="_blank" class="contact-link">
+          <div class="contact-link-icon">⌥</div>
+          <div class="contact-link-text">
+            <div class="contact-link-label">GitHub</div>
+            <div class="contact-link-val">github.com/ilsamaritano</div>
+          </div>
+          <div class="contact-link-arrow">→</div>
+        </a>
+        <a href="https://www.linkedin.com/in/vincenzo-sammartino-0339191a1" target="_blank" class="contact-link">
+          <div class="contact-link-icon">in</div>
+          <div class="contact-link-text">
+            <div class="contact-link-label">LinkedIn</div>
+            <div class="contact-link-val">vincenzo-sammartino</div>
+          </div>
+          <div class="contact-link-arrow">→</div>
+        </a>
+        <a href="https://orcid.org/0009-0002-4632-1179" target="_blank" class="contact-link">
+          <div class="contact-link-icon" style="font-size:.7rem;font-weight:700">ID</div>
+          <div class="contact-link-text">
+            <div class="contact-link-label">ORCID</div>
+            <div class="contact-link-val">0009-0002-4632-1179</div>
+          </div>
+          <div class="contact-link-arrow">→</div>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <p>© 2026 Vincenzo Sammartino · <a href="https://github.com/ilsamaritano">ilsamaritano</a> · Built for <a href="https://ilsamaritano.github.io">ilsamaritano.github.io</a></p>
+    <p style="margin-top:8px;font-size:.6rem;opacity:.4">PhD in AI · Università di Pisa · KAUST Visiting Researcher</p>
+  </div>
+</footer>
+
+<script>
+// CURSOR
+const cursor = document.getElementById('cursor');
+const ring = document.getElementById('cursor-ring');
+let mx=0,my=0,rx=0,ry=0;
+document.addEventListener('mousemove',e=>{
+  mx=e.clientX;my=e.clientY;
+  cursor.style.left=mx+'px';cursor.style.top=my+'px';
+});
+function animRing(){
+  rx+=(mx-rx)*.15;ry+=(my-ry)*.15;
+  ring.style.left=rx+'px';ring.style.top=ry+'px';
+  requestAnimationFrame(animRing);
+}
+animRing();
+document.querySelectorAll('a,button,.btn,.filter-btn').forEach(el=>{
+  el.addEventListener('mouseenter',()=>{
+    cursor.style.width='20px';cursor.style.height='20px';
+    ring.style.width='60px';ring.style.height='60px';
+  });
+  el.addEventListener('mouseleave',()=>{
+    cursor.style.width='12px';cursor.style.height='12px';
+    ring.style.width='40px';ring.style.height='40px';
+  });
+});
+
+// NEURAL CANVAS
+const canvas = document.getElementById('neural-canvas');
+const ctx = canvas.getContext('2d');
+let nodes=[];
+function resize(){canvas.width=window.innerWidth;canvas.height=window.innerHeight}
+resize();window.addEventListener('resize',resize);
+for(let i=0;i<70;i++){
+  nodes.push({x:Math.random()*canvas.width,y:Math.random()*canvas.height,
+    vx:(Math.random()-.5)*.4,vy:(Math.random()-.5)*.4,r:Math.random()*2+1});
+}
+function drawNeural(){
+  ctx.clearRect(0,0,canvas.width,canvas.height);
+  nodes.forEach(n=>{
+    n.x+=n.vx;n.y+=n.vy;
+    if(n.x<0||n.x>canvas.width)n.vx*=-1;
+    if(n.y<0||n.y>canvas.height)n.vy*=-1;
+    ctx.beginPath();ctx.arc(n.x,n.y,n.r,0,Math.PI*2);
+    ctx.fillStyle='rgba(0,229,255,.5)';ctx.fill();
+  });
+  for(let i=0;i<nodes.length;i++){
+    for(let j=i+1;j<nodes.length;j++){
+      const d=Math.hypot(nodes[i].x-nodes[j].x,nodes[i].y-nodes[j].y);
+      if(d<130){
+        ctx.beginPath();
+        ctx.moveTo(nodes[i].x,nodes[i].y);
+        ctx.lineTo(nodes[j].x,nodes[j].y);
+        ctx.strokeStyle=`rgba(0,229,255,${(1-d/130)*.15})`;
+        ctx.lineWidth=.5;ctx.stroke();
+      }
+    }
+  }
+  requestAnimationFrame(drawNeural);
+}
+drawNeural();
+
+// TYPED TEXT
+const phrases=[
+  'Security Twin Researcher @ UniPi & KAUST',
+  'AI-enabled Cybersecurity Engineer',
+  'Digital Twin & Edge AI Specialist',
+  'PhD Candidate in Artificial Intelligence',
+  'UAV Swarm Security Researcher'
+];
+let pi=0,ci=0,del=false;
+const el=document.getElementById('typed-text');
+function type(){
+  const phrase=phrases[pi];
+  if(!del){
+    el.textContent=phrase.slice(0,ci+1);ci++;
+    if(ci===phrase.length){del=true;setTimeout(type,2000);return}
+  }else{
+    el.textContent=phrase.slice(0,ci-1);ci--;
+    if(ci===0){del=false;pi=(pi+1)%phrases.length;setTimeout(type,400);return}
+  }
+  setTimeout(type,del?40:60);
+}
+type();
+
+// INTERSECTION OBSERVER
+const io=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')});
+},{threshold:.1});
+document.querySelectorAll('.tl-entry,.pub-card,.skill-group,.proj-card,.fade-in').forEach(el=>io.observe(el));
+
+// PUB FILTER
+document.querySelectorAll('.filter-btn').forEach(btn=>{
+  btn.addEventListener('click',function(){
+    document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
+    this.classList.add('active');
+    const f=this.dataset.filter;
+    document.querySelectorAll('.pub-card,.pub-type-header').forEach(el=>{
+      if(f==='all'||el.dataset.type===f){
+        el.style.display='';
+      }else{
+        el.style.display='none';
+      }
+    });
+  });
+});
+
+// MOBILE MENU
+document.getElementById('hamburger').addEventListener('click',()=>{
+  document.getElementById('mobile-menu').classList.add('open');
+});
+document.getElementById('mobile-close').addEventListener('click',()=>{
+  document.getElementById('mobile-menu').classList.remove('open');
+});
+function closeMobileMenu(){
+  document.getElementById('mobile-menu').classList.remove('open');
+}
+
+// NAV SCROLL EFFECT
+window.addEventListener('scroll',()=>{
+  document.querySelector('nav').style.background=
+    window.scrollY>50?'rgba(6,8,16,.95)':'rgba(6,8,16,.7)';
+});
+
+// COUNTER ANIMATION
+function animCount(el,target,dur=1500){
+  let start=0,step=target/dur*16;
+  let isFloat=String(target).includes('.');
+  const timer=setInterval(()=>{
+    start+=step;if(start>=target){start=target;clearInterval(timer)}
+    el.textContent=isFloat?start.toFixed(1):Math.floor(start);
+  },16);
+}
+const statsObs=new IntersectionObserver(entries=>{
+  if(entries[0].isIntersecting){
+    animCount(document.getElementById('cnt-cit'),37);
+    animCount(document.getElementById('cnt-h'),4);
+    animCount(document.getElementById('cnt-pub'),23);
+    statsObs.disconnect();
+  }
+},{threshold:.5});
+const heroStats=document.querySelector('.hero-stats');
+if(heroStats)statsObs.observe(heroStats);
+</script>
 </body>
 </html>
