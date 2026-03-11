@@ -147,15 +147,13 @@
 }
 </script>
 
-<!-- ── 2.4  ScholarlyArticle Schema per le pubblicazioni principali ──
-     Aggiungi un blocco per ciascuna pubblicazione rilevante.
-     Esempio con due paper campione — replica il pattern per le altre 23.        -->
+<!-- ── 2.4  ScholarlyArticle Schema — COMPLETE (23 publications) ── -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "ItemList",
   "name": "Publications by Vincenzo Sammartino",
-  "description": "List of scientific publications co-authored by Vincenzo Sammartino",
+  "description": "Complete list of peer-reviewed scientific publications authored or co-authored by Vincenzo Sammartino, PhD Candidate in Artificial Intelligence at the University of Pisa and VSRP Intern at KAUST.",
   "numberOfItems": 23,
   "itemListElement": [
     {
@@ -163,21 +161,35 @@
       "position": 1,
       "item": {
         "@type": "ScholarlyArticle",
-        "headline": "ResilientGuard: A Security Framework for UAV Swarms Based on TinyML and Byzantine Fault Tolerance",
+        "@id": "https://www.vincenzosammartino.com/#pub1",
+        "headline": "A comparative study of machine learning models for hate speech and stereotype detection in Italian texts",
+        "name": "A comparative study of machine learning models for hate speech and stereotype detection in Italian texts",
         "author": [
           {
             "@type": "Person",
             "name": "Vincenzo Sammartino",
-            "sameAs": "https://orcid.org/0009-0002-4632-1179"
+            "sameAs": [
+              "https://orcid.org/0009-0002-4632-1179",
+              "https://scholar.google.com/citations?user=ilsamaritano"
+            ]
           }
         ],
-        "description": "A decentralised anomaly-detection framework based on TinyML/Edge AI models for UAV swarms, with Byzantine-resilient consensus mechanisms.",
+        "datePublished": "2024",
+        "isPartOf": {
+          "@type": "Periodical",
+          "name": "International Journal of Complexity in Applied Science and Technology",
+          "volumeNumber": "1",
+          "issueNumber": "2"
+        },
         "publisher": {
           "@type": "Organization",
-          "name": "KAUST"
+          "name": "International Journal of Complexity in Applied Science and Technology"
         },
         "inLanguage": "en",
-        "keywords": "UAV security, TinyML, Edge AI, Byzantine Fault Tolerance, swarm security"
+        "description": "Comparative evaluation of machine learning models for automated hate speech and stereotype detection in Italian-language texts, employing NLP-based classification pipelines.",
+        "keywords": "hate speech detection, stereotype detection, machine learning, NLP, Italian language, text classification",
+        "citation": "6",
+        "about": "Natural Language Processing"
       }
     },
     {
@@ -185,7 +197,107 @@
       "position": 2,
       "item": {
         "@type": "ScholarlyArticle",
-        "headline": "Security Twins: Digital Twin Architectures for Real-Time Cyber-Physical Threat Assessment",
+        "@id": "https://www.vincenzosammartino.com/#pub2",
+        "headline": "AI-enabled cybersecurity using synthetic data",
+        "name": "AI-enabled cybersecurity using synthetic data",
+        "author": [
+          { "@type": "Person", "name": "Fabrizio Baiardi" },
+          {
+            "@type": "Person",
+            "name": "Salvatore Ruggieri",
+            "sameAs": "https://www.di.unipi.it/~ruggieri/"
+          },
+          {
+            "@type": "Person",
+            "name": "Vincenzo Sammartino",
+            "sameAs": "https://orcid.org/0009-0002-4632-1179"
+          }
+        ],
+        "datePublished": "2025",
+        "isPartOf": {
+          "@type": "Event",
+          "name": "2025 IEEE International Conference on Pervasive Computing and Communications (PerCom)"
+        },
+        "publisher": { "@type": "Organization", "name": "IEEE" },
+        "inLanguage": "en",
+        "description": "A methodology leveraging AI-generated synthetic datasets to train and validate cybersecurity intrusion detection models, addressing data scarcity and privacy constraints in adversarial machine learning pipelines.",
+        "keywords": "synthetic data, AI-enabled cybersecurity, intrusion detection, machine learning, adversarial AI, PerCom 2025",
+        "citation": "5"
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "item": {
+        "@type": "ScholarlyArticle",
+        "@id": "https://www.vincenzosammartino.com/#pub3",
+        "headline": "Anticipating disasters through a security twin",
+        "name": "Anticipating disasters through a security twin",
+        "author": [
+          { "@type": "Person", "name": "Fabrizio Baiardi" },
+          {
+            "@type": "Person",
+            "name": "Salvatore Ruggieri",
+            "sameAs": "https://www.di.unipi.it/~ruggieri/"
+          },
+          {
+            "@type": "Person",
+            "name": "Vincenzo Sammartino",
+            "sameAs": "https://orcid.org/0009-0002-4632-1179"
+          }
+        ],
+        "datePublished": "2026",
+        "isPartOf": {
+          "@type": "Book",
+          "name": "Dynamics of Disasters: Hybrid Threats",
+          "pagination": "1-14"
+        },
+        "inLanguage": "en",
+        "description": "Application of the Security Twin paradigm to anticipate and model disaster scenarios involving hybrid cyber-physical threats, enabling proactive resilience assessment via digital twin simulation.",
+        "keywords": "Security Twin, disaster anticipation, hybrid threats, cyber-physical systems, digital twin, resilience",
+        "citation": "4"
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 4,
+      "item": {
+        "@type": "ScholarlyArticle",
+        "@id": "https://www.vincenzosammartino.com/#pub4",
+        "headline": "A security twin to defeat intrusions in cyber physical systems",
+        "name": "A security twin to defeat intrusions in cyber physical systems",
+        "author": [
+          { "@type": "Person", "name": "Fabrizio Baiardi" },
+          {
+            "@type": "Person",
+            "name": "Vincenzo Sammartino",
+            "sameAs": "https://orcid.org/0009-0002-4632-1179"
+          },
+          {
+            "@type": "Person",
+            "name": "Salvatore Ruggieri",
+            "sameAs": "https://www.di.unipi.it/~ruggieri/"
+          }
+        ],
+        "datePublished": "2025",
+        "isPartOf": {
+          "@type": "Event",
+          "name": "ESREL SRA-E 2025 — European Safety and Reliability Conference"
+        },
+        "inLanguage": "en",
+        "description": "A Security Twin-based defence mechanism designed to detect and counteract intrusion attempts in cyber-physical systems through real-time non-intrusive simulation and threat modelling.",
+        "keywords": "Security Twin, cyber-physical systems, intrusion detection, cyber defence, ESREL, reliability engineering",
+        "citation": "4"
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 5,
+      "item": {
+        "@type": "ScholarlyArticle",
+        "@id": "https://www.vincenzosammartino.com/#pub5",
+        "headline": "A framework for proactive cyber-resilience: Non-intrusive modeling for autonomous defense",
+        "name": "A framework for proactive cyber-resilience: Non-intrusive modeling for autonomous defense",
         "author": [
           {
             "@type": "Person",
@@ -193,18 +305,532 @@
             "sameAs": "https://orcid.org/0009-0002-4632-1179"
           }
         ],
-        "description": "Non-intrusive digital twin architecture for real-time threat modelling in cyber-physical systems.",
+        "datePublished": "2025",
+        "isPartOf": {
+          "@type": "Event",
+          "name": "2025 29th International Symposium on Distributed Simulation and Real Time Applications (DS-RT)"
+        },
+        "publisher": { "@type": "Organization", "name": "IEEE / ACM" },
         "inLanguage": "en",
-        "keywords": "Security Twin, Digital Twin, Cybersecurity, Cyber-Physical Systems"
+        "description": "A proactive cyber-resilience framework employing non-intrusive modelling techniques to enable autonomous defence in complex networked environments, minimising operational disruption during threat response.",
+        "keywords": "proactive cyber-resilience, non-intrusive modelling, autonomous defence, distributed simulation, cyber defence",
+        "citation": "3"
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 6,
+      "item": {
+        "@type": "ScholarlyArticle",
+        "@id": "https://www.vincenzosammartino.com/#pub6",
+        "headline": "A quantitative framework for the validation of twin-based cyber defense",
+        "name": "A quantitative framework for the validation of twin-based cyber defense",
+        "author": [
+          { "@type": "Person", "name": "Fabrizio Baiardi" },
+          {
+            "@type": "Person",
+            "name": "Vincenzo Sammartino",
+            "sameAs": "https://orcid.org/0009-0002-4632-1179"
+          }
+        ],
+        "datePublished": "2025",
+        "isPartOf": {
+          "@type": "Periodical",
+          "name": "Procedia Computer Science",
+          "volumeNumber": "274",
+          "pagination": "721-730"
+        },
+        "publisher": { "@type": "Organization", "name": "Elsevier" },
+        "inLanguage": "en",
+        "description": "A quantitative validation methodology for Security Twin-based cyber defence systems, introducing formal metrics and benchmarks to assess the fidelity and effectiveness of twin-driven threat simulations.",
+        "keywords": "Security Twin, quantitative validation, cyber defence, digital twin, simulation fidelity, Procedia Computer Science",
+        "citation": "3"
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 7,
+      "item": {
+        "@type": "ScholarlyArticle",
+        "@id": "https://www.vincenzosammartino.com/#pub7",
+        "headline": "Graph-Based Cyber Defence using a Security Twin",
+        "name": "Graph-Based Cyber Defence using a Security Twin",
+        "author": [
+          { "@type": "Person", "name": "Fabrizio Baiardi" },
+          {
+            "@type": "Person",
+            "name": "Vincenzo Sammartino",
+            "sameAs": "https://orcid.org/0009-0002-4632-1179"
+          },
+          {
+            "@type": "Person",
+            "name": "Salvatore Ruggieri",
+            "sameAs": "https://www.di.unipi.it/~ruggieri/"
+          }
+        ],
+        "datePublished": "2025",
+        "isPartOf": {
+          "@type": "Event",
+          "name": "29th International Symposium on Distributed Simulation and Real Time Applications (DS-RT 2025)"
+        },
+        "inLanguage": "en",
+        "description": "Graph-based representation of attack surfaces integrated into a Security Twin architecture, enabling structural analysis of attack paths and automated cyber defence decisions.",
+        "keywords": "graph-based cyber defence, Security Twin, attack graph, attack path analysis, digital twin, DS-RT 2025",
+        "citation": "3"
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 8,
+      "item": {
+        "@type": "ScholarlyArticle",
+        "@id": "https://www.vincenzosammartino.com/#pub8",
+        "headline": "From digital twins to AI agents: A synthetic data paradigm for next-generation cybersecurity",
+        "name": "From digital twins to AI agents: A synthetic data paradigm for next-generation cybersecurity",
+        "author": [
+          { "@type": "Person", "name": "Fabrizio Baiardi" },
+          {
+            "@type": "Person",
+            "name": "Vincenzo Sammartino",
+            "sameAs": "https://orcid.org/0009-0002-4632-1179"
+          }
+        ],
+        "datePublished": "2026",
+        "isPartOf": {
+          "@type": "Book",
+          "name": "Artificial Intelligence in Cybersecurity: Unlocking the Power of Large Language Models"
+        },
+        "inLanguage": "en",
+        "description": "Conceptual and architectural evolution from Digital Twin systems to AI agent-based cybersecurity, leveraging synthetic data generation paradigms to support next-generation autonomous threat response.",
+        "keywords": "digital twin, AI agents, synthetic data, next-generation cybersecurity, large language models, LLM cybersecurity",
+        "citation": "2"
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 9,
+      "item": {
+        "@type": "ScholarlyArticle",
+        "@id": "https://www.vincenzosammartino.com/#pub9",
+        "headline": "Database Decomposition to satisfy the Least Privilege Principle in Healthcare",
+        "name": "Database Decomposition to satisfy the Least Privilege Principle in Healthcare",
+        "author": [
+          {
+            "@type": "Person",
+            "name": "Vincenzo Sammartino",
+            "sameAs": "https://orcid.org/0009-0002-4632-1179"
+          },
+          { "@type": "Person", "name": "Fabrizio Baiardi" }
+        ],
+        "datePublished": "2024",
+        "isPartOf": {
+          "@type": "Periodical",
+          "name": "ARIS2 — Advanced Research on Information Systems Security",
+          "volumeNumber": "4",
+          "issueNumber": "1",
+          "pagination": "47-69"
+        },
+        "inLanguage": "en",
+        "description": "A principled database decomposition methodology enforcing the Least Privilege Principle in healthcare information systems, reducing the attack surface through fine-grained access control at the schema level.",
+        "keywords": "Least Privilege Principle, database decomposition, healthcare security, access control, GDPR, data protection",
+        "citation": "2"
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 10,
+      "item": {
+        "@type": "ScholarlyArticle",
+        "@id": "https://www.vincenzosammartino.com/#pub10",
+        "headline": "Evaluating Adversary Strategies Through a Security Twin",
+        "name": "Evaluating Adversary Strategies Through a Security Twin",
+        "author": [
+          { "@type": "Person", "name": "Fabrizio Baiardi" },
+          {
+            "@type": "Person",
+            "name": "Vincenzo Sammartino",
+            "sameAs": "https://orcid.org/0009-0002-4632-1179"
+          },
+          {
+            "@type": "Person",
+            "name": "Salvatore Ruggieri",
+            "sameAs": "https://www.di.unipi.it/~ruggieri/"
+          }
+        ],
+        "datePublished": "2026",
+        "isPartOf": {
+          "@type": "Event",
+          "name": "IEEE International Conference on Pervasive Computing and Communications (PerCom 2026)"
+        },
+        "publisher": { "@type": "Organization", "name": "IEEE" },
+        "inLanguage": "en",
+        "description": "Systematic evaluation of adversary attack strategies using a Security Twin simulation environment, enabling what-if analysis and predictive modelling of attacker behaviour in cyber-physical systems.",
+        "keywords": "adversary strategies, Security Twin, what-if analysis, adversarial modelling, PerCom, cyber-physical systems",
+        "citation": "1"
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 11,
+      "item": {
+        "@type": "ScholarlyArticle",
+        "@id": "https://www.vincenzosammartino.com/#pub11",
+        "headline": "NotLine: A Non-Intrusive Automated Platform to Build a Digital Twin",
+        "name": "NotLine: A Non-Intrusive Automated Platform to Build a Digital Twin",
+        "author": [
+          { "@type": "Person", "name": "Fabrizio Baiardi" },
+          {
+            "@type": "Person",
+            "name": "Vincenzo Sammartino",
+            "sameAs": "https://orcid.org/0009-0002-4632-1179"
+          },
+          {
+            "@type": "Person",
+            "name": "Salvatore Ruggieri",
+            "sameAs": "https://www.di.unipi.it/~ruggieri/"
+          }
+        ],
+        "datePublished": "2025",
+        "isPartOf": {
+          "@type": "Event",
+          "name": "2025 29th International Symposium on Distributed Simulation and Real Time Applications (DS-RT)"
+        },
+        "inLanguage": "en",
+        "description": "NotLine is an automated, non-intrusive platform for constructing accurate digital twins of networked systems, enabling passive network observation to derive structural and behavioural system models without operational disruption.",
+        "keywords": "NotLine, digital twin construction, non-intrusive platform, network modelling, automated digital twin, DS-RT 2025",
+        "citation": "1"
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 12,
+      "item": {
+        "@type": "ScholarlyArticle",
+        "@id": "https://www.vincenzosammartino.com/#pub12",
+        "headline": "Security Twins e il Futuro della Previsione di Intrusioni Cyber",
+        "name": "Security Twins e il Futuro della Previsione di Intrusioni Cyber",
+        "author": [
+          { "@type": "Person", "name": "Fabrizio Baiardi" },
+          {
+            "@type": "Person",
+            "name": "Salvatore Ruggieri",
+            "sameAs": "https://www.di.unipi.it/~ruggieri/"
+          },
+          {
+            "@type": "Person",
+            "name": "Vincenzo Sammartino",
+            "sameAs": "https://orcid.org/0009-0002-4632-1179"
+          }
+        ],
+        "datePublished": "2025",
+        "isPartOf": {
+          "@type": "Periodical",
+          "name": "ICT Security Magazine"
+        },
+        "inLanguage": "it",
+        "description": "Articolo divulgativo scientifico sul paradigma dei Security Twin e le prospettive future per la previsione proattiva di intrusioni cyber in sistemi informatici critici.",
+        "keywords": "Security Twin, previsione intrusioni, cybersecurity, digital twin, ICT Security, Italian",
+        "citation": "1"
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 13,
+      "item": {
+        "@type": "ScholarlyArticle",
+        "@id": "https://www.vincenzosammartino.com/#pub13",
+        "headline": "Satisfying Least Privilege Through Database Decomposition",
+        "name": "Satisfying Least Privilege Through Database Decomposition",
+        "author": [
+          { "@type": "Person", "name": "Fabrizio Baiardi" },
+          { "@type": "Person", "name": "Corrado Comella" },
+          {
+            "@type": "Person",
+            "name": "Vincenzo Sammartino",
+            "sameAs": "https://orcid.org/0009-0002-4632-1179"
+          }
+        ],
+        "datePublished": "2024",
+        "isPartOf": {
+          "@type": "Event",
+          "name": "2024 20th International Conference on the Design of Reliable Communication Networks (DRCN)"
+        },
+        "publisher": { "@type": "Organization", "name": "IEEE" },
+        "inLanguage": "en",
+        "description": "Formal methodology for enforcing the Least Privilege Principle in relational database systems through schema-level decomposition, analysed within a network reliability and communication security context.",
+        "keywords": "Least Privilege, database decomposition, access control, reliable networks, DRCN 2024, security by design",
+        "citation": "1"
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 14,
+      "item": {
+        "@type": "ScholarlyArticle",
+        "@id": "https://www.vincenzosammartino.com/#pub14",
+        "headline": "Multilevel Database Decomposition Framework",
+        "name": "Multilevel Database Decomposition Framework",
+        "author": [
+          { "@type": "Person", "name": "Fabrizio Baiardi" },
+          { "@type": "Person", "name": "Corrado Comella" },
+          {
+            "@type": "Person",
+            "name": "Vincenzo Sammartino",
+            "sameAs": "https://orcid.org/0009-0002-4632-1179"
+          }
+        ],
+        "datePublished": "2024",
+        "isPartOf": {
+          "@type": "Event",
+          "name": "ITASEC 2024 — Italian Conference on Cybersecurity"
+        },
+        "inLanguage": "en",
+        "description": "A multilevel framework for hierarchical database decomposition supporting granular access control enforcement at multiple privilege tiers, extending the Least Privilege Principle to complex enterprise database architectures.",
+        "keywords": "multilevel database decomposition, access control, privilege levels, ITASEC 2024, cybersecurity, database security",
+        "citation": "1"
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 15,
+      "item": {
+        "@type": "ScholarlyArticle",
+        "@id": "https://www.vincenzosammartino.com/#pub15",
+        "headline": "Blockchain-Enabled Quantum-Resistant Hybrid Isogeny-Based Signcryption Framework for Digital Twin-Assisted Healthcare System",
+        "name": "Blockchain-Enabled Quantum-Resistant Hybrid Isogeny-Based Signcryption Framework for Digital Twin-Assisted Healthcare System",
+        "author": [
+          { "@type": "Person", "name": "Anil Kumar Pandey" },
+          {
+            "@type": "Person",
+            "name": "Vincenzo Sammartino",
+            "sameAs": "https://orcid.org/0009-0002-4632-1179"
+          },
+          { "@type": "Person", "name": "Anish Vangala" },
+          { "@type": "Person", "name": "Ashok Kumar Das" }
+        ],
+        "datePublished": "2026",
+        "isPartOf": {
+          "@type": "Periodical",
+          "name": "IEEE Communications Standards Magazine"
+        },
+        "publisher": { "@type": "Organization", "name": "IEEE" },
+        "inLanguage": "en",
+        "description": "A post-quantum cryptographic framework combining blockchain technology with isogeny-based signcryption for secure communication in digital twin-assisted healthcare systems, providing quantum-resistant confidentiality and authentication.",
+        "keywords": "blockchain, post-quantum cryptography, isogeny-based cryptography, signcryption, digital twin, healthcare security, IEEE Communications"
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 16,
+      "item": {
+        "@type": "ScholarlyArticle",
+        "@id": "https://www.vincenzosammartino.com/#pub16",
+        "headline": "Quantifying Resilience of Cyber-Physical Systems to Zero-Day Threats: A Digital Twin-Based What-If Analysis",
+        "name": "Quantifying Resilience of Cyber-Physical Systems to Zero-Day Threats: A Digital Twin-Based What-If Analysis",
+        "author": [
+          { "@type": "Person", "name": "Fabrizio Baiardi" },
+          {
+            "@type": "Person",
+            "name": "Vincenzo Sammartino",
+            "sameAs": "https://orcid.org/0009-0002-4632-1179"
+          }
+        ],
+        "datePublished": "2026",
+        "isPartOf": {
+          "@type": "Event",
+          "name": "ESREL 2026 — European Safety and Reliability Conference"
+        },
+        "inLanguage": "en",
+        "description": "A digital twin-based what-if analysis methodology for quantifying the resilience of cyber-physical systems against zero-day vulnerability exploitation, enabling proactive risk assessment without operational system modification.",
+        "keywords": "resilience quantification, zero-day threats, cyber-physical systems, digital twin, what-if analysis, ESREL 2026, risk assessment"
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 17,
+      "item": {
+        "@type": "ScholarlyArticle",
+        "@id": "https://www.vincenzosammartino.com/#pub17",
+        "headline": "Quantifying the Impact of CVSS Score Ordering on Attack Paths",
+        "name": "Quantifying the Impact of CVSS Score Ordering on Attack Paths",
+        "author": [
+          { "@type": "Person", "name": "Fabrizio Baiardi" },
+          {
+            "@type": "Person",
+            "name": "Vincenzo Sammartino",
+            "sameAs": "https://orcid.org/0009-0002-4632-1179"
+          }
+        ],
+        "datePublished": "2026",
+        "isPartOf": {
+          "@type": "Event",
+          "name": "EAI GOODTECHS 2026 — 12th EAI International Conference on Smart Objects and Technologies for Social Good"
+        },
+        "inLanguage": "en",
+        "description": "Quantitative analysis of the influence of CVSS (Common Vulnerability Scoring System) score ordering on the generation and prioritisation of attack paths in networked systems, with implications for patch management strategy.",
+        "keywords": "CVSS, attack paths, vulnerability scoring, attack path analysis, patch prioritisation, EAI GOODTECHS 2026"
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 18,
+      "item": {
+        "@type": "ScholarlyArticle",
+        "@id": "https://www.vincenzosammartino.com/#pub18",
+        "headline": "Simulation-Powered Cybersecurity: Real-Time Risk Assessment via Non-Intrusive Security Twin",
+        "name": "Simulation-Powered Cybersecurity: Real-Time Risk Assessment via Non-Intrusive Security Twin",
+        "author": [
+          { "@type": "Person", "name": "Fabrizio Baiardi" },
+          {
+            "@type": "Person",
+            "name": "Vincenzo Sammartino",
+            "sameAs": "https://orcid.org/0009-0002-4632-1179"
+          }
+        ],
+        "datePublished": "2026",
+        "isPartOf": {
+          "@type": "Periodical",
+          "name": "The Journal of Supercomputing — Special Issue: Simulation-Powered Cybersecurity"
+        },
+        "publisher": { "@type": "Organization", "name": "Springer" },
+        "inLanguage": "en",
+        "description": "A simulation-powered cybersecurity approach employing a non-intrusive Security Twin for continuous real-time risk assessment, enabling dynamic threat monitoring and automated response in operational environments.",
+        "keywords": "simulation-powered cybersecurity, real-time risk assessment, non-intrusive Security Twin, Journal of Supercomputing, Springer, continuous monitoring"
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 19,
+      "item": {
+        "@type": "ScholarlyArticle",
+        "@id": "https://www.vincenzosammartino.com/#pub19",
+        "headline": "Cyber Weapons as Components of Weapon Systems",
+        "name": "Cyber Weapons as Components of Weapon Systems",
+        "author": [
+          { "@type": "Person", "name": "Fabrizio Baiardi" },
+          {
+            "@type": "Person",
+            "name": "Vincenzo Sammartino",
+            "sameAs": "https://orcid.org/0009-0002-4632-1179"
+          }
+        ],
+        "datePublished": "2025",
+        "isPartOf": {
+          "@type": "Periodical",
+          "name": "Journal of Information Warfare",
+          "volumeNumber": "24",
+          "issueNumber": "4"
+        },
+        "inLanguage": "en",
+        "description": "Conceptual analysis of cyber weapons as constituent components of integrated weapon systems, examining their operational taxonomy, strategic role, and implications for international law and military doctrine.",
+        "keywords": "cyber weapons, weapon systems, information warfare, military cyber operations, cyber doctrine, Journal of Information Warfare"
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 20,
+      "item": {
+        "@type": "ScholarlyArticle",
+        "@id": "https://www.vincenzosammartino.com/#pub20",
+        "headline": "A Comparative Study of NLP Systems for Sentiment Polarity Classification Across Different Domains and Genres",
+        "name": "A Comparative Study of NLP Systems for Sentiment Polarity Classification Across Different Domains and Genres",
+        "author": [
+          {
+            "@type": "Person",
+            "name": "Vincenzo Sammartino",
+            "sameAs": "https://orcid.org/0009-0002-4632-1179"
+          }
+        ],
+        "datePublished": "2025",
+        "isPartOf": {
+          "@type": "Periodical",
+          "name": "International Journal of Complexity in Applied Science and Technology"
+        },
+        "inLanguage": "en",
+        "description": "Systematic comparative evaluation of NLP systems for sentiment polarity classification, assessed across multiple textual domains and genres to characterise generalisation capabilities and domain-specific performance degradation.",
+        "keywords": "NLP, sentiment analysis, sentiment polarity classification, cross-domain, text classification, natural language processing"
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 21,
+      "item": {
+        "@type": "ScholarlyArticle",
+        "@id": "https://www.vincenzosammartino.com/#pub21",
+        "headline": "Feature Engineering and Semantic Enrichment for Enhanced Text Classification: A Case Study on Figurative Language in Tweets",
+        "name": "Feature Engineering and Semantic Enrichment for Enhanced Text Classification: A Case Study on Figurative Language in Tweets",
+        "author": [
+          {
+            "@type": "Person",
+            "name": "Vincenzo Sammartino",
+            "sameAs": "https://orcid.org/0009-0002-4632-1179"
+          },
+          { "@type": "Person", "name": "Corrado Baccheschi" },
+          { "@type": "Person", "name": "J. Gneri" },
+          { "@type": "Person", "name": "V. Picchianti" },
+          { "@type": "Person", "name": "A. Frasson" }
+        ],
+        "datePublished": "2024",
+        "isPartOf": {
+          "@type": "Periodical",
+          "name": "Preprints"
+        },
+        "inLanguage": "en",
+        "description": "Investigation of feature engineering and semantic enrichment strategies to enhance text classification performance, with a specific case study on figurative language detection in social media tweets.",
+        "keywords": "feature engineering, semantic enrichment, text classification, figurative language, tweets, NLP, social media"
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 22,
+      "item": {
+        "@type": "ScholarlyArticle",
+        "@id": "https://www.vincenzosammartino.com/#pub22",
+        "headline": "D3F: A Framework to Minimize the Impact of Intrusions",
+        "name": "D3F: A Framework to Minimize the Impact of Intrusions",
+        "author": [
+          { "@type": "Person", "name": "Fabrizio Baiardi" },
+          {
+            "@type": "Person",
+            "name": "Vincenzo Sammartino",
+            "sameAs": "https://orcid.org/0009-0002-4632-1179"
+          }
+        ],
+        "datePublished": "2024",
+        "isPartOf": {
+          "@type": "Periodical",
+          "name": "Preprints"
+        },
+        "inLanguage": "en",
+        "description": "D3F is a defensive framework designed to minimise the operational and informational impact of successful intrusions in networked systems, employing containment, isolation, and damage-limitation strategies derived from digital twin simulation.",
+        "keywords": "D3F, intrusion impact minimisation, cyber defence framework, intrusion containment, digital twin, network security"
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 23,
+      "item": {
+        "@type": "ScholarlyArticle",
+        "@id": "https://www.vincenzosammartino.com/#pub23",
+        "headline": "Protezione dei Dati Personali su Servizi Web",
+        "name": "Protezione dei Dati Personali su Servizi Web",
+        "author": [
+          {
+            "@type": "Person",
+            "name": "Vincenzo Sammartino",
+            "sameAs": "https://orcid.org/0009-0002-4632-1179"
+          }
+        ],
+        "datePublished": "2024",
+        "inLanguage": "it",
+        "description": "Analisi della protezione dei dati personali nel contesto dei servizi web, con riferimento al Regolamento GDPR, alle responsabilità dei titolari del trattamento e alle misure tecniche di sicurezza applicabili.",
+        "keywords": "protezione dati personali, GDPR, servizi web, privacy, data protection, cybersecurity, Italian"
       }
     }
-    /* ⚠️ Aggiungi qui un oggetto per ciascuna delle altre 21 pubblicazioni,
-       con titolo, venue (journal/conference), DOI, anno, coautori.
-       Più dati fornisci, maggiore è la probabilità di essere citato
-       nei risultati AI (ChatGPT, Perplexity, Google AI Overview). */
   ]
 }
 </script>
+
 
 <!-- ── 2.5  ResearchProject Schema (ResilientGuard) ── -->
 <script type="application/ld+json">
