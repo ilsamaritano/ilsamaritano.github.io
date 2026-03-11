@@ -2,7 +2,7 @@ User-agent: *
   Allow: /
   Disallow: /cdn-cgi/
   Crawl-delay: 10
-  Sitemap: https://www.vincenzosammartino.com/sitemap.xml
+  Sitemap: https://ilsamaritano.github.io/sitemap.xml
 
   # Consenti esplicitamente i principali crawler AI
   User-agent: GPTBot
