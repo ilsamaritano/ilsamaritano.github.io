@@ -1,4 +1,4 @@
-Contact: mailto:v.sammartino@phd.unipi.it
+Contact: mailto:vincenzo.sammartino@phd.unipi.it
 Expires: 2027-01-01T00:00:00.000Z
 Preferred-Languages: en, it
 Canonical: https://ilsamaritano.github.io/.well-known/security.txt
