@@ -5,8 +5,8 @@
 [![Live](https://img.shields.io/badge/Live-ilsamaritano.github.io-00e5ff?style=flat-square&logo=github)](https://ilsamaritano.github.io)
 [![License](https://img.shields.io/badge/License-MIT-7c3aed?style=flat-square)](LICENSE)
 [![ORCID](https://img.shields.io/badge/ORCID-0009--0002--4632--1179-a6ce39?style=flat-square&logo=orcid)](https://orcid.org/0009-0002-4632-1179)
-[![Citations](https://img.shields.io/badge/Citations-37-10b981?style=flat-square)](https://scholar.google.com/citations?user=ilsamaritano)
-[![H-Index](https://img.shields.io/badge/H--Index-4-10b981?style=flat-square)](https://scholar.google.com/citations?user=ilsamaritano)
+[![Citations](https://img.shields.io/badge/Citations-37-10b981?style=flat-square)](https://scholar.google.com/citations?user=lQig7SEAAAAJ)
+[![H-Index](https://img.shields.io/badge/H--Index-4-10b981?style=flat-square)](https://scholar.google.com/citations?user=lQig7SEAAAAJ)
 
 ---
 
@@ -118,7 +118,7 @@ The canonical live endpoint is: **[https://ilsamaritano.github.io](https://ilsam
 
 ## Selected Publications
 
-A representative, non-exhaustive selection of contributions ordered by recency. The complete bibliographic record is available via [Google Scholar](https://scholar.google.com/citations?user=ilsamaritano) and [ORCID 0009-0002-4632-1179](https://orcid.org/0009-0002-4632-1179).
+A representative, non-exhaustive selection of contributions ordered by recency. The complete bibliographic record is available via [Google Scholar](https://scholar.google.com/citations?user=lQig7SEAAAAJ) and [ORCID 0009-0002-4632-1179](https://orcid.org/0009-0002-4632-1179).
 
 **2026**
 - *From Digital Twins to AI Agents: A Synthetic Data Paradigm for Next-Generation Cybersecurity* — CRC / Taylor & Francis (Book Chapter)
@@ -142,7 +142,7 @@ A representative, non-exhaustive selection of contributions ordered by recency. 
 |---|---|
 | **Email** | [vincesammartino@gmail.com](mailto:vincesammartino@gmail.com) |
 | **ORCID** | [0009-0002-4632-1179](https://orcid.org/0009-0002-4632-1179) |
-| **Google Scholar** | [scholar.google.com/citations?user=ilsamaritano](https://scholar.google.com/citations?user=ilsamaritano) |
+| **Google Scholar** | [scholar.google.com/citations?user=lQig7SEAAAAJ](https://scholar.google.com/citations?user=lQig7SEAAAAJ) |
 | **LinkedIn** | [vincenzo-sammartino-0339191a1](https://www.linkedin.com/in/vincenzo-sammartino-0339191a1) |
 | **GitHub** | [@ilsamaritano](https://github.com/ilsamaritano) |
 

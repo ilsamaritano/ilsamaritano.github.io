@@ -6,9 +6,38 @@
 > UAV swarm security with TinyML and Edge AI, Byzantine-resilient consensus,
 > GDPR-compliant distributed systems, NLP and Adversarial Machine Learning.
 > ORCID: https://orcid.org/0009-0002-4632-1179
-> Google Scholar: https://scholar.google.com/citations?user=lQig7SEAAAA
+> Google Scholar: https://scholar.google.com/citations?user=lQig7SEAAAAJ
 > Email: vincenzo.sammartino@phd.unipi.it
 > Personal site: https://ilsamaritano.github.io
+
+---
+
+## AI-friendly metadata (JSON)
+
+```json
+{
+  "name": "Vincenzo Sammartino",
+  "title": "PhD Candidate in Artificial Intelligence",
+  "affiliations": [
+    "University of Pisa",
+    "King Abdullah University of Science and Technology (KAUST)"
+  ],
+  "orcid": "0009-0002-4632-1179",
+  "googleScholar": "https://scholar.google.com/citations?user=lQig7SEAAAAJ",
+  "website": "https://ilsamaritano.github.io",
+  "email": "vincenzo.sammartino@phd.unipi.it",
+  "keywords": [
+    "Security Twin",
+    "Digital Twin",
+    "UAV Swarm Security",
+    "TinyML",
+    "Edge AI",
+    "Byzantine Fault Tolerance",
+    "GDPR",
+    "NLP"
+  ]
+}
+```
 
 ---
 
@@ -157,6 +186,6 @@
 
 - Homepage: https://ilsamaritano.github.io/
 - ORCID: https://orcid.org/0009-0002-4632-1179
-- Google Scholar: https://scholar.google.com/citations?user=lQig7SEAAAA
+- Google Scholar: https://scholar.google.com/citations?user=lQig7SEAAAAJ
 - GitHub: https://github.com/ilsamaritano
 - LinkedIn: https://www.linkedin.com/in/vincenzo-sammartino-0339191a1
