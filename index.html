@@ -1051,6 +1051,7 @@
   .tl-org{font-size:.75rem;color:var(--muted);margin-bottom:10px;}
   .tl-desc{font-size:.8rem;color:#64748b;line-height:1.7;}
   .tl-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px;}
+  .thesis-lang-wrap{margin-bottom:32px;}
   .tag{font-size:.6rem;padding:3px 10px;border:1px solid var(--border);border-radius:2px;color:var(--muted);letter-spacing:.08em;text-transform:uppercase;transition:.2s;}
   .tag:hover{border-color:var(--accent);color:var(--accent)}
   .tag.accent{border-color:rgba(0,229,255,.3);color:var(--accent)}
@@ -1702,14 +1703,21 @@
   <div class="wrap">
     <div class="section-tag">Thesis Supervision</div>
     <h2 class="section-title">Supervised<br>Theses</h2>
+    <div class="thesis-lang-wrap">
+      <button class="filter-btn" id="thesis-lang-toggle" aria-label="Toggle thesis language">IT</button>
+    </div>
     <div class="timeline">
 
       <div class="tl-entry">
         <div class="tl-dot"></div>
         <div class="tl-date">Role: Relatore 2</div>
-        <div class="tl-title">Sviluppo di un Security Twin per l'analisi delle vulnerabilità nei sistemi UAV</div>
+        <div class="tl-title"
+          data-en="Development of a Security Twin for Vulnerability Analysis in UAV Systems"
+          data-it="Sviluppo di un Security Twin per l'analisi delle vulnerabilità nei sistemi UAV">Development of a Security Twin for Vulnerability Analysis in UAV Systems</div>
         <div class="tl-org">Università di Pisa — Dipartimento di Informatica</div>
-        <div class="tl-desc">Progettazione e implementazione di un'architettura Security Twin per la modellazione e l'analisi sistematica delle superfici di attacco in sistemi a velivoli senza pilota (UAV), con focus su vulnerabilità a livello di protocollo e vettori di intrusione remota.</div>
+        <div class="tl-desc"
+          data-en="Design and implementation of a Security Twin architecture for systematic modeling and analysis of attack surfaces in unmanned aerial vehicle (UAV) systems, focusing on protocol-level vulnerabilities and remote intrusion vectors."
+          data-it="Progettazione e implementazione di un'architettura Security Twin per la modellazione e l'analisi sistematica delle superfici di attacco in sistemi a velivoli senza pilota (UAV), con focus su vulnerabilità a livello di protocollo e vettori di intrusione remota.">Design and implementation of a Security Twin architecture for systematic modeling and analysis of attack surfaces in unmanned aerial vehicle (UAV) systems, focusing on protocol-level vulnerabilities and remote intrusion vectors.</div>
         <div class="tl-tags">
           <span class="tag accent">Security Twin</span>
           <span class="tag accent">UAV Security</span>
@@ -1721,9 +1729,13 @@
       <div class="tl-entry">
         <div class="tl-dot"></div>
         <div class="tl-date">Role: Relatore 2</div>
-        <div class="tl-title">Zeek e ntopng: confronto e integrazione in NotLine</div>
+        <div class="tl-title"
+          data-en="Zeek and ntopng: Comparison and Integration in NotLine"
+          data-it="Zeek e ntopng: confronto e integrazione in NotLine">Zeek and ntopng: Comparison and Integration in NotLine</div>
         <div class="tl-org">Università di Pisa — Dipartimento di Informatica</div>
-        <div class="tl-desc">Analisi comparativa degli strumenti di network monitoring Zeek e ntopng, con successiva integrazione nella piattaforma NotLine per il rilevamento non intrusivo del traffico di rete a supporto della costruzione automatizzata di Digital Twin.</div>
+        <div class="tl-desc"
+          data-en="Comparative analysis of the network monitoring tools Zeek and ntopng, with subsequent integration into the NotLine platform for non-intrusive network traffic detection in support of automated Digital Twin construction."
+          data-it="Analisi comparativa degli strumenti di network monitoring Zeek e ntopng, con successiva integrazione nella piattaforma NotLine per il rilevamento non intrusivo del traffico di rete a supporto della costruzione automatizzata di Digital Twin.">Comparative analysis of the network monitoring tools Zeek and ntopng, with subsequent integration into the NotLine platform for non-intrusive network traffic detection in support of automated Digital Twin construction.</div>
         <div class="tl-tags">
           <span class="tag accent">NotLine</span>
           <span class="tag">Zeek</span>
@@ -1736,9 +1748,13 @@
       <div class="tl-entry">
         <div class="tl-dot purple"></div>
         <div class="tl-date">Role: Relatore 2</div>
-        <div class="tl-title">Autenticazione su bus CAN</div>
+        <div class="tl-title"
+          data-en="Authentication on CAN Bus"
+          data-it="Autenticazione su bus CAN">Authentication on CAN Bus</div>
         <div class="tl-org">Università di Pisa — Dipartimento di Informatica</div>
-        <div class="tl-desc">Studio dei meccanismi di autenticazione applicabili al protocollo Controller Area Network (CAN), con valutazione delle soluzioni crittografiche lightweight compatibili con i vincoli computazionali dei sistemi embedded in ambienti automotive e industriali.</div>
+        <div class="tl-desc"
+          data-en="Study of authentication mechanisms applicable to the Controller Area Network (CAN) protocol, with evaluation of lightweight cryptographic solutions compatible with the computational constraints of embedded systems in automotive and industrial environments."
+          data-it="Studio dei meccanismi di autenticazione applicabili al protocollo Controller Area Network (CAN), con valutazione delle soluzioni crittografiche lightweight compatibili con i vincoli computazionali dei sistemi embedded in ambienti automotive e industriali.">Study of authentication mechanisms applicable to the Controller Area Network (CAN) protocol, with evaluation of lightweight cryptographic solutions compatible with the computational constraints of embedded systems in automotive and industrial environments.</div>
         <div class="tl-tags">
           <span class="tag accent">CAN Bus</span>
           <span class="tag">Embedded Security</span>
@@ -1750,9 +1766,13 @@
       <div class="tl-entry">
         <div class="tl-dot purple"></div>
         <div class="tl-date">Role: Relatore 2</div>
-        <div class="tl-title">Estensione di un Security Twin con un modello di performance</div>
+        <div class="tl-title"
+          data-en="Extension of a Security Twin with a Performance Model"
+          data-it="Estensione di un Security Twin con un modello di performance">Extension of a Security Twin with a Performance Model</div>
         <div class="tl-org">Università di Pisa — Dipartimento di Informatica</div>
-        <div class="tl-desc">Estensione dell'architettura Security Twin mediante l'integrazione di un modello quantitativo delle prestazioni di sistema, al fine di correlare le metriche di sicurezza con l'impatto operativo delle misure di mitigazione adottate in risposta alle intrusioni rilevate.</div>
+        <div class="tl-desc"
+          data-en="Extension of the Security Twin architecture by integrating a quantitative model of system performance, aimed at correlating security metrics with the operational impact of mitigation measures adopted in response to detected intrusions."
+          data-it="Estensione dell'architettura Security Twin mediante l'integrazione di un modello quantitativo delle prestazioni di sistema, al fine di correlare le metriche di sicurezza con l'impatto operativo delle misure di mitigazione adottate in risposta alle intrusioni rilevate.">Extension of the Security Twin architecture by integrating a quantitative model of system performance, aimed at correlating security metrics with the operational impact of mitigation measures adopted in response to detected intrusions.</div>
         <div class="tl-tags">
           <span class="tag accent">Security Twin</span>
           <span class="tag">Performance Modeling</span>
@@ -1764,9 +1784,13 @@
       <div class="tl-entry">
         <div class="tl-dot"></div>
         <div class="tl-date">Role: Relatore 2</div>
-        <div class="tl-title">Confidential Computing: Analisi Costi/Prestazioni</div>
+        <div class="tl-title"
+          data-en="Confidential Computing: Cost/Performance Analysis"
+          data-it="Confidential Computing: Analisi Costi/Prestazioni">Confidential Computing: Cost/Performance Analysis</div>
         <div class="tl-org">Università di Pisa — Dipartimento di Informatica</div>
-        <div class="tl-desc">Valutazione sistematica del trade-off costi/prestazioni nelle tecnologie di Confidential Computing (Intel SGX, AMD SEV, ARM TrustZone), con analisi del relativo overhead computazionale e delle implicazioni architetturali per sistemi distribuiti ad elevata riservatezza.</div>
+        <div class="tl-desc"
+          data-en="Systematic evaluation of the cost/performance trade-off in Confidential Computing technologies (Intel SGX, AMD SEV, ARM TrustZone), with analysis of the related computational overhead and architectural implications for highly confidential distributed systems."
+          data-it="Valutazione sistematica del trade-off costi/prestazioni nelle tecnologie di Confidential Computing (Intel SGX, AMD SEV, ARM TrustZone), con analisi del relativo overhead computazionale e delle implicazioni architetturali per sistemi distribuiti ad elevata riservatezza.">Systematic evaluation of the cost/performance trade-off in Confidential Computing technologies (Intel SGX, AMD SEV, ARM TrustZone), with analysis of the related computational overhead and architectural implications for highly confidential distributed systems.</div>
         <div class="tl-tags">
           <span class="tag accent">Confidential Computing</span>
           <span class="tag">TEE</span>
@@ -1778,9 +1802,13 @@
       <div class="tl-entry">
         <div class="tl-dot"></div>
         <div class="tl-date">Role: Relatore 2</div>
-        <div class="tl-title">Progettazione e analisi di strategie dinamiche di intrusione attraverso il Security Twin</div>
+        <div class="tl-title"
+          data-en="Design and Analysis of Dynamic Intrusion Strategies via the Security Twin"
+          data-it="Progettazione e analisi di strategie dinamiche di intrusione attraverso il Security Twin">Design and Analysis of Dynamic Intrusion Strategies via the Security Twin</div>
         <div class="tl-org">Università di Pisa — Dipartimento di Informatica</div>
-        <div class="tl-desc">Formalizzazione e simulazione di strategie di intrusione dinamiche mediante l'ambiente Security Twin, con analisi what-if del comportamento avversariale in scenari multi-step. Studio delle implicazioni per la progettazione di politiche di difesa adattive e proattive.</div>
+        <div class="tl-desc"
+          data-en="Formalization and simulation of dynamic intrusion strategies within the Security Twin environment, with what-if analysis of adversarial behavior in multi-step scenarios. Study of the implications for designing adaptive and proactive defense policies."
+          data-it="Formalizzazione e simulazione di strategie di intrusione dinamiche mediante l'ambiente Security Twin, con analisi what-if del comportamento avversariale in scenari multi-step. Studio delle implicazioni per la progettazione di politiche di difesa adattive e proattive.">Formalization and simulation of dynamic intrusion strategies within the Security Twin environment, with what-if analysis of adversarial behavior in multi-step scenarios. Study of the implications for designing adaptive and proactive defense policies.</div>
         <div class="tl-tags">
           <span class="tag accent">Security Twin</span>
           <span class="tag accent">Adversarial Modeling</span>
@@ -2121,6 +2149,23 @@ const statsObs=new IntersectionObserver(entries=>{
 },{threshold:.5});
 const heroStats=document.querySelector('.hero-stats');
 if(heroStats)statsObs.observe(heroStats);
+
+// THESIS LANGUAGE TOGGLE
+(function(){
+  const btn=document.getElementById('thesis-lang-toggle');
+  let lang=localStorage.getItem('thesis-lang')||'en';
+  function applyLang(l){
+    document.querySelectorAll('#theses [data-en]').forEach(function(el){
+      el.textContent=el.dataset[l];
+    });
+    btn.textContent=l==='en'?'IT':'EN';
+    btn.classList.toggle('active',l==='it');
+    lang=l;
+    localStorage.setItem('thesis-lang',l);
+  }
+  applyLang(lang);
+  btn.addEventListener('click',function(){applyLang(lang==='en'?'it':'en');});
+})();
 </script>
 </body>
 </html>
