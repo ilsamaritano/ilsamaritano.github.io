@@ -150,11 +150,15 @@
 }
 </script>
 
-  <!-- ── 2.4  ScholarlyArticle Schema — Deferred for performance ── -->
-  <!--
-    Publications schema moved to deferred loading to improve initial page load time.
-    Loaded after DOMContentLoaded to prevent blocking preload phase.
-  -->
+  <!-- ── 2.4  ScholarlyArticle Schema — COMPLETE (23 publications) ── -->
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "Publications by Vincenzo Sammartino",
+  "description": "Complete list of peer-reviewed scientific publications authored or co-authored by Vincenzo Sammartino, PhD Candidate in Artificial Intelligence at the University of Pisa and VSRP Intern at KAUST.",
+  "numberOfItems": 23,
+  "itemListElement": [
     {
       "@type": "ListItem",
       "position": 1,
@@ -829,7 +833,7 @@
     }
   ]
 }
-</script> -->
+</script>
 
 
   <!-- ── 2.5  ResearchProject Schema (ResilientGuard) ── -->
@@ -857,16 +861,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Vincenzo Sammartino — AI Researcher & PhD Candidate</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <!-- Async load fonts to prevent render blocking -->
   <link
     href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;600;700;800&family=DM+Mono:wght@300;400;500&display=swap"
-    rel="stylesheet" media="print" onload="this.media='all'">
-  <noscript>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;600;700;800&family=DM+Mono:wght@300;400;500&display=swap"
-      rel="stylesheet">
-  </noscript>
+    rel="stylesheet">
   <link rel="canonical" href="https://ilsamaritano.github.io/">
   <meta name="description"
     content="Vincenzo Sammartino — PhD Candidate in Artificial Intelligence at the University of Pisa and VSRP Intern at KAUST. Research on Security Twins, Digital Twin architectures for cybersecurity, UAV swarm security, TinyML, Edge AI, and Byzantine-resilient systems. 23 publications, h-index 4.">
@@ -924,7 +921,8 @@
   <link rel="me" href="https://github.com/ilsamaritano">
   <link rel="me" href="https://www.linkedin.com/in/vincenzo-sammartino-0339191a1">
 
-  <!-- ── 1.7  PERFORMANCE + DNS PREFETCH ── -->
+  <!-- ── 1.7  PERFORMANCE + PRELOAD (indirettamente favorisce il ranking) ── -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="dns-prefetch" href="https://fonts.googleapis.com">
   <link rel="dns-prefetch" href="https://scholar.google.com">
   <link rel="dns-prefetch" href="https://orcid.org">
@@ -3232,72 +3230,69 @@
   </footer>
 
   <script>
-    // Defer heavy animations until page is fully loaded for better preload performance
-    window.addEventListener('load', function() {
-      // CURSOR - Deferred
-      const cursor = document.getElementById('cursor');
-      const ring = document.getElementById('cursor-ring');
-      let mx = 0, my = 0, rx = 0, ry = 0;
-      document.addEventListener('mousemove', e => {
-        mx = e.clientX; my = e.clientY;
-        cursor.style.left = mx + 'px'; cursor.style.top = my + 'px';
+    // CURSOR
+    const cursor = document.getElementById('cursor');
+    const ring = document.getElementById('cursor-ring');
+    let mx = 0, my = 0, rx = 0, ry = 0;
+    document.addEventListener('mousemove', e => {
+      mx = e.clientX; my = e.clientY;
+      cursor.style.left = mx + 'px'; cursor.style.top = my + 'px';
+    });
+    function animRing() {
+      rx += (mx - rx) * .15; ry += (my - ry) * .15;
+      ring.style.left = rx + 'px'; ring.style.top = ry + 'px';
+      requestAnimationFrame(animRing);
+    }
+    animRing();
+    document.querySelectorAll('a,button,.btn,.filter-btn').forEach(el => {
+      el.addEventListener('mouseenter', () => {
+        cursor.style.width = '20px'; cursor.style.height = '20px';
+        ring.style.width = '60px'; ring.style.height = '60px';
       });
-      function animRing() {
-        rx += (mx - rx) * .15; ry += (my - ry) * .15;
-        ring.style.left = rx + 'px'; ring.style.top = ry + 'px';
-        requestAnimationFrame(animRing);
-      }
-      animRing();
-      document.querySelectorAll('a,button,.btn,.filter-btn').forEach(el => {
-        el.addEventListener('mouseenter', () => {
-          cursor.style.width = '20px'; cursor.style.height = '20px';
-          ring.style.width = '60px'; ring.style.height = '60px';
-        });
-        el.addEventListener('mouseleave', () => {
-          cursor.style.width = '12px'; cursor.style.height = '12px';
-          ring.style.width = '40px'; ring.style.height = '40px';
-        });
+      el.addEventListener('mouseleave', () => {
+        cursor.style.width = '12px'; cursor.style.height = '12px';
+        ring.style.width = '40px'; ring.style.height = '40px';
       });
-
-      // NEURAL CANVAS - Deferred
-      const canvas = document.getElementById('neural-canvas');
-      const ctx = canvas.getContext('2d');
-      let nodes = [];
-      function resize() { canvas.width = window.innerWidth; canvas.height = window.innerHeight }
-      resize(); window.addEventListener('resize', resize);
-      for (let i = 0; i < 70; i++) {
-        nodes.push({
-          x: Math.random() * canvas.width, y: Math.random() * canvas.height,
-          vx: (Math.random() - .5) * .4, vy: (Math.random() - .5) * .4, r: Math.random() * 2 + 1
-        });
-      }
-      function drawNeural() {
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-        nodes.forEach(n => {
-          n.x += n.vx; n.y += n.vy;
-          if (n.x < 0 || n.x > canvas.width) n.vx *= -1;
-          if (n.y < 0 || n.y > canvas.height) n.vy *= -1;
-          ctx.beginPath(); ctx.arc(n.x, n.y, n.r, 0, Math.PI * 2);
-          ctx.fillStyle = 'rgba(0,229,255,.5)'; ctx.fill();
-        });
-        for (let i = 0; i < nodes.length; i++) {
-          for (let j = i + 1; j < nodes.length; j++) {
-            const d = Math.hypot(nodes[i].x - nodes[j].x, nodes[i].y - nodes[j].y);
-            if (d < 130) {
-              ctx.beginPath();
-              ctx.moveTo(nodes[i].x, nodes[i].y);
-              ctx.lineTo(nodes[j].x, nodes[j].y);
-              ctx.strokeStyle = `rgba(0,229,255,${(1 - d / 130) * .15})`;
-              ctx.lineWidth = .5; ctx.stroke();
-            }
-          }
-        }
-        requestAnimationFrame(drawNeural);
-      }
-      drawNeural();
     });
 
-    // TYPED TEXT - Start immediately for visual feedback
+    // NEURAL CANVAS
+    const canvas = document.getElementById('neural-canvas');
+    const ctx = canvas.getContext('2d');
+    let nodes = [];
+    function resize() { canvas.width = window.innerWidth; canvas.height = window.innerHeight }
+    resize(); window.addEventListener('resize', resize);
+    for (let i = 0; i < 70; i++) {
+      nodes.push({
+        x: Math.random() * canvas.width, y: Math.random() * canvas.height,
+        vx: (Math.random() - .5) * .4, vy: (Math.random() - .5) * .4, r: Math.random() * 2 + 1
+      });
+    }
+    function drawNeural() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      nodes.forEach(n => {
+        n.x += n.vx; n.y += n.vy;
+        if (n.x < 0 || n.x > canvas.width) n.vx *= -1;
+        if (n.y < 0 || n.y > canvas.height) n.vy *= -1;
+        ctx.beginPath(); ctx.arc(n.x, n.y, n.r, 0, Math.PI * 2);
+        ctx.fillStyle = 'rgba(0,229,255,.5)'; ctx.fill();
+      });
+      for (let i = 0; i < nodes.length; i++) {
+        for (let j = i + 1; j < nodes.length; j++) {
+          const d = Math.hypot(nodes[i].x - nodes[j].x, nodes[i].y - nodes[j].y);
+          if (d < 130) {
+            ctx.beginPath();
+            ctx.moveTo(nodes[i].x, nodes[i].y);
+            ctx.lineTo(nodes[j].x, nodes[j].y);
+            ctx.strokeStyle = `rgba(0,229,255,${(1 - d / 130) * .15})`;
+            ctx.lineWidth = .5; ctx.stroke();
+          }
+        }
+      }
+      requestAnimationFrame(drawNeural);
+    }
+    drawNeural();
+
+    // TYPED TEXT
     const phrases = [
       'Security Twin Researcher @ UniPi & KAUST',
       'AI-enabled Cybersecurity Engineer',
