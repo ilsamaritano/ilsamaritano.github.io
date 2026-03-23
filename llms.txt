@@ -26,6 +26,11 @@
   "googleScholar": "https://scholar.google.com/citations?user=lQig7SEAAAAJ",
   "website": "https://ilsamaritano.github.io",
   "email": "vincenzo.sammartino@phd.unipi.it",
+  "zenodoRecords": [
+    "https://zenodo.org/records/19061497",
+    "https://zenodo.org/records/19061347",
+    "https://zenodo.org/records/19019069"
+  ],
   "keywords": [
     "Security Twin",
     "Digital Twin",
@@ -189,3 +194,6 @@
 - Google Scholar: https://scholar.google.com/citations?user=lQig7SEAAAAJ
 - GitHub: https://github.com/ilsamaritano
 - LinkedIn: https://www.linkedin.com/in/vincenzo-sammartino-0339191a1
+- Zenodo: https://zenodo.org/records/19061497
+- Zenodo: https://zenodo.org/records/19061347
+- Zenodo: https://zenodo.org/records/19019069
