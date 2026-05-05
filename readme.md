@@ -26,7 +26,7 @@ The implementation is intentionally dependency-free at the deployment level — 
 | **Visiting Position** | VSRP Intern, King Abdullah University of Science and Technology (KAUST) · Thuwal, Saudi Arabia |
 | **Supervisors** | Prof. Fabrizio Baiardi (UniPi) · Prof. Salvatore Ruggieri (UniPi) · Prof. Roberto Di Pietro (KAUST) |
 | **Research Areas** | Security Twin · Digital Twin Architectures · Cyber-Physical Systems Resilience · UAV Swarm Security · TinyML / Edge AI · Byzantine Fault Tolerance · GDPR-compliant Distributed Systems · NLP |
-| **Total Citations** | 37 |
+| **Total Citations** | 49 |
 | **H-Index** | 4 |
 | **Publications** | 23 (IEEE · Springer · CRC/Taylor & Francis · peer-reviewed journals) |
 
