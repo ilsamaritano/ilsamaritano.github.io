@@ -5,7 +5,7 @@
 [![Live](https://img.shields.io/badge/Live-ilsamaritano.github.io-00e5ff?style=flat-square&logo=github)](https://ilsamaritano.github.io)
 [![License](https://img.shields.io/badge/License-MIT-7c3aed?style=flat-square)](LICENSE)
 [![ORCID](https://img.shields.io/badge/ORCID-0009--0002--4632--1179-a6ce39?style=flat-square&logo=orcid)](https://orcid.org/0009-0002-4632-1179)
-[![Citations](https://img.shields.io/badge/Citations-37-10b981?style=flat-square)](https://scholar.google.com/citations?user=lQig7SEAAAAJ)
+[![Citations](https://img.shields.io/badge/Citations-51-10b981?style=flat-square)](https://scholar.google.com/citations?user=lQig7SEAAAAJ)
 [![H-Index](https://img.shields.io/badge/H--Index-4-10b981?style=flat-square)](https://scholar.google.com/citations?user=lQig7SEAAAAJ)
 
 ---
@@ -26,9 +26,9 @@ The implementation is intentionally dependency-free at the deployment level — 
 | **Visiting Position** | VSRP Intern, King Abdullah University of Science and Technology (KAUST) · Thuwal, Saudi Arabia |
 | **Supervisors** | Prof. Fabrizio Baiardi (UniPi) · Prof. Salvatore Ruggieri (UniPi) · Prof. Roberto Di Pietro (KAUST) |
 | **Research Areas** | Security Twin · Digital Twin Architectures · Cyber-Physical Systems Resilience · UAV Swarm Security · TinyML / Edge AI · Byzantine Fault Tolerance · GDPR-compliant Distributed Systems · NLP |
-| **Total Citations** | 49 |
+| **Total Citations** | 51 |
 | **H-Index** | 4 |
-| **Publications** | 23 (IEEE · Springer · CRC/Taylor & Francis · peer-reviewed journals) |
+| **Publications** | 24 (IEEE · Springer · CRC/Taylor & Francis · peer-reviewed journals) |
 
 ---
 
@@ -121,17 +121,18 @@ The canonical live endpoint is: **[https://ilsamaritano.github.io](https://ilsam
 A representative, non-exhaustive selection of contributions ordered by recency. The complete bibliographic record is available via [Google Scholar](https://scholar.google.com/citations?user=lQig7SEAAAAJ) and [ORCID 0009-0002-4632-1179](https://orcid.org/0009-0002-4632-1179).
 
 **2026**
+- *Hybrid Quantum Graph Neural Networks for Robust Botnet Detection in Modern IoT Ecosystems* — Future Generation Computer Systems (Journal)
 - *From Digital Twins to AI Agents: A Synthetic Data Paradigm for Next-Generation Cybersecurity* — CRC / Taylor & Francis (Book Chapter)
 - *Evaluating Adversary Strategies Through a Security Twin* — IEEE PerCom Workshops 2026
 - *Quantifying Resilience of Cyber-Physical Systems to Zero-Day Threats* — ESREL 2026
 
 **2025**
-- *AI-enabled Cybersecurity using Synthetic Data* — **IEEE PerCom 2025**, Washington DC · 5 citations
+- *AI-enabled Cybersecurity using Synthetic Data* — **IEEE PerCom 2025**, Washington DC · 7 citations
 - *A Security Twin to Defeat Intrusions in Cyber Physical Systems* — ESREL / SRA-E 2025 · 4 citations
 - *A Framework for Proactive Cyber-Resilience: Non-intrusive Modeling for Autonomous Defense* — DS-RT 2025 · 3 citations
 
 **2024**
-- *A Comparative Study of Machine Learning Models for Hate Speech and Stereotype Detection in Italian Texts* — IJCAST · 6 citations
+- *A Comparative Study of Machine Learning Models for Hate Speech and Stereotype Detection in Italian Texts* — IJCAST · 7 citations
 - *Database Decomposition to Satisfy the Least Privilege Principle in Healthcare* — ARIS2 2024 · 2 citations
 
 ---
