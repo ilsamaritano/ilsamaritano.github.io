@@ -46,7 +46,7 @@
 
 ---
 
-## Publications (23 peer-reviewed works, 37+ citations as of 2026)
+## Publications (24 peer-reviewed works, 51 citations as of 2026)
 
 ### 2026
 
@@ -85,11 +85,16 @@
   *The Journal of Supercomputing — Special Issue: Simulation-Powered Cybersecurity*, Springer, 2026.
   Keywords: simulation, real-time risk assessment, non-intrusive Security Twin, Journal of Supercomputing
 
+- **Hybrid Quantum Graph Neural Networks for Robust Botnet Detection in Modern IoT Ecosystems**
+  V. Sammartino
+  *Future Generation Computer Systems*, 2026.
+  Keywords: IoT security, botnet detection, quantum machine learning, graph neural networks
+
 ### 2025
 
 - **AI-enabled cybersecurity using synthetic data**
   F. Baiardi, S. Ruggieri, V. Sammartino
-  *2025 IEEE International Conference on Pervasive Computing and Communications (PerCom 2025)*, IEEE, 2025. [5 citations]
+  *2025 IEEE International Conference on Pervasive Computing and Communications (PerCom 2025)*, IEEE, 2025. [7 citations]
   Keywords: synthetic data, AI-enabled cybersecurity, intrusion detection, adversarial ML
 
 - **A security twin to defeat intrusions in cyber physical systems**
@@ -136,7 +141,7 @@
 
 - **A comparative study of machine learning models for hate speech and stereotype detection in Italian texts**
   V. Sammartino
-  *International Journal of Complexity in Applied Science and Technology*, vol. 1, no. 2, 2024. [6 citations]
+  *International Journal of Complexity in Applied Science and Technology*, vol. 1, no. 2, 2024. [7 citations]
   Keywords: hate speech detection, stereotype detection, ML, NLP, Italian language
 
 - **Database Decomposition to satisfy the Least Privilege Principle in Healthcare**
