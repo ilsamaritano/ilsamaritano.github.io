@@ -1,24 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-  <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-          xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
-            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-    <url>
-      <loc>https://ilsamaritano.github.io/</loc>
-      <lastmod>2026-03-11</lastmod>
-      <changefreq>monthly</changefreq>
-      <priority>1.0</priority>
-    </url>
-    <url>
-      <loc>https://ilsamaritano.github.io/#publications</loc>
-      <lastmod>2026-03-11</lastmod>
-      <changefreq>monthly</changefreq>
-      <priority>0.9</priority>
-    </url>
-    <url>
-      <loc>https://ilsamaritano.github.io/#experience</loc>
-      <lastmod>2026-03-11</lastmod>
-      <changefreq>monthly</changefreq>
-      <priority>0.7</priority>
-    </url>
-  </urlset>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://ilsamaritano.github.io/</loc>
+    <lastmod>2026-09-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://ilsamaritano.github.io/assets/photo.jpg</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://ilsamaritano.github.io/llms.txt</loc>
+    <lastmod>2026-09-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+</urlset>
