@@ -1,0 +1,299 @@
+# Vincenzo Sammartino — Academic Profile for LLM Indexing
+
+> PhD Candidate in Artificial Intelligence (National PhD Programme in AI) at the University of Pisa.
+> Visiting PhD Student (VSRP Intern) at KAUST under Prof. Roberto Di Pietro, January–June 2026.
+> Research areas: Security Twins and Digital Twin architectures for cybersecurity,
+> cyber-physical systems resilience, quantum machine learning and post-quantum security,
+> 6G far-edge digital twins, UAV swarm security with TinyML and Edge AI,
+> security of LLM-driven multi-agent systems, NLP.
+> Google Scholar (15 September 2026): 160 citations · h-index 8 · i10-index 7 · 36 works.
+> Peer reviewer for 20 international journals (37 reviews recorded on ORCID, 2026), including
+> IEEE Transactions on Neural Networks and Learning Systems, ACM Computing Surveys, Scientific Reports,
+> Computers & Security and Future Generation Computer Systems.
+> Scopus Author ID: 59166600100 · SciProfiles: 3668849
+> ORCID: https://orcid.org/0009-0002-4632-1179
+> Google Scholar: https://scholar.google.com/citations?user=lQig7SEAAAAJ
+> Email: vincesammartino@gmail.com
+> Personal site: https://ilsamaritano.github.io
+
+---
+
+## AI-friendly metadata (JSON)
+
+```json
+{
+  "name": "Vincenzo Sammartino",
+  "title": "PhD Candidate in Artificial Intelligence",
+  "affiliations": [
+    "University of Pisa",
+    "King Abdullah University of Science and Technology (KAUST)"
+  ],
+  "orcid": "0009-0002-4632-1179",
+  "scopusAuthorId": "59166600100",
+  "sciProfilesId": "3668849",
+  "peerReview": { "reviews": 37, "journals": 20, "year": 2026, "source": "https://orcid.org/0009-0002-4632-1179" },
+  "googleScholar": "https://scholar.google.com/citations?user=lQig7SEAAAAJ",
+  "metrics": { "citations": 160, "hIndex": 8, "i10Index": 7, "works": 36, "asOf": "2026-09-15" },
+  "website": "https://ilsamaritano.github.io",
+  "email": "vincesammartino@gmail.com",
+  "zenodoRecords": [
+    "https://zenodo.org/records/19061497",
+    "https://zenodo.org/records/19061347",
+    "https://zenodo.org/records/19019069"
+  ],
+  "keywords": [
+    "Security Twin",
+    "Digital Twin",
+    "Cyber-Physical Systems",
+    "Quantum Machine Learning",
+    "Post-Quantum Cryptography",
+    "6G",
+    "UAV Swarm Security",
+    "TinyML",
+    "Edge AI",
+    "LLM Multi-Agent Security",
+    "NLP"
+  ]
+}
+```
+
+---
+
+<!-- PUBS:START -->
+## Publications (36 works, 160 citations, h-index 8, i10-index 7 — Google Scholar, 15 September 2026)
+
+### 2026
+
+- **Anticipating Disasters through a Security Twin**
+  F. Baiardi, S. Ruggieri, V. Sammartino
+  *Dynamics of Disasters: Hybrid Threats — Springer Optimization and Its Applications (DoD 2024, Vienna)*, 2026. [14 citations]
+  https://zenodo.org/records/19019069
+
+- **Simulation-Powered Cybersecurity: Real-Time Risk Assessment via Non-Intrusive Security Twin**
+  F. Baiardi, V. Sammartino
+  *The Journal of Supercomputing — Special Issue on Simulation-Powered Cybersecurity, Springer*, 2026. [10 citations]
+
+- **From Digital Twins to AI Agents: A Synthetic Data Paradigm for Next-Generation Cybersecurity**
+  F. Baiardi, V. Sammartino
+  *Artificial Intelligence in Cybersecurity: Unlocking the Power of Large Language Models, CRC Press / Taylor & Francis*, 2026. [9 citations]
+
+- **Quantifying the Impact of CVSS Score Ordering on Attack Paths**
+  F. Baiardi, V. Sammartino
+  *12th EAI International Conference on Smart Objects and Technologies for Social Good (GOODTECHS 2026)*, 2026. [8 citations]
+
+- **Evaluating Adversary Strategies Through a Security Twin**
+  F. Baiardi, V. Sammartino, S. Ruggieri
+  *IEEE International Conference on Pervasive Computing and Communications (PerCom Workshops 2026)*, 2026. [6 citations]
+
+- **Quantifying Resilience of Cyber-Physical Systems to Zero-Day Threats: A Security Twin-Based What-If Analysis Framework**
+  F. Baiardi, V. Sammartino
+  *Proceedings of the 36th European Safety and Reliability Conference (ESREL 2026)*, 2026. [3 citations]
+
+- **Blockchain-Enabled Quantum-Resistant Hybrid Isogeny-Based Signcryption Framework for Digital Twin-Assisted Healthcare System**
+  A.K. Pandey, V. Sammartino, A. Vangala, A.K. Das
+  *IEEE Communications Standards Magazine*, 2026. [2 citations]
+
+- **DOS Classification, and Virtual Machine Detection via Passive Monitoring through Security Twins**
+  V. Sammartino, F. Baiardi, S. Ruggieri
+  *IEEE Xplore*, 2026. [2 citations]
+
+- **HAVE: Host Active Verification Engine for Closing the Contextual Reality Gap in Security Digital Twins**
+  V. Sammartino, M. Pasquini
+  *arXiv preprint arXiv:2606.06968*, 2026. [2 citations]
+  https://arxiv.org/abs/2606.06968
+
+- **SA-DTS: Semantic-Aware Digital Twin Synchronization over 6G Networks**
+  V. Sammartino
+  *arXiv preprint arXiv:2606.03617*, 2026. [2 citations]
+  https://arxiv.org/abs/2606.03617
+
+- **Model-Driven Security Analysis of SD-Access Fabrics Using Digital Twins: A Probabilistic Framework in Software-Defined Campus and Cyber-Physical Networks**
+  V. Sammartino, M. Schneider
+  *Future Generation Computer Systems, Elsevier*, 2026. [1 citation]
+
+- **Hybrid Quantum Graph Neural Networks for Robust Botnet Detection in Modern IoT Ecosystems**
+  V. Sammartino
+  *Future Generation Computer Systems, Elsevier*, 2026. [1 citation]
+
+- **Feature Encoding in Quantum Machine Learning: A Survey and Practical Guidelines**
+  V. Sammartino
+  *arXiv preprint arXiv:2606.05387*, 2026. [1 citation]
+  https://arxiv.org/abs/2606.05387
+
+- **Q-FE: A Quantum-Native 6G Far-Edge Architecture Securing Industrial IoT Digital Twins via CSIDH-PQC and Asynchronous Federated Learning**
+  V. Sammartino
+  *arXiv preprint arXiv:2606.03611*, 2026. [1 citation]
+  https://arxiv.org/abs/2606.03611
+
+- **Quantifying Cyber Robustness and Financial Risk via Security Twins**
+  F. Baiardi, V. Sammartino
+  *SSRN preprint 6890389*, 2026. [1 citation]
+  https://ssrn.com/abstract=6890389
+
+- **SMCC-Empowered Digital Twins for Sensorless Monitoring in Large-Scale AI-Driven IoT Systems**
+  V. Sammartino
+  *arXiv preprint arXiv:2609.09161*, 2026.
+  https://arxiv.org/abs/2609.09161
+
+- **QUASAR: A Quantum-Classical Neural Network for SAR Satellite Physical-Layer Authentication**
+  V. Sammartino, N. Denis, R. Di Pietro
+  *arXiv preprint arXiv:2608.20240*, 2026.
+  https://arxiv.org/abs/2608.20240
+
+- **Adversarial Reliability: From Design to Deployment and Beyond Using Attack-Path Chokepoints**
+  V. Sammartino, F. Baiardi, S. Ruggieri
+  *SSRN preprint 7382213*, 2026.
+  https://ssrn.com/abstract=7382213
+
+### 2025
+
+- **AI-Enabled Cybersecurity Using Synthetic Data**
+  F. Baiardi, S. Ruggieri, V. Sammartino
+  *23rd IEEE International Conference on Pervasive Computing and Communications (PerCom 2025), Washington DC*, 2025. [17 citations]
+
+- **A Framework for Proactive Cyber-Resilience: Non-Intrusive Modeling for Autonomous Defense**
+  V. Sammartino
+  *29th International Symposium on Distributed Simulation and Real Time Applications (DS-RT 2025), IEEE*, 2025. [13 citations]
+
+- **A Security Twin to Defeat Intrusions in Cyber Physical Systems**
+  F. Baiardi, S. Ruggieri, V. Sammartino
+  *European Safety and Reliability Conference (ESREL SRA-E 2025), Stavanger, Norway*, 2025. [13 citations]
+
+- **NotLine: A Non-Intrusive Automated Platform to Build a Digital Twin**
+  F. Baiardi, V. Sammartino, S. Ruggieri
+  *29th International Symposium on Distributed Simulation and Real Time Applications (DS-RT 2025), IEEE*, 2025. [11 citations]
+
+- **A Quantitative Framework for the Validation of Twin-Based Cyber Defense**
+  F. Baiardi, V. Sammartino
+  *Procedia Computer Science, vol. 274, pp. 721–730, Elsevier*, 2025. [11 citations]
+
+- **Graph-Based Cyber Defence Using a Security Twin**
+  F. Baiardi, V. Sammartino, S. Ruggieri
+  *29th International Symposium on Distributed Simulation and Real Time Applications (DS-RT 2025), IEEE*, 2025. [8 citations]
+
+- **Security Twins e il Futuro della Previsione di Intrusioni Cyber**
+  F. Baiardi, S. Ruggieri, V. Sammartino
+  *ICT Security Magazine*, 2025. [4 citations]
+
+- **Cyber Weapons as Components of Weapon Systems**
+  F. Baiardi, V. Sammartino
+  *Journal of Information Warfare, vol. 24, no. 4*, 2025. [1 citation]
+  https://zenodo.org/records/19061347
+
+- **A Comparative Study of NLP Systems for Sentiment Polarity Classification Across Different Domains and Genres**
+  V. Sammartino
+  *International Journal of Complexity in Applied Science and Technology*, 2025.
+
+- **NotLine: Dynamic Network Topology and Risk Assessment Through Passive Discovery**
+  V. Sammartino
+  *FAIR General Conference, Rome, 10–12 December 2025*, 2025.
+
+### 2024
+
+- **A Comparative Study of Machine Learning Models for Hate Speech and Stereotype Detection in Italian Texts**
+  V. Sammartino
+  *International Journal of Complexity in Applied Science and Technology, vol. 1, no. 2, pp. 155–176*, 2024. [7 citations]
+  https://zenodo.org/records/19061497
+
+- **Database Decomposition to Satisfy the Least Privilege Principle in Healthcare**
+  V. Sammartino, F. Baiardi
+  *ARIS2 — Advanced Research on Information Systems Security, vol. 4, no. 1*, 2024. [4 citations]
+  https://doi.org/10.56394/aris2.v4i1.43
+
+- **Satisfying Least Privilege Through Database Decomposition**
+  F. Baiardi, C. Comella, V. Sammartino
+  *20th International Conference on the Design of Reliable Communication Networks (DRCN 2024), Montréal, Canada, IEEE*, 2024. [3 citations]
+
+- **Multilevel Database Decomposition Framework**
+  F. Baiardi, C. Comella, V. Sammartino
+  *ITASEC 2024 — Italian Conference on Cybersecurity, Salerno · CEUR Workshop Proceedings, vol. 3731*, 2024. [2 citations]
+
+- **Feature Engineering and Semantic Enrichment for Enhanced Text Classification: A Case Study on Figurative Language in Tweets**
+  V. Sammartino, C. Baccheschi, J. Gneri, V. Picchianti, A. Frasson
+  *Preprints*, 2024.
+
+- **D3F: A Framework to Minimize the Impact of Intrusions**
+  F. Baiardi, V. Sammartino
+  *Preprints*, 2024.
+
+### Undated preprints
+
+- **Discovering When a Security Twin Cheats: An Equivalence Theorem**
+  V. Sammartino, F. Baiardi
+  *SSRN preprint 7277218*.
+  https://ssrn.com/abstract=7277218
+
+- **Vulnerabilities in Autonomous Execution: A Survey of Security Threats and Defenses in LLM-Driven Multi-Agent Systems**
+  V. Sammartino
+  *SSRN preprint 7218206*.
+  https://ssrn.com/abstract=7218206
+<!-- PUBS:END -->
+
+---
+
+## Peer Review (37 reviews for 20 journals, all 2026 — recorded on ORCID)
+
+| Journal | Publisher | ISSN | Reviews |
+|---|---|---|---|
+| Discover Artificial Intelligence | Springer Nature | 2731-0809 | 7 |
+| Scientific Reports | Springer Nature | 2045-2322 | 6 |
+| Pervasive and Mobile Computing | Elsevier | 1574-1192 | 4 |
+| IEEE Transactions on Neural Networks and Learning Systems | IEEE | 2162-2388 | 2 |
+| International Journal of Information Security | Springer Nature | 1615-5270 | 2 |
+| Big Data Mining and Analytics | Tsinghua University Press | 2097-406X | 2 |
+| ACM Computing Surveys | ACM | 1557-7341 | 1 |
+| Computers & Security | Elsevier | 0167-4048 | 1 |
+| Future Generation Computer Systems | Elsevier | 0167-739X | 1 |
+| Computer Communications | Elsevier | 0140-3664 | 1 |
+| Journal of Computer Security | SAGE Publications | 1875-8924 | 1 |
+| Cluster Computing | Springer Nature | 1573-7543 | 1 |
+| Journal of Cloud Computing | Springer Nature | 2192-113X | 1 |
+| Journal of Big Data | Springer Nature | 2196-1115 | 1 |
+| Discover Computing | Springer Nature | 2948-2992 | 1 |
+| International Journal of Data Science and Analytics | Springer Nature | 2364-4168 | 1 |
+| Journal of King Saud University – Computer and Information Sciences | Springer Nature | 2213-1248 | 1 |
+| PeerJ Computer Science | PeerJ | 2376-5992 | 1 |
+| Computers, Materials & Continua | Tech Science Press | 1546-2218 | 1 |
+| Computer Systems Science and Engineering | Tech Science Press | 0267-6192 | 1 |
+
+## Research Grant
+
+- **Smart Security for Connected Cyber-Physical Systems: Paradigms, Threats and AI-based Defenses** — grant, Università di Pisa, Prot. 0079213/2026 del 16/04/2026.
+
+---
+
+## Key Research Themes
+
+- **Security Twin**: Non-intrusive digital twin architectures for real-time cyber threat simulation, what-if analysis, attack-path analysis and proactive defence in cyber-physical systems (NotLine, HAVE).
+- **Quantum ML & Post-Quantum Security**: Hybrid quantum graph neural networks, quantum feature encoding, quantum-classical physical-layer authentication (QUASAR), CSIDH-based PQC for industrial IoT.
+- **6G & Edge Digital Twins**: Semantic-aware digital twin synchronisation and far-edge architectures with asynchronous federated learning.
+- **UAV Swarm Security**: Byzantine-resilient anomaly detection via TinyML and Edge AI for decentralised drone swarms (ResilientGuard, KAUST).
+- **Synthetic Data & AI Agents for Cybersecurity**: Synthetic datasets for robust intrusion detection; security of LLM-driven multi-agent systems.
+- **Least Privilege in Databases**: Schema-level decomposition enforcing fine-grained access control in healthcare and enterprise systems.
+- **NLP**: Hate speech detection, sentiment analysis and figurative language classification.
+
+---
+
+## Affiliations
+
+- University of Pisa — National PhD Programme in Artificial Intelligence, Department of Computer Science (Sep 2024 – present; doctoral position Nov 2024 – Oct 2027)
+- University of Pisa — Research Fellow, Department of Computer Science (Mar 2024 – Sep 2024)
+- University of Pisa — Research Fellow, Department of Philology, Literature and Linguistics (Nov 2023 – Mar 2024)
+- University of Pisa — Research Fellow, Department of Clinical and Experimental Medicine (Jan 2023 – Dec 2023)
+- University of Pisa — Research Fellow, Direzione Didattica, Studenti e Internazionalizzazione (Nov 2022 – Dec 2022)
+- University of Pisa — Research Fellow, Department of Philology, Literature and Linguistics (Jan 2022 – Dec 2022)
+- CNR — Istituto di Linguistica Computazionale "A. Zampolli", Pisa — Research Internship (Oct 2021 – May 2022)
+- KAUST (King Abdullah University of Science and Technology) — VSRP Intern (Jan – Jun 2026)
+- Supervisors: Prof. Fabrizio Baiardi (UniPi), Prof. Salvatore Ruggieri (UniPi, co-supervisor), Prof. Roberto Di Pietro (KAUST)
+
+## Links
+
+- Homepage: https://ilsamaritano.github.io/
+- ORCID: https://orcid.org/0009-0002-4632-1179
+- Google Scholar: https://scholar.google.com/citations?user=lQig7SEAAAAJ
+- Scopus: https://www.scopus.com/authid/detail.uri?authorId=59166600100
+- SciProfiles: https://sciprofiles.com/profile/3668849
+- University of Pisa profile: https://people.unipi.it/vincenzo_sammartino/
+- GitHub: https://github.com/ilsamaritano
+- LinkedIn: https://www.linkedin.com/in/vincenzo-sammartino-0339191a1
+- SV WebStudio (custom websites: showcase sites, e-commerce, restyling, performance & SEO): https://ilsamaritano.github.io/sv-webstudio/ · Instagram @sv_webstudio
