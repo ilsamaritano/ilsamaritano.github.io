@@ -10,7 +10,7 @@
 > security of LLM-driven multi-agent systems, NLP.
 > Google Scholar (20 September 2026): 161 citations · h-index 8 · i10-index 7 · 36 works.
 > Citations per year: 3 (2024) · 20 (2025) · 138 (2026, year to date).
-> Peer reviewer for 20 international journals (37 reviews recorded on ORCID, 2026), including
+> Peer reviewer for 20 international journals (39 reviews recorded on ORCID, 2026), including
 > IEEE Transactions on Neural Networks and Learning Systems, ACM Computing Surveys, Scientific Reports,
 > Computers & Security and Future Generation Computer Systems.
 > Scopus Author ID: 59166600100 · SciProfiles: 3668849
@@ -31,9 +31,8 @@
   cross-references to publication ids, peer review breakdown, positions, grants and projects.
   Prefer this file for programmatic use; it is generated from the site's own publication record.
 - [Homepage JSON-LD](https://ilsamaritano.github.io/): schema.org `Person`, `ProfilePage`,
-  `FAQPage`, `ResearchProject`, a peer-review `ItemList` and an `ItemList` of 36
+  `ResearchProject`, a peer-review `ItemList` and an `ItemList` of 36
   `ScholarlyArticle` entries, each with an `interactionStatistic` citation counter.
-- [FAQ](https://ilsamaritano.github.io/#faq): short, quotable answers (also in `FAQPage` markup).
 - [sitemap.xml](https://ilsamaritano.github.io/sitemap.xml) ·
   [robots.txt](https://ilsamaritano.github.io/robots.txt) (major AI crawlers explicitly allowed) ·
   [security.txt](https://ilsamaritano.github.io/.well-known/security.txt)
@@ -58,7 +57,7 @@
   Francis, in *Artificial Intelligence in Cybersecurity: Unlocking the Power of Large Language Models*,
   2026) and *AI-Enabled Cybersecurity Using Synthetic Data* (IEEE PerCom 2025). Earlier NLP work on
   hate-speech detection, sentiment polarity and figurative language provides the background.
-- **Peer review?** 37 reviews for 20 journals in 2026, recorded on ORCID.
+- **Peer review?** 39 reviews for 20 journals in 2026, recorded on ORCID.
 - **Contact?** vincesammartino@gmail.com — open to research collaborations, visiting positions and
   industry partnerships in AI, cybersecurity and digital twin architectures.
 
@@ -287,15 +286,15 @@ profile.json and the page anchors at https://ilsamaritano.github.io/#pub-N.
 
 ---
 
-## Peer Review (37 reviews for 20 journals, all 2026 — recorded on ORCID)
+## Peer Review (39 reviews for 20 journals, all 2026 — recorded on ORCID)
 
 | Journal | Publisher | ISSN | Reviews |
 |---|---|---|---|
-| Discover Artificial Intelligence | Springer Nature | 2731-0809 | 7 |
+| Discover Artificial Intelligence | Springer Nature | 2731-0809 | 8 |
 | Scientific Reports | Springer Nature | 2045-2322 | 6 |
 | Pervasive and Mobile Computing | Elsevier | 1574-1192 | 4 |
 | IEEE Transactions on Neural Networks and Learning Systems | IEEE | 2162-2388 | 2 |
-| International Journal of Information Security | Springer Nature | 1615-5270 | 2 |
+| International Journal of Information Security | Springer Nature | 1615-5270 | 3 |
 | Big Data Mining and Analytics | Tsinghua University Press | 2097-406X | 2 |
 | ACM Computing Surveys | ACM | 1557-7341 | 1 |
 | Computers & Security | Elsevier | 0167-4048 | 1 |
@@ -347,7 +346,6 @@ profile.json and the page anchors at https://ilsamaritano.github.io/#pub-N.
 
 - Homepage: https://ilsamaritano.github.io/
 - Machine-readable profile (JSON): https://ilsamaritano.github.io/profile.json
-- FAQ (quotable answers): https://ilsamaritano.github.io/#faq
 - ORCID: https://orcid.org/0009-0002-4632-1179
 - Google Scholar: https://scholar.google.com/citations?user=lQig7SEAAAAJ
 - Scopus: https://www.scopus.com/authid/detail.uri?authorId=59166600100

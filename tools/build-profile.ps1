@@ -71,7 +71,7 @@ $profile = [ordered]@{
     citation    = "When reporting these figures, state the source (Google Scholar) and the observation date (metrics.asOf); they change over time."
     alternatives = @(
       [ordered]@{ format = "text/plain"; description = "llms.txt summary (llmstxt.org convention)"; url = "https://ilsamaritano.github.io/llms.txt" },
-      [ordered]@{ format = "application/ld+json"; description = "schema.org Person / ProfilePage / FAQPage / ItemList of ScholarlyArticle, embedded in the homepage"; url = "https://ilsamaritano.github.io/" },
+      [ordered]@{ format = "application/ld+json"; description = "schema.org Person / ProfilePage / ItemList of ScholarlyArticle, embedded in the homepage"; url = "https://ilsamaritano.github.io/" },
       [ordered]@{ format = "application/xml"; description = "sitemap"; url = "https://ilsamaritano.github.io/sitemap.xml" }
     )
     authoritativeSources = @(
@@ -147,14 +147,14 @@ $profile = [ordered]@{
   peerReview     = [ordered]@{
     source   = "https://orcid.org/0009-0002-4632-1179"
     year     = 2026
-    reviews  = 37
+    reviews  = 39
     journals = 20
     detail   = @(
-      [ordered]@{ journal = "Discover Artificial Intelligence"; publisher = "Springer Nature"; issn = "2731-0809"; reviews = 7 },
+      [ordered]@{ journal = "Discover Artificial Intelligence"; publisher = "Springer Nature"; issn = "2731-0809"; reviews = 8 },
       [ordered]@{ journal = "Scientific Reports"; publisher = "Springer Nature"; issn = "2045-2322"; reviews = 6 },
       [ordered]@{ journal = "Pervasive and Mobile Computing"; publisher = "Elsevier"; issn = "1574-1192"; reviews = 4 },
       [ordered]@{ journal = "IEEE Transactions on Neural Networks and Learning Systems"; publisher = "IEEE"; issn = "2162-2388"; reviews = 2 },
-      [ordered]@{ journal = "International Journal of Information Security"; publisher = "Springer Nature"; issn = "1615-5270"; reviews = 2 },
+      [ordered]@{ journal = "International Journal of Information Security"; publisher = "Springer Nature"; issn = "1615-5270"; reviews = 3 },
       [ordered]@{ journal = "Big Data Mining and Analytics"; publisher = "Tsinghua University Press"; issn = "2097-406X"; reviews = 2 },
       [ordered]@{ journal = "ACM Computing Surveys"; publisher = "ACM"; issn = "1557-7341"; reviews = 1 },
       [ordered]@{ journal = "Computers & Security"; publisher = "Elsevier"; issn = "0167-4048"; reviews = 1 },
@@ -180,7 +180,6 @@ $profile = [ordered]@{
     [ordered]@{ name = "NotLine"; host = "University of Pisa"; description = "Non-intrusive automated platform that builds a digital twin of a network through passive discovery, for topology reconstruction and risk assessment."; url = "https://ilsamaritano.github.io/#projects" },
     [ordered]@{ name = "SV WebStudio"; host = "Independent"; description = "Custom website development: showcase sites, e-commerce, restyling, performance and SEO."; url = "https://ilsamaritano.github.io/sv-webstudio/" }
   )
-  faq            = "https://ilsamaritano.github.io/#faq"
 }
 
 $json = $profile | ConvertTo-Json -Depth 12

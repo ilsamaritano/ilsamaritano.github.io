@@ -30,7 +30,7 @@ The implementation is intentionally dependency-free at the deployment level — 
 | **Total Citations** | 161 (Google Scholar, 20 Sep 2026) |
 | **H-Index / i10-Index** | 8 / 7 |
 | **Publications** | 36 (IEEE · Springer · Elsevier · CRC/Taylor & Francis · arXiv / SSRN preprints) |
-| **Peer Review** | 37 reviews for 20 journals (2026, ORCID) — incl. IEEE TNNLS, ACM Computing Surveys, Scientific Reports, Computers & Security, FGCS |
+| **Peer Review** | 39 reviews for 20 journals (2026, ORCID) — incl. IEEE TNNLS, ACM Computing Surveys, Scientific Reports, Computers & Security, FGCS |
 | **Research Grant** | *Smart Security for Connected Cyber-Physical Systems: Paradigms, Threats and AI-based Defenses* — Università di Pisa (2026) |
 | **Identifiers** | ORCID 0009-0002-4632-1179 · Scopus 59166600100 · SciProfiles 3668849 |
 
