@@ -23,7 +23,7 @@ The implementation is intentionally dependency-free at the deployment level — 
 
 | Field | Detail |
 |---|---|
-| **Primary Affiliation** | National PhD Programme in Artificial Intelligence, Università di Pisa |
+| **Primary Affiliation** | National PhD Programme in Artificial Intelligence, [Università di Pisa](https://people.unipi.it/vincenzo_sammartino/) |
 | **Visiting Position** | VSRP Intern, KAUST · Thuwal, Saudi Arabia (Jan–Jun 2026) |
 | **Supervisors** | Prof. Fabrizio Baiardi (UniPi) · Prof. Salvatore Ruggieri (UniPi) · Prof. Roberto Di Pietro (KAUST) |
 | **Research Areas** | Security Twin · Digital Twin Architectures · Cyber-Physical Systems Resilience · Quantum ML & Post-Quantum Security · 6G Edge Digital Twins · UAV Swarm Security · TinyML / Edge AI · NLP |
@@ -209,6 +209,7 @@ Most-cited works (Google Scholar, 20 September 2026). The complete record is on 
 | Channel | Reference |
 |---|---|
 | **Email** | [vincesammartino@gmail.com](mailto:vincesammartino@gmail.com) |
+| **University of Pisa** | [people.unipi.it/vincenzo_sammartino](https://people.unipi.it/vincenzo_sammartino/) — institutional profile |
 | **ORCID** | [0009-0002-4632-1179](https://orcid.org/0009-0002-4632-1179) |
 | **Google Scholar** | [scholar.google.com/citations?user=lQig7SEAAAAJ](https://scholar.google.com/citations?user=lQig7SEAAAAJ) |
 | **LinkedIn** | [vincenzo-sammartino-0339191a1](https://www.linkedin.com/in/vincenzo-sammartino-0339191a1) |
