@@ -5,7 +5,7 @@
 [![Live](https://img.shields.io/badge/Live-ilsamaritano.github.io-00e5ff?style=flat-square&logo=github)](https://ilsamaritano.github.io)
 [![License](https://img.shields.io/badge/License-MIT-7c3aed?style=flat-square)](LICENSE)
 [![ORCID](https://img.shields.io/badge/ORCID-0009--0002--4632--1179-a6ce39?style=flat-square&logo=orcid)](https://orcid.org/0009-0002-4632-1179)
-[![Citations](https://img.shields.io/badge/Citations-160-10b981?style=flat-square)](https://scholar.google.com/citations?user=lQig7SEAAAAJ)
+[![Citations](https://img.shields.io/badge/Citations-161-10b981?style=flat-square)](https://scholar.google.com/citations?user=lQig7SEAAAAJ)
 [![H-Index](https://img.shields.io/badge/H--Index-8-10b981?style=flat-square)](https://scholar.google.com/citations?user=lQig7SEAAAAJ)
 [![i10-Index](https://img.shields.io/badge/i10--Index-7-10b981?style=flat-square)](https://scholar.google.com/citations?user=lQig7SEAAAAJ)
 
@@ -27,7 +27,7 @@ The implementation is intentionally dependency-free at the deployment level — 
 | **Visiting Position** | VSRP Intern, KAUST · Thuwal, Saudi Arabia (Jan–Jun 2026) |
 | **Supervisors** | Prof. Fabrizio Baiardi (UniPi) · Prof. Salvatore Ruggieri (UniPi) · Prof. Roberto Di Pietro (KAUST) |
 | **Research Areas** | Security Twin · Digital Twin Architectures · Cyber-Physical Systems Resilience · Quantum ML & Post-Quantum Security · 6G Edge Digital Twins · UAV Swarm Security · TinyML / Edge AI · NLP |
-| **Total Citations** | 160 (Google Scholar, 15 Sep 2026) |
+| **Total Citations** | 161 (Google Scholar, 20 Sep 2026) |
 | **H-Index / i10-Index** | 8 / 7 |
 | **Publications** | 36 (IEEE · Springer · Elsevier · CRC/Taylor & Francis · arXiv / SSRN preprints) |
 | **Peer Review** | 37 reviews for 20 journals (2026, ORCID) — incl. IEEE TNNLS, ACM Computing Surveys, Scientific Reports, Computers & Security, FGCS |
@@ -49,6 +49,10 @@ ilsamaritano.github.io/
 ├── robots.txt          # Crawler directives (search engines + AI agents)
 ├── sitemap.xml         # URL manifest for search engine discovery
 ├── llms.txt            # LLM-readable identity and research summary (llmstxt.org)
+├── profile.json        # Complete machine-readable record (generated from index.html)
+├── tools/
+│   ├── build-profile.ps1     # index.html → profile.json
+│   └── build-llms-pubs.py    # profile.json → llms.txt publication block
 ├── .well-known/security.txt
 └── readme.md           # This document
 ```
@@ -76,17 +80,22 @@ The site is a **static HTML5 document** with no external JavaScript dependencies
 | Scholar impact panel | Citations / h-index / i10-index / publications counters, citations-per-year bar chart (with screen-reader table), and top-cited works |
 | Publications explorer | Type filter with counts, multi-term search over title/venue/authors, sort by newest or most cited, live result count (`aria-live`) |
 | Theses | Supervised theses with EN/IT language toggle (persisted in `localStorage`) |
+| FAQ | Eight `<details>` answers (no JavaScript required), mirrored verbatim in `FAQPage` JSON-LD |
 | Accessibility | Skip link, `:focus-visible` outlines, semantic `<main>`/`<nav>`, accessible mobile menu (Escape to close, `aria-expanded`) |
 
 ---
 
 ## SEO and AI Discoverability
 
-**Structured Data (JSON-LD).** Schema.org `Person`, `ProfilePage`, `ResearchProject`, and an `ItemList` of `ScholarlyArticle` entries (one per publication, with arXiv / SSRN / DOI / Zenodo identifiers where available).
+**Structured Data (JSON-LD).** Schema.org `Person`, `ProfilePage`, `FAQPage`, `ResearchProject`, a peer-review `ItemList`, and an `ItemList` of `ScholarlyArticle` entries — one per publication, with arXiv / SSRN / DOI / Zenodo identifiers where available and an `interactionStatistic` (`CiteAction`) citation counter carrying its `observationDate`. The `Person` node additionally exposes citations, h-index, i10-index, work count and review counts as dated `PropertyValue` entries, so an agent can read the bibliometrics without scraping the rendered page.
 
-**Crawler Directives.** `robots.txt` includes explicit `Allow` directives for `GPTBot`, `ClaudeBot`, `anthropic-ai`, and `PerplexityBot`.
+**Machine-readable Profile.** `profile.json` is the canonical structured record: identity, persistent identifiers, metrics with observation date and citations-per-year, all 36 works (id, title, authors, author position, venue, type, year, citation count, persistent links), research themes cross-referenced to publication ids, the peer-review breakdown, positions, grants and projects. It is *generated from* `index.html` (see `Deployment` below), so the page and the JSON cannot drift apart. Advertised via `<link rel="alternate" type="application/json">`, `sitemap.xml`, `robots.txt` and `llms.txt`.
 
-**LLM-readable Summary.** `llms.txt` (per the [llmstxt.org](https://llmstxt.org) specification) lists identity, metrics and the complete publication record.
+**Crawler Directives.** `robots.txt` carries explicit `Allow` directives for indexing crawlers (`GPTBot`, `ClaudeBot`, `anthropic-ai`, `Google-Extended`, `PerplexityBot`, `Applebot-Extended`, `CCBot`, `Meta-ExternalAgent`, `cohere-ai`, `Amazonbot`, `Bytespider`) and for on-demand assistant fetchers (`OAI-SearchBot`, `ChatGPT-User`, `Claude-User`, `Claude-SearchBot`, `Perplexity-User`, `DuckAssistBot`, `MistralAI-User`, `YouBot`), while blocking commercial SEO scrapers.
+
+**LLM-readable Summary.** `llms.txt` (per the [llmstxt.org](https://llmstxt.org) specification) opens with a machine-readable endpoint index and a *Quick answers* block, then lists identity, metrics and the complete publication record grouped by year, each entry tagged with its output type and citation count.
+
+**Direct Answers.** The `#faq` section publishes eight short, quotable answers — including "what is a Security Twin", the current bibliometrics with their observation date, and the LLM / AI-agent security research — as both readable HTML and `FAQPage` structured data.
 
 **Identity Graph.** `rel="me"` link annotations and `sameAs` JSON-LD properties link this domain to ORCID, Google Scholar, LinkedIn and GitHub.
 
@@ -108,18 +117,32 @@ git commit -m "update: <scope> — <description>"
 git push origin main
 ```
 
+### Refreshing the bibliometrics
+
+`index.html` is the single source of truth for the publication record; the machine-readable files are derived from it.
+
+1. Update the Google Scholar figures in `index.html` — the metric cards and citations-per-year chart in `#metrics`, the `data-cites` / `pub-citations` values and `interactionStatistic` counters of each publication, the `PropertyValue` entries on the `Person` node, and the prose figures in `#about`, `#faq` and `#contact`. Bump the observation date (`2026-09-20`) wherever it appears, including `dateModified` and `sitemap.xml`.
+2. Regenerate the derived files:
+
+```bash
+powershell -File tools/build-profile.ps1 -AsOf 2026-09-20   # index.html → profile.json
+python tools/build-llms-pubs.py                             # profile.json → llms.txt pubs block
+```
+
+`build-profile.ps1` refuses to write unless it parses exactly 36 publication cards, and `build-llms-pubs.py` refuses unless the `PUBS:START` / `PUBS:END` markers are found exactly once — so a malformed edit fails loudly instead of silently shipping a partial record. Both are idempotent: re-running them on an unchanged page reproduces byte-identical output. Prose sections of `llms.txt` (identity header, quick answers, peer review, themes, affiliations) are maintained by hand.
+
 The canonical live endpoint is: **[https://ilsamaritano.github.io](https://ilsamaritano.github.io)**
 
 ---
 
 ## Selected Publications
 
-Most-cited works (Google Scholar, September 2026). The complete record is on the website, in [`llms.txt`](llms.txt), on [Google Scholar](https://scholar.google.com/citations?user=lQig7SEAAAAJ) and [ORCID](https://orcid.org/0009-0002-4632-1179).
+Most-cited works (Google Scholar, 20 September 2026). The complete record is on the website, in [`profile.json`](profile.json) and [`llms.txt`](llms.txt), on [Google Scholar](https://scholar.google.com/citations?user=lQig7SEAAAAJ) and [ORCID](https://orcid.org/0009-0002-4632-1179).
 
 - *AI-Enabled Cybersecurity Using Synthetic Data* — **IEEE PerCom 2025** · 17 citations
 - *Anticipating Disasters through a Security Twin* — Dynamics of Disasters: Hybrid Threats, Springer, 2026 · 14 citations
+- *A Security Twin to Defeat Intrusions in Cyber Physical Systems* — ESREL SRA-E 2025 · 14 citations
 - *A Framework for Proactive Cyber-Resilience: Non-Intrusive Modeling for Autonomous Defense* — DS-RT 2025 · 13 citations
-- *A Security Twin to Defeat Intrusions in Cyber Physical Systems* — ESREL SRA-E 2025 · 13 citations
 - *NotLine: A Non-Intrusive Automated Platform to Build a Digital Twin* — DS-RT 2025 · 11 citations
 - *A Quantitative Framework for the Validation of Twin-Based Cyber Defense* — Procedia Computer Science 274, 2025 · 11 citations
 - *Simulation-Powered Cybersecurity: Real-Time Risk Assessment via Non-Intrusive Security Twin* — The Journal of Supercomputing, 2026 · 10 citations

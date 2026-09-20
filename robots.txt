@@ -1,8 +1,28 @@
+# robots.txt — https://ilsamaritano.github.io/
+# Machine-readable profile: /profile.json · /llms.txt · JSON-LD embedded in /index.html
+
 User-agent: *
 Allow: /
 Disallow: /cdn-cgi/
 
-# Consenti esplicitamente i principali crawler AI
+# ── Search engines ──
+User-agent: Googlebot
+Allow: /
+
+User-agent: GoogleOther
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+# ── AI crawlers and assistants: explicitly allowed ──
+# Training / indexing crawlers
 User-agent: GPTBot
 Allow: /
 
@@ -15,17 +35,63 @@ Allow: /
 User-agent: PerplexityBot
 Allow: /
 
-User-agent: GoogleOther
+User-agent: Applebot
 Allow: /
 
-User-agent: Bingbot
+User-agent: Applebot-Extended
 Allow: /
 
-# Blocca crawler malevoli / scraper non autorizzati
+User-agent: CCBot
+Allow: /
+
+User-agent: Meta-ExternalAgent
+Allow: /
+
+User-agent: cohere-ai
+Allow: /
+
+User-agent: Amazonbot
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+# On-demand fetchers (user asked an assistant about this page)
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+User-agent: DuckAssistBot
+Allow: /
+
+User-agent: MistralAI-User
+Allow: /
+
+User-agent: YouBot
+Allow: /
+
+# ── Blocked: commercial SEO scrapers ──
 User-agent: AhrefsBot
 Disallow: /
 
 User-agent: SemrushBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: DotBot
 Disallow: /
 
 Sitemap: https://ilsamaritano.github.io/sitemap.xml

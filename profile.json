@@ -1,0 +1,1010 @@
+{
+  "document": "Machine-readable academic profile of Vincenzo Sammartino",
+  "canonicalUrl": "https://ilsamaritano.github.io/profile.json",
+  "generatedFrom": "https://ilsamaritano.github.io/ (index.html publication record)",
+  "lastUpdated": "2026-09-20",
+  "license": "CC BY 4.0 — attribution: Vincenzo Sammartino, https://ilsamaritano.github.io/",
+  "usage": {
+    "audience": "Search engines, AI assistants, research-indexing agents and scripts.",
+    "citation": "When reporting these figures, state the source (Google Scholar) and the observation date (metrics.asOf); they change over time.",
+    "alternatives": [
+      {
+        "format": "text/plain",
+        "description": "llms.txt summary (llmstxt.org convention)",
+        "url": "https://ilsamaritano.github.io/llms.txt"
+      },
+      {
+        "format": "application/ld+json",
+        "description": "schema.org Person / ProfilePage / FAQPage / ItemList of ScholarlyArticle, embedded in the homepage",
+        "url": "https://ilsamaritano.github.io/"
+      },
+      {
+        "format": "application/xml",
+        "description": "sitemap",
+        "url": "https://ilsamaritano.github.io/sitemap.xml"
+      }
+    ],
+    "authoritativeSources": [
+      "https://scholar.google.com/citations?user=lQig7SEAAAAJ",
+      "https://orcid.org/0009-0002-4632-1179",
+      "https://www.scopus.com/authid/detail.uri?authorId=59166600100",
+      "https://people.unipi.it/vincenzo_sammartino/"
+    ]
+  },
+  "person": {
+    "name": "Vincenzo Sammartino",
+    "givenName": "Vincenzo",
+    "familyName": "Sammartino",
+    "jobTitle": "PhD Candidate in Artificial Intelligence",
+    "summary": "PhD candidate in Artificial Intelligence at the University of Pisa (Italian National PhD Programme in AI, doctoral position November 2024 – October 2027) and former Visiting PhD Student (VSRP Intern) at KAUST, January–June 2026. Works on Security Twins and Digital Twin architectures for cybersecurity, cyber-physical systems resilience, quantum machine learning and post-quantum security, 6G far-edge digital twins, UAV swarm security with TinyML and Edge AI, the security of LLM-driven multi-agent systems, and NLP.",
+    "email": "vincesammartino@gmail.com",
+    "emailInstitutional": "v.sammartino@phd.unipi.it",
+    "website": "https://ilsamaritano.github.io/",
+    "locations": [
+      "Pisa, Italy",
+      "Thuwal, Saudi Arabia"
+    ],
+    "languages": [
+      "Italian (native)",
+      "English"
+    ],
+    "image": "https://ilsamaritano.github.io/assets/photo.jpg"
+  },
+  "identifiers": {
+    "orcid": "0009-0002-4632-1179",
+    "orcidUrl": "https://orcid.org/0009-0002-4632-1179",
+    "googleScholarId": "lQig7SEAAAAJ",
+    "googleScholarUrl": "https://scholar.google.com/citations?user=lQig7SEAAAAJ",
+    "scopusAuthorId": "59166600100",
+    "scopusUrl": "https://www.scopus.com/authid/detail.uri?authorId=59166600100",
+    "sciProfilesId": "3668849",
+    "sciProfilesUrl": "https://sciprofiles.com/profile/3668849",
+    "github": "https://github.com/ilsamaritano",
+    "linkedin": "https://www.linkedin.com/in/vincenzo-sammartino-0339191a1",
+    "institutionalPage": "https://people.unipi.it/vincenzo_sammartino/"
+  },
+  "metrics": {
+    "source": "Google Scholar",
+    "sourceUrl": "https://scholar.google.com/citations?user=lQig7SEAAAAJ",
+    "asOf": "2026-09-20",
+    "citations": 161,
+    "hIndex": 8,
+    "i10Index": 7,
+    "indexedWorks": 36,
+    "citationsByYear": {
+      "2024": 3,
+      "2025": 20,
+      "2026": 138
+    },
+    "note": "2026 is year to date. Sum of per-publication citation counts in this file: 158 (Google Scholar's profile total may differ slightly because of merged or duplicate records)."
+  },
+  "positions": [
+    {
+      "role": "PhD Candidate, National PhD Programme in Artificial Intelligence",
+      "organization": "University of Pisa, Department of Computer Science",
+      "start": "2024-09",
+      "end": null,
+      "note": "Doctoral position November 2024 – October 2027"
+    },
+    {
+      "role": "Visiting PhD Student (VSRP Intern)",
+      "organization": "King Abdullah University of Science and Technology (KAUST)",
+      "start": "2026-01",
+      "end": "2026-06",
+      "note": "ResilientGuard project, under Prof. Roberto Di Pietro"
+    },
+    {
+      "role": "Research Fellow",
+      "organization": "University of Pisa, Department of Computer Science",
+      "start": "2024-03",
+      "end": "2024-09"
+    },
+    {
+      "role": "Research Fellow",
+      "organization": "University of Pisa, Department of Philology, Literature and Linguistics",
+      "start": "2023-11",
+      "end": "2024-03"
+    },
+    {
+      "role": "Research Fellow",
+      "organization": "University of Pisa, Department of Clinical and Experimental Medicine",
+      "start": "2023-01",
+      "end": "2023-12"
+    },
+    {
+      "role": "Research Fellow",
+      "organization": "University of Pisa, Direzione Didattica, Studenti e Internazionalizzazione",
+      "start": "2022-11",
+      "end": "2022-12"
+    },
+    {
+      "role": "Research Fellow",
+      "organization": "University of Pisa, Department of Philology, Literature and Linguistics",
+      "start": "2022-01",
+      "end": "2022-12"
+    },
+    {
+      "role": "Research Intern",
+      "organization": "CNR — Istituto di Linguistica Computazionale 'A. Zampolli', Pisa",
+      "start": "2021-10",
+      "end": "2022-05"
+    }
+  ],
+  "supervisors": [
+    {
+      "name": "Fabrizio Baiardi",
+      "role": "PhD supervisor",
+      "organization": "University of Pisa"
+    },
+    {
+      "name": "Salvatore Ruggieri",
+      "role": "PhD co-supervisor",
+      "organization": "University of Pisa"
+    },
+    {
+      "name": "Roberto Di Pietro",
+      "role": "KAUST host supervisor",
+      "organization": "KAUST"
+    }
+  ],
+  "researchThemes": [
+    {
+      "name": "Security Twin",
+      "description": "Non-intrusive digital twin architectures for real-time cyber threat simulation, what-if analysis, attack-path reasoning and proactive defence in cyber-physical systems (NotLine, HAVE, D3F).",
+      "keyPublications": [
+        "pub-1",
+        "pub-9",
+        "pub-22",
+        "pub-35"
+      ]
+    },
+    {
+      "name": "Quantum ML & post-quantum security",
+      "description": "Hybrid quantum graph neural networks, quantum feature encoding, quantum-classical physical-layer authentication (QUASAR) and CSIDH-based post-quantum cryptography for industrial IoT.",
+      "keyPublications": [
+        "pub-12",
+        "pub-13",
+        "pub-14",
+        "pub-17"
+      ]
+    },
+    {
+      "name": "6G & far-edge digital twins",
+      "description": "Semantic-aware digital twin synchronisation and quantum-native far-edge architectures with asynchronous federated learning.",
+      "keyPublications": [
+        "pub-10",
+        "pub-14"
+      ]
+    },
+    {
+      "name": "UAV swarm security",
+      "description": "Byzantine-resilient anomaly detection with TinyML and Edge AI for decentralised drone swarms (ResilientGuard, KAUST).",
+      "keyPublications": []
+    },
+    {
+      "name": "LLM & AI-agent security",
+      "description": "Security threats and defences in LLM-driven multi-agent systems (prompt injection, tool misuse, inter-agent trust, privilege escalation) and the use of LLMs plus synthetic data for next-generation cyber defence.",
+      "keyPublications": [
+        "pub-36",
+        "pub-3",
+        "pub-19"
+      ]
+    },
+    {
+      "name": "Synthetic data for cybersecurity",
+      "description": "Synthetic dataset generation for robust intrusion detection and autonomous defence.",
+      "keyPublications": [
+        "pub-19",
+        "pub-3"
+      ]
+    },
+    {
+      "name": "Least privilege in databases",
+      "description": "Schema-level decomposition enforcing fine-grained access control in healthcare and enterprise systems.",
+      "keyPublications": [
+        "pub-30",
+        "pub-31",
+        "pub-32"
+      ]
+    },
+    {
+      "name": "Natural language processing",
+      "description": "Hate speech and stereotype detection, sentiment polarity classification and figurative language in Italian and multi-domain corpora.",
+      "keyPublications": [
+        "pub-29",
+        "pub-27",
+        "pub-33"
+      ]
+    }
+  ],
+  "publications": [
+    {
+      "id": "pub-1",
+      "title": "Anticipating Disasters through a Security Twin",
+      "authors": [
+        "F. Baiardi",
+        "S. Ruggieri",
+        "V. Sammartino"
+      ],
+      "authorPosition": 3,
+      "venue": "Dynamics of Disasters: Hybrid Threats — Springer Optimization and Its Applications (DoD 2024, Vienna)",
+      "type": "book",
+      "outputForm": "Book Chapter",
+      "year": 2026,
+      "citations": 14,
+      "url": "https://ilsamaritano.github.io/#pub-1",
+      "identifiers": [
+        {
+          "label": "Zenodo",
+          "url": "https://zenodo.org/records/19019069"
+        }
+      ]
+    },
+    {
+      "id": "pub-2",
+      "title": "Simulation-Powered Cybersecurity: Real-Time Risk Assessment via Non-Intrusive Security Twin",
+      "authors": [
+        "F. Baiardi",
+        "V. Sammartino"
+      ],
+      "authorPosition": 2,
+      "venue": "The Journal of Supercomputing — Special Issue on Simulation-Powered Cybersecurity · Springer",
+      "type": "journal",
+      "outputForm": "Journal",
+      "year": 2026,
+      "citations": 10,
+      "url": "https://ilsamaritano.github.io/#pub-2"
+    },
+    {
+      "id": "pub-3",
+      "title": "From Digital Twins to AI Agents: A Synthetic Data Paradigm for Next-Generation Cybersecurity",
+      "authors": [
+        "F. Baiardi",
+        "V. Sammartino"
+      ],
+      "authorPosition": 2,
+      "venue": "Artificial Intelligence in Cybersecurity: Unlocking the Power of Large Language Models · CRC Press / Taylor & Francis",
+      "type": "book",
+      "outputForm": "Book Chapter",
+      "year": 2026,
+      "citations": 9,
+      "url": "https://ilsamaritano.github.io/#pub-3"
+    },
+    {
+      "id": "pub-4",
+      "title": "Quantifying the Impact of CVSS Score Ordering on Attack Paths",
+      "authors": [
+        "F. Baiardi",
+        "V. Sammartino"
+      ],
+      "authorPosition": 2,
+      "venue": "12th EAI International Conference on Smart Objects and Technologies for Social Good (GOODTECHS 2026)",
+      "type": "conference",
+      "outputForm": "Conference",
+      "year": 2026,
+      "citations": 8,
+      "url": "https://ilsamaritano.github.io/#pub-4"
+    },
+    {
+      "id": "pub-5",
+      "title": "Evaluating Adversary Strategies Through a Security Twin",
+      "authors": [
+        "F. Baiardi",
+        "V. Sammartino",
+        "S. Ruggieri"
+      ],
+      "authorPosition": 2,
+      "venue": "IEEE International Conference on Pervasive Computing and Communications (PerCom Workshops 2026)",
+      "type": "conference",
+      "outputForm": "Conference",
+      "year": 2026,
+      "citations": 6,
+      "url": "https://ilsamaritano.github.io/#pub-5"
+    },
+    {
+      "id": "pub-6",
+      "title": "Quantifying Resilience of Cyber-Physical Systems to Zero-Day Threats: A Security Twin-Based What-If Analysis Framework",
+      "authors": [
+        "F. Baiardi",
+        "V. Sammartino"
+      ],
+      "authorPosition": 2,
+      "venue": "Proceedings of the 36th European Safety and Reliability Conference (ESREL 2026)",
+      "type": "conference",
+      "outputForm": "Conference",
+      "year": 2026,
+      "citations": 3,
+      "url": "https://ilsamaritano.github.io/#pub-6"
+    },
+    {
+      "id": "pub-7",
+      "title": "Blockchain-Enabled Quantum-Resistant Hybrid Isogeny-Based Signcryption Framework for Digital Twin-Assisted Healthcare System",
+      "authors": [
+        "A.K. Pandey",
+        "V. Sammartino",
+        "A. Vangala",
+        "A.K. Das"
+      ],
+      "authorPosition": 2,
+      "venue": "IEEE Communications Standards Magazine",
+      "type": "journal",
+      "outputForm": "Journal",
+      "year": 2026,
+      "citations": 2,
+      "url": "https://ilsamaritano.github.io/#pub-7"
+    },
+    {
+      "id": "pub-8",
+      "title": "DOS Classification, and Virtual Machine Detection via Passive Monitoring through Security Twins",
+      "authors": [
+        "V. Sammartino",
+        "F. Baiardi",
+        "S. Ruggieri"
+      ],
+      "authorPosition": 1,
+      "venue": "IEEE Xplore",
+      "type": "conference",
+      "outputForm": "Conference",
+      "year": 2026,
+      "citations": 2,
+      "url": "https://ilsamaritano.github.io/#pub-8"
+    },
+    {
+      "id": "pub-9",
+      "title": "HAVE: Host Active Verification Engine for Closing the Contextual Reality Gap in Security Digital Twins",
+      "authors": [
+        "V. Sammartino",
+        "M. Pasquini"
+      ],
+      "authorPosition": 1,
+      "venue": "arXiv preprint arXiv:2606.06968",
+      "type": "preprint",
+      "outputForm": "Preprint",
+      "year": 2026,
+      "citations": 2,
+      "url": "https://ilsamaritano.github.io/#pub-9",
+      "identifiers": [
+        {
+          "label": "arXiv",
+          "url": "https://arxiv.org/abs/2606.06968"
+        }
+      ]
+    },
+    {
+      "id": "pub-10",
+      "title": "SA-DTS: Semantic-Aware Digital Twin Synchronization over 6G Networks",
+      "authors": [
+        "V. Sammartino"
+      ],
+      "authorPosition": 1,
+      "venue": "arXiv preprint arXiv:2606.03617",
+      "type": "preprint",
+      "outputForm": "Preprint",
+      "year": 2026,
+      "citations": 2,
+      "url": "https://ilsamaritano.github.io/#pub-10",
+      "identifiers": [
+        {
+          "label": "arXiv",
+          "url": "https://arxiv.org/abs/2606.03617"
+        }
+      ]
+    },
+    {
+      "id": "pub-11",
+      "title": "Model-Driven Security Analysis of SD-Access Fabrics Using Digital Twins: A Probabilistic Framework in Software-Defined Campus and Cyber-Physical Networks",
+      "authors": [
+        "V. Sammartino",
+        "M. Schneider"
+      ],
+      "authorPosition": 1,
+      "venue": "Future Generation Computer Systems · Elsevier",
+      "type": "journal",
+      "outputForm": "Journal",
+      "year": 2026,
+      "citations": 1,
+      "url": "https://ilsamaritano.github.io/#pub-11"
+    },
+    {
+      "id": "pub-12",
+      "title": "Hybrid Quantum Graph Neural Networks for Robust Botnet Detection in Modern IoT Ecosystems",
+      "authors": [
+        "V. Sammartino"
+      ],
+      "authorPosition": 1,
+      "venue": "Future Generation Computer Systems · Elsevier",
+      "type": "journal",
+      "outputForm": "Journal",
+      "year": 2026,
+      "citations": 1,
+      "url": "https://ilsamaritano.github.io/#pub-12"
+    },
+    {
+      "id": "pub-13",
+      "title": "Feature Encoding in Quantum Machine Learning: A Survey and Practical Guidelines",
+      "authors": [
+        "V. Sammartino"
+      ],
+      "authorPosition": 1,
+      "venue": "arXiv preprint arXiv:2606.05387",
+      "type": "preprint",
+      "outputForm": "Preprint",
+      "year": 2026,
+      "citations": 1,
+      "url": "https://ilsamaritano.github.io/#pub-13",
+      "identifiers": [
+        {
+          "label": "arXiv",
+          "url": "https://arxiv.org/abs/2606.05387"
+        }
+      ]
+    },
+    {
+      "id": "pub-14",
+      "title": "Q-FE: A Quantum-Native 6G Far-Edge Architecture Securing Industrial IoT Digital Twins via CSIDH-PQC and Asynchronous Federated Learning",
+      "authors": [
+        "V. Sammartino"
+      ],
+      "authorPosition": 1,
+      "venue": "arXiv preprint arXiv:2606.03611",
+      "type": "preprint",
+      "outputForm": "Preprint",
+      "year": 2026,
+      "citations": 1,
+      "url": "https://ilsamaritano.github.io/#pub-14",
+      "identifiers": [
+        {
+          "label": "arXiv",
+          "url": "https://arxiv.org/abs/2606.03611"
+        }
+      ]
+    },
+    {
+      "id": "pub-15",
+      "title": "Quantifying Cyber Robustness and Financial Risk via Security Twins",
+      "authors": [
+        "F. Baiardi",
+        "V. Sammartino"
+      ],
+      "authorPosition": 2,
+      "venue": "SSRN preprint 6890389",
+      "type": "preprint",
+      "outputForm": "Preprint",
+      "year": 2026,
+      "citations": 1,
+      "url": "https://ilsamaritano.github.io/#pub-15",
+      "identifiers": [
+        {
+          "label": "SSRN",
+          "url": "https://ssrn.com/abstract=6890389"
+        }
+      ]
+    },
+    {
+      "id": "pub-16",
+      "title": "SMCC-Empowered Digital Twins for Sensorless Monitoring in Large-Scale AI-Driven IoT Systems",
+      "authors": [
+        "V. Sammartino"
+      ],
+      "authorPosition": 1,
+      "venue": "arXiv preprint arXiv:2609.09161",
+      "type": "preprint",
+      "outputForm": "Preprint",
+      "year": 2026,
+      "citations": 0,
+      "url": "https://ilsamaritano.github.io/#pub-16",
+      "identifiers": [
+        {
+          "label": "arXiv",
+          "url": "https://arxiv.org/abs/2609.09161"
+        }
+      ]
+    },
+    {
+      "id": "pub-17",
+      "title": "QUASAR: A Quantum-Classical Neural Network for SAR Satellite Physical-Layer Authentication",
+      "authors": [
+        "V. Sammartino",
+        "N. Denis",
+        "R. Di Pietro"
+      ],
+      "authorPosition": 1,
+      "venue": "arXiv preprint arXiv:2608.20240",
+      "type": "preprint",
+      "outputForm": "Preprint",
+      "year": 2026,
+      "citations": 0,
+      "url": "https://ilsamaritano.github.io/#pub-17",
+      "identifiers": [
+        {
+          "label": "arXiv",
+          "url": "https://arxiv.org/abs/2608.20240"
+        }
+      ]
+    },
+    {
+      "id": "pub-18",
+      "title": "Adversarial Reliability: From Design to Deployment and Beyond Using Attack-Path Chokepoints",
+      "authors": [
+        "V. Sammartino",
+        "F. Baiardi",
+        "S. Ruggieri"
+      ],
+      "authorPosition": 1,
+      "venue": "SSRN preprint 7382213",
+      "type": "preprint",
+      "outputForm": "Preprint",
+      "year": 2026,
+      "citations": 0,
+      "url": "https://ilsamaritano.github.io/#pub-18",
+      "identifiers": [
+        {
+          "label": "SSRN",
+          "url": "https://ssrn.com/abstract=7382213"
+        }
+      ]
+    },
+    {
+      "id": "pub-19",
+      "title": "AI-Enabled Cybersecurity Using Synthetic Data",
+      "authors": [
+        "F. Baiardi",
+        "S. Ruggieri",
+        "V. Sammartino"
+      ],
+      "authorPosition": 3,
+      "venue": "23rd IEEE International Conference on Pervasive Computing and Communications (PerCom 2025), Washington DC",
+      "type": "conference",
+      "outputForm": "Conference",
+      "year": 2025,
+      "citations": 17,
+      "url": "https://ilsamaritano.github.io/#pub-19"
+    },
+    {
+      "id": "pub-20",
+      "title": "A Framework for Proactive Cyber-Resilience: Non-Intrusive Modeling for Autonomous Defense",
+      "authors": [
+        "V. Sammartino"
+      ],
+      "authorPosition": 1,
+      "venue": "29th International Symposium on Distributed Simulation and Real Time Applications (DS-RT 2025) · IEEE",
+      "type": "conference",
+      "outputForm": "Conference",
+      "year": 2025,
+      "citations": 13,
+      "url": "https://ilsamaritano.github.io/#pub-20"
+    },
+    {
+      "id": "pub-21",
+      "title": "A Security Twin to Defeat Intrusions in Cyber Physical Systems",
+      "authors": [
+        "F. Baiardi",
+        "S. Ruggieri",
+        "V. Sammartino"
+      ],
+      "authorPosition": 3,
+      "venue": "European Safety and Reliability Conference (ESREL SRA-E 2025), Stavanger, Norway",
+      "type": "conference",
+      "outputForm": "Conference",
+      "year": 2025,
+      "citations": 14,
+      "url": "https://ilsamaritano.github.io/#pub-21"
+    },
+    {
+      "id": "pub-22",
+      "title": "NotLine: A Non-Intrusive Automated Platform to Build a Digital Twin",
+      "authors": [
+        "F. Baiardi",
+        "V. Sammartino",
+        "S. Ruggieri"
+      ],
+      "authorPosition": 2,
+      "venue": "29th International Symposium on Distributed Simulation and Real Time Applications (DS-RT 2025) · IEEE",
+      "type": "conference",
+      "outputForm": "Conference",
+      "year": 2025,
+      "citations": 11,
+      "url": "https://ilsamaritano.github.io/#pub-22"
+    },
+    {
+      "id": "pub-23",
+      "title": "A Quantitative Framework for the Validation of Twin-Based Cyber Defense",
+      "authors": [
+        "F. Baiardi",
+        "V. Sammartino"
+      ],
+      "authorPosition": 2,
+      "venue": "Procedia Computer Science, vol. 274, pp. 721–730 · Elsevier",
+      "type": "conference",
+      "outputForm": "Proceedings",
+      "year": 2025,
+      "citations": 11,
+      "url": "https://ilsamaritano.github.io/#pub-23"
+    },
+    {
+      "id": "pub-24",
+      "title": "Graph-Based Cyber Defence Using a Security Twin",
+      "authors": [
+        "F. Baiardi",
+        "V. Sammartino",
+        "S. Ruggieri"
+      ],
+      "authorPosition": 2,
+      "venue": "29th International Symposium on Distributed Simulation and Real Time Applications (DS-RT 2025) · IEEE",
+      "type": "conference",
+      "outputForm": "Conference",
+      "year": 2025,
+      "citations": 8,
+      "url": "https://ilsamaritano.github.io/#pub-24"
+    },
+    {
+      "id": "pub-25",
+      "title": "Security Twins e il Futuro della Previsione di Intrusioni Cyber",
+      "authors": [
+        "F. Baiardi",
+        "S. Ruggieri",
+        "V. Sammartino"
+      ],
+      "authorPosition": 3,
+      "venue": "ICT Security Magazine",
+      "type": "journal",
+      "outputForm": "Magazine",
+      "year": 2025,
+      "citations": 4,
+      "url": "https://ilsamaritano.github.io/#pub-25"
+    },
+    {
+      "id": "pub-26",
+      "title": "Cyber Weapons as Components of Weapon Systems",
+      "authors": [
+        "F. Baiardi",
+        "V. Sammartino"
+      ],
+      "authorPosition": 2,
+      "venue": "Journal of Information Warfare, vol. 24, no. 4",
+      "type": "journal",
+      "outputForm": "Journal",
+      "year": 2025,
+      "citations": 1,
+      "url": "https://ilsamaritano.github.io/#pub-26",
+      "identifiers": [
+        {
+          "label": "Zenodo",
+          "url": "https://zenodo.org/records/19061347"
+        }
+      ]
+    },
+    {
+      "id": "pub-27",
+      "title": "A Comparative Study of NLP Systems for Sentiment Polarity Classification Across Different Domains and Genres",
+      "authors": [
+        "V. Sammartino"
+      ],
+      "authorPosition": 1,
+      "venue": "International Journal of Complexity in Applied Science and Technology",
+      "type": "journal",
+      "outputForm": "Journal",
+      "year": 2025,
+      "citations": 0,
+      "url": "https://ilsamaritano.github.io/#pub-27"
+    },
+    {
+      "id": "pub-28",
+      "title": "NotLine: Dynamic Network Topology and Risk Assessment Through Passive Discovery",
+      "authors": [
+        "V. Sammartino"
+      ],
+      "authorPosition": 1,
+      "venue": "FAIR General Conference, Rome, 10–12 December 2025",
+      "type": "conference",
+      "outputForm": "Conference",
+      "year": 2025,
+      "citations": 0,
+      "url": "https://ilsamaritano.github.io/#pub-28"
+    },
+    {
+      "id": "pub-29",
+      "title": "A Comparative Study of Machine Learning Models for Hate Speech and Stereotype Detection in Italian Texts",
+      "authors": [
+        "V. Sammartino"
+      ],
+      "authorPosition": 1,
+      "venue": "International Journal of Complexity in Applied Science and Technology, vol. 1, no. 2, pp. 155–176",
+      "type": "journal",
+      "outputForm": "Journal",
+      "year": 2024,
+      "citations": 7,
+      "url": "https://ilsamaritano.github.io/#pub-29",
+      "identifiers": [
+        {
+          "label": "Zenodo",
+          "url": "https://zenodo.org/records/19061497"
+        }
+      ]
+    },
+    {
+      "id": "pub-30",
+      "title": "Database Decomposition to Satisfy the Least Privilege Principle in Healthcare",
+      "authors": [
+        "V. Sammartino",
+        "F. Baiardi"
+      ],
+      "authorPosition": 1,
+      "venue": "ARIS2 — Advanced Research on Information Systems Security, vol. 4, no. 1",
+      "type": "journal",
+      "outputForm": "Journal",
+      "year": 2024,
+      "citations": 4,
+      "url": "https://ilsamaritano.github.io/#pub-30",
+      "identifiers": [
+        {
+          "label": "DOI",
+          "url": "https://doi.org/10.56394/aris2.v4i1.43"
+        }
+      ]
+    },
+    {
+      "id": "pub-31",
+      "title": "Satisfying Least Privilege Through Database Decomposition",
+      "authors": [
+        "F. Baiardi",
+        "C. Comella",
+        "V. Sammartino"
+      ],
+      "authorPosition": 3,
+      "venue": "20th International Conference on the Design of Reliable Communication Networks (DRCN 2024), Montréal, Canada · IEEE",
+      "type": "conference",
+      "outputForm": "Conference",
+      "year": 2024,
+      "citations": 3,
+      "url": "https://ilsamaritano.github.io/#pub-31"
+    },
+    {
+      "id": "pub-32",
+      "title": "Multilevel Database Decomposition Framework",
+      "authors": [
+        "F. Baiardi",
+        "C. Comella",
+        "V. Sammartino"
+      ],
+      "authorPosition": 3,
+      "venue": "ITASEC 2024 — Italian Conference on Cybersecurity, Salerno · CEUR Workshop Proceedings, vol. 3731",
+      "type": "conference",
+      "outputForm": "Conference",
+      "year": 2024,
+      "citations": 2,
+      "url": "https://ilsamaritano.github.io/#pub-32"
+    },
+    {
+      "id": "pub-33",
+      "title": "Feature Engineering and Semantic Enrichment for Enhanced Text Classification: A Case Study on Figurative Language in Tweets",
+      "authors": [
+        "V. Sammartino",
+        "C. Baccheschi",
+        "J. Gneri",
+        "V. Picchianti",
+        "A. Frasson"
+      ],
+      "authorPosition": 1,
+      "venue": "Preprints",
+      "type": "preprint",
+      "outputForm": "Preprint",
+      "year": 2024,
+      "citations": 0,
+      "url": "https://ilsamaritano.github.io/#pub-33"
+    },
+    {
+      "id": "pub-34",
+      "title": "D3F: A Framework to Minimize the Impact of Intrusions",
+      "authors": [
+        "F. Baiardi",
+        "V. Sammartino"
+      ],
+      "authorPosition": 2,
+      "venue": "Preprints",
+      "type": "preprint",
+      "outputForm": "Preprint",
+      "year": 2024,
+      "citations": 0,
+      "url": "https://ilsamaritano.github.io/#pub-34"
+    },
+    {
+      "id": "pub-35",
+      "title": "Discovering When a Security Twin Cheats: An Equivalence Theorem",
+      "authors": [
+        "V. Sammartino",
+        "F. Baiardi"
+      ],
+      "authorPosition": 1,
+      "venue": "SSRN preprint 7277218",
+      "type": "preprint",
+      "outputForm": "Preprint",
+      "year": null,
+      "citations": 0,
+      "url": "https://ilsamaritano.github.io/#pub-35",
+      "identifiers": [
+        {
+          "label": "SSRN",
+          "url": "https://ssrn.com/abstract=7277218"
+        }
+      ]
+    },
+    {
+      "id": "pub-36",
+      "title": "Vulnerabilities in Autonomous Execution: A Survey of Security Threats and Defenses in LLM-Driven Multi-Agent Systems",
+      "authors": [
+        "V. Sammartino"
+      ],
+      "authorPosition": 1,
+      "venue": "SSRN preprint 7218206",
+      "type": "preprint",
+      "outputForm": "Preprint",
+      "year": null,
+      "citations": 0,
+      "url": "https://ilsamaritano.github.io/#pub-36",
+      "identifiers": [
+        {
+          "label": "SSRN",
+          "url": "https://ssrn.com/abstract=7218206"
+        }
+      ]
+    }
+  ],
+  "peerReview": {
+    "source": "https://orcid.org/0009-0002-4632-1179",
+    "year": 2026,
+    "reviews": 37,
+    "journals": 20,
+    "detail": [
+      {
+        "journal": "Discover Artificial Intelligence",
+        "publisher": "Springer Nature",
+        "issn": "2731-0809",
+        "reviews": 7
+      },
+      {
+        "journal": "Scientific Reports",
+        "publisher": "Springer Nature",
+        "issn": "2045-2322",
+        "reviews": 6
+      },
+      {
+        "journal": "Pervasive and Mobile Computing",
+        "publisher": "Elsevier",
+        "issn": "1574-1192",
+        "reviews": 4
+      },
+      {
+        "journal": "IEEE Transactions on Neural Networks and Learning Systems",
+        "publisher": "IEEE",
+        "issn": "2162-2388",
+        "reviews": 2
+      },
+      {
+        "journal": "International Journal of Information Security",
+        "publisher": "Springer Nature",
+        "issn": "1615-5270",
+        "reviews": 2
+      },
+      {
+        "journal": "Big Data Mining and Analytics",
+        "publisher": "Tsinghua University Press",
+        "issn": "2097-406X",
+        "reviews": 2
+      },
+      {
+        "journal": "ACM Computing Surveys",
+        "publisher": "ACM",
+        "issn": "1557-7341",
+        "reviews": 1
+      },
+      {
+        "journal": "Computers & Security",
+        "publisher": "Elsevier",
+        "issn": "0167-4048",
+        "reviews": 1
+      },
+      {
+        "journal": "Future Generation Computer Systems",
+        "publisher": "Elsevier",
+        "issn": "0167-739X",
+        "reviews": 1
+      },
+      {
+        "journal": "Computer Communications",
+        "publisher": "Elsevier",
+        "issn": "0140-3664",
+        "reviews": 1
+      },
+      {
+        "journal": "Journal of Computer Security",
+        "publisher": "SAGE Publications",
+        "issn": "1875-8924",
+        "reviews": 1
+      },
+      {
+        "journal": "Cluster Computing",
+        "publisher": "Springer Nature",
+        "issn": "1573-7543",
+        "reviews": 1
+      },
+      {
+        "journal": "Journal of Cloud Computing",
+        "publisher": "Springer Nature",
+        "issn": "2192-113X",
+        "reviews": 1
+      },
+      {
+        "journal": "Journal of Big Data",
+        "publisher": "Springer Nature",
+        "issn": "2196-1115",
+        "reviews": 1
+      },
+      {
+        "journal": "Discover Computing",
+        "publisher": "Springer Nature",
+        "issn": "2948-2992",
+        "reviews": 1
+      },
+      {
+        "journal": "International Journal of Data Science and Analytics",
+        "publisher": "Springer Nature",
+        "issn": "2364-4168",
+        "reviews": 1
+      },
+      {
+        "journal": "Journal of King Saud University – Computer and Information Sciences",
+        "publisher": "Springer Nature",
+        "issn": "2213-1248",
+        "reviews": 1
+      },
+      {
+        "journal": "PeerJ Computer Science",
+        "publisher": "PeerJ",
+        "issn": "2376-5992",
+        "reviews": 1
+      },
+      {
+        "journal": "Computers, Materials & Continua",
+        "publisher": "Tech Science Press",
+        "issn": "1546-2218",
+        "reviews": 1
+      },
+      {
+        "journal": "Computer Systems Science and Engineering",
+        "publisher": "Tech Science Press",
+        "issn": "0267-6192",
+        "reviews": 1
+      }
+    ]
+  },
+  "grants": [
+    {
+      "name": "Smart Security for Connected Cyber-Physical Systems: Paradigms, Threats and AI-based Defenses",
+      "funder": "University of Pisa",
+      "identifier": "Prot. 0079213/2026 del 16/04/2026",
+      "year": 2026
+    }
+  ],
+  "projects": [
+    {
+      "name": "ResilientGuard",
+      "host": "KAUST",
+      "description": "Security framework for UAV swarms using TinyML and Edge AI with Byzantine-resilient distributed consensus and anomaly detection.",
+      "url": "https://ilsamaritano.github.io/#projects"
+    },
+    {
+      "name": "NotLine",
+      "host": "University of Pisa",
+      "description": "Non-intrusive automated platform that builds a digital twin of a network through passive discovery, for topology reconstruction and risk assessment.",
+      "url": "https://ilsamaritano.github.io/#projects"
+    },
+    {
+      "name": "SV WebStudio",
+      "host": "Independent",
+      "description": "Custom website development: showcase sites, e-commerce, restyling, performance and SEO.",
+      "url": "https://ilsamaritano.github.io/sv-webstudio/"
+    }
+  ],
+  "faq": "https://ilsamaritano.github.io/#faq"
+}
