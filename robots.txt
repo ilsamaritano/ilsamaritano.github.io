@@ -1,12 +1,26 @@
 # robots.txt — https://ilsamaritano.github.io/
 # Machine-readable profile: /profile.json · /llms.txt · JSON-LD embedded in /index.html
+#
+# Policy: everything is crawlable. The default group below allows every crawler, and a
+# crawler that matches one of the named groups sees only that group, so no search engine,
+# academic indexer or AI assistant is ever restricted by the default rules.
+# Only four commercial SEO/backlink scrapers are disallowed, at the end of this file.
+#
+# Google Scholar note: Scholar has no crawler of its own — it indexes through Googlebot.
+# Googlebot must therefore stay fully allowed, and academic <meta name="citation_*"> tags
+# must remain readable on the crawled pages.
 
 User-agent: *
 Allow: /
-Disallow: /cdn-cgi/
 
-# ── Search engines ──
+# ── Generalist search engines ──
 User-agent: Googlebot
+Allow: /
+
+User-agent: Googlebot-Image
+Allow: /
+
+User-agent: Googlebot-News
 Allow: /
 
 User-agent: GoogleOther
@@ -18,7 +32,44 @@ Allow: /
 User-agent: Bingbot
 Allow: /
 
+User-agent: BingPreview
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
 User-agent: DuckDuckBot
+Allow: /
+
+User-agent: YandexBot
+Allow: /
+
+User-agent: Baiduspider
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+User-agent: SeznamBot
+Allow: /
+
+User-agent: Qwantify
+Allow: /
+
+User-agent: MojeekBot
+Allow: /
+
+# ── Academic / scholarly indexers and archives ──
+User-agent: SemanticScholarBot
+Allow: /
+
+User-agent: CiteSeerXBot
+Allow: /
+
+User-agent: archive.org_bot
+Allow: /
+
+User-agent: ia_archiver
 Allow: /
 
 # ── AI crawlers and assistants: explicitly allowed ──
@@ -33,9 +84,6 @@ User-agent: anthropic-ai
 Allow: /
 
 User-agent: PerplexityBot
-Allow: /
-
-User-agent: Applebot
 Allow: /
 
 User-agent: Applebot-Extended
@@ -56,7 +104,7 @@ Allow: /
 User-agent: Bytespider
 Allow: /
 
-# On-demand fetchers (user asked an assistant about this page)
+# On-demand fetchers (a user asked an assistant about this page)
 User-agent: OAI-SearchBot
 Allow: /
 
@@ -81,7 +129,7 @@ Allow: /
 User-agent: YouBot
 Allow: /
 
-# ── Blocked: commercial SEO scrapers ──
+# ── Blocked: commercial SEO / backlink scrapers only ──
 User-agent: AhrefsBot
 Disallow: /
 

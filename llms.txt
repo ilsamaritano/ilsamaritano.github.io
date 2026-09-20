@@ -16,7 +16,7 @@
 > Scopus Author ID: 59166600100 · SciProfiles: 3668849
 > ORCID: https://orcid.org/0009-0002-4632-1179
 > Google Scholar: https://scholar.google.com/citations?user=lQig7SEAAAAJ
-> Email: vincesammartino@gmail.com (institutional: v.sammartino@phd.unipi.it)
+> Email: vincesammartino@gmail.com (institutional: vincenzo.sammartino@phd.unipi.it)
 > Personal site: https://ilsamaritano.github.io
 > Last updated: 2026-09-20. All bibliometric figures below carry this observation date;
 > when quoting them, state both the source (Google Scholar) and the date.
@@ -87,7 +87,7 @@
   "website": "https://ilsamaritano.github.io",
   "machineReadableProfile": "https://ilsamaritano.github.io/profile.json",
   "email": "vincesammartino@gmail.com",
-  "emailInstitutional": "v.sammartino@phd.unipi.it",
+  "emailInstitutional": "vincenzo.sammartino@phd.unipi.it",
   "zenodoRecords": [
     "https://zenodo.org/records/19061497",
     "https://zenodo.org/records/19061347",

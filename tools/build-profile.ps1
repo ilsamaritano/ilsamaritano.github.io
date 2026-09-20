@@ -5,6 +5,10 @@
 #
 # Update $asOf and the metrics block below after each Google Scholar sync; the per-publication
 # titles, venues, authors, types, years, citation counts and links are read from index.html.
+#
+# Keep this file saved as UTF-8 *with BOM*: Windows PowerShell 5.1 reads a BOM-less script as
+# ANSI, which mangles the accented characters and em dashes in the strings below and makes the
+# script fail to parse. (pwsh 7+ assumes UTF-8 either way.)
 
 param(
   [string]$Root = (Split-Path -Parent $PSScriptRoot),
@@ -84,7 +88,7 @@ $profile = [ordered]@{
     jobTitle    = "PhD Candidate in Artificial Intelligence"
     summary     = "PhD candidate in Artificial Intelligence at the University of Pisa (Italian National PhD Programme in AI, doctoral position November 2024 – October 2027) and former Visiting PhD Student (VSRP Intern) at KAUST, January–June 2026. Works on Security Twins and Digital Twin architectures for cybersecurity, cyber-physical systems resilience, quantum machine learning and post-quantum security, 6G far-edge digital twins, UAV swarm security with TinyML and Edge AI, the security of LLM-driven multi-agent systems, and NLP."
     email       = "vincesammartino@gmail.com"
-    emailInstitutional = "v.sammartino@phd.unipi.it"
+    emailInstitutional = "vincenzo.sammartino@phd.unipi.it"
     website     = "https://ilsamaritano.github.io/"
     locations   = @("Pisa, Italy", "Thuwal, Saudi Arabia")
     languages   = @("Italian (native)", "English")
