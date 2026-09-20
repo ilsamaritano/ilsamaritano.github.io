@@ -68,8 +68,10 @@ ALIASES = {
     # ESREL 2026: ORCID has both the "Digital Twin-Based What-If Analysis" and the
     # "Security Twin-Based What-If Analysis Framework" wording; the site lists one card.
     "quantifyingresilienceofcyberphysicalsystemstozerodaythreatsadigitaltwinbasedwhatifanalysis": "pub-6",
-    # Published in Knowledge-Based Systems as "...LLM-driven Agentic and Multi-Agent Systems".
+    # Published in Knowledge-Based Systems as "...LLM-driven Agentic and Multi-Agent Systems";
+    # ORCID keeps the earlier SSRN preprint under the original title as a separate record.
     "vulnerabilitiesinautonomousexecutionasurveyofsecuritythreatsanddefensesinllmdrivenagenticandmultiagentsystems": "pub-36",
+    "vulnerabilitiesinautonomousexecutionasurveyofsecuritythreatsanddefensesinllmdrivenmultiagentsystems": "pub-36",
 }
 
 
@@ -79,11 +81,17 @@ def norm(s):
 
 
 def read(path):
-    return io.open(os.path.join(ROOT, path), encoding="utf-8").read()
+    # .ps1 files carry a UTF-8 BOM on purpose (see build-profile.ps1); read it as a signature
+    # rather than as text, or rewriting the file would give it a second one.
+    enc = "utf-8-sig" if path.endswith(".ps1") else "utf-8"
+    return io.open(os.path.join(ROOT, path), encoding=enc).read()
 
 
 def write(path, text):
-    io.open(os.path.join(ROOT, path), "w", encoding="utf-8", newline="").write(text)
+    # .ps1 files must keep their UTF-8 BOM, or Windows PowerShell 5.1 reads them as ANSI
+    # and their em dashes and accents become mojibake (the script then fails to parse).
+    enc = "utf-8-sig" if path.endswith(".ps1") else "utf-8"
+    io.open(os.path.join(ROOT, path), "w", encoding=enc, newline="").write(text)
 
 
 def fetch_record(snapshot=None):

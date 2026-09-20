@@ -57,7 +57,9 @@ foreach ($m in [regex]::Matches($t, '(?s)<article class="pub-card"\s+data-type="
   $pubs += $rec
 }
 
-if ($pubs.Count -ne 36) { throw "expected 36 publications, parsed $($pubs.Count)" }
+$expected = ([regex]::Match($t, '<button class="filter-btn active" data-filter="all"[^>]*>All <span class="count">(\d+)</span>')).Groups[1].Value
+if (-not $expected) { throw "could not read the expected publication count from the page toolbar" }
+if ($pubs.Count -ne [int]$expected) { throw "toolbar says $expected publications, parsed $($pubs.Count)" }
 $total = 0; foreach ($p in $pubs) { $total += [int]$p['citations'] }
 
 $profile = [ordered]@{
@@ -116,7 +118,7 @@ $profile = [ordered]@{
     i10Index         = 7
     indexedWorks     = 36
     citationsByYear  = [ordered]@{ '2024' = 3; '2025' = 20; '2026' = 138 }
-    note             = "2026 is year to date. Sum of per-publication citation counts in this file: $total (Google Scholar's profile total may differ slightly because of merged or duplicate records)."
+    note             = "Metrics cover the $($pubs.Count) publications listed here, of which 36 are indexed by Google Scholar. 2026 is year to date. Sum of per-publication citation counts in this file: $total (Google Scholar's profile total may differ slightly because of merged or duplicate records)."
   }
   positions      = @(
     [ordered]@{ role = "PhD Candidate, National PhD Programme in Artificial Intelligence"; organization = "University of Pisa, Department of Computer Science"; start = "2024-09"; end = $null; note = "Doctoral position November 2024 – October 2027" },
@@ -134,11 +136,11 @@ $profile = [ordered]@{
     [ordered]@{ name = "Roberto Di Pietro"; role = "KAUST host supervisor"; organization = "KAUST" }
   )
   researchThemes = @(
-    [ordered]@{ name = "Security Twin"; description = "Non-intrusive digital twin architectures for real-time cyber threat simulation, what-if analysis, attack-path reasoning and proactive defence in cyber-physical systems (NotLine, HAVE, D3F)."; keyPublications = @("pub-1", "pub-9", "pub-22", "pub-35") },
+    [ordered]@{ name = "Security Twin"; description = "Non-intrusive digital twin architectures for real-time cyber threat simulation, what-if analysis, attack-path reasoning and proactive defence in cyber-physical systems (NotLine, HAVE, D3F)."; keyPublications = @("pub-1", "pub-9", "pub-22", "pub-35", "pub-38") },
     [ordered]@{ name = "Quantum ML & post-quantum security"; description = "Hybrid quantum graph neural networks, quantum feature encoding, quantum-classical physical-layer authentication (QUASAR) and CSIDH-based post-quantum cryptography for industrial IoT."; keyPublications = @("pub-12", "pub-13", "pub-14", "pub-17") },
     [ordered]@{ name = "6G & far-edge digital twins"; description = "Semantic-aware digital twin synchronisation and quantum-native far-edge architectures with asynchronous federated learning."; keyPublications = @("pub-10", "pub-14") },
-    [ordered]@{ name = "UAV swarm security"; description = "Byzantine-resilient anomaly detection with TinyML and Edge AI for decentralised drone swarms (ResilientGuard, KAUST)."; keyPublications = @() },
-    [ordered]@{ name = "LLM & AI-agent security"; description = "Security threats and defences in LLM-driven multi-agent systems (prompt injection, tool misuse, inter-agent trust, privilege escalation) and the use of LLMs plus synthetic data for next-generation cyber defence."; keyPublications = @("pub-36", "pub-3", "pub-19") },
+    [ordered]@{ name = "UAV swarm security"; description = "Byzantine-resilient anomaly detection with TinyML and Edge AI for decentralised drone swarms (ResilientGuard, KAUST), and acoustic counter-UAV perimeter intrusion detection with drone-mounted microphones."; keyPublications = @("pub-37") },
+    [ordered]@{ name = "LLM & AI-agent security"; description = "Security threats and defences in LLM-driven agentic and multi-agent systems — prompt injection, tool misuse, inter-agent trust, privilege escalation — surveyed in Knowledge-Based Systems (Elsevier, 2026), and the use of LLMs plus synthetic data for next-generation cyber defence."; keyPublications = @("pub-36", "pub-3", "pub-19") },
     [ordered]@{ name = "Synthetic data for cybersecurity"; description = "Synthetic dataset generation for robust intrusion detection and autonomous defence."; keyPublications = @("pub-19", "pub-3") },
     [ordered]@{ name = "Least privilege in databases"; description = "Schema-level decomposition enforcing fine-grained access control in healthcare and enterprise systems."; keyPublications = @("pub-30", "pub-31", "pub-32") },
     [ordered]@{ name = "Natural language processing"; description = "Hate speech and stereotype detection, sentiment polarity classification and figurative language in Italian and multi-domain corpora."; keyPublications = @("pub-29", "pub-27", "pub-33") }

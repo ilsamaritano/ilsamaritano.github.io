@@ -15,7 +15,7 @@
       },
       {
         "format": "application/ld+json",
-        "description": "schema.org Person / ProfilePage / FAQPage / ItemList of ScholarlyArticle, embedded in the homepage",
+        "description": "schema.org Person / ProfilePage / ItemList of ScholarlyArticle, embedded in the homepage",
         "url": "https://ilsamaritano.github.io/"
       },
       {
@@ -76,7 +76,7 @@
       "2025": 20,
       "2026": 138
     },
-    "note": "2026 is year to date. Sum of per-publication citation counts in this file: 158 (Google Scholar's profile total may differ slightly because of merged or duplicate records)."
+    "note": "Metrics cover the 38 publications listed here, of which 36 are indexed by Google Scholar. 2026 is year to date. Sum of per-publication citation counts in this file: 158 (Google Scholar's profile total may differ slightly because of merged or duplicate records)."
   },
   "positions": [
     {
@@ -155,7 +155,8 @@
         "pub-1",
         "pub-9",
         "pub-22",
-        "pub-35"
+        "pub-35",
+        "pub-38"
       ]
     },
     {
@@ -178,12 +179,14 @@
     },
     {
       "name": "UAV swarm security",
-      "description": "Byzantine-resilient anomaly detection with TinyML and Edge AI for decentralised drone swarms (ResilientGuard, KAUST).",
-      "keyPublications": []
+      "description": "Byzantine-resilient anomaly detection with TinyML and Edge AI for decentralised drone swarms (ResilientGuard, KAUST), and acoustic counter-UAV perimeter intrusion detection with drone-mounted microphones.",
+      "keyPublications": [
+        "pub-37"
+      ]
     },
     {
       "name": "LLM & AI-agent security",
-      "description": "Security threats and defences in LLM-driven multi-agent systems (prompt injection, tool misuse, inter-agent trust, privilege escalation) and the use of LLMs plus synthetic data for next-generation cyber defence.",
+      "description": "Security threats and defences in LLM-driven agentic and multi-agent systems — prompt injection, tool misuse, inter-agent trust, privilege escalation — surveyed in Knowledge-Based Systems (Elsevier, 2026), and the use of LLMs plus synthetic data for next-generation cyber defence.",
       "keyPublications": [
         "pub-36",
         "pub-3",
@@ -235,6 +238,10 @@
       "url": "https://ilsamaritano.github.io/#pub-1",
       "identifiers": [
         {
+          "label": "DOI",
+          "url": "https://doi.org/10.1007/978-3-032-08606-8_1"
+        },
+        {
           "label": "Zenodo",
           "url": "https://zenodo.org/records/19019069"
         }
@@ -253,7 +260,13 @@
       "outputForm": "Journal",
       "year": 2026,
       "citations": 10,
-      "url": "https://ilsamaritano.github.io/#pub-2"
+      "url": "https://ilsamaritano.github.io/#pub-2",
+      "identifiers": [
+        {
+          "label": "DOI",
+          "url": "https://doi.org/10.1007/s11227-026-08454-0"
+        }
+      ]
     },
     {
       "id": "pub-3",
@@ -268,7 +281,13 @@
       "outputForm": "Book Chapter",
       "year": 2026,
       "citations": 9,
-      "url": "https://ilsamaritano.github.io/#pub-3"
+      "url": "https://ilsamaritano.github.io/#pub-3",
+      "identifiers": [
+        {
+          "label": "ARPI",
+          "url": "https://arpi.unipi.it/handle/11568/1323948"
+        }
+      ]
     },
     {
       "id": "pub-4",
@@ -283,7 +302,13 @@
       "outputForm": "Conference",
       "year": 2026,
       "citations": 8,
-      "url": "https://ilsamaritano.github.io/#pub-4"
+      "url": "https://ilsamaritano.github.io/#pub-4",
+      "identifiers": [
+        {
+          "label": "ARPI",
+          "url": "https://arpi.unipi.it/handle/11568/1349767"
+        }
+      ]
     },
     {
       "id": "pub-5",
@@ -299,7 +324,13 @@
       "outputForm": "Conference",
       "year": 2026,
       "citations": 6,
-      "url": "https://ilsamaritano.github.io/#pub-5"
+      "url": "https://ilsamaritano.github.io/#pub-5",
+      "identifiers": [
+        {
+          "label": "DOI",
+          "url": "https://doi.org/10.1109/PerComWorkshops68308.2026.11585207"
+        }
+      ]
     },
     {
       "id": "pub-6",
@@ -309,12 +340,18 @@
         "V. Sammartino"
       ],
       "authorPosition": 2,
-      "venue": "Proceedings of the 36th European Safety and Reliability Conference (ESREL 2026)",
+      "venue": "ESREL 2026 — European Safety and Reliability Conference, Book of Proceedings, pp. 3304–3311 · Research Publishing, Singapore",
       "type": "conference",
       "outputForm": "Conference",
       "year": 2026,
       "citations": 3,
-      "url": "https://ilsamaritano.github.io/#pub-6"
+      "url": "https://ilsamaritano.github.io/#pub-6",
+      "identifiers": [
+        {
+          "label": "ARPI",
+          "url": "https://arpi.unipi.it/handle/11568/1345228"
+        }
+      ]
     },
     {
       "id": "pub-7",
@@ -331,7 +368,13 @@
       "outputForm": "Journal",
       "year": 2026,
       "citations": 2,
-      "url": "https://ilsamaritano.github.io/#pub-7"
+      "url": "https://ilsamaritano.github.io/#pub-7",
+      "identifiers": [
+        {
+          "label": "DOI",
+          "url": "https://doi.org/10.1109/MCOMSTD.2026.3665935"
+        }
+      ]
     },
     {
       "id": "pub-8",
@@ -347,7 +390,13 @@
       "outputForm": "Conference",
       "year": 2026,
       "citations": 2,
-      "url": "https://ilsamaritano.github.io/#pub-8"
+      "url": "https://ilsamaritano.github.io/#pub-8",
+      "identifiers": [
+        {
+          "label": "ARPI",
+          "url": "https://arpi.unipi.it/handle/11568/1361887"
+        }
+      ]
     },
     {
       "id": "pub-9",
@@ -403,7 +452,13 @@
       "outputForm": "Journal",
       "year": 2026,
       "citations": 1,
-      "url": "https://ilsamaritano.github.io/#pub-11"
+      "url": "https://ilsamaritano.github.io/#pub-11",
+      "identifiers": [
+        {
+          "label": "DOI",
+          "url": "https://doi.org/10.1016/j.future.2026.108698"
+        }
+      ]
     },
     {
       "id": "pub-12",
@@ -417,7 +472,13 @@
       "outputForm": "Journal",
       "year": 2026,
       "citations": 1,
-      "url": "https://ilsamaritano.github.io/#pub-12"
+      "url": "https://ilsamaritano.github.io/#pub-12",
+      "identifiers": [
+        {
+          "label": "DOI",
+          "url": "https://doi.org/10.1016/j.future.2026.108650"
+        }
+      ]
     },
     {
       "id": "pub-13",
@@ -539,8 +600,85 @@
       "url": "https://ilsamaritano.github.io/#pub-18",
       "identifiers": [
         {
+          "label": "DOI",
+          "url": "https://doi.org/10.2139/ssrn.7382213"
+        },
+        {
           "label": "SSRN",
           "url": "https://ssrn.com/abstract=7382213"
+        }
+      ]
+    },
+    {
+      "id": "pub-37",
+      "title": "Fight Drones with Drones: Detecting Aerial Perimeter Intrusion using Drone-mounted Microphones",
+      "authors": [
+        "V. Sammartino",
+        "N. Denis",
+        "O. Ibrahim",
+        "R. Di Pietro"
+      ],
+      "authorPosition": 1,
+      "venue": "Lecture Notes in Computer Science (LNCS) · Springer",
+      "type": "conference",
+      "outputForm": "Conference",
+      "year": 2026,
+      "citations": 0,
+      "url": "https://ilsamaritano.github.io/#pub-37",
+      "identifiers": [
+        {
+          "label": "ARPI",
+          "url": "https://arpi.unipi.it/handle/11568/1362908"
+        }
+      ]
+    },
+    {
+      "id": "pub-38",
+      "title": "TWIN-IDS: Twin-driven IDS Placement for Cost-aware Detection",
+      "authors": [
+        "V. Sammartino",
+        "F. Baiardi",
+        "S. Ruggieri"
+      ],
+      "authorPosition": 1,
+      "venue": "30th International Symposium on Distributed Simulation and Real Time Applications (DS-RT 2026) · IEEE",
+      "type": "conference",
+      "outputForm": "Conference",
+      "year": 2026,
+      "citations": 0,
+      "url": "https://ilsamaritano.github.io/#pub-38",
+      "identifiers": [
+        {
+          "label": "ARPI",
+          "url": "https://arpi.unipi.it/handle/11568/1369148"
+        }
+      ]
+    },
+    {
+      "id": "pub-36",
+      "title": "Vulnerabilities in Autonomous Execution: A Survey of Security Threats and Defenses in LLM-Driven Agentic and Multi-Agent Systems",
+      "authors": [
+        "V. Sammartino"
+      ],
+      "authorPosition": 1,
+      "venue": "Knowledge-Based Systems · Elsevier (preprint: SSRN 7218206)",
+      "type": "journal",
+      "outputForm": "Journal",
+      "year": 2026,
+      "citations": 0,
+      "url": "https://ilsamaritano.github.io/#pub-36",
+      "identifiers": [
+        {
+          "label": "ARPI",
+          "url": "https://arpi.unipi.it/handle/11568/1369147"
+        },
+        {
+          "label": "DOI",
+          "url": "https://doi.org/10.2139/ssrn.7218206"
+        },
+        {
+          "label": "SSRN",
+          "url": "https://ssrn.com/abstract=7218206"
         }
       ]
     },
@@ -558,21 +696,13 @@
       "outputForm": "Conference",
       "year": 2025,
       "citations": 17,
-      "url": "https://ilsamaritano.github.io/#pub-19"
-    },
-    {
-      "id": "pub-20",
-      "title": "A Framework for Proactive Cyber-Resilience: Non-Intrusive Modeling for Autonomous Defense",
-      "authors": [
-        "V. Sammartino"
-      ],
-      "authorPosition": 1,
-      "venue": "29th International Symposium on Distributed Simulation and Real Time Applications (DS-RT 2025) · IEEE",
-      "type": "conference",
-      "outputForm": "Conference",
-      "year": 2025,
-      "citations": 13,
-      "url": "https://ilsamaritano.github.io/#pub-20"
+      "url": "https://ilsamaritano.github.io/#pub-19",
+      "identifiers": [
+        {
+          "label": "DOI",
+          "url": "https://doi.org/10.1109/percomworkshops65533.2025.00055"
+        }
+      ]
     },
     {
       "id": "pub-21",
@@ -588,7 +718,33 @@
       "outputForm": "Conference",
       "year": 2025,
       "citations": 14,
-      "url": "https://ilsamaritano.github.io/#pub-21"
+      "url": "https://ilsamaritano.github.io/#pub-21",
+      "identifiers": [
+        {
+          "label": "ARPI",
+          "url": "https://arpi.unipi.it/handle/11568/1319647"
+        }
+      ]
+    },
+    {
+      "id": "pub-20",
+      "title": "A Framework for Proactive Cyber-Resilience: Non-Intrusive Modeling for Autonomous Defense",
+      "authors": [
+        "V. Sammartino"
+      ],
+      "authorPosition": 1,
+      "venue": "29th International Symposium on Distributed Simulation and Real Time Applications (DS-RT 2025) · IEEE",
+      "type": "conference",
+      "outputForm": "Conference",
+      "year": 2025,
+      "citations": 13,
+      "url": "https://ilsamaritano.github.io/#pub-20",
+      "identifiers": [
+        {
+          "label": "DOI",
+          "url": "https://doi.org/10.1109/DS-RT68115.2025.11185079"
+        }
+      ]
     },
     {
       "id": "pub-22",
@@ -604,7 +760,13 @@
       "outputForm": "Conference",
       "year": 2025,
       "citations": 11,
-      "url": "https://ilsamaritano.github.io/#pub-22"
+      "url": "https://ilsamaritano.github.io/#pub-22",
+      "identifiers": [
+        {
+          "label": "DOI",
+          "url": "https://doi.org/10.1109/DS-RT68115.2025.11185873"
+        }
+      ]
     },
     {
       "id": "pub-23",
@@ -619,7 +781,13 @@
       "outputForm": "Proceedings",
       "year": 2025,
       "citations": 11,
-      "url": "https://ilsamaritano.github.io/#pub-23"
+      "url": "https://ilsamaritano.github.io/#pub-23",
+      "identifiers": [
+        {
+          "label": "DOI",
+          "url": "https://doi.org/10.1016/j.procs.2025.12.070"
+        }
+      ]
     },
     {
       "id": "pub-24",
@@ -635,7 +803,13 @@
       "outputForm": "Conference",
       "year": 2025,
       "citations": 8,
-      "url": "https://ilsamaritano.github.io/#pub-24"
+      "url": "https://ilsamaritano.github.io/#pub-24",
+      "identifiers": [
+        {
+          "label": "ARPI",
+          "url": "https://arpi.unipi.it/handle/11568/1323891"
+        }
+      ]
     },
     {
       "id": "pub-25",
@@ -651,7 +825,13 @@
       "outputForm": "Magazine",
       "year": 2025,
       "citations": 4,
-      "url": "https://ilsamaritano.github.io/#pub-25"
+      "url": "https://ilsamaritano.github.io/#pub-25",
+      "identifiers": [
+        {
+          "label": "ARPI",
+          "url": "https://arpi.unipi.it/handle/11568/1319807"
+        }
+      ]
     },
     {
       "id": "pub-26",
@@ -686,7 +866,13 @@
       "outputForm": "Journal",
       "year": 2025,
       "citations": 0,
-      "url": "https://ilsamaritano.github.io/#pub-27"
+      "url": "https://ilsamaritano.github.io/#pub-27",
+      "identifiers": [
+        {
+          "label": "DOI",
+          "url": "https://doi.org/10.1504/IJCAST.2026.10076620"
+        }
+      ]
     },
     {
       "id": "pub-28",
@@ -700,7 +886,13 @@
       "outputForm": "Conference",
       "year": 2025,
       "citations": 0,
-      "url": "https://ilsamaritano.github.io/#pub-28"
+      "url": "https://ilsamaritano.github.io/#pub-28",
+      "identifiers": [
+        {
+          "label": "ARPI",
+          "url": "https://arpi.unipi.it/handle/11568/1338870"
+        }
+      ]
     },
     {
       "id": "pub-29",
@@ -716,6 +908,10 @@
       "citations": 7,
       "url": "https://ilsamaritano.github.io/#pub-29",
       "identifiers": [
+        {
+          "label": "DOI",
+          "url": "https://doi.org/10.1504/ijcast.2024.143880"
+        },
         {
           "label": "Zenodo",
           "url": "https://zenodo.org/records/19061497"
@@ -757,7 +953,13 @@
       "outputForm": "Conference",
       "year": 2024,
       "citations": 3,
-      "url": "https://ilsamaritano.github.io/#pub-31"
+      "url": "https://ilsamaritano.github.io/#pub-31",
+      "identifiers": [
+        {
+          "label": "DOI",
+          "url": "https://doi.org/10.1109/DRCN60692.2024.10539148"
+        }
+      ]
     },
     {
       "id": "pub-32",
@@ -773,7 +975,13 @@
       "outputForm": "Conference",
       "year": 2024,
       "citations": 2,
-      "url": "https://ilsamaritano.github.io/#pub-32"
+      "url": "https://ilsamaritano.github.io/#pub-32",
+      "identifiers": [
+        {
+          "label": "ARPI",
+          "url": "https://arpi.unipi.it/handle/11568/1319649"
+        }
+      ]
     },
     {
       "id": "pub-33",
@@ -791,7 +999,13 @@
       "outputForm": "Preprint",
       "year": 2024,
       "citations": 0,
-      "url": "https://ilsamaritano.github.io/#pub-33"
+      "url": "https://ilsamaritano.github.io/#pub-33",
+      "identifiers": [
+        {
+          "label": "DOI",
+          "url": "https://doi.org/10.20944/preprints202407.1179.v1"
+        }
+      ]
     },
     {
       "id": "pub-34",
@@ -806,7 +1020,13 @@
       "outputForm": "Preprint",
       "year": 2024,
       "citations": 0,
-      "url": "https://ilsamaritano.github.io/#pub-34"
+      "url": "https://ilsamaritano.github.io/#pub-34",
+      "identifiers": [
+        {
+          "label": "DOI",
+          "url": "https://doi.org/10.20944/preprints202407.0627.v1"
+        }
+      ]
     },
     {
       "id": "pub-35",
@@ -828,39 +1048,19 @@
           "url": "https://ssrn.com/abstract=7277218"
         }
       ]
-    },
-    {
-      "id": "pub-36",
-      "title": "Vulnerabilities in Autonomous Execution: A Survey of Security Threats and Defenses in LLM-Driven Multi-Agent Systems",
-      "authors": [
-        "V. Sammartino"
-      ],
-      "authorPosition": 1,
-      "venue": "SSRN preprint 7218206",
-      "type": "preprint",
-      "outputForm": "Preprint",
-      "year": null,
-      "citations": 0,
-      "url": "https://ilsamaritano.github.io/#pub-36",
-      "identifiers": [
-        {
-          "label": "SSRN",
-          "url": "https://ssrn.com/abstract=7218206"
-        }
-      ]
     }
   ],
   "peerReview": {
     "source": "https://orcid.org/0009-0002-4632-1179",
     "year": 2026,
-    "reviews": 37,
+    "reviews": 39,
     "journals": 20,
     "detail": [
       {
         "journal": "Discover Artificial Intelligence",
         "publisher": "Springer Nature",
         "issn": "2731-0809",
-        "reviews": 7
+        "reviews": 8
       },
       {
         "journal": "Scientific Reports",
@@ -884,7 +1084,7 @@
         "journal": "International Journal of Information Security",
         "publisher": "Springer Nature",
         "issn": "1615-5270",
-        "reviews": 2
+        "reviews": 3
       },
       {
         "journal": "Big Data Mining and Analytics",
@@ -1005,6 +1205,5 @@
       "description": "Custom website development: showcase sites, e-commerce, restyling, performance and SEO.",
       "url": "https://ilsamaritano.github.io/sv-webstudio/"
     }
-  ],
-  "faq": "https://ilsamaritano.github.io/#faq"
+  ]
 }

@@ -34,8 +34,9 @@ def entry(p):
 years = sorted({p["year"] for p in pubs if p["year"]}, reverse=True)
 out = []
 out.append(
-    "## Publications (%d works, %d citations, h-index %d, i10-index %d — Google Scholar, 20 September 2026)\n"
-    % (m["indexedWorks"], m["citations"], m["hIndex"], m["i10Index"])
+    "## Publications (%d listed; the %d indexed by Google Scholar are cited %d times, "
+    "h-index %d, i10-index %d — %s)\n"
+    % (len(pubs), m["indexedWorks"], m["citations"], m["hIndex"], m["i10Index"], m["asOf"])
 )
 out.append(
     "Entries are grouped by year, then by citation count (descending). Each entry carries its output\n"

@@ -1,0 +1,148 @@
+name: Sync profile (ORCID + Google Scholar)
+
+# Keeps the site in step with the two authoritative sources:
+#   · ORCID   — peer reviews, DOIs, the work list (public API, no credentials needed)
+#   · Scholar — citation counts, h-index, i10-index (needs the SERPAPI_KEY secret; skipped
+#               without it, because Google Scholar has no API and blocks CI IP ranges)
+#
+# The job only commits when tools/validate.py passes, so a half-applied update never ships.
+# Anything that needs a human decision — a publication on ORCID or Scholar that the page does
+# not list — is reported in an issue instead of being guessed at.
+
+on:
+  schedule:
+    - cron: '30 5 * * 1'        # every Monday, 05:30 UTC
+  workflow_dispatch:
+    inputs:
+      as_of:
+        description: 'Observation date to stamp (YYYY-MM-DD, default: today UTC)'
+        required: false
+      skip_scholar:
+        description: 'Skip the Google Scholar step'
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+  issues: write
+
+concurrency:
+  group: sync-profile
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Resolve the observation date
+        run: echo "AS_OF=${{ inputs.as_of || '' }}" >> "$GITHUB_ENV"
+
+      - name: Default the date to today (UTC)
+        if: env.AS_OF == ''
+        run: echo "AS_OF=$(date -u +%F)" >> "$GITHUB_ENV"
+
+      - name: Sync from ORCID
+        id: orcid
+        run: |
+          set +e
+          python tools/sync-orcid.py --apply --as-of "$AS_OF" | tee orcid.log
+          echo "status=${PIPESTATUS[0]}" >> "$GITHUB_OUTPUT"
+          exit 0
+
+      - name: Sync from Google Scholar
+        id: scholar
+        if: ${{ !inputs.skip_scholar }}
+        env:
+          SERPAPI_KEY: ${{ secrets.SERPAPI_KEY }}
+        run: |
+          if [ -z "$SERPAPI_KEY" ]; then
+            echo 'No SERPAPI_KEY secret set — leaving the citation figures untouched.' | tee scholar.log
+            echo "status=skipped" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          set +e
+          python tools/sync-scholar.py --serpapi-key "$SERPAPI_KEY" --as-of "$AS_OF" | tee scholar.log
+          echo "status=${PIPESTATUS[0]}" >> "$GITHUB_OUTPUT"
+          exit 0
+
+      - name: Regenerate profile.json and the llms.txt publication block
+        run: |
+          pwsh -File tools/build-profile.ps1 -AsOf "$AS_OF"
+          python tools/build-llms-pubs.py
+
+      - name: Validate
+        run: python tools/validate.py
+
+      - name: Commit and push
+        id: commit
+        run: |
+          if git diff --quiet; then
+            echo 'Nothing changed.'
+            echo "pushed=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          git config user.name  'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -A
+          git commit -m "sync: profile figures from ORCID and Google Scholar ($AS_OF)"
+          git push
+          echo "pushed=true" >> "$GITHUB_OUTPUT"
+
+      - name: Job summary
+        if: always()
+        run: |
+          {
+            echo "## Profile sync — $AS_OF"
+            echo
+            echo "Committed: ${{ steps.commit.outputs.pushed || 'no (earlier step failed)' }}"
+            echo
+            echo '### ORCID'
+            echo '```'
+            cat orcid.log 2>/dev/null || echo 'did not run'
+            echo '```'
+            echo '### Google Scholar'
+            echo '```'
+            cat scholar.log 2>/dev/null || echo 'did not run'
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      # Exit code 2 from either script means: a publication exists upstream that the page does
+      # not list. Adding it needs an editorial decision, so raise it with a human.
+      - name: Open an issue for the works that need adding
+        if: always() && (steps.orcid.outputs.status == '2' || steps.scholar.outputs.status == '2')
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          TITLE="Profile sync: publications to add by hand"
+          BODY=$(printf '%s\n' \
+            "The scheduled sync on $AS_OF found works upstream that the site does not list." \
+            "" \
+            "Add them to the publication list in \`index.html\` (card + JSON-LD entry), bump the" \
+            "filter-toolbar counts, then run:" \
+            "" \
+            '```' \
+            "pwsh tools/build-profile.ps1 -AsOf $AS_OF" \
+            "python tools/build-llms-pubs.py" \
+            "python tools/validate.py" \
+            '```' \
+            "" \
+            "### ORCID" \
+            '```' \
+            "$(cat orcid.log 2>/dev/null || echo 'did not run')" \
+            '```' \
+            "### Google Scholar" \
+            '```' \
+            "$(cat scholar.log 2>/dev/null || echo 'did not run')" \
+            '```')
+          EXISTING=$(gh issue list --state open --search "$TITLE in:title" --json number --jq '.[0].number')
+          if [ -n "$EXISTING" ]; then
+            gh issue comment "$EXISTING" --body "$BODY"
+          else
+            gh issue create --title "$TITLE" --body "$BODY"
+          fi

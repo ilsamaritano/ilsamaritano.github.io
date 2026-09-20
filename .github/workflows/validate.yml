@@ -1,0 +1,37 @@
+name: Validate
+
+# Runs on every push and pull request: checks that the page, its JSON-LD, profile.json,
+# llms.txt, readme.md and sitemap.xml still agree, and that the generated files were
+# regenerated after the page was edited.
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Consistency checks
+        run: python tools/validate.py
+
+      - name: Generated files are up to date
+        run: |
+          AS_OF=$(python -c "import io,json;print(json.load(io.open('profile.json',encoding='utf-8'))['metrics']['asOf'])")
+          pwsh -File tools/build-profile.ps1 -AsOf "$AS_OF"
+          python tools/build-llms-pubs.py
+          if ! git diff --exit-code; then
+            echo '::error::profile.json or llms.txt is stale — run tools/build-profile.ps1 and tools/build-llms-pubs.py and commit the result'
+            exit 1
+          fi
