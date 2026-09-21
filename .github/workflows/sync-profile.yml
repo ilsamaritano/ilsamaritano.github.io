@@ -71,9 +71,12 @@ jobs:
           echo "status=${PIPESTATUS[0]}" >> "$GITHUB_OUTPUT"
           exit 0
 
+      # No -AsOf here: metrics.asOf is the Google Scholar observation date, and sync-scholar.py
+      # writes it into build-profile.ps1's default when (and only when) it actually syncs. Passing
+      # today's date would advance it on ORCID-only runs and fail validation.
       - name: Regenerate profile.json and the llms.txt publication block
         run: |
-          pwsh -File tools/build-profile.ps1 -AsOf "$AS_OF"
+          pwsh -File tools/build-profile.ps1
           python tools/build-llms-pubs.py
 
       - name: Validate
