@@ -143,3 +143,7 @@ User-agent: DotBot
 Disallow: /
 
 Sitemap: https://ilsamaritano.github.io/sitemap.xml
+# Project sites on the same host: crawlers only read robots.txt at the host root, so the
+# robots.txt files inside /sv-webstudio/ and /context_ai/ are never seen — list their sitemaps here.
+Sitemap: https://ilsamaritano.github.io/sv-webstudio/sitemap.xml
+Sitemap: https://ilsamaritano.github.io/context_ai/sitemap-index.xml
