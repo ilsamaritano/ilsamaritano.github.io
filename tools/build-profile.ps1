@@ -12,7 +12,7 @@
 
 param(
   [string]$Root = (Split-Path -Parent $PSScriptRoot),
-  [string]$AsOf = "2026-09-20"
+  [string]$AsOf = "2026-09-22"
 )
 
 $src = Join-Path $Root "index.html"
@@ -116,9 +116,9 @@ $profile = [ordered]@{
     citations        = 161
     hIndex           = 8
     i10Index         = 7
-    indexedWorks     = 36
+    indexedWorks     = 35
     citationsByYear  = [ordered]@{ '2024' = 3; '2025' = 20; '2026' = 138 }
-    note             = "Metrics cover the $($pubs.Count) publications listed here, of which 36 are indexed by Google Scholar. 2026 is year to date. Sum of per-publication citation counts in this file: $total (Google Scholar's profile total may differ slightly because of merged or duplicate records)."
+    note             = "Metrics cover the $($pubs.Count) publications listed here, of which 35 are indexed by Google Scholar. 2026 is year to date. Sum of per-publication citation counts in this file: $total (Google Scholar's profile total may differ slightly because of merged or duplicate records)."
   }
   positions      = @(
     [ordered]@{ role = "PhD Candidate, National PhD Programme in Artificial Intelligence"; organization = "University of Pisa, Department of Computer Science"; start = "2024-09"; end = $null; note = "Doctoral position November 2024 – October 2027" },
@@ -149,10 +149,10 @@ $profile = [ordered]@{
   peerReview     = [ordered]@{
     source   = "https://orcid.org/0009-0002-4632-1179"
     year     = 2026
-    reviews  = 39
-    journals = 20
+    reviews  = 41
+    journals = 21
     detail   = @(
-      [ordered]@{ journal = "Discover Artificial Intelligence"; publisher = "Springer Nature"; issn = "2731-0809"; reviews = 8 },
+      [ordered]@{ journal = "Discover Artificial Intelligence"; publisher = "Springer Nature"; issn = "2731-0809"; reviews = 9 },
       [ordered]@{ journal = "Scientific Reports"; publisher = "Springer Nature"; issn = "2045-2322"; reviews = 6 },
       [ordered]@{ journal = "Pervasive and Mobile Computing"; publisher = "Elsevier"; issn = "1574-1192"; reviews = 4 },
       [ordered]@{ journal = "IEEE Transactions on Neural Networks and Learning Systems"; publisher = "IEEE"; issn = "2162-2388"; reviews = 2 },
@@ -171,7 +171,8 @@ $profile = [ordered]@{
       [ordered]@{ journal = "Journal of King Saud University – Computer and Information Sciences"; publisher = "Springer Nature"; issn = "2213-1248"; reviews = 1 },
       [ordered]@{ journal = "PeerJ Computer Science"; publisher = "PeerJ"; issn = "2376-5992"; reviews = 1 },
       [ordered]@{ journal = "Computers, Materials & Continua"; publisher = "Tech Science Press"; issn = "1546-2218"; reviews = 1 },
-      [ordered]@{ journal = "Computer Systems Science and Engineering"; publisher = "Tech Science Press"; issn = "0267-6192"; reviews = 1 }
+      [ordered]@{ journal = "Computer Systems Science and Engineering"; publisher = "Tech Science Press"; issn = "0267-6192"; reviews = 1 },
+      [ordered]@{ journal = "Journal of Computer Networks and Communications"; publisher = "Wiley"; issn = "2090-7141"; reviews = 1 }
     )
   }
   grants         = @(

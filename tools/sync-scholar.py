@@ -56,6 +56,15 @@ def write(name, text):
     io.open(os.path.join(ROOT, name), "w", encoding=enc, newline="").write(text)
 
 
+# Scholar titles that belong to a card the loose matcher cannot reach: Scholar keeps two records
+# for the same work (a preprint and the published version, or a retitled paper). Keyed by the
+# normalised Scholar title; mirrors ALIASES in tools/sync-orcid.py.
+ALIASES = {
+    "quantifyingresilienceofcyberphysicalsystemstozerodaythreatsadigitaltwinbasedwhatifanalysis": "pub-6",
+    "vulnerabilitiesinautonomousexecutionasurveyofsecuritythreatsanddefensesinllmdrivenmultiagentsystems": "pub-36",
+}
+
+
 def norm(s):
     return re.sub(r"[^a-z0-9]", "", (s or "").lower())
 
@@ -381,9 +390,14 @@ def main():
     print("Scholar %s — %d citations · h-index %d · i10-index %d · %d indexed works"
           % (d["asOf"], d["citations"], d["hIndex"], d["i10Index"], d["indexedWorks"]))
 
-    cite_changes, unmatched = [], []
+    by_id = {c["id"]: c for c in cards}
+    cite_changes, unmatched, alias_hits, matched = [], [], [], set()
     for a in d.get("articles", []):
         n = norm(a["title"])
+        if n in ALIASES:
+            # a duplicate record of a listed work: never overwrite the main record's count
+            alias_hits.append(ALIASES[n])
+            continue
         c = by_norm.get(n)
         if c is None:
             for k, cand in by_norm.items():
@@ -393,8 +407,16 @@ def main():
         if c is None:
             unmatched.append(a)
             continue
+        matched.add(c["id"])
         if c["cites"] != int(a["citations"]):
             cite_changes.append((c["id"], c["cites"], int(a["citations"]), c["title"]))
+
+    if d.get("articles"):
+        # Scholar lists some works twice; count each listed work once
+        distinct = len(matched | set(alias_hits)) + len(unmatched)
+        if distinct != d["indexedWorks"]:
+            print("indexed works: %d Scholar records → %d distinct works" % (d["indexedWorks"], distinct))
+        d["indexedWorks"] = distinct
 
     print("\nPer-publication citation changes: %d" % len(cite_changes))
     for pid, old, new, title in cite_changes:

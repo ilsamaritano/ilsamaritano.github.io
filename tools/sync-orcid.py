@@ -56,6 +56,7 @@ JOURNALS = {
     "2376-5992": ("PeerJ Computer Science", "PeerJ"),
     "1546-2218": ("Computers, Materials & Continua", "Tech Science Press"),
     "0267-6192": ("Computer Systems Science and Engineering", "Tech Science Press"),
+    "2090-7141": ("Journal of Computer Networks and Communications", "Wiley"),
 }
 
 
@@ -177,6 +178,60 @@ def match_work(work_title, cards):
     return None
 
 
+def add_new_journals(html, reviews, site_counts, changed):
+    """Append a row for every ISSN that ORCID has, JOURNALS knows and the site does not list yet.
+
+    Covers the review card, the peer-review ItemList JSON-LD, the Occupation description, the
+    llms.txt / readme.md tables and the build-profile.ps1 table. Without this a first review for
+    a new journal left the figures inconsistent and tools/validate.py blocked the commit.
+    """
+    new = [i for i in reviews if i not in site_counts and i in JOURNALS]
+    if not new:
+        return html
+    esc = lambda t: t.replace("&", "&amp;")
+    for issn in new:
+        name, pub = JOURNALS[issn]
+        n = reviews[issn]
+        rv = "%d review%s" % (n, "" if n == 1 else "s")
+        # review card: after the last card of the grid
+        cards = list(re.finditer(r'(?m)^(\s*)<li class="review-card">.*</li>$', html))
+        last = cards[-1]
+        card = ('\n%s<li class="review-card"><span><span class="rv-name">%s</span><span class="rv-pub">'
+                '%s · ISSN %s</span></span><span class="rv-count">%s</span></li>'
+                % (last.group(1), esc(name), esc(pub), issn, rv))
+        html = html[:last.end()] + card + html[last.end():]
+        # JSON-LD periodical list
+        items = list(re.finditer(r'(?m)^(\s*)\{ "@type": "ListItem", "position": (\d+), "item": \{ "@type": "Periodical".*\} \},?$', html))
+        if items:
+            li = items[-1]
+            row = (',\n%s{ "@type": "ListItem", "position": %d, "item": { "@type": "Periodical", "name": %s, '
+                   '"issn": "%s", "publisher": { "@type": "Organization", "name": %s }, "description": "%s (2026)" } }'
+                   % (li.group(1), int(li.group(2)) + 1, json.dumps(name, ensure_ascii=False), issn,
+                      json.dumps(pub, ensure_ascii=False), rv))
+            html = html[:li.end()] + row + html[li.end():]
+            html = re.sub(r'("@id": "https://ilsamaritano\.github\.io/#peer-review",(?:.|\n)*?"numberOfItems": )\d+',
+                          lambda m: "%s%d" % (m.group(1), int(li.group(2)) + 1), html, count=1)
+        # Occupation description: the comma-separated journal list ends with a full stop
+        html = re.sub(r'("description": "Reviewer for [^"]*?)\."',
+                      lambda m: '%s, %s."' % (m.group(1), name), html, count=1)
+        for path in ("llms.txt", "readme.md"):
+            t = read(path)
+            rows = list(re.finditer(r'(?m)^\| [^|\n]+ \| [^|\n]+ \| [\dX]{4}-[\dX]{4} \| \d+ \|$', t))
+            if rows:
+                r = rows[-1]
+                t = t[:r.end()] + "\n| %s | %s | %s | %d |" % (name, pub, issn, n) + t[r.end():]
+                write(path, t)
+        gen = read("tools/build-profile.ps1")
+        rows = list(re.finditer(r'(?m)^(\s*)\[ordered\]@\{ journal = .*reviews = \d+ \}$', gen))
+        if rows:
+            r = rows[-1]
+            gen = (gen[:r.end()] + ',\n%s[ordered]@{ journal = "%s"; publisher = "%s"; issn = "%s"; reviews = %d }'
+                   % (r.group(1), name, pub, issn, n) + gen[r.end():])
+            write("tools/build-profile.ps1", gen)
+        changed.append("new review journal: %s (%s)" % (name, issn))
+    return html
+
+
 # ── report / apply ────────────────────────────────────────────────────────────
 
 def main():
@@ -275,6 +330,7 @@ def main():
     # step is idempotent and a partially-applied earlier run still converges.
     total, journals = sum(reviews.values()), len(reviews)
     before_review_state = html
+    html = add_new_journals(html, reviews, site_counts, changed)
 
     def plural(n):
         return "%d review%s" % (n, "" if n == 1 else "s")
@@ -293,6 +349,8 @@ def main():
     html = re.sub(r'\d+ reviews recorded on ORCID', "%d reviews recorded on ORCID" % total, html)
     html = re.sub(r'\d+ reviews for \d+ (international )?journals',
                   lambda m: "%d reviews for %d %sjournals" % (total, journals, m.group(1) or ""), html)
+    html = re.sub(r'([Rr]eviewer for )\d+( international journals)',
+                  lambda m: "%s%d%s" % (m.group(1), journals, m.group(2)), html)
     html = re.sub(r'\d+ peer reviews for \d+ international journals',
                   "%d peer reviews for %d international journals" % (total, journals), html)
     html = re.sub(r'>\d+ reviews · \d+ journals<', ">%d reviews · %d journals<" % (total, journals), html)
@@ -309,6 +367,8 @@ def main():
         t = re.sub(r'\d+ reviews recorded on ORCID', "%d reviews recorded on ORCID" % total, t)
         t = re.sub(r'\d+ reviews for \d+ (international )?journals',
                    lambda m: "%d reviews for %d %sjournals" % (total, journals, m.group(1) or ""), t)
+        t = re.sub(r'([Rr]eviewer for )\d+( international journals)',
+                   lambda m: "%s%d%s" % (m.group(1), journals, m.group(2)), t)
         t = re.sub(r'## Peer Review \(\d+ reviews', "## Peer Review (%d reviews" % total, t)
         t = re.sub(r'"reviews": \d+, "journals": \d+',
                    '"reviews": %d, "journals": %d' % (total, journals), t)

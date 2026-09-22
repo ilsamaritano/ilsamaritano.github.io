@@ -34,9 +34,9 @@ jobs:
   sync:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
 
-      - uses: actions/setup-python@v5
+      - uses: actions/setup-python@v6
         with:
           python-version: '3.12'
 
@@ -148,4 +148,22 @@ jobs:
             gh issue comment "$EXISTING" --body "$BODY"
           else
             gh issue create --title "$TITLE" --body "$BODY"
+          fi
+
+      # Both sync steps always exit 0 so that the rest of the job (commit, summary, issue) still
+      # runs; without this check a crash — ORCID or SerpApi unreachable, a bad key, a parser
+      # error — would leave the run green while nothing was updated.
+      - name: Fail the run if a sync step crashed
+        if: always()
+        run: |
+          fail=0
+          for s in "${{ steps.orcid.outputs.status }}" "${{ steps.scholar.outputs.status }}"; do
+            case "$s" in 0|2|skipped|'') ;; *) fail=1 ;; esac
+          done
+          if [ "${{ steps.scholar.outputs.status }}" = "skipped" ]; then
+            echo "::warning::SERPAPI_KEY is not set — citation figures and the 'updated' date were NOT refreshed."
+          fi
+          if [ "$fail" = 1 ]; then
+            echo "::error::A sync step failed (ORCID=${{ steps.orcid.outputs.status }}, Scholar=${{ steps.scholar.outputs.status }}). See the job summary."
+            exit 1
           fi

@@ -2,7 +2,7 @@
   "document": "Machine-readable academic profile of Vincenzo Sammartino",
   "canonicalUrl": "https://ilsamaritano.github.io/profile.json",
   "generatedFrom": "https://ilsamaritano.github.io/ (index.html publication record)",
-  "lastUpdated": "2026-09-20",
+  "lastUpdated": "2026-09-22",
   "license": "CC BY 4.0 — attribution: Vincenzo Sammartino, https://ilsamaritano.github.io/",
   "usage": {
     "audience": "Search engines, AI assistants, research-indexing agents and scripts.",
@@ -66,17 +66,17 @@
   "metrics": {
     "source": "Google Scholar",
     "sourceUrl": "https://scholar.google.com/citations?user=lQig7SEAAAAJ",
-    "asOf": "2026-09-20",
+    "asOf": "2026-09-22",
     "citations": 161,
     "hIndex": 8,
     "i10Index": 7,
-    "indexedWorks": 36,
+    "indexedWorks": 35,
     "citationsByYear": {
       "2024": 3,
       "2025": 20,
       "2026": 138
     },
-    "note": "Metrics cover the 38 publications listed here, of which 36 are indexed by Google Scholar. 2026 is year to date. Sum of per-publication citation counts in this file: 158 (Google Scholar's profile total may differ slightly because of merged or duplicate records)."
+    "note": "Metrics cover the 38 publications listed here, of which 35 are indexed by Google Scholar. 2026 is year to date. Sum of per-publication citation counts in this file: 158 (Google Scholar's profile total may differ slightly because of merged or duplicate records)."
   },
   "positions": [
     {
@@ -1053,14 +1053,14 @@
   "peerReview": {
     "source": "https://orcid.org/0009-0002-4632-1179",
     "year": 2026,
-    "reviews": 39,
-    "journals": 20,
+    "reviews": 41,
+    "journals": 21,
     "detail": [
       {
         "journal": "Discover Artificial Intelligence",
         "publisher": "Springer Nature",
         "issn": "2731-0809",
-        "reviews": 8
+        "reviews": 9
       },
       {
         "journal": "Scientific Reports",
@@ -1174,6 +1174,12 @@
         "journal": "Computer Systems Science and Engineering",
         "publisher": "Tech Science Press",
         "issn": "0267-6192",
+        "reviews": 1
+      },
+      {
+        "journal": "Journal of Computer Networks and Communications",
+        "publisher": "Wiley",
+        "issn": "2090-7141",
         "reviews": 1
       }
     ]

@@ -8,10 +8,10 @@
 > cyber-physical systems resilience, quantum machine learning and post-quantum security,
 > 6G far-edge digital twins, UAV swarm security with TinyML and Edge AI,
 > security of LLM-driven multi-agent systems, NLP.
-> 38 publications listed here; the 36 indexed by Google Scholar (20 September 2026) are cited
+> 38 publications listed here; the 35 indexed by Google Scholar (22 September 2026) are cited
 > 161 times · h-index 8 · i10-index 7.
 > Citations per year: 3 (2024) · 20 (2025) · 138 (2026, year to date).
-> Peer reviewer for 20 international journals (39 reviews recorded on ORCID, 2026), including
+> Peer reviewer for 21 international journals (41 reviews recorded on ORCID, 2026), including
 > IEEE Transactions on Neural Networks and Learning Systems, ACM Computing Surveys, Scientific Reports,
 > Computers & Security and Future Generation Computer Systems.
 > Scopus Author ID: 59166600100 · SciProfiles: 3668849
@@ -20,7 +20,7 @@
 > Email: vincesammartino@gmail.com (institutional: vincenzo.sammartino@phd.unipi.it)
 > Personal site: https://ilsamaritano.github.io
 > Institutional profile (University of Pisa): https://people.unipi.it/vincenzo_sammartino/
-> Last updated: 2026-09-20. All bibliometric figures below carry this observation date;
+> Last updated: 2026-09-22. All bibliometric figures below carry this observation date;
 > when quoting them, state both the source (Google Scholar) and the date.
 
 ---
@@ -60,7 +60,7 @@
   Francis, in *Artificial Intelligence in Cybersecurity: Unlocking the Power of Large Language Models*,
   2026) and *AI-Enabled Cybersecurity Using Synthetic Data* (IEEE PerCom 2025). Earlier NLP work on
   hate-speech detection, sentiment polarity and figurative language provides the background.
-- **Peer review?** 39 reviews for 20 journals in 2026, recorded on ORCID.
+- **Peer review?** 41 reviews for 21 journals in 2026, recorded on ORCID.
 - **Contact?** vincesammartino@gmail.com — open to research collaborations, visiting positions and
   industry partnerships in AI, cybersecurity and digital twin architectures.
 
@@ -79,10 +79,10 @@
   "orcid": "0009-0002-4632-1179",
   "scopusAuthorId": "59166600100",
   "sciProfilesId": "3668849",
-  "peerReview": { "reviews": 39, "journals": 20, "year": 2026, "source": "https://orcid.org/0009-0002-4632-1179" },
+  "peerReview": { "reviews": 41, "journals": 21, "year": 2026, "source": "https://orcid.org/0009-0002-4632-1179" },
   "googleScholar": "https://scholar.google.com/citations?user=lQig7SEAAAAJ",
   "metrics": {
-    "citations": 161, "hIndex": 8, "i10Index": 7, "worksIndexedByScholar": 36, "publicationsListed": 38, "asOf": "2026-09-20",
+    "citations": 161, "hIndex": 8, "i10Index": 7, "worksIndexedByScholar": 35, "publicationsListed": 38, "asOf": "2026-09-22",
     "citationsByYear": { "2024": 3, "2025": 20, "2026": 138 },
     "source": "Google Scholar"
   },
@@ -114,7 +114,7 @@
 ---
 
 <!-- PUBS:START -->
-## Publications (38 listed; the 36 indexed by Google Scholar are cited 161 times, h-index 8, i10-index 7 — 2026-09-20)
+## Publications (38 listed; the 35 indexed by Google Scholar are cited 161 times, h-index 8, i10-index 7 — 2026-09-22)
 
 Entries are grouped by year, then by citation count (descending). Each entry carries its output
 type and its Google Scholar citation count as of 2026-09-20. Canonical ids (`pub-N`) match
@@ -326,11 +326,11 @@ profile.json and the page anchors at https://ilsamaritano.github.io/#pub-N.
 
 ---
 
-## Peer Review (39 reviews for 20 journals, all 2026 — recorded on ORCID)
+## Peer Review (41 reviews for 21 journals, all 2026 — recorded on ORCID)
 
 | Journal | Publisher | ISSN | Reviews |
 |---|---|---|---|
-| Discover Artificial Intelligence | Springer Nature | 2731-0809 | 8 |
+| Discover Artificial Intelligence | Springer Nature | 2731-0809 | 9 |
 | Scientific Reports | Springer Nature | 2045-2322 | 6 |
 | Pervasive and Mobile Computing | Elsevier | 1574-1192 | 4 |
 | IEEE Transactions on Neural Networks and Learning Systems | IEEE | 2162-2388 | 2 |
@@ -350,6 +350,7 @@ profile.json and the page anchors at https://ilsamaritano.github.io/#pub-N.
 | PeerJ Computer Science | PeerJ | 2376-5992 | 1 |
 | Computers, Materials & Continua | Tech Science Press | 1546-2218 | 1 |
 | Computer Systems Science and Engineering | Tech Science Press | 0267-6192 | 1 |
+| Journal of Computer Networks and Communications | Wiley | 2090-7141 | 1 |
 
 ## Research Grant
 
