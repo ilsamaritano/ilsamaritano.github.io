@@ -1,0 +1,28 @@
+name: IndexNow ping
+
+# Tells Bing, Yandex, Seznam, Naver and the other IndexNow engines that the profile changed, so
+# they recrawl within hours instead of weeks. The key file (620c7482039b41a1d4ade3ff90b0f3d7.txt) at the site root proves
+# ownership. Google does not take part in IndexNow: it picks changes up from sitemap.xml
+# (submit it once in Search Console).
+
+on:
+  push:
+    branches: [main]
+    paths: ['index.html', 'profile.json', 'llms.txt', 'sitemap.xml']
+  workflow_run:
+    workflows: ['Sync profile (ORCID + Google Scholar)']
+    types: [completed]
+  workflow_dispatch:
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      # give GitHub Pages time to publish the new version before the engines fetch it
+      - run: sleep 90
+      - name: Submit the changed URLs
+        run: |
+          curl -sS -o /dev/null -w 'IndexNow HTTP %{http_code}\n' \
+            -H 'Content-Type: application/json; charset=utf-8' \
+            -d '{"host":"ilsamaritano.github.io","key":"620c7482039b41a1d4ade3ff90b0f3d7","keyLocation":"https://ilsamaritano.github.io/620c7482039b41a1d4ade3ff90b0f3d7.txt","urlList":["https://ilsamaritano.github.io/","https://ilsamaritano.github.io/profile.json","https://ilsamaritano.github.io/llms.txt"]}' \
+            https://api.indexnow.org/indexnow

@@ -108,6 +108,9 @@ $profile = [ordered]@{
     github          = "https://github.com/ilsamaritano"
     linkedin        = "https://www.linkedin.com/in/vincenzo-sammartino-0339191a1"
     institutionalPage = "https://people.unipi.it/vincenzo_sammartino/"
+    dblp            = "https://dblp.org/pid/377/1000"
+    semanticScholar = "https://www.semanticscholar.org/author/2297110799"
+    openAlex        = "https://openalex.org/A5095698377"
   }
   metrics        = [ordered]@{
     source           = "Google Scholar"

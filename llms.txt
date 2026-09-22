@@ -391,6 +391,9 @@ profile.json and the page anchors at https://ilsamaritano.github.io/#pub-N.
 - Google Scholar: https://scholar.google.com/citations?user=lQig7SEAAAAJ
 - Scopus: https://www.scopus.com/authid/detail.uri?authorId=59166600100
 - SciProfiles: https://sciprofiles.com/profile/3668849
+- DBLP: https://dblp.org/pid/377/1000
+- Semantic Scholar: https://www.semanticscholar.org/author/2297110799
+- OpenAlex: https://openalex.org/A5095698377
 - University of Pisa profile: https://people.unipi.it/vincenzo_sammartino/
 - GitHub: https://github.com/ilsamaritano
 - LinkedIn: https://www.linkedin.com/in/vincenzo-sammartino-0339191a1
