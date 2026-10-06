@@ -57,6 +57,36 @@ JOURNALS = {
     "1546-2218": ("Computers, Materials & Continua", "Tech Science Press"),
     "0267-6192": ("Computer Systems Science and Engineering", "Tech Science Press"),
     "2090-7141": ("Journal of Computer Networks and Communications", "Wiley"),
+    "1569-190X": ("Simulation Modelling Practice and Theory", "Elsevier"),
+    "2079-9292": ("Electronics", "MDPI"),
+    "0272-4332": ("Risk Analysis", "Wiley"),
+    "2579-0064": ("Journal of Cyber Security", "Tech Science Press"),
+    "2624-9898": ("Frontiers in Computer Science", "Frontiers Media"),
+    "2730-7239": ("Discover Internet of Things", "Springer Nature"),
+}
+
+# ORCID files reviews under whichever ISSN the publisher reported, so one journal can turn up
+# under both its print and its electronic ISSN. Map the second onto the one the page lists.
+SAME_JOURNAL = {
+    "1872-6208": "0167-4048",   # Computers & Security
+    "1878-1462": "1569-190X",   # Simulation Modelling Practice and Theory
+}
+
+# ISSNs neither table knows are looked up (OpenAlex, then Crossref) and remembered here, so a
+# first review for a new journal no longer needs a hand edit before the sync can commit.
+JOURNAL_CACHE = "tools/journals.json"
+
+# Directory spellings of a publisher → the short form the page uses.
+PUBLISHERS = {
+    "Elsevier BV": "Elsevier",
+    "Multidisciplinary Digital Publishing Institute": "MDPI",
+    "MDPI AG": "MDPI",
+    "Springer Science+Business Media": "Springer Nature",
+    "Springer-Verlag": "Springer Nature",
+    "Frontiers Media SA": "Frontiers Media",
+    "Institute of Electrical and Electronics Engineers": "IEEE",
+    "Association for Computing Machinery": "ACM",
+    "SAGE Publishing": "SAGE Publications",
 }
 
 
@@ -113,6 +143,71 @@ def orcid_reviews(rec):
         issn = g["external-ids"]["external-id"][0]["external-id-value"].replace("issn:", "")
         out[issn] = sum(len(x["peer-review-summary"]) for x in g["peer-review-group"])
     return out
+
+
+def get_json(url):
+    req = urllib.request.Request(url, headers={"Accept": "application/json",
+                                               "User-Agent": "ilsamaritano.github.io sync"})
+    with urllib.request.urlopen(req, timeout=30) as r:
+        return json.loads(r.read().decode("utf-8"))
+
+
+def lookup_issn(issn):
+    """(name, publisher, every ISSN of the journal), or None when no directory names it."""
+    name, pub, family = None, None, []
+    try:
+        d = get_json("https://api.openalex.org/sources/issn:%s"
+                     "?select=display_name,host_organization_name,issn_l,issn" % issn)
+        name, pub = d.get("display_name"), d.get("host_organization_name")
+        family = [i for i in [d.get("issn_l")] + (d.get("issn") or []) if i]
+    except Exception:
+        pass
+    if not (name and pub):
+        try:
+            d = get_json("https://api.crossref.org/journals/%s" % issn)["message"]
+            name, pub = name or d.get("title"), pub or d.get("publisher")
+            family += [i for i in d.get("ISSN") or [] if i not in family]
+        except Exception:
+            pass
+    if not (name and pub):
+        return None
+    pub = PUBLISHERS.get(pub, re.sub(r"\s*\([^)]*\)$", "", pub))
+    return name, pub, family
+
+
+def canonical_reviews(raw, save):
+    """Fold ORCID's per-ISSN counts into one count per journal the page can name.
+
+    Returns ({issn the page lists the journal under: reviews}, [ISSNs nobody could name]).
+    The unnamed ones are left out of every total, so the figures the page states always add up
+    to the rows it shows and tools/validate.py passes whatever ORCID has gained.
+    """
+    path = os.path.join(ROOT, JOURNAL_CACHE)
+    cache = json.load(io.open(path, encoding="utf-8")) if os.path.exists(path) else {}
+    out, unnamed, learned = {}, [], False
+    for issn in sorted(raw):
+        key = issn if issn in JOURNALS else SAME_JOURNAL.get(issn)
+        if key is None and issn in cache:
+            e = cache[issn]
+            key = e["listedAs"]
+            JOURNALS.setdefault(key, (e["name"], e["publisher"]))
+        if key is None:
+            found = lookup_issn(issn)
+            if found:
+                name, pub, family = found
+                key = next((i for i in family if i in JOURNALS), issn)
+                JOURNALS.setdefault(key, (name, pub))
+                cache[issn] = {"name": JOURNALS[key][0], "publisher": JOURNALS[key][1], "listedAs": key}
+                learned = True
+                print("new ISSN %s → %s (%s), listed as %s" % (issn, name, pub, key))
+        if key is None:
+            unnamed.append(issn)
+            continue
+        out[key] = out.get(key, 0) + raw[issn]
+    if learned and save:
+        io.open(path, "w", encoding="utf-8", newline="\n").write(
+            json.dumps(cache, indent=2, ensure_ascii=False, sort_keys=True) + "\n")
+    return out, unnamed
 
 
 def orcid_works(rec):
@@ -247,7 +342,7 @@ def main():
         io.open(args.save_snapshot, "w", encoding="utf-8", newline="\n").write(
             json.dumps(rec, indent=1, ensure_ascii=False))
 
-    reviews = orcid_reviews(rec)
+    reviews, unnamed = canonical_reviews(orcid_reviews(rec), args.apply)
     works = orcid_works(rec)
     html = read("index.html")
     cards = site_cards(html)
@@ -257,10 +352,9 @@ def main():
           % (ORCID, len(works), len(reviews), sum(reviews.values())))
 
     # 1. peer review -----------------------------------------------------------
-    unknown = sorted(set(reviews) - set(JOURNALS))
-    if unknown:
-        problems.append("unknown ISSN(s) on ORCID, add them to JOURNALS in this script: %s"
-                        % ", ".join(unknown))
+    if unnamed:
+        problems.append("ISSN(s) on ORCID that no directory could name, left out of the totals — "
+                        "add them to JOURNALS in this script: %s" % ", ".join(unnamed))
     site_counts = {m.group("issn"): int(m.group("n")) for m in re.finditer(
         r'ISSN (?P<issn>[\dX-]+)</span></span><span class="rv-count">(?P<n>\d+) review',
         html)}
@@ -346,10 +440,16 @@ def main():
 
     html = re.sub(r'(<div><span class="metric-num">)\d+(</span><span class="metric-label">Reviews)',
                   lambda m: "%s%d%s" % (m.group(1), total, m.group(2)), html)
+    publishers = len(set(re.findall(r'<span class="rv-pub">(.*?) · ISSN', html)))
+    for label, n in (("Journals", journals), ("Publishers", publishers)):
+        html = re.sub(r'(<div><span class="metric-num[^"]*">)\d+(</span><span class="metric-label">%s)' % label,
+                      lambda m, n=n: "%s%d%s" % (m.group(1), n, m.group(2)), html)
     html = re.sub(r'\d+ reviews recorded on ORCID', "%d reviews recorded on ORCID" % total, html)
     html = re.sub(r'\d+ reviews for \d+ (international )?journals',
                   lambda m: "%d reviews for %d %sjournals" % (total, journals, m.group(1) or ""), html)
     html = re.sub(r'([Rr]eviewer for )\d+( international journals)',
+                  lambda m: "%s%d%s" % (m.group(1), journals, m.group(2)), html)
+    html = re.sub(r'([Rr]eviewer for )\d+( journals)',
                   lambda m: "%s%d%s" % (m.group(1), journals, m.group(2)), html)
     html = re.sub(r'\d+ peer reviews for \d+ international journals',
                   "%d peer reviews for %d international journals" % (total, journals), html)
@@ -414,9 +514,15 @@ def main():
             ld = re.search(r'(?s)("@id": "https://ilsamaritano\.github\.io/#%s",\n)(\s*)'
                            % re.escape(pid), html)
             if ld and ('"%s"' % url) not in html[ld.start():ld.start() + 2000]:
-                prop = ('"identifier": { "@type": "PropertyValue", "propertyID": "%s", "url": "%s" },\n%s'
-                        % (label, url, ld.group(2)))
-                html = html[:ld.end()] + prop + html[ld.end():]
+                value = '{ "@type": "PropertyValue", "propertyID": "%s", "url": "%s" }' % (label, url)
+                # an entry that already has an identifier gets a list: a second "identifier"
+                # key would be a duplicate, and JSON parsers keep only the last one
+                have = re.compile(r'"identifier": (\[)?(.*?)\]?,\n').match(html, ld.end())
+                if have:
+                    html = (html[:have.start()] + '"identifier": [%s, %s],\n' % (value, have.group(2))
+                            + html[have.end():])
+                else:
+                    html = html[:ld.end()] + '"identifier": %s,\n%s' % (value, ld.group(2)) + html[ld.end():]
         changed.append("%d identifier link(s) added" % len(link_adds))
 
     if args.as_of:

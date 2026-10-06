@@ -4,6 +4,7 @@
 Google Scholar has no public API and blocks datacentre IPs, so the numbers come from one of:
 
     python tools/sync-scholar.py --serpapi-key $SERPAPI_KEY          # fetch (needs a key)
+    python tools/sync-scholar.py --fetch                             # read the profile page (home IP)
     python tools/sync-scholar.py --from-json scholar.json            # hand-prepared numbers
     python tools/sync-scholar.py --from-json scholar.json --report    # show the diff only
 
@@ -105,6 +106,67 @@ def from_serpapi(key, as_of):
         "citations": table.get("citations"),
         "hIndex": table.get("h_index"),
         "i10Index": table.get("i10_index"),
+        "indexedWorks": len(articles),
+        "citationsByYear": graph,
+        "articles": articles,
+    }
+
+
+PROFILE_URL = "https://scholar.google.com/citations?user=%s&hl=en&cstart=%%d&pagesize=100" % SCHOLAR_ID
+BLOCKED = 3                 # exit code: Scholar refused the request, nothing was changed
+
+
+def from_profile_page(as_of, saved=None):
+    """Read the public profile page itself: no key needed, but Scholar only answers some IPs.
+
+    Works from a home or office connection; from a datacentre (GitHub Actions included) Scholar
+    usually replies with a CAPTCHA or a 403/429, which ends the run with exit code BLOCKED.
+    """
+    import html as htmllib
+    pages = []
+    if saved:
+        pages.append(io.open(saved, encoding="utf-8", errors="replace").read())
+    else:
+        start = 0
+        while True:
+            req = urllib.request.Request(PROFILE_URL % start, headers={
+                "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
+                              "(KHTML, like Gecko) Chrome/129.0 Safari/537.36",
+                "Accept-Language": "en"})
+            try:
+                with urllib.request.urlopen(req, timeout=60) as r:
+                    page = r.read().decode("utf-8", "replace")
+            except Exception as e:
+                print("Google Scholar refused the request (%s) — nothing changed." % e)
+                sys.exit(BLOCKED)
+            pages.append(page)
+            if len(re.findall(r'<tr class="gsc_a_tr">', page)) < 100:
+                break
+            start += 100
+    first = pages[0]
+    stats = [int(n) for n in re.findall(r'<td class="gsc_rsb_std">(\d+)</td>', first)]
+    if len(stats) < 5:
+        print("Google Scholar did not return the profile (CAPTCHA or changed markup) — nothing changed.")
+        sys.exit(BLOCKED)
+    # one label per year, but a bar only for the years that have citations; z-index counts the
+    # bars from the right, which is what ties a bar back to its year
+    years = re.findall(r'class="gsc_g_t"[^>]*>(\d{4})<', first)
+    graph = {}
+    for z, n in re.findall(r'class="gsc_g_a"[^>]*z-index:(\d+)[^>]*><span class="gsc_g_al">(\d+)<', first):
+        graph[years[len(years) - int(z)]] = int(n)
+    articles = []
+    for page in pages:
+        for row in re.findall(r'(?s)<tr class="gsc_a_tr">(.*?)</tr>', page):
+            title = re.search(r'(?s)class="gsc_a_at">(.*?)</a>', row)
+            cites = re.search(r'class="gsc_a_ac[^"]*">(\d*)<', row)
+            if title:
+                articles.append({"title": htmllib.unescape(re.sub(r"<[^>]+>", "", title.group(1))),
+                                 "citations": int(cites.group(1) or 0) if cites else 0})
+    return {
+        "asOf": as_of,
+        "citations": stats[0],
+        "hIndex": stats[2],
+        "i10Index": stats[4],
         "indexedWorks": len(articles),
         "citationsByYear": graph,
         "articles": articles,
@@ -368,6 +430,8 @@ def main():
     src = ap.add_mutually_exclusive_group(required=True)
     src.add_argument("--serpapi-key")
     src.add_argument("--from-json")
+    src.add_argument("--fetch", action="store_true", help="read the public profile page directly")
+    src.add_argument("--from-html", help="a saved copy of the public profile page")
     ap.add_argument("--as-of", default=None, help="observation date (default: today, UTC)")
     ap.add_argument("--report", action="store_true", help="show the diff without writing")
     args = ap.parse_args()
@@ -377,7 +441,12 @@ def main():
         import datetime
         as_of = datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%d")
 
-    d = from_serpapi(args.serpapi_key, as_of) if args.serpapi_key else from_file(args.from_json, as_of)
+    if args.serpapi_key:
+        d = from_serpapi(args.serpapi_key, as_of)
+    elif args.from_json:
+        d = from_file(args.from_json, as_of)
+    else:
+        d = from_profile_page(as_of, args.from_html)
     for k in ("citations", "hIndex", "i10Index", "indexedWorks", "citationsByYear"):
         if d.get(k) in (None, {}):
             raise SystemExit("the Scholar data is missing '%s'" % k)

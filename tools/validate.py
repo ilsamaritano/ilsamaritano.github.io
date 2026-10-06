@@ -256,6 +256,15 @@ def main():
         bad("index.html Reviews counter says %s, profile.json says %d"
             % (shown_total.group(1), pr["reviews"]))
 
+    review_rows = len(re.findall(r'<li class="review-card">', html))
+    if review_rows != pr["journals"]:
+        bad("index.html lists %d review journals, profile.json says %d" % (review_rows, pr["journals"]))
+    for quoted in set(re.findall(r'<div><span class="metric-num[^"]*">(\d+)</span>'
+                                 r'<span class="metric-label">Journals', html)
+                      + re.findall(r'[Rr]eviewer for (\d+) (?:international )?journals', html)):
+        if int(quoted) != pr["journals"]:
+            bad("index.html quotes %s review journals, profile.json says %d" % (quoted, pr["journals"]))
+
     # ── referenced local files exist ─────────────────────────────────────────
     for ref in set(re.findall(r'(?:src|href)="((?!https?:|mailto:|#|//)[^"]+)"', html)):
         target = ref.split("?")[0].split("#")[0]

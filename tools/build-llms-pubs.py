@@ -40,8 +40,8 @@ out.append(
 )
 out.append(
     "Entries are grouped by year, then by citation count (descending). Each entry carries its output\n"
-    "type and its Google Scholar citation count as of 2026-09-20. Canonical ids (`pub-N`) match\n"
-    "profile.json and the page anchors at https://ilsamaritano.github.io/#pub-N.\n"
+    "type and its Google Scholar citation count as of %s. Canonical ids (`pub-N`) match\n"
+    "profile.json and the page anchors at https://ilsamaritano.github.io/#pub-N.\n" % m["asOf"]
 )
 for y in years:
     group = sorted(

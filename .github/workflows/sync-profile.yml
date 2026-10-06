@@ -2,8 +2,9 @@ name: Sync profile (ORCID + Google Scholar)
 
 # Keeps the site in step with the two authoritative sources:
 #   · ORCID   — peer reviews, DOIs, the work list (public API, no credentials needed)
-#   · Scholar — citation counts, h-index, i10-index (needs the SERPAPI_KEY secret; skipped
-#               without it, because Google Scholar has no API and blocks CI IP ranges)
+#   · Scholar — citation counts, h-index, i10-index (through SerpApi when the SERPAPI_KEY
+#               secret is set; otherwise read from the profile page, which Google Scholar
+#               often refuses to CI IP ranges — the step is then skipped, not failed)
 #
 # The job only commits when tools/validate.py passes, so a half-applied update never ships.
 # Anything that needs a human decision — a publication on ORCID or Scholar that the page does
@@ -61,14 +62,17 @@ jobs:
         env:
           SERPAPI_KEY: ${{ secrets.SERPAPI_KEY }}
         run: |
-          if [ -z "$SERPAPI_KEY" ]; then
-            echo 'No SERPAPI_KEY secret set — leaving the citation figures untouched.' | tee scholar.log
-            echo "status=skipped" >> "$GITHUB_OUTPUT"
-            exit 0
-          fi
           set +e
-          python tools/sync-scholar.py --serpapi-key "$SERPAPI_KEY" --as-of "$AS_OF" | tee scholar.log
-          echo "status=${PIPESTATUS[0]}" >> "$GITHUB_OUTPUT"
+          if [ -n "$SERPAPI_KEY" ]; then
+            python tools/sync-scholar.py --serpapi-key "$SERPAPI_KEY" --as-of "$AS_OF" | tee scholar.log
+          else
+            # No key: ask Scholar directly. It refuses most datacentre addresses (exit code 3),
+            # in which case the citation figures simply stay as they are.
+            python tools/sync-scholar.py --fetch --as-of "$AS_OF" | tee scholar.log
+          fi
+          status=${PIPESTATUS[0]}
+          [ "$status" = 3 ] && status=skipped
+          echo "status=$status" >> "$GITHUB_OUTPUT"
           exit 0
 
       # No -AsOf here: metrics.asOf is the Google Scholar observation date, and sync-scholar.py
@@ -124,10 +128,10 @@ jobs:
         run: |
           TITLE="Profile sync: publications to add by hand"
           BODY=$(printf '%s\n' \
-            "The scheduled sync on $AS_OF found works upstream that the site does not list." \
+            "The scheduled sync on $AS_OF found something upstream that needs a hand edit (see the logs below)." \
             "" \
-            "Add them to the publication list in \`index.html\` (card + JSON-LD entry), bump the" \
-            "filter-toolbar counts, then run:" \
+            "For a missing work: add it to the publication list in \`index.html\` (card + JSON-LD entry)," \
+            "bump the filter-toolbar counts, then run:" \
             "" \
             '```' \
             "pwsh tools/build-profile.ps1 -AsOf $AS_OF" \
@@ -161,7 +165,7 @@ jobs:
             case "$s" in 0|2|skipped|'') ;; *) fail=1 ;; esac
           done
           if [ "${{ steps.scholar.outputs.status }}" = "skipped" ]; then
-            echo "::warning::SERPAPI_KEY is not set — citation figures and the 'updated' date were NOT refreshed."
+            echo "::warning::Google Scholar refused the request and no SERPAPI_KEY is set — citation figures and the 'updated' date were NOT refreshed."
           fi
           if [ "$fail" = 1 ]; then
             echo "::error::A sync step failed (ORCID=${{ steps.orcid.outputs.status }}, Scholar=${{ steps.scholar.outputs.status }}). See the job summary."
