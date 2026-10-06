@@ -8,10 +8,10 @@
 > cyber-physical systems resilience, quantum machine learning and post-quantum security,
 > 6G far-edge digital twins, UAV swarm security with TinyML and Edge AI,
 > security of LLM-driven multi-agent systems, NLP.
-> 38 publications listed here; the 35 indexed by Google Scholar (22 September 2026) are cited
-> 161 times · h-index 8 · i10-index 7.
-> Citations per year: 3 (2024) · 20 (2025) · 138 (2026, year to date).
-> Peer reviewer for 21 international journals (41 reviews recorded on ORCID, 2026), including
+> 39 publications listed here; the 38 indexed by Google Scholar (6 October 2026) are cited
+> 206 times · h-index 10 · i10-index 10.
+> Citations per year: 3 (2024) · 20 (2025) · 183 (2026, year to date).
+> Peer reviewer for 27 international journals (57 reviews recorded on ORCID, 2026), including
 > IEEE Transactions on Neural Networks and Learning Systems, ACM Computing Surveys, Scientific Reports,
 > Computers & Security and Future Generation Computer Systems.
 > Scopus Author ID: 59166600100 · SciProfiles: 3668849
@@ -20,7 +20,7 @@
 > Email: vincesammartino@gmail.com (institutional: vincenzo.sammartino@phd.unipi.it)
 > Personal site: https://ilsamaritano.github.io
 > Institutional profile (University of Pisa): https://people.unipi.it/vincenzo_sammartino/
-> Last updated: 2026-09-22. All bibliometric figures below carry this observation date;
+> Last updated: 2026-10-06. All bibliometric figures below carry this observation date;
 > when quoting them, state both the source (Google Scholar) and the date.
 
 ---
@@ -28,12 +28,12 @@
 ## Machine-readable endpoints
 
 - [profile.json](https://ilsamaritano.github.io/profile.json): complete structured record —
-  identity, persistent identifiers, metrics with observation date, all 38 publications
+  identity, persistent identifiers, metrics with observation date, all 39 publications
   (type, venue, year, citation count, author position, persistent links), research themes with
   cross-references to publication ids, peer review breakdown, positions, grants and projects.
   Prefer this file for programmatic use; it is generated from the site's own publication record.
 - [Homepage JSON-LD](https://ilsamaritano.github.io/): schema.org `Person`, `ProfilePage`,
-  `ResearchProject`, a peer-review `ItemList` and an `ItemList` of 38
+  `ResearchProject`, a peer-review `ItemList` and an `ItemList` of 39
   `ScholarlyArticle` entries, each with an `interactionStatistic` citation counter.
 - [sitemap.xml](https://ilsamaritano.github.io/sitemap.xml) ·
   [robots.txt](https://ilsamaritano.github.io/robots.txt) (major AI crawlers explicitly allowed) ·
@@ -60,7 +60,7 @@
   Francis, in *Artificial Intelligence in Cybersecurity: Unlocking the Power of Large Language Models*,
   2026) and *AI-Enabled Cybersecurity Using Synthetic Data* (IEEE PerCom 2025). Earlier NLP work on
   hate-speech detection, sentiment polarity and figurative language provides the background.
-- **Peer review?** 41 reviews for 21 journals in 2026, recorded on ORCID.
+- **Peer review?** 57 reviews for 27 journals in 2026, recorded on ORCID.
 - **Contact?** vincesammartino@gmail.com — open to research collaborations, visiting positions and
   industry partnerships in AI, cybersecurity and digital twin architectures.
 
@@ -79,11 +79,11 @@
   "orcid": "0009-0002-4632-1179",
   "scopusAuthorId": "59166600100",
   "sciProfilesId": "3668849",
-  "peerReview": { "reviews": 41, "journals": 21, "year": 2026, "source": "https://orcid.org/0009-0002-4632-1179" },
+  "peerReview": { "reviews": 57, "journals": 27, "year": 2026, "source": "https://orcid.org/0009-0002-4632-1179" },
   "googleScholar": "https://scholar.google.com/citations?user=lQig7SEAAAAJ",
   "metrics": {
-    "citations": 161, "hIndex": 8, "i10Index": 7, "worksIndexedByScholar": 35, "publicationsListed": 38, "asOf": "2026-09-22",
-    "citationsByYear": { "2024": 3, "2025": 20, "2026": 138 },
+    "citations": 206, "hIndex": 10, "i10Index": 10, "worksIndexedByScholar": 38, "publicationsListed": 39, "asOf": "2026-10-06",
+    "citationsByYear": { "2024": 3, "2025": 20, "2026": 183 },
     "source": "Google Scholar"
   },
   "website": "https://ilsamaritano.github.io",
@@ -114,99 +114,110 @@
 ---
 
 <!-- PUBS:START -->
-## Publications (38 listed; the 35 indexed by Google Scholar are cited 161 times, h-index 8, i10-index 7 — 2026-09-22)
+## Publications (39 listed; the 38 indexed by Google Scholar are cited 206 times, h-index 10, i10-index 10 — 2026-10-06)
 
 Entries are grouped by year, then by citation count (descending). Each entry carries its output
-type and its Google Scholar citation count as of 2026-09-20. Canonical ids (`pub-N`) match
+type and its Google Scholar citation count as of 2026-10-06. Canonical ids (`pub-N`) match
 profile.json and the page anchors at https://ilsamaritano.github.io/#pub-N.
 
 ### 2026
 
 - **Anticipating Disasters through a Security Twin**
   F. Baiardi, S. Ruggieri, V. Sammartino
-  *Dynamics of Disasters: Hybrid Threats — Springer Optimization and Its Applications (DoD 2024, Vienna)*, 2026. [Book Chapter · 14 citations]
+  *Dynamics of Disasters: Hybrid Threats — Springer Optimization and Its Applications (DoD 2024, Vienna)*, 2026. [Book Chapter · 16 citations]
   DOI: https://doi.org/10.1007/978-3-032-08606-8_1
   Zenodo: https://zenodo.org/records/19019069
 
 - **Simulation-Powered Cybersecurity: Real-Time Risk Assessment via Non-Intrusive Security Twin**
   F. Baiardi, V. Sammartino
-  *The Journal of Supercomputing — Special Issue on Simulation-Powered Cybersecurity · Springer*, 2026. [Journal · 10 citations]
+  *The Journal of Supercomputing — Special Issue on Simulation-Powered Cybersecurity · Springer*, 2026. [Journal · 13 citations]
   DOI: https://doi.org/10.1007/s11227-026-08454-0
 
 - **From Digital Twins to AI Agents: A Synthetic Data Paradigm for Next-Generation Cybersecurity**
   F. Baiardi, V. Sammartino
-  *Artificial Intelligence in Cybersecurity: Unlocking the Power of Large Language Models · CRC Press / Taylor & Francis*, 2026. [Book Chapter · 9 citations]
+  *Artificial Intelligence in Cybersecurity: Unlocking the Power of Large Language Models · CRC Press / Taylor & Francis*, 2026. [Book Chapter · 11 citations]
   ARPI: https://arpi.unipi.it/handle/11568/1323948
 
 - **Quantifying the Impact of CVSS Score Ordering on Attack Paths**
   F. Baiardi, V. Sammartino
-  *12th EAI International Conference on Smart Objects and Technologies for Social Good (GOODTECHS 2026)*, 2026. [Conference · 8 citations]
+  *12th EAI International Conference on Smart Objects and Technologies for Social Good (GOODTECHS 2026)*, 2026. [Conference · 10 citations]
   ARPI: https://arpi.unipi.it/handle/11568/1349767
 
 - **Evaluating Adversary Strategies Through a Security Twin**
   F. Baiardi, V. Sammartino, S. Ruggieri
-  *IEEE International Conference on Pervasive Computing and Communications (PerCom Workshops 2026)*, 2026. [Conference · 6 citations]
+  *IEEE International Conference on Pervasive Computing and Communications (PerCom Workshops 2026)*, 2026. [Conference · 8 citations]
   DOI: https://doi.org/10.1109/PerComWorkshops68308.2026.11585207
 
 - **Quantifying Resilience of Cyber-Physical Systems to Zero-Day Threats: A Security Twin-Based What-If Analysis Framework**
   F. Baiardi, V. Sammartino
-  *ESREL 2026 — European Safety and Reliability Conference, Book of Proceedings, pp. 3304–3311 · Research Publishing, Singapore*, 2026. [Conference · 3 citations]
+  *ESREL 2026 — European Safety and Reliability Conference, Book of Proceedings, pp. 3304–3311 · Research Publishing, Singapore*, 2026. [Conference · 4 citations]
   ARPI: https://arpi.unipi.it/handle/11568/1345228
 
 - **Blockchain-Enabled Quantum-Resistant Hybrid Isogeny-Based Signcryption Framework for Digital Twin-Assisted Healthcare System**
   A.K. Pandey, V. Sammartino, A. Vangala, A.K. Das
-  *IEEE Communications Standards Magazine*, 2026. [Journal · 2 citations]
+  *IEEE Communications Standards Magazine*, 2026. [Journal · 3 citations]
   DOI: https://doi.org/10.1109/MCOMSTD.2026.3665935
 
 - **DOS Classification, and Virtual Machine Detection via Passive Monitoring through Security Twins**
   V. Sammartino, F. Baiardi, S. Ruggieri
-  *IEEE Xplore*, 2026. [Conference · 2 citations]
+  *IEEE Xplore*, 2026. [Conference · 3 citations]
   ARPI: https://arpi.unipi.it/handle/11568/1361887
 
 - **HAVE: Host Active Verification Engine for Closing the Contextual Reality Gap in Security Digital Twins**
   V. Sammartino, M. Pasquini
-  *arXiv preprint arXiv:2606.06968*, 2026. [Preprint · 2 citations]
+  *arXiv preprint arXiv:2606.06968*, 2026. [Preprint · 3 citations]
   arXiv: https://arxiv.org/abs/2606.06968
+
+- **Hybrid Quantum Graph Neural Networks for Robust Botnet Detection in Modern IoT Ecosystems**
+  V. Sammartino
+  *Future Generation Computer Systems · Elsevier*, 2026. [Journal · 3 citations]
+  DOI: https://doi.org/10.1016/j.future.2026.108650
+
+- **Quantifying Cyber Robustness and Financial Risk via Security Twins**
+  F. Baiardi, V. Sammartino
+  *SSRN preprint 6890389*, 2026. [Preprint · 3 citations]
+  SSRN: https://ssrn.com/abstract=6890389
 
 - **SA-DTS: Semantic-Aware Digital Twin Synchronization over 6G Networks**
   V. Sammartino
-  *arXiv preprint arXiv:2606.03617*, 2026. [Preprint · 2 citations]
+  *arXiv preprint arXiv:2606.03617*, 2026. [Preprint · 3 citations]
   arXiv: https://arxiv.org/abs/2606.03617
 
 - **Feature Encoding in Quantum Machine Learning: A Survey and Practical Guidelines**
   V. Sammartino
-  *arXiv preprint arXiv:2606.05387*, 2026. [Preprint · 1 citation]
+  *arXiv preprint arXiv:2606.05387*, 2026. [Preprint · 2 citations]
   arXiv: https://arxiv.org/abs/2606.05387
-
-- **Hybrid Quantum Graph Neural Networks for Robust Botnet Detection in Modern IoT Ecosystems**
-  V. Sammartino
-  *Future Generation Computer Systems · Elsevier*, 2026. [Journal · 1 citation]
-  DOI: https://doi.org/10.1016/j.future.2026.108650
 
 - **Model-Driven Security Analysis of SD-Access Fabrics Using Digital Twins: A Probabilistic Framework in Software-Defined Campus and Cyber-Physical Networks**
   V. Sammartino, M. Schneider
-  *Future Generation Computer Systems · Elsevier*, 2026. [Journal · 1 citation]
+  *Future Generation Computer Systems · Elsevier*, 2026. [Journal · 2 citations]
   DOI: https://doi.org/10.1016/j.future.2026.108698
 
 - **Q-FE: A Quantum-Native 6G Far-Edge Architecture Securing Industrial IoT Digital Twins via CSIDH-PQC and Asynchronous Federated Learning**
   V. Sammartino
-  *arXiv preprint arXiv:2606.03611*, 2026. [Preprint · 1 citation]
+  *arXiv preprint arXiv:2606.03611*, 2026. [Preprint · 2 citations]
   arXiv: https://arxiv.org/abs/2606.03611
 
-- **Quantifying Cyber Robustness and Financial Risk via Security Twins**
-  F. Baiardi, V. Sammartino
-  *SSRN preprint 6890389*, 2026. [Preprint · 1 citation]
-  SSRN: https://ssrn.com/abstract=6890389
+- **TWIN-IDS: Twin-driven IDS Placement for Cost-aware Detection**
+  V. Sammartino, F. Baiardi, S. Ruggieri
+  *30th International Symposium on Distributed Simulation and Real Time Applications (DS-RT 2026) · IEEE*, 2026. [Conference · 2 citations]
+  ARPI: https://arpi.unipi.it/handle/11568/1369148
 
 - **Adversarial Reliability: From Design to Deployment and Beyond Using Attack-Path Chokepoints**
   V. Sammartino, F. Baiardi, S. Ruggieri
-  *SSRN preprint 7382213*, 2026. [Preprint]
+  *SSRN preprint 7382213*, 2026. [Preprint · 1 citation]
   DOI: https://doi.org/10.2139/ssrn.7382213
   SSRN: https://ssrn.com/abstract=7382213
+
+- **Consensus and Factual Dynamics in Large Populations of Interacting Language Models**
+  E. Ricco, E. Onofri, V. Sammartino, R. Di Pietro
+  *arXiv preprint arXiv:2609.39211*, 2026. [Preprint]
+  arXiv: https://arxiv.org/abs/2609.39211
 
 - **Fight Drones with Drones: Detecting Aerial Perimeter Intrusion using Drone-mounted Microphones**
   V. Sammartino, N. Denis, O. Ibrahim, R. Di Pietro
   *Lecture Notes in Computer Science (LNCS) · Springer*, 2026. [Conference]
+  DOI: https://doi.org/10.1007/978-3-032-38702-8_31
   ARPI: https://arpi.unipi.it/handle/11568/1362908
 
 - **QUASAR: A Quantum-Classical Neural Network for SAR Satellite Physical-Layer Authentication**
@@ -219,11 +230,6 @@ profile.json and the page anchors at https://ilsamaritano.github.io/#pub-N.
   *arXiv preprint arXiv:2609.09161*, 2026. [Preprint]
   arXiv: https://arxiv.org/abs/2609.09161
 
-- **TWIN-IDS: Twin-driven IDS Placement for Cost-aware Detection**
-  V. Sammartino, F. Baiardi, S. Ruggieri
-  *30th International Symposium on Distributed Simulation and Real Time Applications (DS-RT 2026) · IEEE*, 2026. [Conference]
-  ARPI: https://arpi.unipi.it/handle/11568/1369148
-
 - **Vulnerabilities in Autonomous Execution: A Survey of Security Threats and Defenses in LLM-Driven Agentic and Multi-Agent Systems**
   V. Sammartino
   *Knowledge-Based Systems · Elsevier (preprint: SSRN 7218206)*, 2026. [Journal]
@@ -235,38 +241,43 @@ profile.json and the page anchors at https://ilsamaritano.github.io/#pub-N.
 
 - **AI-Enabled Cybersecurity Using Synthetic Data**
   F. Baiardi, S. Ruggieri, V. Sammartino
-  *23rd IEEE International Conference on Pervasive Computing and Communications (PerCom 2025), Washington DC*, 2025. [Conference · 17 citations]
+  *23rd IEEE International Conference on Pervasive Computing and Communications (PerCom 2025), Washington DC*, 2025. [Conference · 18 citations]
   DOI: https://doi.org/10.1109/percomworkshops65533.2025.00055
-
-- **A Security Twin to Defeat Intrusions in Cyber Physical Systems**
-  F. Baiardi, S. Ruggieri, V. Sammartino
-  *European Safety and Reliability Conference (ESREL SRA-E 2025), Stavanger, Norway*, 2025. [Conference · 14 citations]
-  ARPI: https://arpi.unipi.it/handle/11568/1319647
 
 - **A Framework for Proactive Cyber-Resilience: Non-Intrusive Modeling for Autonomous Defense**
   V. Sammartino
-  *29th International Symposium on Distributed Simulation and Real Time Applications (DS-RT 2025) · IEEE*, 2025. [Conference · 13 citations]
+  *29th International Symposium on Distributed Simulation and Real Time Applications (DS-RT 2025) · IEEE*, 2025. [Conference · 15 citations]
   DOI: https://doi.org/10.1109/DS-RT68115.2025.11185079
+
+- **A Security Twin to Defeat Intrusions in Cyber Physical Systems**
+  F. Baiardi, S. Ruggieri, V. Sammartino
+  *European Safety and Reliability Conference (ESREL SRA-E 2025), Stavanger, Norway*, 2025. [Conference · 15 citations]
+  ARPI: https://arpi.unipi.it/handle/11568/1319647
 
 - **A Quantitative Framework for the Validation of Twin-Based Cyber Defense**
   F. Baiardi, V. Sammartino
-  *Procedia Computer Science, vol. 274, pp. 721–730 · Elsevier*, 2025. [Proceedings · 11 citations]
+  *Procedia Computer Science, vol. 274, pp. 721–730 · Elsevier*, 2025. [Proceedings · 13 citations]
   DOI: https://doi.org/10.1016/j.procs.2025.12.070
 
 - **NotLine: A Non-Intrusive Automated Platform to Build a Digital Twin**
   F. Baiardi, V. Sammartino, S. Ruggieri
-  *29th International Symposium on Distributed Simulation and Real Time Applications (DS-RT 2025) · IEEE*, 2025. [Conference · 11 citations]
+  *29th International Symposium on Distributed Simulation and Real Time Applications (DS-RT 2025) · IEEE*, 2025. [Conference · 12 citations]
   DOI: https://doi.org/10.1109/DS-RT68115.2025.11185873
 
 - **Graph-Based Cyber Defence Using a Security Twin**
   F. Baiardi, V. Sammartino, S. Ruggieri
-  *29th International Symposium on Distributed Simulation and Real Time Applications (DS-RT 2025) · IEEE*, 2025. [Conference · 8 citations]
+  *29th International Symposium on Distributed Simulation and Real Time Applications (DS-RT 2025) · IEEE*, 2025. [Conference · 10 citations]
   ARPI: https://arpi.unipi.it/handle/11568/1323891
 
 - **Security Twins e il Futuro della Previsione di Intrusioni Cyber**
   F. Baiardi, S. Ruggieri, V. Sammartino
-  *ICT Security Magazine*, 2025. [Magazine · 4 citations]
+  *ICT Security Magazine*, 2025. [Magazine · 6 citations]
   ARPI: https://arpi.unipi.it/handle/11568/1319807
+
+- **NotLine: Dynamic Network Topology and Risk Assessment Through Passive Discovery**
+  V. Sammartino
+  *FAIR General Conference, Rome, 10–12 December 2025*, 2025. [Conference · 2 citations]
+  ARPI: https://arpi.unipi.it/handle/11568/1338870
 
 - **Cyber Weapons as Components of Weapon Systems**
   F. Baiardi, V. Sammartino
@@ -277,11 +288,6 @@ profile.json and the page anchors at https://ilsamaritano.github.io/#pub-N.
   V. Sammartino
   *International Journal of Complexity in Applied Science and Technology*, 2025. [Journal]
   DOI: https://doi.org/10.1504/IJCAST.2026.10076620
-
-- **NotLine: Dynamic Network Topology and Risk Assessment Through Passive Discovery**
-  V. Sammartino
-  *FAIR General Conference, Rome, 10–12 December 2025*, 2025. [Conference]
-  ARPI: https://arpi.unipi.it/handle/11568/1338870
 
 ### 2024
 
@@ -308,7 +314,7 @@ profile.json and the page anchors at https://ilsamaritano.github.io/#pub-N.
 
 - **D3F: A Framework to Minimize the Impact of Intrusions**
   F. Baiardi, V. Sammartino
-  *Preprints*, 2024. [Preprint]
+  *Preprints*, 2024. [Preprint · 1 citation]
   DOI: https://doi.org/10.20944/preprints202407.0627.v1
 
 - **Feature Engineering and Semantic Enrichment for Enhanced Text Classification: A Case Study on Figurative Language in Tweets**
@@ -320,24 +326,24 @@ profile.json and the page anchors at https://ilsamaritano.github.io/#pub-N.
 
 - **Discovering When a Security Twin Cheats: An Equivalence Theorem**
   V. Sammartino, F. Baiardi
-  *SSRN preprint 7277218*. [Preprint]
+  *SSRN preprint 7277218*. [Preprint · 2 citations]
   SSRN: https://ssrn.com/abstract=7277218
 <!-- PUBS:END -->
 
 ---
 
-## Peer Review (41 reviews for 21 journals, all 2026 — recorded on ORCID)
+## Peer Review (57 reviews for 27 journals, all 2026 — recorded on ORCID)
 
 | Journal | Publisher | ISSN | Reviews |
 |---|---|---|---|
-| Discover Artificial Intelligence | Springer Nature | 2731-0809 | 9 |
-| Scientific Reports | Springer Nature | 2045-2322 | 6 |
+| Discover Artificial Intelligence | Springer Nature | 2731-0809 | 10 |
+| Scientific Reports | Springer Nature | 2045-2322 | 8 |
 | Pervasive and Mobile Computing | Elsevier | 1574-1192 | 4 |
 | IEEE Transactions on Neural Networks and Learning Systems | IEEE | 2162-2388 | 2 |
-| International Journal of Information Security | Springer Nature | 1615-5270 | 3 |
-| Big Data Mining and Analytics | Tsinghua University Press | 2097-406X | 2 |
+| International Journal of Information Security | Springer Nature | 1615-5270 | 4 |
+| Big Data Mining and Analytics | Tsinghua University Press | 2097-406X | 3 |
 | ACM Computing Surveys | ACM | 1557-7341 | 1 |
-| Computers & Security | Elsevier | 0167-4048 | 1 |
+| Computers & Security | Elsevier | 0167-4048 | 3 |
 | Future Generation Computer Systems | Elsevier | 0167-739X | 1 |
 | Computer Communications | Elsevier | 0140-3664 | 1 |
 | Journal of Computer Security | SAGE Publications | 1875-8924 | 1 |
@@ -348,9 +354,15 @@ profile.json and the page anchors at https://ilsamaritano.github.io/#pub-N.
 | International Journal of Data Science and Analytics | Springer Nature | 2364-4168 | 1 |
 | Journal of King Saud University – Computer and Information Sciences | Springer Nature | 2213-1248 | 1 |
 | PeerJ Computer Science | PeerJ | 2376-5992 | 1 |
-| Computers, Materials & Continua | Tech Science Press | 1546-2218 | 1 |
+| Computers, Materials & Continua | Tech Science Press | 1546-2218 | 3 |
 | Computer Systems Science and Engineering | Tech Science Press | 0267-6192 | 1 |
 | Journal of Computer Networks and Communications | Wiley | 2090-7141 | 1 |
+| Risk Analysis | Wiley | 0272-4332 | 1 |
+| Simulation Modelling Practice and Theory | Elsevier | 1569-190X | 2 |
+| Electronics | MDPI | 2079-9292 | 1 |
+| Journal of Cyber Security | Tech Science Press | 2579-0064 | 1 |
+| Frontiers in Computer Science | Frontiers Media | 2624-9898 | 1 |
+| Discover Internet of Things | Springer Nature | 2730-7239 | 1 |
 
 ## Research Grant
 

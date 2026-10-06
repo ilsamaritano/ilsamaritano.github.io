@@ -5,9 +5,9 @@
 [![Live](https://img.shields.io/badge/Live-ilsamaritano.github.io-00e5ff?style=flat-square&logo=github)](https://ilsamaritano.github.io)
 [![License](https://img.shields.io/badge/License-MIT-7c3aed?style=flat-square)](LICENSE)
 [![ORCID](https://img.shields.io/badge/ORCID-0009--0002--4632--1179-a6ce39?style=flat-square&logo=orcid)](https://orcid.org/0009-0002-4632-1179)
-[![Citations](https://img.shields.io/badge/Citations-161-10b981?style=flat-square)](https://scholar.google.com/citations?user=lQig7SEAAAAJ)
-[![H-Index](https://img.shields.io/badge/H--Index-8-10b981?style=flat-square)](https://scholar.google.com/citations?user=lQig7SEAAAAJ)
-[![i10-Index](https://img.shields.io/badge/i10--Index-7-10b981?style=flat-square)](https://scholar.google.com/citations?user=lQig7SEAAAAJ)
+[![Citations](https://img.shields.io/badge/Citations-206-10b981?style=flat-square)](https://scholar.google.com/citations?user=lQig7SEAAAAJ)
+[![H-Index](https://img.shields.io/badge/H--Index-10-10b981?style=flat-square)](https://scholar.google.com/citations?user=lQig7SEAAAAJ)
+[![i10-Index](https://img.shields.io/badge/i10--Index-10-10b981?style=flat-square)](https://scholar.google.com/citations?user=lQig7SEAAAAJ)
 
 ---
 
@@ -27,10 +27,10 @@ The implementation is intentionally dependency-free at the deployment level — 
 | **Visiting Position** | VSRP Intern, KAUST · Thuwal, Saudi Arabia (Jan–Jun 2026) |
 | **Supervisors** | Prof. Fabrizio Baiardi (UniPi) · Prof. Salvatore Ruggieri (UniPi) · Prof. Roberto Di Pietro (KAUST) |
 | **Research Areas** | Security Twin · Digital Twin Architectures · Cyber-Physical Systems Resilience · Quantum ML & Post-Quantum Security · 6G Edge Digital Twins · UAV Swarm Security · TinyML / Edge AI · NLP |
-| **Total Citations** | 161 (Google Scholar, 22 September 2026) |
-| **H-Index / i10-Index** | 8 / 7 |
-| **Publications** | 38 — 35 indexed by Google Scholar (IEEE · Springer · Elsevier · CRC/Taylor & Francis · arXiv / SSRN preprints) |
-| **Peer Review** | 41 reviews for 21 journals (2026, ORCID) — incl. IEEE TNNLS, ACM Computing Surveys, Scientific Reports, Computers & Security, FGCS |
+| **Total Citations** | 206 (Google Scholar, 6 October 2026) |
+| **H-Index / i10-Index** | 10 / 10 |
+| **Publications** | 39 — 38 indexed by Google Scholar (IEEE · Springer · Elsevier · CRC/Taylor & Francis · arXiv / SSRN preprints) |
+| **Peer Review** | 57 reviews for 27 journals (2026, ORCID) — incl. IEEE TNNLS, ACM Computing Surveys, Scientific Reports, Computers & Security, FGCS |
 | **Research Grant** | *Smart Security for Connected Cyber-Physical Systems: Paradigms, Threats and AI-based Defenses* — Università di Pisa (2026) |
 | **Identifiers** | ORCID 0009-0002-4632-1179 · Scopus 59166600100 · SciProfiles 3668849 |
 
@@ -94,7 +94,7 @@ The site is a **static HTML5 document** with no external JavaScript dependencies
 
 **Structured Data (JSON-LD).** Schema.org `Person`, `ProfilePage`, `ResearchProject`, a peer-review `ItemList`, and an `ItemList` of `ScholarlyArticle` entries — one per publication, with arXiv / SSRN / DOI / Zenodo identifiers where available and an `interactionStatistic` (`CiteAction`) citation counter carrying its `observationDate`. The `Person` node additionally exposes citations, h-index, i10-index, work count and review counts as dated `PropertyValue` entries, so an agent can read the bibliometrics without scraping the rendered page.
 
-**Machine-readable Profile.** `profile.json` is the canonical structured record: identity, persistent identifiers, metrics with observation date and citations-per-year, all 38 publications (id, title, authors, author position, venue, type, year, citation count, persistent links), research themes cross-referenced to publication ids, the peer-review breakdown, positions, grants and projects. It is *generated from* `index.html` (see **Staying in sync** below), so the page and the JSON cannot drift apart. Advertised via `<link rel="alternate" type="application/json">`, `sitemap.xml`, `robots.txt` and `llms.txt`.
+**Machine-readable Profile.** `profile.json` is the canonical structured record: identity, persistent identifiers, metrics with observation date and citations-per-year, all 39 publications (id, title, authors, author position, venue, type, year, citation count, persistent links), research themes cross-referenced to publication ids, the peer-review breakdown, positions, grants and projects. It is *generated from* `index.html` (see **Staying in sync** below), so the page and the JSON cannot drift apart. Advertised via `<link rel="alternate" type="application/json">`, `sitemap.xml`, `robots.txt` and `llms.txt`.
 
 **Crawler Directives.** `robots.txt` is allow-by-default and grants explicit `Allow` directives to four groups: generalist search engines (`Googlebot` and its variants, `Bingbot`, `Slurp`, `DuckDuckBot`, `YandexBot`, `Baiduspider`, `Applebot`, `SeznamBot`, `Qwantify`, `MojeekBot`), academic indexers and archives (`SemanticScholarBot`, `CiteSeerXBot`, `archive.org_bot`, `ia_archiver`), AI indexing crawlers (`GPTBot`, `ClaudeBot`, `anthropic-ai`, `Google-Extended`, `PerplexityBot`, `Applebot-Extended`, `CCBot`, `Meta-ExternalAgent`, `cohere-ai`, `Amazonbot`, `Bytespider`) and on-demand assistant fetchers (`OAI-SearchBot`, `ChatGPT-User`, `Claude-User`, `Claude-SearchBot`, `Perplexity-User`, `DuckAssistBot`, `MistralAI-User`, `YouBot`). Only four commercial SEO/backlink scrapers are disallowed.
 
@@ -140,7 +140,9 @@ git push origin main
 Two things it deliberately does *not* do on its own:
 
 - **Adding a publication.** When a work exists on ORCID or Scholar but not on the page, the tools report it and exit with code 2; the workflow opens (or comments on) an issue with the details and a ready-made checklist, because the venue wording, output type and position in the list are editorial decisions.
-- **Scraping Scholar.** Google Scholar has no API and blocks CI address ranges. The Scholar step therefore needs a `SERPAPI_KEY` repository secret; without it the step logs that it is skipping and the citation figures are left untouched. Everything ORCID-driven keeps working regardless.
+- **Guaranteeing the Scholar figures.** Google Scholar has no API and refuses most CI address ranges. With a `SERPAPI_KEY` repository secret the step goes through SerpApi and is reliable; without it the step reads the public profile page directly, and when Scholar refuses it logs that it is skipping and leaves the citation figures untouched. Everything ORCID-driven keeps working regardless.
+
+A first review for a journal the page does not list yet no longer needs a hand edit: `sync-orcid.py` looks the ISSN up on OpenAlex and Crossref, adds the row everywhere, and remembers the answer in `tools/journals.json`. Print and electronic ISSNs of one journal are counted as one journal.
 
 ### Manual — same tools, no services
 
@@ -148,7 +150,9 @@ Two things it deliberately does *not* do on its own:
 python tools/sync-orcid.py                       # report what ORCID has that the site lacks
 python tools/sync-orcid.py --apply --as-of 2026-09-20
 
-# Scholar, without any API key: put the numbers in a small JSON file and apply them
+# Scholar, without any API key: read the profile page (works from a home connection) …
+python tools/sync-scholar.py --fetch
+# … or put the numbers in a small JSON file and apply them
 python tools/sync-scholar.py --from-json scholar.json --report
 python tools/sync-scholar.py --from-json scholar.json
 
@@ -186,7 +190,7 @@ The canonical live endpoint is: **[https://ilsamaritano.github.io](https://ilsam
 
 ## Selected Publications
 
-Most-cited works (Google Scholar, 22 September 2026). The complete record is on the website, in [`profile.json`](profile.json) and [`llms.txt`](llms.txt), on [Google Scholar](https://scholar.google.com/citations?user=lQig7SEAAAAJ) and [ORCID](https://orcid.org/0009-0002-4632-1179).
+Most-cited works (Google Scholar, 6 October 2026). The complete record is on the website, in [`profile.json`](profile.json) and [`llms.txt`](llms.txt), on [Google Scholar](https://scholar.google.com/citations?user=lQig7SEAAAAJ) and [ORCID](https://orcid.org/0009-0002-4632-1179).
 
 - *AI-Enabled Cybersecurity Using Synthetic Data* — **IEEE PerCom 2025** · 17 citations
 - *Anticipating Disasters through a Security Twin* — Dynamics of Disasters: Hybrid Threats, Springer, 2026 · 14 citations

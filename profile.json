@@ -2,7 +2,7 @@
   "document": "Machine-readable academic profile of Vincenzo Sammartino",
   "canonicalUrl": "https://ilsamaritano.github.io/profile.json",
   "generatedFrom": "https://ilsamaritano.github.io/ (index.html publication record)",
-  "lastUpdated": "2026-09-22",
+  "lastUpdated": "2026-10-06",
   "license": "CC BY 4.0 — attribution: Vincenzo Sammartino, https://ilsamaritano.github.io/",
   "usage": {
     "audience": "Search engines, AI assistants, research-indexing agents and scripts.",
@@ -69,17 +69,17 @@
   "metrics": {
     "source": "Google Scholar",
     "sourceUrl": "https://scholar.google.com/citations?user=lQig7SEAAAAJ",
-    "asOf": "2026-09-22",
-    "citations": 161,
-    "hIndex": 8,
-    "i10Index": 7,
-    "indexedWorks": 35,
+    "asOf": "2026-10-06",
+    "citations": 206,
+    "hIndex": 10,
+    "i10Index": 10,
+    "indexedWorks": 38,
     "citationsByYear": {
       "2024": 3,
       "2025": 20,
-      "2026": 138
+      "2026": 183
     },
-    "note": "Metrics cover the 38 publications listed here, of which 35 are indexed by Google Scholar. 2026 is year to date. Sum of per-publication citation counts in this file: 158 (Google Scholar's profile total may differ slightly because of merged or duplicate records)."
+    "note": "Metrics cover the 39 publications listed here, of which 38 are indexed by Google Scholar. 2026 is year to date. Sum of per-publication citation counts in this file: 200 (Google Scholar's profile total may differ slightly because of merged or duplicate records)."
   },
   "positions": [
     {
@@ -237,7 +237,7 @@
       "type": "book",
       "outputForm": "Book Chapter",
       "year": 2026,
-      "citations": 14,
+      "citations": 16,
       "url": "https://ilsamaritano.github.io/#pub-1",
       "identifiers": [
         {
@@ -262,7 +262,7 @@
       "type": "journal",
       "outputForm": "Journal",
       "year": 2026,
-      "citations": 10,
+      "citations": 13,
       "url": "https://ilsamaritano.github.io/#pub-2",
       "identifiers": [
         {
@@ -283,7 +283,7 @@
       "type": "book",
       "outputForm": "Book Chapter",
       "year": 2026,
-      "citations": 9,
+      "citations": 11,
       "url": "https://ilsamaritano.github.io/#pub-3",
       "identifiers": [
         {
@@ -304,7 +304,7 @@
       "type": "conference",
       "outputForm": "Conference",
       "year": 2026,
-      "citations": 8,
+      "citations": 10,
       "url": "https://ilsamaritano.github.io/#pub-4",
       "identifiers": [
         {
@@ -326,7 +326,7 @@
       "type": "conference",
       "outputForm": "Conference",
       "year": 2026,
-      "citations": 6,
+      "citations": 8,
       "url": "https://ilsamaritano.github.io/#pub-5",
       "identifiers": [
         {
@@ -347,7 +347,7 @@
       "type": "conference",
       "outputForm": "Conference",
       "year": 2026,
-      "citations": 3,
+      "citations": 4,
       "url": "https://ilsamaritano.github.io/#pub-6",
       "identifiers": [
         {
@@ -370,7 +370,7 @@
       "type": "journal",
       "outputForm": "Journal",
       "year": 2026,
-      "citations": 2,
+      "citations": 3,
       "url": "https://ilsamaritano.github.io/#pub-7",
       "identifiers": [
         {
@@ -392,7 +392,7 @@
       "type": "conference",
       "outputForm": "Conference",
       "year": 2026,
-      "citations": 2,
+      "citations": 3,
       "url": "https://ilsamaritano.github.io/#pub-8",
       "identifiers": [
         {
@@ -413,7 +413,7 @@
       "type": "preprint",
       "outputForm": "Preprint",
       "year": 2026,
-      "citations": 2,
+      "citations": 3,
       "url": "https://ilsamaritano.github.io/#pub-9",
       "identifiers": [
         {
@@ -433,12 +433,53 @@
       "type": "preprint",
       "outputForm": "Preprint",
       "year": 2026,
-      "citations": 2,
+      "citations": 3,
       "url": "https://ilsamaritano.github.io/#pub-10",
       "identifiers": [
         {
           "label": "arXiv",
           "url": "https://arxiv.org/abs/2606.03617"
+        }
+      ]
+    },
+    {
+      "id": "pub-12",
+      "title": "Hybrid Quantum Graph Neural Networks for Robust Botnet Detection in Modern IoT Ecosystems",
+      "authors": [
+        "V. Sammartino"
+      ],
+      "authorPosition": 1,
+      "venue": "Future Generation Computer Systems · Elsevier",
+      "type": "journal",
+      "outputForm": "Journal",
+      "year": 2026,
+      "citations": 3,
+      "url": "https://ilsamaritano.github.io/#pub-12",
+      "identifiers": [
+        {
+          "label": "DOI",
+          "url": "https://doi.org/10.1016/j.future.2026.108650"
+        }
+      ]
+    },
+    {
+      "id": "pub-15",
+      "title": "Quantifying Cyber Robustness and Financial Risk via Security Twins",
+      "authors": [
+        "F. Baiardi",
+        "V. Sammartino"
+      ],
+      "authorPosition": 2,
+      "venue": "SSRN preprint 6890389",
+      "type": "preprint",
+      "outputForm": "Preprint",
+      "year": 2026,
+      "citations": 3,
+      "url": "https://ilsamaritano.github.io/#pub-15",
+      "identifiers": [
+        {
+          "label": "SSRN",
+          "url": "https://ssrn.com/abstract=6890389"
         }
       ]
     },
@@ -454,32 +495,12 @@
       "type": "journal",
       "outputForm": "Journal",
       "year": 2026,
-      "citations": 1,
+      "citations": 2,
       "url": "https://ilsamaritano.github.io/#pub-11",
       "identifiers": [
         {
           "label": "DOI",
           "url": "https://doi.org/10.1016/j.future.2026.108698"
-        }
-      ]
-    },
-    {
-      "id": "pub-12",
-      "title": "Hybrid Quantum Graph Neural Networks for Robust Botnet Detection in Modern IoT Ecosystems",
-      "authors": [
-        "V. Sammartino"
-      ],
-      "authorPosition": 1,
-      "venue": "Future Generation Computer Systems · Elsevier",
-      "type": "journal",
-      "outputForm": "Journal",
-      "year": 2026,
-      "citations": 1,
-      "url": "https://ilsamaritano.github.io/#pub-12",
-      "identifiers": [
-        {
-          "label": "DOI",
-          "url": "https://doi.org/10.1016/j.future.2026.108650"
         }
       ]
     },
@@ -494,7 +515,7 @@
       "type": "preprint",
       "outputForm": "Preprint",
       "year": 2026,
-      "citations": 1,
+      "citations": 2,
       "url": "https://ilsamaritano.github.io/#pub-13",
       "identifiers": [
         {
@@ -514,7 +535,7 @@
       "type": "preprint",
       "outputForm": "Preprint",
       "year": 2026,
-      "citations": 1,
+      "citations": 2,
       "url": "https://ilsamaritano.github.io/#pub-14",
       "identifiers": [
         {
@@ -524,23 +545,50 @@
       ]
     },
     {
-      "id": "pub-15",
-      "title": "Quantifying Cyber Robustness and Financial Risk via Security Twins",
+      "id": "pub-38",
+      "title": "TWIN-IDS: Twin-driven IDS Placement for Cost-aware Detection",
       "authors": [
+        "V. Sammartino",
         "F. Baiardi",
-        "V. Sammartino"
+        "S. Ruggieri"
       ],
-      "authorPosition": 2,
-      "venue": "SSRN preprint 6890389",
+      "authorPosition": 1,
+      "venue": "30th International Symposium on Distributed Simulation and Real Time Applications (DS-RT 2026) · IEEE",
+      "type": "conference",
+      "outputForm": "Conference",
+      "year": 2026,
+      "citations": 2,
+      "url": "https://ilsamaritano.github.io/#pub-38",
+      "identifiers": [
+        {
+          "label": "ARPI",
+          "url": "https://arpi.unipi.it/handle/11568/1369148"
+        }
+      ]
+    },
+    {
+      "id": "pub-18",
+      "title": "Adversarial Reliability: From Design to Deployment and Beyond Using Attack-Path Chokepoints",
+      "authors": [
+        "V. Sammartino",
+        "F. Baiardi",
+        "S. Ruggieri"
+      ],
+      "authorPosition": 1,
+      "venue": "SSRN preprint 7382213",
       "type": "preprint",
       "outputForm": "Preprint",
       "year": 2026,
       "citations": 1,
-      "url": "https://ilsamaritano.github.io/#pub-15",
+      "url": "https://ilsamaritano.github.io/#pub-18",
       "identifiers": [
         {
+          "label": "DOI",
+          "url": "https://doi.org/10.2139/ssrn.7382213"
+        },
+        {
           "label": "SSRN",
-          "url": "https://ssrn.com/abstract=6890389"
+          "url": "https://ssrn.com/abstract=7382213"
         }
       ]
     },
@@ -587,32 +635,6 @@
       ]
     },
     {
-      "id": "pub-18",
-      "title": "Adversarial Reliability: From Design to Deployment and Beyond Using Attack-Path Chokepoints",
-      "authors": [
-        "V. Sammartino",
-        "F. Baiardi",
-        "S. Ruggieri"
-      ],
-      "authorPosition": 1,
-      "venue": "SSRN preprint 7382213",
-      "type": "preprint",
-      "outputForm": "Preprint",
-      "year": 2026,
-      "citations": 0,
-      "url": "https://ilsamaritano.github.io/#pub-18",
-      "identifiers": [
-        {
-          "label": "DOI",
-          "url": "https://doi.org/10.2139/ssrn.7382213"
-        },
-        {
-          "label": "SSRN",
-          "url": "https://ssrn.com/abstract=7382213"
-        }
-      ]
-    },
-    {
       "id": "pub-37",
       "title": "Fight Drones with Drones: Detecting Aerial Perimeter Intrusion using Drone-mounted Microphones",
       "authors": [
@@ -630,30 +652,12 @@
       "url": "https://ilsamaritano.github.io/#pub-37",
       "identifiers": [
         {
-          "label": "ARPI",
-          "url": "https://arpi.unipi.it/handle/11568/1362908"
-        }
-      ]
-    },
-    {
-      "id": "pub-38",
-      "title": "TWIN-IDS: Twin-driven IDS Placement for Cost-aware Detection",
-      "authors": [
-        "V. Sammartino",
-        "F. Baiardi",
-        "S. Ruggieri"
-      ],
-      "authorPosition": 1,
-      "venue": "30th International Symposium on Distributed Simulation and Real Time Applications (DS-RT 2026) · IEEE",
-      "type": "conference",
-      "outputForm": "Conference",
-      "year": 2026,
-      "citations": 0,
-      "url": "https://ilsamaritano.github.io/#pub-38",
-      "identifiers": [
+          "label": "DOI",
+          "url": "https://doi.org/10.1007/978-3-032-38702-8_31"
+        },
         {
           "label": "ARPI",
-          "url": "https://arpi.unipi.it/handle/11568/1369148"
+          "url": "https://arpi.unipi.it/handle/11568/1362908"
         }
       ]
     },
@@ -686,6 +690,29 @@
       ]
     },
     {
+      "id": "pub-39",
+      "title": "Consensus and Factual Dynamics in Large Populations of Interacting Language Models",
+      "authors": [
+        "E. Ricco",
+        "E. Onofri",
+        "V. Sammartino",
+        "R. Di Pietro"
+      ],
+      "authorPosition": 3,
+      "venue": "arXiv preprint arXiv:2609.39211",
+      "type": "preprint",
+      "outputForm": "Preprint",
+      "year": 2026,
+      "citations": 0,
+      "url": "https://ilsamaritano.github.io/#pub-39",
+      "identifiers": [
+        {
+          "label": "arXiv",
+          "url": "https://arxiv.org/abs/2609.39211"
+        }
+      ]
+    },
+    {
       "id": "pub-19",
       "title": "AI-Enabled Cybersecurity Using Synthetic Data",
       "authors": [
@@ -698,7 +725,7 @@
       "type": "conference",
       "outputForm": "Conference",
       "year": 2025,
-      "citations": 17,
+      "citations": 18,
       "url": "https://ilsamaritano.github.io/#pub-19",
       "identifiers": [
         {
@@ -720,7 +747,7 @@
       "type": "conference",
       "outputForm": "Conference",
       "year": 2025,
-      "citations": 14,
+      "citations": 15,
       "url": "https://ilsamaritano.github.io/#pub-21",
       "identifiers": [
         {
@@ -740,12 +767,33 @@
       "type": "conference",
       "outputForm": "Conference",
       "year": 2025,
-      "citations": 13,
+      "citations": 15,
       "url": "https://ilsamaritano.github.io/#pub-20",
       "identifiers": [
         {
           "label": "DOI",
           "url": "https://doi.org/10.1109/DS-RT68115.2025.11185079"
+        }
+      ]
+    },
+    {
+      "id": "pub-23",
+      "title": "A Quantitative Framework for the Validation of Twin-Based Cyber Defense",
+      "authors": [
+        "F. Baiardi",
+        "V. Sammartino"
+      ],
+      "authorPosition": 2,
+      "venue": "Procedia Computer Science, vol. 274, pp. 721–730 · Elsevier",
+      "type": "conference",
+      "outputForm": "Proceedings",
+      "year": 2025,
+      "citations": 13,
+      "url": "https://ilsamaritano.github.io/#pub-23",
+      "identifiers": [
+        {
+          "label": "DOI",
+          "url": "https://doi.org/10.1016/j.procs.2025.12.070"
         }
       ]
     },
@@ -762,33 +810,12 @@
       "type": "conference",
       "outputForm": "Conference",
       "year": 2025,
-      "citations": 11,
+      "citations": 12,
       "url": "https://ilsamaritano.github.io/#pub-22",
       "identifiers": [
         {
           "label": "DOI",
           "url": "https://doi.org/10.1109/DS-RT68115.2025.11185873"
-        }
-      ]
-    },
-    {
-      "id": "pub-23",
-      "title": "A Quantitative Framework for the Validation of Twin-Based Cyber Defense",
-      "authors": [
-        "F. Baiardi",
-        "V. Sammartino"
-      ],
-      "authorPosition": 2,
-      "venue": "Procedia Computer Science, vol. 274, pp. 721–730 · Elsevier",
-      "type": "conference",
-      "outputForm": "Proceedings",
-      "year": 2025,
-      "citations": 11,
-      "url": "https://ilsamaritano.github.io/#pub-23",
-      "identifiers": [
-        {
-          "label": "DOI",
-          "url": "https://doi.org/10.1016/j.procs.2025.12.070"
         }
       ]
     },
@@ -805,7 +832,7 @@
       "type": "conference",
       "outputForm": "Conference",
       "year": 2025,
-      "citations": 8,
+      "citations": 10,
       "url": "https://ilsamaritano.github.io/#pub-24",
       "identifiers": [
         {
@@ -827,12 +854,32 @@
       "type": "journal",
       "outputForm": "Magazine",
       "year": 2025,
-      "citations": 4,
+      "citations": 6,
       "url": "https://ilsamaritano.github.io/#pub-25",
       "identifiers": [
         {
           "label": "ARPI",
           "url": "https://arpi.unipi.it/handle/11568/1319807"
+        }
+      ]
+    },
+    {
+      "id": "pub-28",
+      "title": "NotLine: Dynamic Network Topology and Risk Assessment Through Passive Discovery",
+      "authors": [
+        "V. Sammartino"
+      ],
+      "authorPosition": 1,
+      "venue": "FAIR General Conference, Rome, 10–12 December 2025",
+      "type": "conference",
+      "outputForm": "Conference",
+      "year": 2025,
+      "citations": 2,
+      "url": "https://ilsamaritano.github.io/#pub-28",
+      "identifiers": [
+        {
+          "label": "ARPI",
+          "url": "https://arpi.unipi.it/handle/11568/1338870"
         }
       ]
     },
@@ -874,26 +921,6 @@
         {
           "label": "DOI",
           "url": "https://doi.org/10.1504/IJCAST.2026.10076620"
-        }
-      ]
-    },
-    {
-      "id": "pub-28",
-      "title": "NotLine: Dynamic Network Topology and Risk Assessment Through Passive Discovery",
-      "authors": [
-        "V. Sammartino"
-      ],
-      "authorPosition": 1,
-      "venue": "FAIR General Conference, Rome, 10–12 December 2025",
-      "type": "conference",
-      "outputForm": "Conference",
-      "year": 2025,
-      "citations": 0,
-      "url": "https://ilsamaritano.github.io/#pub-28",
-      "identifiers": [
-        {
-          "label": "ARPI",
-          "url": "https://arpi.unipi.it/handle/11568/1338870"
         }
       ]
     },
@@ -987,6 +1014,27 @@
       ]
     },
     {
+      "id": "pub-34",
+      "title": "D3F: A Framework to Minimize the Impact of Intrusions",
+      "authors": [
+        "F. Baiardi",
+        "V. Sammartino"
+      ],
+      "authorPosition": 2,
+      "venue": "Preprints",
+      "type": "preprint",
+      "outputForm": "Preprint",
+      "year": 2024,
+      "citations": 1,
+      "url": "https://ilsamaritano.github.io/#pub-34",
+      "identifiers": [
+        {
+          "label": "DOI",
+          "url": "https://doi.org/10.20944/preprints202407.0627.v1"
+        }
+      ]
+    },
+    {
       "id": "pub-33",
       "title": "Feature Engineering and Semantic Enrichment for Enhanced Text Classification: A Case Study on Figurative Language in Tweets",
       "authors": [
@@ -1011,27 +1059,6 @@
       ]
     },
     {
-      "id": "pub-34",
-      "title": "D3F: A Framework to Minimize the Impact of Intrusions",
-      "authors": [
-        "F. Baiardi",
-        "V. Sammartino"
-      ],
-      "authorPosition": 2,
-      "venue": "Preprints",
-      "type": "preprint",
-      "outputForm": "Preprint",
-      "year": 2024,
-      "citations": 0,
-      "url": "https://ilsamaritano.github.io/#pub-34",
-      "identifiers": [
-        {
-          "label": "DOI",
-          "url": "https://doi.org/10.20944/preprints202407.0627.v1"
-        }
-      ]
-    },
-    {
       "id": "pub-35",
       "title": "Discovering When a Security Twin Cheats: An Equivalence Theorem",
       "authors": [
@@ -1043,7 +1070,7 @@
       "type": "preprint",
       "outputForm": "Preprint",
       "year": null,
-      "citations": 0,
+      "citations": 2,
       "url": "https://ilsamaritano.github.io/#pub-35",
       "identifiers": [
         {
@@ -1056,20 +1083,20 @@
   "peerReview": {
     "source": "https://orcid.org/0009-0002-4632-1179",
     "year": 2026,
-    "reviews": 41,
-    "journals": 21,
+    "reviews": 57,
+    "journals": 27,
     "detail": [
       {
         "journal": "Discover Artificial Intelligence",
         "publisher": "Springer Nature",
         "issn": "2731-0809",
-        "reviews": 9
+        "reviews": 10
       },
       {
         "journal": "Scientific Reports",
         "publisher": "Springer Nature",
         "issn": "2045-2322",
-        "reviews": 6
+        "reviews": 8
       },
       {
         "journal": "Pervasive and Mobile Computing",
@@ -1087,13 +1114,13 @@
         "journal": "International Journal of Information Security",
         "publisher": "Springer Nature",
         "issn": "1615-5270",
-        "reviews": 3
+        "reviews": 4
       },
       {
         "journal": "Big Data Mining and Analytics",
         "publisher": "Tsinghua University Press",
         "issn": "2097-406X",
-        "reviews": 2
+        "reviews": 3
       },
       {
         "journal": "ACM Computing Surveys",
@@ -1105,7 +1132,7 @@
         "journal": "Computers & Security",
         "publisher": "Elsevier",
         "issn": "0167-4048",
-        "reviews": 1
+        "reviews": 3
       },
       {
         "journal": "Future Generation Computer Systems",
@@ -1171,7 +1198,7 @@
         "journal": "Computers, Materials & Continua",
         "publisher": "Tech Science Press",
         "issn": "1546-2218",
-        "reviews": 1
+        "reviews": 3
       },
       {
         "journal": "Computer Systems Science and Engineering",
@@ -1183,6 +1210,42 @@
         "journal": "Journal of Computer Networks and Communications",
         "publisher": "Wiley",
         "issn": "2090-7141",
+        "reviews": 1
+      },
+      {
+        "journal": "Risk Analysis",
+        "publisher": "Wiley",
+        "issn": "0272-4332",
+        "reviews": 1
+      },
+      {
+        "journal": "Simulation Modelling Practice and Theory",
+        "publisher": "Elsevier",
+        "issn": "1569-190X",
+        "reviews": 2
+      },
+      {
+        "journal": "Electronics",
+        "publisher": "MDPI",
+        "issn": "2079-9292",
+        "reviews": 1
+      },
+      {
+        "journal": "Journal of Cyber Security",
+        "publisher": "Tech Science Press",
+        "issn": "2579-0064",
+        "reviews": 1
+      },
+      {
+        "journal": "Frontiers in Computer Science",
+        "publisher": "Frontiers Media",
+        "issn": "2624-9898",
+        "reviews": 1
+      },
+      {
+        "journal": "Discover Internet of Things",
+        "publisher": "Springer Nature",
+        "issn": "2730-7239",
         "reviews": 1
       }
     ]

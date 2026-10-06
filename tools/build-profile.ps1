@@ -12,7 +12,7 @@
 
 param(
   [string]$Root = (Split-Path -Parent $PSScriptRoot),
-  [string]$AsOf = "2026-09-22"
+  [string]$AsOf = "2026-10-06"
 )
 
 $src = Join-Path $Root "index.html"
@@ -116,12 +116,12 @@ $profile = [ordered]@{
     source           = "Google Scholar"
     sourceUrl        = "https://scholar.google.com/citations?user=lQig7SEAAAAJ"
     asOf             = $asOf
-    citations        = 161
-    hIndex           = 8
-    i10Index         = 7
-    indexedWorks     = 35
-    citationsByYear  = [ordered]@{ '2024' = 3; '2025' = 20; '2026' = 138 }
-    note             = "Metrics cover the $($pubs.Count) publications listed here, of which 35 are indexed by Google Scholar. 2026 is year to date. Sum of per-publication citation counts in this file: $total (Google Scholar's profile total may differ slightly because of merged or duplicate records)."
+    citations        = 206
+    hIndex           = 10
+    i10Index         = 10
+    indexedWorks     = 38
+    citationsByYear  = [ordered]@{ '2024' = 3; '2025' = 20; '2026' = 183 }
+    note             = "Metrics cover the $($pubs.Count) publications listed here, of which 38 are indexed by Google Scholar. 2026 is year to date. Sum of per-publication citation counts in this file: $total (Google Scholar's profile total may differ slightly because of merged or duplicate records)."
   }
   positions      = @(
     [ordered]@{ role = "PhD Candidate, National PhD Programme in Artificial Intelligence"; organization = "University of Pisa, Department of Computer Science"; start = "2024-09"; end = $null; note = "Doctoral position November 2024 – October 2027" },
@@ -152,17 +152,17 @@ $profile = [ordered]@{
   peerReview     = [ordered]@{
     source   = "https://orcid.org/0009-0002-4632-1179"
     year     = 2026
-    reviews  = 41
-    journals = 21
+    reviews  = 57
+    journals = 27
     detail   = @(
-      [ordered]@{ journal = "Discover Artificial Intelligence"; publisher = "Springer Nature"; issn = "2731-0809"; reviews = 9 },
-      [ordered]@{ journal = "Scientific Reports"; publisher = "Springer Nature"; issn = "2045-2322"; reviews = 6 },
+      [ordered]@{ journal = "Discover Artificial Intelligence"; publisher = "Springer Nature"; issn = "2731-0809"; reviews = 10 },
+      [ordered]@{ journal = "Scientific Reports"; publisher = "Springer Nature"; issn = "2045-2322"; reviews = 8 },
       [ordered]@{ journal = "Pervasive and Mobile Computing"; publisher = "Elsevier"; issn = "1574-1192"; reviews = 4 },
       [ordered]@{ journal = "IEEE Transactions on Neural Networks and Learning Systems"; publisher = "IEEE"; issn = "2162-2388"; reviews = 2 },
-      [ordered]@{ journal = "International Journal of Information Security"; publisher = "Springer Nature"; issn = "1615-5270"; reviews = 3 },
-      [ordered]@{ journal = "Big Data Mining and Analytics"; publisher = "Tsinghua University Press"; issn = "2097-406X"; reviews = 2 },
+      [ordered]@{ journal = "International Journal of Information Security"; publisher = "Springer Nature"; issn = "1615-5270"; reviews = 4 },
+      [ordered]@{ journal = "Big Data Mining and Analytics"; publisher = "Tsinghua University Press"; issn = "2097-406X"; reviews = 3 },
       [ordered]@{ journal = "ACM Computing Surveys"; publisher = "ACM"; issn = "1557-7341"; reviews = 1 },
-      [ordered]@{ journal = "Computers & Security"; publisher = "Elsevier"; issn = "0167-4048"; reviews = 1 },
+      [ordered]@{ journal = "Computers & Security"; publisher = "Elsevier"; issn = "0167-4048"; reviews = 3 },
       [ordered]@{ journal = "Future Generation Computer Systems"; publisher = "Elsevier"; issn = "0167-739X"; reviews = 1 },
       [ordered]@{ journal = "Computer Communications"; publisher = "Elsevier"; issn = "0140-3664"; reviews = 1 },
       [ordered]@{ journal = "Journal of Computer Security"; publisher = "SAGE Publications"; issn = "1875-8924"; reviews = 1 },
@@ -173,9 +173,15 @@ $profile = [ordered]@{
       [ordered]@{ journal = "International Journal of Data Science and Analytics"; publisher = "Springer Nature"; issn = "2364-4168"; reviews = 1 },
       [ordered]@{ journal = "Journal of King Saud University – Computer and Information Sciences"; publisher = "Springer Nature"; issn = "2213-1248"; reviews = 1 },
       [ordered]@{ journal = "PeerJ Computer Science"; publisher = "PeerJ"; issn = "2376-5992"; reviews = 1 },
-      [ordered]@{ journal = "Computers, Materials & Continua"; publisher = "Tech Science Press"; issn = "1546-2218"; reviews = 1 },
+      [ordered]@{ journal = "Computers, Materials & Continua"; publisher = "Tech Science Press"; issn = "1546-2218"; reviews = 3 },
       [ordered]@{ journal = "Computer Systems Science and Engineering"; publisher = "Tech Science Press"; issn = "0267-6192"; reviews = 1 },
-      [ordered]@{ journal = "Journal of Computer Networks and Communications"; publisher = "Wiley"; issn = "2090-7141"; reviews = 1 }
+      [ordered]@{ journal = "Journal of Computer Networks and Communications"; publisher = "Wiley"; issn = "2090-7141"; reviews = 1 },
+      [ordered]@{ journal = "Risk Analysis"; publisher = "Wiley"; issn = "0272-4332"; reviews = 1 },
+      [ordered]@{ journal = "Simulation Modelling Practice and Theory"; publisher = "Elsevier"; issn = "1569-190X"; reviews = 2 },
+      [ordered]@{ journal = "Electronics"; publisher = "MDPI"; issn = "2079-9292"; reviews = 1 },
+      [ordered]@{ journal = "Journal of Cyber Security"; publisher = "Tech Science Press"; issn = "2579-0064"; reviews = 1 },
+      [ordered]@{ journal = "Frontiers in Computer Science"; publisher = "Frontiers Media"; issn = "2624-9898"; reviews = 1 },
+      [ordered]@{ journal = "Discover Internet of Things"; publisher = "Springer Nature"; issn = "2730-7239"; reviews = 1 }
     )
   }
   grants         = @(
