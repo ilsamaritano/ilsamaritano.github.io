@@ -1058,6 +1058,21 @@
     }
 
     /* ═══ PROJECTS ═══ */
+    /* Research Lab: interactive toy models of the research lines */
+    .lab-intro { color: var(--muted); font-size: .85rem; max-width: 62ch; margin-bottom: 24px }
+    .lab-tabs { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 16px }
+    .lab-stage { position: relative; background: var(--surface); border: 1px solid var(--border); border-radius: 4px; overflow: hidden }
+    #lab-canvas { display: block; width: 100%; height: 380px; touch-action: manipulation }
+    .lab-reset { position: absolute; top: 12px; right: 12px; padding: 6px 12px; font-family: 'Space Mono', monospace; font-size: .62rem;
+      letter-spacing: .08em; text-transform: uppercase; background: rgba(6, 8, 16, .7); color: var(--muted); border: 1px solid var(--border); cursor: none }
+    .lab-reset:hover { color: var(--accent); border-color: var(--accent) }
+    .lab-status { margin-top: 14px; font-size: .82rem; line-height: 1.6; min-height: 3.2em }
+    .lab-caption { margin-top: 6px; color: var(--muted); font-size: .78rem; line-height: 1.7; max-width: 80ch }
+    .lab-caption strong { color: var(--text) }
+    .lab-caption a { color: var(--accent); text-decoration: none; white-space: nowrap }
+    .lab-caption a:hover { text-decoration: underline }
+    @media (max-width: 640px) { #lab-canvas { height: 300px } }
+
     #projects .proj-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -4520,6 +4535,243 @@
       </div>
     </div>
   </section>
+
+  <!-- RESEARCH LAB (interactive toy models of the research lines) -->
+  <section id="lab">
+    <div class="wrap">
+      <div class="section-tag">Research Lab</div>
+      <h2 class="section-title">Play With the Ideas</h2>
+      <p class="lab-intro">Three toy models of what I work on. They run in your browser: pick one and click around.</p>
+      <div class="lab-tabs" role="tablist" aria-label="Research demos">
+        <button class="filter-btn active" type="button" role="tab" aria-selected="true" data-lab="twin">Security Twin</button>
+        <button class="filter-btn" type="button" role="tab" aria-selected="false" data-lab="swarm">UAV Swarm</button>
+        <button class="filter-btn" type="button" role="tab" aria-selected="false" data-lab="notline">NotLine</button>
+      </div>
+      <div class="lab-stage">
+        <canvas id="lab-canvas" role="img" aria-label="Interactive research demo; its state is described in the text below"></canvas>
+        <button class="lab-reset" id="lab-reset" type="button">Reset</button>
+      </div>
+      <p class="lab-status" id="lab-status" aria-live="polite"></p>
+      <p class="lab-caption" id="lab-caption"></p>
+    </div>
+  </section>
+  <script>
+    (function () {
+      const cv = document.getElementById('lab-canvas');
+      if (!cv || !cv.getContext) return;
+      const ctx = cv.getContext('2d'), statusEl = document.getElementById('lab-status'), capEl = document.getElementById('lab-caption');
+      const still = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+      const C = { cyan: '#00e5ff', violet: '#a78bfa', green: '#10b981', red: '#ff5470', text: '#e2e8f0', muted: '#64748b', line: 'rgba(0,229,255,.2)', bg: '#0d1120' };
+      let W = 0, H = 0, demo = null, raf = 0, visible = false, last = 0;
+      const X = x => 34 + x * (W - 68), Y = y => 30 + y * (H - 60);
+      const say = s => { statusEl.textContent = s; };
+      function seg(x1, y1, x2, y2, color, width, dash) {
+        ctx.beginPath(); ctx.setLineDash(dash || []); ctx.moveTo(x1, y1); ctx.lineTo(x2, y2);
+        ctx.strokeStyle = color; ctx.lineWidth = width || 1; ctx.stroke(); ctx.setLineDash([]);
+      }
+      function dot(x, y, r, fill, stroke, width) {
+        ctx.beginPath(); ctx.arc(x, y, r, 0, 6.2832);
+        if (fill) { ctx.fillStyle = fill; ctx.fill(); }
+        if (stroke) { ctx.strokeStyle = stroke; ctx.lineWidth = width || 1.5; ctx.stroke(); }
+      }
+      function label(s, x, y, color) {
+        ctx.font = "11px 'DM Mono', monospace"; ctx.textAlign = 'center'; ctx.fillStyle = color; ctx.fillText(s, x, y);
+      }
+      const nearest = (pts, x, y, max) => {
+        let best = -1, bd = max * max;
+        pts.forEach((p, i) => { const d = (p[0] - x) * (p[0] - x) + (p[1] - y) * (p[1] - y); if (d < bd) { bd = d; best = i; } });
+        return best;
+      };
+
+      // ── Security Twin: the attacker always takes the cheapest path; patch hosts and watch it re-plan ──
+      function twin() {
+        const N = [['Internet', .03, .5], ['Web', .2, .22], ['VPN', .2, .78], ['App', .4, .1], ['WS-1', .4, .5], ['WS-2', .4, .9],
+                   ['Mail', .6, .28], ['AD', .62, .72], ['DB', .8, .16], ['HMI', .82, .66], ['PLC', .97, .42]];
+        const E = [[0, 1, 2], [0, 2, 3], [1, 3, 2], [1, 4, 3], [2, 4, 2], [2, 5, 2], [3, 6, 2], [3, 8, 4], [4, 6, 2], [4, 7, 2],
+                   [5, 7, 3], [6, 8, 2], [6, 7, 3], [7, 9, 2], [8, 10, 4], [9, 10, 2], [8, 9, 3]];
+        const TARGET = 10, BUDGET = 2, patched = new Set();
+        let path = [], cost = 0, t = 0;
+        function solve(note) {
+          const d = N.map(() => Infinity), prev = N.map(() => -1), done = new Set();
+          d[0] = 0;
+          for (;;) {
+            let u = -1;
+            d.forEach((v, i) => { if (!done.has(i) && v < Infinity && (u < 0 || v < d[u])) u = i; });
+            if (u < 0 || u === TARGET) break;
+            done.add(u);
+            for (const [a, b, w] of E) {
+              const v = a === u ? b : b === u ? a : -1;
+              if (v < 0 || patched.has(v) || done.has(v)) continue;
+              if (d[u] + w < d[v]) { d[v] = d[u] + w; prev[v] = u; }
+            }
+          }
+          path = []; cost = d[TARGET];
+          if (cost < Infinity) for (let v = TARGET; v >= 0; v = prev[v]) path.unshift(v);
+          const left = BUDGET - patched.size;
+          say(note || (path.length
+            ? 'Cheapest attack path: ' + path.map(i => N[i][0]).join(' → ') + ' (effort ' + cost + '). ' +
+              (left ? 'Click a host to patch it — ' + left + ' patch' + (left > 1 ? 'es' : '') + ' left — and watch the attacker re-plan.'
+                    : 'Both patches spent and the PLC is still reachable: click a patched host to take the patch back and try elsewhere.')
+            : 'Contained: with these ' + patched.size + ' patches no path reaches the PLC. This is the what-if question a Security Twin answers before anything is touched in production.'));
+        }
+        solve();
+        return {
+          state: () => ({ path, cost, patched }),
+          click(x, y) {
+            const i = nearest(N.map(n => [X(n[1]), Y(n[2])]), x, y, 26);
+            if (i <= 0 || i === TARGET) return;
+            if (patched.has(i)) patched.delete(i);
+            else if (patched.size < BUDGET) patched.add(i);
+            else return solve('Only ' + BUDGET + ' patches in the budget: click a patched host to take one back first.');
+            solve();
+          },
+          draw(dt) {
+            t += dt;
+            const on = new Set(path.slice(1).map((v, k) => Math.min(path[k], v) + '-' + Math.max(path[k], v)));
+            for (const [a, b] of E) {
+              const hot = on.has(a + '-' + b), cut = patched.has(a) || patched.has(b);
+              seg(X(N[a][1]), Y(N[a][2]), X(N[b][1]), Y(N[b][2]), hot ? C.red : cut ? 'rgba(100,116,139,.25)' : C.line, hot ? 2 : 1, cut ? [3, 5] : null);
+            }
+            if (path.length > 1) {   // the attacker, moving along its plan
+              const f = (still ? .5 : (t * .28) % 1) * (path.length - 1), k = Math.min(Math.floor(f), path.length - 2), r = f - k;
+              const a = N[path[k]], b = N[path[k + 1]];
+              dot(X(a[1] + (b[1] - a[1]) * r), Y(a[2] + (b[2] - a[2]) * r), 5, C.red);
+              dot(X(a[1] + (b[1] - a[1]) * r), Y(a[2] + (b[2] - a[2]) * r), 10, null, 'rgba(255,84,112,.35)');
+            }
+            N.forEach((n, i) => {
+              const x = X(n[1]), y = Y(n[2]), hit = path.includes(i);
+              if (patched.has(i)) { dot(x, y, 10, C.bg, C.green, 3); label('✓', x, y + 4, C.green); }
+              else dot(x, y, i === TARGET ? 11 : 9, C.bg, i === 0 ? C.violet : hit ? C.red : C.cyan, i === TARGET ? 3 : 1.5);
+              label(n[0], x, y + 26, patched.has(i) ? C.green : hit ? C.text : C.muted);
+            });
+          }
+        };
+      }
+
+      // ── UAV swarm: a compromised drone misbehaves, its neighbours cross-check it and vote it out ──
+      function swarm() {
+        const D = [];
+        for (let i = 0; i < 14; i++) D.push({ a: (i < 5 ? i / 5 : (i - 5) / 9) * 6.2832, r: i < 5 ? .1 : .2, st: 0, s: 0, ox: 0, oy: 0, x: 0, y: 0 });
+        let t = 0;
+        function tell() {
+          const n = k => D.filter(d => d.st === k).length;
+          say(n(0) + ' drones in formation · ' + n(1) + ' compromised, under vote · ' + n(2) + ' isolated. ' +
+            (n(0) > 4 ? 'Click a drone to compromise it: its neighbours cross-check its behaviour and vote it out of the formation.'
+                      : 'The swarm is running thin — press Reset to relaunch it.'));
+        }
+        tell();
+        return {
+          click(x, y) {
+            const i = nearest(D.map(d => [d.x, d.y]), x, y, 24);
+            if (i < 0 || D[i].st !== 0) return;
+            D[i].st = still ? 2 : 1; tell();
+          },
+          draw(dt) {
+            t += dt;
+            const S = Math.min(W, H * 1.5), cx = X(.5 + .25 * Math.sin(t * .23)), cy = Y(.5 + .16 * Math.sin(t * .37));
+            for (const d of D) {
+              if (d.st === 1) {            // erratic behaviour; suspicion grows with every neighbour that can observe it
+                d.ox = Math.max(-60, Math.min(60, d.ox + (Math.random() - .5) * dt * 260));
+                d.oy = Math.max(-60, Math.min(60, d.oy + (Math.random() - .5) * dt * 260));
+                const nb = D.filter(o => o.st === 0 && Math.hypot(o.x - d.x, o.y - d.y) < .24 * S).length;
+                d.s += dt * Math.min(nb, 4) / 4 / 1.8;
+                if (d.s >= 1) { d.st = 2; tell(); }
+              } else if (d.st === 2) d.oy = Math.min(d.oy + dt * 14, 90);   // drops out of the formation
+              d.x = cx + Math.cos(d.a + t * .3) * d.r * S + d.ox;
+              d.y = cy + Math.sin(d.a + t * .3) * d.r * S + d.oy;
+            }
+            for (let i = 0; i < D.length; i++) for (let j = i + 1; j < D.length; j++) {
+              const a = D[i], b = D[j];
+              if (a.st === 2 || b.st === 2 || Math.hypot(a.x - b.x, a.y - b.y) > .15 * S) continue;
+              seg(a.x, a.y, b.x, b.y, a.st || b.st ? 'rgba(255,84,112,.45)' : C.line, 1);
+            }
+            for (const d of D) {
+              if (d.st === 2) { dot(d.x, d.y, 5, null, C.muted, 1); seg(d.x - 4, d.y - 4, d.x + 4, d.y + 4, C.muted, 1); continue; }
+              dot(d.x, d.y, 5, d.st ? C.red : C.cyan);
+              dot(d.x, d.y, 9, null, d.st ? 'rgba(255,84,112,.25)' : 'rgba(0,229,255,.2)', 1);
+              if (d.st === 1) { ctx.beginPath(); ctx.arc(d.x, d.y, 13, -1.5708, -1.5708 + d.s * 6.2832); ctx.strokeStyle = C.red; ctx.lineWidth = 2; ctx.stroke(); }
+            }
+          }
+        };
+      }
+
+      // ── NotLine: the topology appears only as traffic is observed; nothing is ever sent ──
+      function notline() {
+        const N = [[.5, .5], [.28, .3], [.28, .72], [.72, .3], [.72, .7], [.08, .14], [.08, .42], [.06, .86], [.3, .96],
+                   [.92, .12], [.94, .44], [.92, .84], [.5, .1], [.52, .9]];
+        const E = [[0, 1], [0, 2], [0, 3], [0, 4], [1, 5], [1, 6], [2, 7], [2, 8], [3, 9], [3, 10], [4, 11], [1, 12], [3, 12], [2, 13], [4, 13], [1, 2], [3, 4]];
+        const seenN = new Map(), seenE = new Map(), P = [];
+        let t = 0, next = 0, sent = 0;
+        function emit() {
+          const fresh = E.map((e, i) => i).filter(i => !seenE.has(i));
+          const i = fresh.length && Math.random() < .6 ? fresh[Math.floor(Math.random() * fresh.length)] : Math.floor(Math.random() * E.length);
+          P.push({ e: i, back: Math.random() < .5, p: 0 }); sent++;
+          if (!seenE.has(i)) seenE.set(i, t);
+          E[i].forEach(n => { if (!seenN.has(n)) seenN.set(n, t); });
+          say(seenE.size < E.length
+            ? 'Listening… ' + seenN.size + '/' + N.length + ' hosts and ' + seenE.size + '/' + E.length + ' links reconstructed from ' + sent + ' observed packets — 0 probes sent. Click the canvas to let more traffic through.'
+            : 'Topology complete: ' + N.length + ' hosts and ' + E.length + ' links rebuilt from ' + sent + ' observed packets, without sending a single one. Press Reset to listen again.');
+        }
+        say('Listening… nothing observed yet.');
+        if (still) while (seenE.size < E.length) emit();
+        return {
+          click() { for (let k = 0; k < 3; k++) emit(); },
+          draw(dt) {
+            t += dt;
+            if (!still && t >= next && seenE.size < E.length) { emit(); next = t + .5; }
+            const fade = t0 => still ? 1 : Math.min(1, (t - t0) / .7);
+            seenE.forEach((t0, i) => {
+              const a = N[E[i][0]], b = N[E[i][1]];
+              ctx.globalAlpha = fade(t0); seg(X(a[0]), Y(a[1]), X(b[0]), Y(b[1]), 'rgba(0,229,255,.35)', 1);
+            });
+            seenN.forEach((t0, i) => {
+              ctx.globalAlpha = fade(t0);
+              dot(X(N[i][0]), Y(N[i][1]), i < 5 ? 8 : 5, C.bg, i === 0 ? C.violet : i < 5 ? C.cyan : C.green, i < 5 ? 2 : 1.5);
+            });
+            ctx.globalAlpha = 1;
+            for (let k = P.length - 1; k >= 0; k--) {
+              const q = P[k]; q.p += dt * 1.3;
+              if (q.p >= 1) { P.splice(k, 1); continue; }
+              const a = N[E[q.e][q.back ? 1 : 0]], b = N[E[q.e][q.back ? 0 : 1]];
+              dot(X(a[0] + (b[0] - a[0]) * q.p), Y(a[1] + (b[1] - a[1]) * q.p), 2.5, C.text);
+            }
+          }
+        };
+      }
+
+      const DEMOS = {
+        twin: [twin, 'A <strong>Security Twin</strong> is a digital twin of an infrastructure built for security: it simulates how an attacker would move, so a defence can be tried out before it is deployed. <a href="#pub-1">Anticipating Disasters through a Security Twin →</a>'],
+        swarm: [swarm, '<strong>ResilientGuard</strong> (KAUST): Byzantine-resilient anomaly detection for UAV swarms, with TinyML models running on each drone so that the swarm does not depend on a ground station to notice that one of its members has been taken over.'],
+        notline: [notline, '<strong>NotLine</strong> builds the digital twin of a network by passive discovery only: it listens to the traffic that is already there, so it can be used on industrial systems that must not be scanned. <a href="#pub-22">NotLine: A Non-Intrusive Automated Platform →</a>']
+      };
+      let current = 'twin';
+      function frame(now) {
+        raf = 0;
+        const dt = Math.min((now - last) / 1000, .05); last = now;
+        ctx.clearRect(0, 0, W, H);
+        demo.draw(still ? 0 : dt);
+        if (visible && !still) raf = requestAnimationFrame(frame);
+      }
+      function kick() { if (!raf && W) { last = performance.now(); raf = requestAnimationFrame(frame); } }
+      function load(name) { current = name; demo = DEMOS[name][0](); capEl.innerHTML = DEMOS[name][1]; kick(); }
+      function resize() {
+        const r = cv.getBoundingClientRect(), dpr = window.devicePixelRatio || 1;
+        if (!r.width) return;
+        W = r.width; H = r.height; cv.width = Math.round(W * dpr); cv.height = Math.round(H * dpr);
+        ctx.setTransform(dpr, 0, 0, dpr, 0, 0); kick();
+      }
+      document.querySelectorAll('[data-lab]').forEach(b => b.addEventListener('click', () => {
+        document.querySelectorAll('[data-lab]').forEach(o => { o.classList.toggle('active', o === b); o.setAttribute('aria-selected', o === b); });
+        load(b.dataset.lab);
+      }));
+      document.getElementById('lab-reset').addEventListener('click', () => load(current));
+      cv.addEventListener('click', e => { const r = cv.getBoundingClientRect(); demo.click(e.clientX - r.left, e.clientY - r.top); kick(); });
+      window.addEventListener('resize', resize);
+      if ('IntersectionObserver' in window) new IntersectionObserver(en => { visible = en[0].isIntersecting; if (visible) kick(); }).observe(cv);
+      else visible = true;
+      load('twin'); resize();
+    })();
+  </script>
 
   <!-- PROJECTS -->
   <section id="projects">
