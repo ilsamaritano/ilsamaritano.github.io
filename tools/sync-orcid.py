@@ -525,8 +525,11 @@ def main():
                     html = html[:ld.end()] + '"identifier": %s,\n%s' % (value, ld.group(2)) + html[ld.end():]
         changed.append("%d identifier link(s) added" % len(link_adds))
 
-    if args.as_of:
-        html = re.sub(r"synced \d{4}-\d{2}-\d{2}", "synced " + args.as_of, html)
+    # Only when ORCID actually had something new, and only ORCID's own stamp: the job runs daily,
+    # and a date-only edit would mean a commit, a Pages build and an IndexNow ping every day.
+    if args.as_of and changed:
+        html = re.sub(r"(source: ORCID, synced )\d{4}-\d{2}-\d{2}",
+                      lambda m: m.group(1) + args.as_of, html)
         changed.append("sync date → " + args.as_of)
 
     write("index.html", html)
