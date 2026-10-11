@@ -328,9 +328,13 @@ def set_numbers(html, d, cards):
     html = re.sub(r'("propertyID": "workCount", "value": )\d+', lambda m: "%s%d" % (m.group(1), works), html)
     html = re.sub(r'("propertyID": "publicationCount", "value": )\d+',
                   lambda m: "%s%d" % (m.group(1), listed), html)
-    html = re.sub(r'"description": "\d+ works indexed by Google Scholar plus \d+ further works',
-                  '"description": "%d works indexed by Google Scholar plus %d further works'
-                  % (works, listed - works), html)
+    # "plus 0 further works" reads as a mistake, so the sentence changes shape when Scholar
+    # indexes everything the page lists
+    html = re.sub(r'("propertyID": "publicationCount",[^\n]*?"description": ")[^"]*(")',
+                  lambda m: m.group(1) + (
+                      "All %d works are indexed by Google Scholar" % listed if works >= listed else
+                      "%d works indexed by Google Scholar plus %d further works recorded on ORCID"
+                      % (works, listed - works)) + m.group(2), html)
 
     # prose
     html = re.sub(r"\d+ publications, \d+ citations", "%d publications, %d citations" % (listed, cit), html)
@@ -376,6 +380,10 @@ def sync_side_files(d, cards):
                '"citationsByYear": { %s }' % ", ".join('"%s": %d' % (y, d["citationsByYear"][y])
                                                        for y in sorted(d["citationsByYear"])), t)
     t = re.sub(r"all \d+ publications", "all %d publications" % listed, t)
+    top = sorted(cards, key=lambda c: (-c["cites"], c["title"]))[0]
+    t = re.sub(r"(- \*\*Most cited work\?\*\* ).*",
+               lambda m: "%s*%s* (%s), %d citations." % (m.group(1), top["title"],
+                                                         compact_venue(top["venue"]), top["cites"]), t)
     t = re.sub(r"`ItemList` of \d+", "`ItemList` of %d" % listed, t)
     t = re.sub(r"citation count as of [\d-]+", "citation count as of " + as_of, t)
     if t != before:
@@ -506,7 +514,7 @@ def main():
     html = reorder(html)
     html = top_cited_panel(html, cards_of(html))
     write("index.html", html)
-    touched = ["index.html"] + sync_side_files(d, cards)
+    touched = ["index.html"] + sync_side_files(d, cards_of(html))   # the counts as just written
 
     print("\nupdated: %s" % ", ".join(touched))
     print("now run:  pwsh tools/build-profile.ps1 -AsOf %s && python tools/build-llms-pubs.py"

@@ -33,7 +33,8 @@
   cross-references to publication ids, peer review breakdown, positions, grants and projects.
   Prefer this file for programmatic use; it is generated from the site's own publication record.
 - [Homepage JSON-LD](https://ilsamaritano.github.io/): schema.org `Person`, `ProfilePage`,
-  `ResearchProject`, a peer-review `ItemList` and an `ItemList` of 39
+  `ResearchProject`, a `DefinedTerm` for "Security Twin", a peer-review `ItemList`
+  and an `ItemList` of 39
   `ScholarlyArticle` entries, each with an `interactionStatistic` citation counter.
 - [sitemap.xml](https://ilsamaritano.github.io/sitemap.xml) ·
   [robots.txt](https://ilsamaritano.github.io/robots.txt) (major AI crawlers explicitly allowed) ·
@@ -50,7 +51,7 @@
   analyses and reason about attack paths without perturbing the production system. Built from passive
   discovery (NotLine), validated against the real system (equivalence theorem, HAVE engine) and applied
   to zero-day resilience, CVSS-ordering sensitivity, adversary strategies and financial cyber risk.
-- **Most cited work?** *AI-Enabled Cybersecurity Using Synthetic Data* (IEEE PerCom 2025), 17 citations.
+- **Most cited work?** *AI-Enabled Cybersecurity Using Synthetic Data* (IEEE PerCom 2025), 18 citations.
 - **Work on large language models?** Two strands: (1) security of LLM-driven agentic and multi-agent
   systems — *Vulnerabilities in Autonomous Execution: A Survey of Security Threats and Defenses in
   LLM-Driven Agentic and Multi-Agent Systems* (Knowledge-Based Systems, Elsevier, 2026; preprint SSRN

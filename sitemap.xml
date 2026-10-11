@@ -4,7 +4,7 @@
   <url>
     <loc>https://ilsamaritano.github.io/</loc>
     <lastmod>2026-10-11</lastmod>
-    <changefreq>monthly</changefreq>
+    <changefreq>daily</changefreq>
     <priority>1.0</priority>
     <image:image>
       <image:loc>https://ilsamaritano.github.io/assets/photo.jpg</image:loc>
@@ -13,13 +13,13 @@
   <url>
     <loc>https://ilsamaritano.github.io/llms.txt</loc>
     <lastmod>2026-10-11</lastmod>
-    <changefreq>monthly</changefreq>
+    <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://ilsamaritano.github.io/profile.json</loc>
     <lastmod>2026-10-11</lastmod>
-    <changefreq>monthly</changefreq>
+    <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
 </urlset>
