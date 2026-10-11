@@ -2,7 +2,7 @@
   "document": "Machine-readable academic profile of Vincenzo Sammartino",
   "canonicalUrl": "https://ilsamaritano.github.io/profile.json",
   "generatedFrom": "https://ilsamaritano.github.io/ (index.html publication record)",
-  "lastUpdated": "2026-10-06",
+  "lastUpdated": "2026-10-11",
   "license": "CC BY 4.0 — attribution: Vincenzo Sammartino, https://ilsamaritano.github.io/",
   "usage": {
     "audience": "Search engines, AI assistants, research-indexing agents and scripts.",
@@ -69,17 +69,17 @@
   "metrics": {
     "source": "Google Scholar",
     "sourceUrl": "https://scholar.google.com/citations?user=lQig7SEAAAAJ",
-    "asOf": "2026-10-06",
+    "asOf": "2026-10-11",
     "citations": 206,
     "hIndex": 10,
     "i10Index": 10,
-    "indexedWorks": 38,
+    "indexedWorks": 39,
     "citationsByYear": {
       "2024": 3,
       "2025": 20,
       "2026": 183
     },
-    "note": "Metrics cover the 39 publications listed here, of which 38 are indexed by Google Scholar. 2026 is year to date. Sum of per-publication citation counts in this file: 200 (Google Scholar's profile total may differ slightly because of merged or duplicate records)."
+    "note": "Metrics cover the 39 publications listed here, of which 39 are indexed by Google Scholar. 2026 is year to date. Sum of per-publication citation counts in this file: 200 (Google Scholar's profile total may differ slightly because of merged or duplicate records)."
   },
   "positions": [
     {
@@ -1083,7 +1083,7 @@
   "peerReview": {
     "source": "https://orcid.org/0009-0002-4632-1179",
     "year": 2026,
-    "reviews": 57,
+    "reviews": 58,
     "journals": 27,
     "detail": [
       {
@@ -1096,7 +1096,7 @@
         "journal": "Scientific Reports",
         "publisher": "Springer Nature",
         "issn": "2045-2322",
-        "reviews": 8
+        "reviews": 9
       },
       {
         "journal": "Pervasive and Mobile Computing",

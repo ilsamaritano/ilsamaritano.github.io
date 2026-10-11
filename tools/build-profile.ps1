@@ -12,7 +12,7 @@
 
 param(
   [string]$Root = (Split-Path -Parent $PSScriptRoot),
-  [string]$AsOf = "2026-10-06"
+  [string]$AsOf = "2026-10-11"
 )
 
 $src = Join-Path $Root "index.html"
@@ -119,9 +119,9 @@ $profile = [ordered]@{
     citations        = 206
     hIndex           = 10
     i10Index         = 10
-    indexedWorks     = 38
+    indexedWorks     = 39
     citationsByYear  = [ordered]@{ '2024' = 3; '2025' = 20; '2026' = 183 }
-    note             = "Metrics cover the $($pubs.Count) publications listed here, of which 38 are indexed by Google Scholar. 2026 is year to date. Sum of per-publication citation counts in this file: $total (Google Scholar's profile total may differ slightly because of merged or duplicate records)."
+    note             = "Metrics cover the $($pubs.Count) publications listed here, of which 39 are indexed by Google Scholar. 2026 is year to date. Sum of per-publication citation counts in this file: $total (Google Scholar's profile total may differ slightly because of merged or duplicate records)."
   }
   positions      = @(
     [ordered]@{ role = "PhD Candidate, National PhD Programme in Artificial Intelligence"; organization = "University of Pisa, Department of Computer Science"; start = "2024-09"; end = $null; note = "Doctoral position November 2024 – October 2027" },
@@ -152,11 +152,11 @@ $profile = [ordered]@{
   peerReview     = [ordered]@{
     source   = "https://orcid.org/0009-0002-4632-1179"
     year     = 2026
-    reviews  = 57
+    reviews  = 58
     journals = 27
     detail   = @(
       [ordered]@{ journal = "Discover Artificial Intelligence"; publisher = "Springer Nature"; issn = "2731-0809"; reviews = 10 },
-      [ordered]@{ journal = "Scientific Reports"; publisher = "Springer Nature"; issn = "2045-2322"; reviews = 8 },
+      [ordered]@{ journal = "Scientific Reports"; publisher = "Springer Nature"; issn = "2045-2322"; reviews = 9 },
       [ordered]@{ journal = "Pervasive and Mobile Computing"; publisher = "Elsevier"; issn = "1574-1192"; reviews = 4 },
       [ordered]@{ journal = "IEEE Transactions on Neural Networks and Learning Systems"; publisher = "IEEE"; issn = "2162-2388"; reviews = 2 },
       [ordered]@{ journal = "International Journal of Information Security"; publisher = "Springer Nature"; issn = "1615-5270"; reviews = 4 },
