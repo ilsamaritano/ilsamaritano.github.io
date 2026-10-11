@@ -366,7 +366,7 @@ profile.json and the page anchors at https://ilsamaritano.github.io/#pub-N.
 
 ## Research Grant
 
-- **Smart Security for Connected Cyber-Physical Systems: Paradigms, Threats and AI-based Defenses** — grant, Università di Pisa, Prot. 0079213/2026 del 16/04/2026.
+- **Smart Security for Connected Cyber-Physical Systems: Paradigms, Threats and AI-based Defenses** — grant, Università di Pisa, Prot. 0079213/2026 del 16/04/2026. Event website: https://connected-skies.github.io/
 
 ---
 

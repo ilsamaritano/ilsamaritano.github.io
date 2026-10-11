@@ -31,7 +31,7 @@ The implementation is intentionally dependency-free at the deployment level — 
 | **H-Index / i10-Index** | 10 / 10 |
 | **Publications** | 39 — 39 indexed by Google Scholar (IEEE · Springer · Elsevier · CRC/Taylor & Francis · arXiv / SSRN preprints) |
 | **Peer Review** | 58 reviews for 27 journals (2026, ORCID) — incl. IEEE TNNLS, ACM Computing Surveys, Scientific Reports, Computers & Security, FGCS |
-| **Research Grant** | *Smart Security for Connected Cyber-Physical Systems: Paradigms, Threats and AI-based Defenses* — Università di Pisa (2026) |
+| **Research Grant** | *Smart Security for Connected Cyber-Physical Systems: Paradigms, Threats and AI-based Defenses* — Università di Pisa (2026) · [event website](https://connected-skies.github.io/) |
 | **Identifiers** | ORCID 0009-0002-4632-1179 · Scopus 59166600100 · SciProfiles 3668849 |
 
 ---

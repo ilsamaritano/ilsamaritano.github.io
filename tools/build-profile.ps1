@@ -185,7 +185,7 @@ $profile = [ordered]@{
     )
   }
   grants         = @(
-    [ordered]@{ name = "Smart Security for Connected Cyber-Physical Systems: Paradigms, Threats and AI-based Defenses"; funder = "University of Pisa"; identifier = "Prot. 0079213/2026 del 16/04/2026"; year = 2026 }
+    [ordered]@{ name = "Smart Security for Connected Cyber-Physical Systems: Paradigms, Threats and AI-based Defenses"; funder = "University of Pisa"; identifier = "Prot. 0079213/2026 del 16/04/2026"; year = 2026; url = "https://connected-skies.github.io/" }
   )
   projects       = @(
     [ordered]@{ name = "ResilientGuard"; host = "KAUST"; description = "Security framework for UAV swarms using TinyML and Edge AI with Byzantine-resilient distributed consensus and anomaly detection."; url = "https://ilsamaritano.github.io/#projects" },
