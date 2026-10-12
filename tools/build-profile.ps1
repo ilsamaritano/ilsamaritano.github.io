@@ -12,7 +12,7 @@
 
 param(
   [string]$Root = (Split-Path -Parent $PSScriptRoot),
-  [string]$AsOf = "2026-10-11"
+  [string]$AsOf = "2026-10-12"
 )
 
 $src = Join-Path $Root "index.html"
@@ -116,11 +116,11 @@ $profile = [ordered]@{
     source           = "Google Scholar"
     sourceUrl        = "https://scholar.google.com/citations?user=lQig7SEAAAAJ"
     asOf             = $asOf
-    citations        = 206
+    citations        = 221
     hIndex           = 10
     i10Index         = 10
     indexedWorks     = 39
-    citationsByYear  = [ordered]@{ '2024' = 3; '2025' = 20; '2026' = 183 }
+    citationsByYear  = [ordered]@{ '2024' = 3; '2025' = 20; '2026' = 198 }
     note             = "Metrics cover the $($pubs.Count) publications listed here, of which 39 are indexed by Google Scholar. 2026 is year to date. Sum of per-publication citation counts in this file: $total (Google Scholar's profile total may differ slightly because of merged or duplicate records)."
   }
   positions      = @(
@@ -152,8 +152,8 @@ $profile = [ordered]@{
   peerReview     = [ordered]@{
     source   = "https://orcid.org/0009-0002-4632-1179"
     year     = 2026
-    reviews  = 58
-    journals = 27
+    reviews  = 59
+    journals = 28
     detail   = @(
       [ordered]@{ journal = "Discover Artificial Intelligence"; publisher = "Springer Nature"; issn = "2731-0809"; reviews = 10 },
       [ordered]@{ journal = "Scientific Reports"; publisher = "Springer Nature"; issn = "2045-2322"; reviews = 9 },
@@ -181,7 +181,8 @@ $profile = [ordered]@{
       [ordered]@{ journal = "Electronics"; publisher = "MDPI"; issn = "2079-9292"; reviews = 1 },
       [ordered]@{ journal = "Journal of Cyber Security"; publisher = "Tech Science Press"; issn = "2579-0064"; reviews = 1 },
       [ordered]@{ journal = "Frontiers in Computer Science"; publisher = "Frontiers Media"; issn = "2624-9898"; reviews = 1 },
-      [ordered]@{ journal = "Discover Internet of Things"; publisher = "Springer Nature"; issn = "2730-7239"; reviews = 1 }
+      [ordered]@{ journal = "Discover Internet of Things"; publisher = "Springer Nature"; issn = "2730-7239"; reviews = 1 },
+      [ordered]@{ journal = "Intelligent Systems with Applications"; publisher = "Elsevier"; issn = "2667-3053"; reviews = 1 }
     )
   }
   grants         = @(

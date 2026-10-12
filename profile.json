@@ -2,7 +2,7 @@
   "document": "Machine-readable academic profile of Vincenzo Sammartino",
   "canonicalUrl": "https://ilsamaritano.github.io/profile.json",
   "generatedFrom": "https://ilsamaritano.github.io/ (index.html publication record)",
-  "lastUpdated": "2026-10-11",
+  "lastUpdated": "2026-10-12",
   "license": "CC BY 4.0 — attribution: Vincenzo Sammartino, https://ilsamaritano.github.io/",
   "usage": {
     "audience": "Search engines, AI assistants, research-indexing agents and scripts.",
@@ -69,17 +69,17 @@
   "metrics": {
     "source": "Google Scholar",
     "sourceUrl": "https://scholar.google.com/citations?user=lQig7SEAAAAJ",
-    "asOf": "2026-10-11",
-    "citations": 206,
+    "asOf": "2026-10-12",
+    "citations": 221,
     "hIndex": 10,
     "i10Index": 10,
     "indexedWorks": 39,
     "citationsByYear": {
       "2024": 3,
       "2025": 20,
-      "2026": 183
+      "2026": 198
     },
-    "note": "Metrics cover the 39 publications listed here, of which 39 are indexed by Google Scholar. 2026 is year to date. Sum of per-publication citation counts in this file: 200 (Google Scholar's profile total may differ slightly because of merged or duplicate records)."
+    "note": "Metrics cover the 39 publications listed here, of which 39 are indexed by Google Scholar. 2026 is year to date. Sum of per-publication citation counts in this file: 214 (Google Scholar's profile total may differ slightly because of merged or duplicate records)."
   },
   "positions": [
     {
@@ -237,7 +237,7 @@
       "type": "book",
       "outputForm": "Book Chapter",
       "year": 2026,
-      "citations": 16,
+      "citations": 17,
       "url": "https://ilsamaritano.github.io/#pub-1",
       "identifiers": [
         {
@@ -283,7 +283,7 @@
       "type": "book",
       "outputForm": "Book Chapter",
       "year": 2026,
-      "citations": 11,
+      "citations": 12,
       "url": "https://ilsamaritano.github.io/#pub-3",
       "identifiers": [
         {
@@ -304,7 +304,7 @@
       "type": "conference",
       "outputForm": "Conference",
       "year": 2026,
-      "citations": 10,
+      "citations": 11,
       "url": "https://ilsamaritano.github.io/#pub-4",
       "identifiers": [
         {
@@ -326,7 +326,7 @@
       "type": "conference",
       "outputForm": "Conference",
       "year": 2026,
-      "citations": 8,
+      "citations": 9,
       "url": "https://ilsamaritano.github.io/#pub-5",
       "identifiers": [
         {
@@ -370,12 +370,54 @@
       "type": "journal",
       "outputForm": "Journal",
       "year": 2026,
-      "citations": 3,
+      "citations": 4,
       "url": "https://ilsamaritano.github.io/#pub-7",
       "identifiers": [
         {
           "label": "DOI",
           "url": "https://doi.org/10.1109/MCOMSTD.2026.3665935"
+        }
+      ]
+    },
+    {
+      "id": "pub-9",
+      "title": "HAVE: Host Active Verification Engine for Closing the Contextual Reality Gap in Security Digital Twins",
+      "authors": [
+        "V. Sammartino",
+        "M. Pasquini"
+      ],
+      "authorPosition": 1,
+      "venue": "arXiv preprint arXiv:2606.06968",
+      "type": "preprint",
+      "outputForm": "Preprint",
+      "year": 2026,
+      "citations": 4,
+      "url": "https://ilsamaritano.github.io/#pub-9",
+      "identifiers": [
+        {
+          "label": "arXiv",
+          "url": "https://arxiv.org/abs/2606.06968"
+        }
+      ]
+    },
+    {
+      "id": "pub-15",
+      "title": "Quantifying Cyber Robustness and Financial Risk via Security Twins",
+      "authors": [
+        "F. Baiardi",
+        "V. Sammartino"
+      ],
+      "authorPosition": 2,
+      "venue": "SSRN preprint 6890389",
+      "type": "preprint",
+      "outputForm": "Preprint",
+      "year": 2026,
+      "citations": 4,
+      "url": "https://ilsamaritano.github.io/#pub-15",
+      "identifiers": [
+        {
+          "label": "SSRN",
+          "url": "https://ssrn.com/abstract=6890389"
         }
       ]
     },
@@ -398,27 +440,6 @@
         {
           "label": "ARPI",
           "url": "https://arpi.unipi.it/handle/11568/1361887"
-        }
-      ]
-    },
-    {
-      "id": "pub-9",
-      "title": "HAVE: Host Active Verification Engine for Closing the Contextual Reality Gap in Security Digital Twins",
-      "authors": [
-        "V. Sammartino",
-        "M. Pasquini"
-      ],
-      "authorPosition": 1,
-      "venue": "arXiv preprint arXiv:2606.06968",
-      "type": "preprint",
-      "outputForm": "Preprint",
-      "year": 2026,
-      "citations": 3,
-      "url": "https://ilsamaritano.github.io/#pub-9",
-      "identifiers": [
-        {
-          "label": "arXiv",
-          "url": "https://arxiv.org/abs/2606.06968"
         }
       ]
     },
@@ -463,27 +484,6 @@
       ]
     },
     {
-      "id": "pub-15",
-      "title": "Quantifying Cyber Robustness and Financial Risk via Security Twins",
-      "authors": [
-        "F. Baiardi",
-        "V. Sammartino"
-      ],
-      "authorPosition": 2,
-      "venue": "SSRN preprint 6890389",
-      "type": "preprint",
-      "outputForm": "Preprint",
-      "year": 2026,
-      "citations": 3,
-      "url": "https://ilsamaritano.github.io/#pub-15",
-      "identifiers": [
-        {
-          "label": "SSRN",
-          "url": "https://ssrn.com/abstract=6890389"
-        }
-      ]
-    },
-    {
       "id": "pub-11",
       "title": "Model-Driven Security Analysis of SD-Access Fabrics Using Digital Twins: A Probabilistic Framework in Software-Defined Campus and Cyber-Physical Networks",
       "authors": [
@@ -495,12 +495,32 @@
       "type": "journal",
       "outputForm": "Journal",
       "year": 2026,
-      "citations": 2,
+      "citations": 3,
       "url": "https://ilsamaritano.github.io/#pub-11",
       "identifiers": [
         {
           "label": "DOI",
           "url": "https://doi.org/10.1016/j.future.2026.108698"
+        }
+      ]
+    },
+    {
+      "id": "pub-14",
+      "title": "Q-FE: A Quantum-Native 6G Far-Edge Architecture Securing Industrial IoT Digital Twins via CSIDH-PQC and Asynchronous Federated Learning",
+      "authors": [
+        "V. Sammartino"
+      ],
+      "authorPosition": 1,
+      "venue": "arXiv preprint arXiv:2606.03611",
+      "type": "preprint",
+      "outputForm": "Preprint",
+      "year": 2026,
+      "citations": 3,
+      "url": "https://ilsamaritano.github.io/#pub-14",
+      "identifiers": [
+        {
+          "label": "arXiv",
+          "url": "https://arxiv.org/abs/2606.03611"
         }
       ]
     },
@@ -521,26 +541,6 @@
         {
           "label": "arXiv",
           "url": "https://arxiv.org/abs/2606.05387"
-        }
-      ]
-    },
-    {
-      "id": "pub-14",
-      "title": "Q-FE: A Quantum-Native 6G Far-Edge Architecture Securing Industrial IoT Digital Twins via CSIDH-PQC and Asynchronous Federated Learning",
-      "authors": [
-        "V. Sammartino"
-      ],
-      "authorPosition": 1,
-      "venue": "arXiv preprint arXiv:2606.03611",
-      "type": "preprint",
-      "outputForm": "Preprint",
-      "year": 2026,
-      "citations": 2,
-      "url": "https://ilsamaritano.github.io/#pub-14",
-      "identifiers": [
-        {
-          "label": "arXiv",
-          "url": "https://arxiv.org/abs/2606.03611"
         }
       ]
     },
@@ -725,7 +725,7 @@
       "type": "conference",
       "outputForm": "Conference",
       "year": 2025,
-      "citations": 18,
+      "citations": 19,
       "url": "https://ilsamaritano.github.io/#pub-19",
       "identifiers": [
         {
@@ -747,7 +747,7 @@
       "type": "conference",
       "outputForm": "Conference",
       "year": 2025,
-      "citations": 15,
+      "citations": 16,
       "url": "https://ilsamaritano.github.io/#pub-21",
       "identifiers": [
         {
@@ -767,7 +767,7 @@
       "type": "conference",
       "outputForm": "Conference",
       "year": 2025,
-      "citations": 15,
+      "citations": 16,
       "url": "https://ilsamaritano.github.io/#pub-20",
       "identifiers": [
         {
@@ -788,7 +788,7 @@
       "type": "conference",
       "outputForm": "Proceedings",
       "year": 2025,
-      "citations": 13,
+      "citations": 14,
       "url": "https://ilsamaritano.github.io/#pub-23",
       "identifiers": [
         {
@@ -810,7 +810,7 @@
       "type": "conference",
       "outputForm": "Conference",
       "year": 2025,
-      "citations": 12,
+      "citations": 13,
       "url": "https://ilsamaritano.github.io/#pub-22",
       "identifiers": [
         {
@@ -1083,8 +1083,8 @@
   "peerReview": {
     "source": "https://orcid.org/0009-0002-4632-1179",
     "year": 2026,
-    "reviews": 58,
-    "journals": 27,
+    "reviews": 59,
+    "journals": 28,
     "detail": [
       {
         "journal": "Discover Artificial Intelligence",
@@ -1246,6 +1246,12 @@
         "journal": "Discover Internet of Things",
         "publisher": "Springer Nature",
         "issn": "2730-7239",
+        "reviews": 1
+      },
+      {
+        "journal": "Intelligent Systems with Applications",
+        "publisher": "Elsevier",
+        "issn": "2667-3053",
         "reviews": 1
       }
     ]
