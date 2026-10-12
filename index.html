@@ -4762,7 +4762,7 @@
       let current = 'twin';
       function frame(now) {
         raf = 0;
-        const dt = Math.min((now - last) / 1000, .05); last = now;
+        const dt = Math.max(0, Math.min((now - last) / 1000, .05)); last = now;   // rAF time can precede the performance.now() taken in kick()
         ctx.clearRect(0, 0, W, H);
         demo.draw(still ? 0 : dt);
         if (visible && !still) raf = requestAnimationFrame(frame);
