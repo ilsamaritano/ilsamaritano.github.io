@@ -1,21 +1,7 @@
-Scholar 2026-10-12 — 221 citations · h-index 10 · i10-index 10 · 41 indexed works
+Scholar 2026-10-13 — 221 citations · h-index 10 · i10-index 10 · 41 indexed works
 indexed works: 41 Scholar records → 39 distinct works
 
-Per-publication citation changes: 14
-  pub-19    18 → 19  AI-Enabled Cybersecurity Using Synthetic Data
-  pub-1     16 → 17  Anticipating Disasters through a Security Twin
-  pub-20    15 → 16  A Framework for Proactive Cyber-Resilience: Non-Intrusive Mo
-  pub-21    15 → 16  A Security Twin to Defeat Intrusions in Cyber Physical Syste
-  pub-23    13 → 14  A Quantitative Framework for the Validation of Twin-Based Cy
-  pub-22    12 → 13  NotLine: A Non-Intrusive Automated Platform to Build a Digit
-  pub-3     11 → 12  From Digital Twins to AI Agents: A Synthetic Data Paradigm f
-  pub-4     10 → 11  Quantifying the Impact of CVSS Score Ordering on Attack Path
-  pub-5      8 → 9   Evaluating Adversary Strategies Through a Security Twin
-  pub-9      3 → 4   HAVE: Host Active Verification Engine for Closing the Contex
-  pub-15     3 → 4   Quantifying Cyber Robustness and Financial Risk via Security
-  pub-7      3 → 4   Blockchain-Enabled Quantum-Resistant Hybrid Isogeny-Based Si
-  pub-11     2 → 3   Model-Driven Security Analysis of SD-Access Fabrics Using Di
-  pub-14     2 → 3   Q-FE: A Quantum-Native 6G Far-Edge Architecture Securing Ind
+Per-publication citation changes: 0
 
 updated: index.html, llms.txt, readme.md, sitemap.xml, tools/build-profile.ps1
-now run:  pwsh tools/build-profile.ps1 -AsOf 2026-10-12 && python tools/build-llms-pubs.py && python tools/validate.py
+now run:  pwsh tools/build-profile.ps1 -AsOf 2026-10-13 && python tools/build-llms-pubs.py && python tools/validate.py
