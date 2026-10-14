@@ -125,7 +125,9 @@ $profile = [ordered]@{
   }
   positions      = @(
     [ordered]@{ role = "PhD Candidate, National PhD Programme in Artificial Intelligence"; organization = "University of Pisa, Department of Computer Science"; start = "2024-09"; end = $null; note = "Doctoral position November 2024 – October 2027" },
+    [ordered]@{ role = "Cybersecurity and Data Protection Trainer (docente formatore) — NIS2, GDPR"; organization = "Casa di Cura San Rossore, Pisa (via training agency SOCIP)"; start = "2026-08"; end = "2026-10"; note = "Staff training on the NIS2 Directive (EU 2022/2555, D.Lgs. 138/2024), GDPR (EU 2016/679), health-data protection and security awareness" },
     [ordered]@{ role = "Visiting PhD Student (VSRP Intern)"; organization = "King Abdullah University of Science and Technology (KAUST)"; start = "2026-01"; end = "2026-06"; note = "ResilientGuard project, under Prof. Roberto Di Pietro" },
+    [ordered]@{ role = "Data and Digital Monitoring Specialist (self-employed)"; organization = "University of Pisa, Central Administration"; start = "2026-10"; end = "2027-03"; note = "Monitoring, collection, reorganisation and dissemination of water-quality data from microfiltration plants in university buildings; support to their technical supervision" },
     [ordered]@{ role = "Research Fellow"; organization = "University of Pisa, Department of Computer Science"; start = "2024-03"; end = "2024-09" },
     [ordered]@{ role = "Research Fellow"; organization = "University of Pisa, Department of Philology, Literature and Linguistics"; start = "2023-11"; end = "2024-03" },
     [ordered]@{ role = "Research Fellow"; organization = "University of Pisa, Department of Clinical and Experimental Medicine"; start = "2023-01"; end = "2023-12" },

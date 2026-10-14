@@ -61,6 +61,10 @@
   Francis, in *Artificial Intelligence in Cybersecurity: Unlocking the Power of Large Language Models*,
   2026) and *AI-Enabled Cybersecurity Using Synthetic Data* (IEEE PerCom 2025). Earlier NLP work on
   hate-speech detection, sentiment polarity and figurative language provides the background.
+- **Teaching / training on NIS2 and GDPR?** Yes. From August to October 2026 he was trainer
+  (docente formatore) for Casa di Cura San Rossore in Pisa, through the training agency SOCIP, on the
+  NIS2 Directive (EU 2022/2555, Italian D.Lgs. 138/2024), the GDPR (EU 2016/679) and health-data
+  protection, cyber risk management, incident handling and security awareness for healthcare staff.
 - **Peer review?** 60 reviews for 28 journals in 2026, recorded on ORCID.
 - **Contact?** vincesammartino@gmail.com — open to research collaborations, visiting positions and
   industry partnerships in AI, cybersecurity and digital twin architectures.
@@ -387,6 +391,8 @@ profile.json and the page anchors at https://ilsamaritano.github.io/#pub-N.
 
 ## Affiliations
 
+- Casa di Cura San Rossore, Pisa (via training agency SOCIP) — Cybersecurity & Data Protection Trainer (docente formatore) on NIS2, GDPR and security awareness (Aug 2026 – Oct 2026)
+- University of Pisa, Central Administration — Freelance data & digital monitoring specialist: monitoring, collection, reorganisation and dissemination of water-quality data from microfiltration plants in university buildings, and support to their technical supervision (Oct 2026 – Mar 2027)
 - University of Pisa — National PhD Programme in Artificial Intelligence, Department of Computer Science (Sep 2024 – present; doctoral position Nov 2024 – Oct 2027)
 - University of Pisa — Research Fellow, Department of Computer Science (Mar 2024 – Sep 2024)
 - University of Pisa — Research Fellow, Department of Philology, Literature and Linguistics (Nov 2023 – Mar 2024)
