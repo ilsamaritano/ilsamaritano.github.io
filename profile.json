@@ -2,7 +2,7 @@
   "document": "Machine-readable academic profile of Vincenzo Sammartino",
   "canonicalUrl": "https://ilsamaritano.github.io/profile.json",
   "generatedFrom": "https://ilsamaritano.github.io/ (index.html publication record)",
-  "lastUpdated": "2026-10-14",
+  "lastUpdated": "2026-10-15",
   "license": "CC BY 4.0 — attribution: Vincenzo Sammartino, https://ilsamaritano.github.io/",
   "usage": {
     "audience": "Search engines, AI assistants, research-indexing agents and scripts.",
@@ -69,7 +69,7 @@
   "metrics": {
     "source": "Google Scholar",
     "sourceUrl": "https://scholar.google.com/citations?user=lQig7SEAAAAJ",
-    "asOf": "2026-10-14",
+    "asOf": "2026-10-15",
     "citations": 221,
     "hIndex": 10,
     "i10Index": 10,
@@ -1097,14 +1097,14 @@
   "peerReview": {
     "source": "https://orcid.org/0009-0002-4632-1179",
     "year": 2026,
-    "reviews": 60,
+    "reviews": 61,
     "journals": 28,
     "detail": [
       {
         "journal": "Discover Artificial Intelligence",
         "publisher": "Springer Nature",
         "issn": "2731-0809",
-        "reviews": 10
+        "reviews": 11
       },
       {
         "journal": "Scientific Reports",
