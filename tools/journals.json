@@ -1,7 +1,17 @@
 {
+  "1873-1589": {
+    "listedAs": "1574-1192",
+    "name": "Pervasive and Mobile Computing",
+    "publisher": "Elsevier"
+  },
   "2667-3053": {
     "listedAs": "2667-3053",
     "name": "Intelligent Systems with Applications",
     "publisher": "Elsevier"
+  },
+  "3005-1754": {
+    "listedAs": "3005-1754",
+    "name": "Discover Informatics",
+    "publisher": "Springer Nature"
   }
 }

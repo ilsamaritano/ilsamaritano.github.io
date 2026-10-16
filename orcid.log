@@ -1,11 +1,15 @@
-ORCID 0009-0002-4632-1179 — 38 work groups, 28 review journals, 61 reviews
+new ISSN 1873-1589 → Pervasive and Mobile Computing (Elsevier), listed as 1574-1192
+new ISSN 3005-1754 → Discover Informatics (Springer Nature), listed as 3005-1754
+ORCID 0009-0002-4632-1179 — 38 work groups, 29 review journals, 64 reviews
 
-Peer review: site total 60 → ORCID total 61
-  2731-0809  10 → 11   Discover Artificial Intelligence
+Peer review: site total 61 → ORCID total 64
+  1574-1192  4 → 5   Pervasive and Mobile Computing
+  2045-2322  10 → 11   Scientific Reports
+  3005-1754  None → 1   Discover Informatics
 
 Identifier links to add: 0
 
 ON THE SITE BUT NOT ON ORCID (6): pub-10, pub-14, pub-15, pub-35, pub-39, pub-9
   (fine for preprints ORCID doesn't list; otherwise add them to ORCID)
 
-applied: llms.txt peer-review figures; readme.md peer-review figures; build-profile.ps1 peer-review table; index.html peer review → 61 reviews / 28 journals; sync date → 2026-10-15
+applied: new review journal: Discover Informatics (3005-1754); llms.txt peer-review figures; readme.md peer-review figures; build-profile.ps1 peer-review table; index.html peer review → 64 reviews / 29 journals; sync date → 2026-10-16

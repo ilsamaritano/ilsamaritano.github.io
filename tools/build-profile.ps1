@@ -12,7 +12,7 @@
 
 param(
   [string]$Root = (Split-Path -Parent $PSScriptRoot),
-  [string]$AsOf = "2026-10-15"
+  [string]$AsOf = "2026-10-16"
 )
 
 $src = Join-Path $Root "index.html"
@@ -154,12 +154,12 @@ $profile = [ordered]@{
   peerReview     = [ordered]@{
     source   = "https://orcid.org/0009-0002-4632-1179"
     year     = 2026
-    reviews  = 61
-    journals = 28
+    reviews  = 64
+    journals = 29
     detail   = @(
       [ordered]@{ journal = "Discover Artificial Intelligence"; publisher = "Springer Nature"; issn = "2731-0809"; reviews = 11 },
-      [ordered]@{ journal = "Scientific Reports"; publisher = "Springer Nature"; issn = "2045-2322"; reviews = 10 },
-      [ordered]@{ journal = "Pervasive and Mobile Computing"; publisher = "Elsevier"; issn = "1574-1192"; reviews = 4 },
+      [ordered]@{ journal = "Scientific Reports"; publisher = "Springer Nature"; issn = "2045-2322"; reviews = 11 },
+      [ordered]@{ journal = "Pervasive and Mobile Computing"; publisher = "Elsevier"; issn = "1574-1192"; reviews = 5 },
       [ordered]@{ journal = "IEEE Transactions on Neural Networks and Learning Systems"; publisher = "IEEE"; issn = "2162-2388"; reviews = 2 },
       [ordered]@{ journal = "International Journal of Information Security"; publisher = "Springer Nature"; issn = "1615-5270"; reviews = 4 },
       [ordered]@{ journal = "Big Data Mining and Analytics"; publisher = "Tsinghua University Press"; issn = "2097-406X"; reviews = 3 },
@@ -184,7 +184,8 @@ $profile = [ordered]@{
       [ordered]@{ journal = "Journal of Cyber Security"; publisher = "Tech Science Press"; issn = "2579-0064"; reviews = 1 },
       [ordered]@{ journal = "Frontiers in Computer Science"; publisher = "Frontiers Media"; issn = "2624-9898"; reviews = 1 },
       [ordered]@{ journal = "Discover Internet of Things"; publisher = "Springer Nature"; issn = "2730-7239"; reviews = 1 },
-      [ordered]@{ journal = "Intelligent Systems with Applications"; publisher = "Elsevier"; issn = "2667-3053"; reviews = 1 }
+      [ordered]@{ journal = "Intelligent Systems with Applications"; publisher = "Elsevier"; issn = "2667-3053"; reviews = 1 },
+      [ordered]@{ journal = "Discover Informatics"; publisher = "Springer Nature"; issn = "3005-1754"; reviews = 1 }
     )
   }
   grants         = @(
