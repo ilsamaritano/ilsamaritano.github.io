@@ -12,7 +12,7 @@
 
 param(
   [string]$Root = (Split-Path -Parent $PSScriptRoot),
-  [string]$AsOf = "2026-10-17"
+  [string]$AsOf = "2026-10-18"
 )
 
 $src = Join-Path $Root "index.html"
@@ -154,7 +154,7 @@ $profile = [ordered]@{
   peerReview     = [ordered]@{
     source   = "https://orcid.org/0009-0002-4632-1179"
     year     = 2026
-    reviews  = 66
+    reviews  = 67
     journals = 30
     detail   = @(
       [ordered]@{ journal = "Discover Artificial Intelligence"; publisher = "Springer Nature"; issn = "2731-0809"; reviews = 11 },
@@ -186,7 +186,7 @@ $profile = [ordered]@{
       [ordered]@{ journal = "Discover Internet of Things"; publisher = "Springer Nature"; issn = "2730-7239"; reviews = 1 },
       [ordered]@{ journal = "Intelligent Systems with Applications"; publisher = "Elsevier"; issn = "2667-3053"; reviews = 1 },
       [ordered]@{ journal = "Discover Informatics"; publisher = "Springer Nature"; issn = "3005-1754"; reviews = 1 },
-      [ordered]@{ journal = "Computers"; publisher = "MDPI"; issn = "2073-431X"; reviews = 1 }
+      [ordered]@{ journal = "Computers"; publisher = "MDPI"; issn = "2073-431X"; reviews = 2 }
     )
   }
   grants         = @(
