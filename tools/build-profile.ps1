@@ -12,7 +12,7 @@
 
 param(
   [string]$Root = (Split-Path -Parent $PSScriptRoot),
-  [string]$AsOf = "2026-10-21"
+  [string]$AsOf = "2026-10-22"
 )
 
 $src = Join-Path $Root "index.html"
@@ -154,7 +154,7 @@ $profile = [ordered]@{
   peerReview     = [ordered]@{
     source   = "https://orcid.org/0009-0002-4632-1179"
     year     = 2026
-    reviews  = 67
+    reviews  = 70
     journals = 30
     detail   = @(
       [ordered]@{ journal = "Discover Artificial Intelligence"; publisher = "Springer Nature"; issn = "2731-0809"; reviews = 11 },
@@ -175,13 +175,13 @@ $profile = [ordered]@{
       [ordered]@{ journal = "International Journal of Data Science and Analytics"; publisher = "Springer Nature"; issn = "2364-4168"; reviews = 1 },
       [ordered]@{ journal = "Journal of King Saud University – Computer and Information Sciences"; publisher = "Springer Nature"; issn = "2213-1248"; reviews = 1 },
       [ordered]@{ journal = "PeerJ Computer Science"; publisher = "PeerJ"; issn = "2376-5992"; reviews = 1 },
-      [ordered]@{ journal = "Computers, Materials & Continua"; publisher = "Tech Science Press"; issn = "1546-2218"; reviews = 3 },
+      [ordered]@{ journal = "Computers, Materials & Continua"; publisher = "Tech Science Press"; issn = "1546-2218"; reviews = 4 },
       [ordered]@{ journal = "Computer Systems Science and Engineering"; publisher = "Tech Science Press"; issn = "0267-6192"; reviews = 1 },
       [ordered]@{ journal = "Journal of Computer Networks and Communications"; publisher = "Wiley"; issn = "2090-7141"; reviews = 1 },
       [ordered]@{ journal = "Risk Analysis"; publisher = "Wiley"; issn = "0272-4332"; reviews = 1 },
       [ordered]@{ journal = "Simulation Modelling Practice and Theory"; publisher = "Elsevier"; issn = "1569-190X"; reviews = 2 },
       [ordered]@{ journal = "Electronics"; publisher = "MDPI"; issn = "2079-9292"; reviews = 2 },
-      [ordered]@{ journal = "Journal of Cyber Security"; publisher = "Tech Science Press"; issn = "2579-0064"; reviews = 1 },
+      [ordered]@{ journal = "Journal of Cyber Security"; publisher = "Tech Science Press"; issn = "2579-0064"; reviews = 3 },
       [ordered]@{ journal = "Frontiers in Computer Science"; publisher = "Frontiers Media"; issn = "2624-9898"; reviews = 1 },
       [ordered]@{ journal = "Discover Internet of Things"; publisher = "Springer Nature"; issn = "2730-7239"; reviews = 1 },
       [ordered]@{ journal = "Intelligent Systems with Applications"; publisher = "Elsevier"; issn = "2667-3053"; reviews = 1 },
