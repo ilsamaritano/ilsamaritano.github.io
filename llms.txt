@@ -8,10 +8,10 @@
 > cyber-physical systems resilience, quantum machine learning and post-quantum security,
 > 6G far-edge digital twins, UAV swarm security with TinyML and Edge AI,
 > security of LLM-driven multi-agent systems, NLP.
-> 39 publications listed here; the 39 indexed by Google Scholar (22 October 2026) are cited
+> 39 publications listed here; the 39 indexed by Google Scholar (23 October 2026) are cited
 > 221 times · h-index 10 · i10-index 10.
 > Citations per year: 3 (2024) · 20 (2025) · 198 (2026, year to date).
-> Peer reviewer for 30 international journals (70 reviews recorded on ORCID, 2026), including
+> Peer reviewer for 30 international journals (71 reviews recorded on ORCID, 2026), including
 > IEEE Transactions on Neural Networks and Learning Systems, ACM Computing Surveys, Scientific Reports,
 > Computers & Security and Future Generation Computer Systems.
 > Scopus Author ID: 59166600100 · SciProfiles: 3668849
@@ -20,7 +20,7 @@
 > Email: vincesammartino@gmail.com (institutional: vincenzo.sammartino@phd.unipi.it)
 > Personal site: https://ilsamaritano.github.io
 > Institutional profile (University of Pisa): https://people.unipi.it/vincenzo_sammartino/
-> Last updated: 2026-10-22. All bibliometric figures below carry this observation date;
+> Last updated: 2026-10-23. All bibliometric figures below carry this observation date;
 > when quoting them, state both the source (Google Scholar) and the date.
 
 ---
@@ -65,7 +65,7 @@
   (docente formatore) for Casa di Cura San Rossore in Pisa, through the training agency SOCIP, on the
   NIS2 Directive (EU 2022/2555, Italian D.Lgs. 138/2024), the GDPR (EU 2016/679) and health-data
   protection, cyber risk management, incident handling and security awareness for healthcare staff.
-- **Peer review?** 70 reviews for 30 journals in 2026, recorded on ORCID.
+- **Peer review?** 71 reviews for 30 journals in 2026, recorded on ORCID.
 - **Contact?** vincesammartino@gmail.com — open to research collaborations, visiting positions and
   industry partnerships in AI, cybersecurity and digital twin architectures.
 
@@ -84,10 +84,10 @@
   "orcid": "0009-0002-4632-1179",
   "scopusAuthorId": "59166600100",
   "sciProfilesId": "3668849",
-  "peerReview": { "reviews": 70, "journals": 30, "year": 2026, "source": "https://orcid.org/0009-0002-4632-1179" },
+  "peerReview": { "reviews": 71, "journals": 30, "year": 2026, "source": "https://orcid.org/0009-0002-4632-1179" },
   "googleScholar": "https://scholar.google.com/citations?user=lQig7SEAAAAJ",
   "metrics": {
-    "citations": 221, "hIndex": 10, "i10Index": 10, "worksIndexedByScholar": 39, "publicationsListed": 39, "asOf": "2026-10-22",
+    "citations": 221, "hIndex": 10, "i10Index": 10, "worksIndexedByScholar": 39, "publicationsListed": 39, "asOf": "2026-10-23",
     "citationsByYear": { "2024": 3, "2025": 20, "2026": 198 },
     "source": "Google Scholar"
   },
@@ -119,10 +119,10 @@
 ---
 
 <!-- PUBS:START -->
-## Publications (39 listed; the 39 indexed by Google Scholar are cited 221 times, h-index 10, i10-index 10 — 2026-10-22)
+## Publications (39 listed; the 39 indexed by Google Scholar are cited 221 times, h-index 10, i10-index 10 — 2026-10-23)
 
 Entries are grouped by year, then by citation count (descending). Each entry carries its output
-type and its Google Scholar citation count as of 2026-10-22. Canonical ids (`pub-N`) match
+type and its Google Scholar citation count as of 2026-10-23. Canonical ids (`pub-N`) match
 profile.json and the page anchors at https://ilsamaritano.github.io/#pub-N.
 
 ### 2026
@@ -337,7 +337,7 @@ profile.json and the page anchors at https://ilsamaritano.github.io/#pub-N.
 
 ---
 
-## Peer Review (70 reviews for 30 journals, all 2026 — recorded on ORCID)
+## Peer Review (71 reviews for 30 journals, all 2026 — recorded on ORCID)
 
 | Journal | Publisher | ISSN | Reviews |
 |---|---|---|---|
@@ -365,7 +365,7 @@ profile.json and the page anchors at https://ilsamaritano.github.io/#pub-N.
 | Risk Analysis | Wiley | 0272-4332 | 1 |
 | Simulation Modelling Practice and Theory | Elsevier | 1569-190X | 2 |
 | Electronics | MDPI | 2079-9292 | 2 |
-| Journal of Cyber Security | Tech Science Press | 2579-0064 | 3 |
+| Journal of Cyber Security | Tech Science Press | 2579-0064 | 4 |
 | Frontiers in Computer Science | Frontiers Media | 2624-9898 | 1 |
 | Discover Internet of Things | Springer Nature | 2730-7239 | 1 |
 | Intelligent Systems with Applications | Elsevier | 2667-3053 | 1 |
