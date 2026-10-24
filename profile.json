@@ -2,7 +2,7 @@
   "document": "Machine-readable academic profile of Vincenzo Sammartino",
   "canonicalUrl": "https://ilsamaritano.github.io/profile.json",
   "generatedFrom": "https://ilsamaritano.github.io/ (index.html publication record)",
-  "lastUpdated": "2026-10-23",
+  "lastUpdated": "2026-10-24",
   "license": "CC BY 4.0 — attribution: Vincenzo Sammartino, https://ilsamaritano.github.io/",
   "usage": {
     "audience": "Search engines, AI assistants, research-indexing agents and scripts.",
@@ -69,7 +69,7 @@
   "metrics": {
     "source": "Google Scholar",
     "sourceUrl": "https://scholar.google.com/citations?user=lQig7SEAAAAJ",
-    "asOf": "2026-10-23",
+    "asOf": "2026-10-24",
     "citations": 221,
     "hIndex": 10,
     "i10Index": 10,
@@ -1097,8 +1097,8 @@
   "peerReview": {
     "source": "https://orcid.org/0009-0002-4632-1179",
     "year": 2026,
-    "reviews": 71,
-    "journals": 30,
+    "reviews": 72,
+    "journals": 31,
     "detail": [
       {
         "journal": "Discover Artificial Intelligence",
@@ -1279,6 +1279,12 @@
         "publisher": "MDPI",
         "issn": "2073-431X",
         "reviews": 2
+      },
+      {
+        "journal": "IET Quantum Communication",
+        "publisher": "Institution of Engineering and Technology",
+        "issn": "2632-8925",
+        "reviews": 1
       }
     ]
   },
