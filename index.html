@@ -10,11 +10,11 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <!-- Async load fonts to prevent render blocking -->
   <link
-    href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;600;700;800&family=DM+Mono:wght@300;400;500&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap"
     rel="stylesheet" media="print" onload="this.media='all'">
   <noscript>
     <link
-      href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;600;700;800&family=DM+Mono:wght@300;400;500&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap"
       rel="stylesheet">
   </noscript>
   <link rel="canonical" href="https://ilsamaritano.github.io/">
@@ -93,7 +93,7 @@
   <link rel="dns-prefetch" href="https://orcid.org">
 
   <!-- ── 1.8  THEME COLOR (per Google mobile + browser) ── -->
-  <meta name="theme-color" content="#060810">
+  <meta name="theme-color" content="#05070b">
   <link rel="icon" href="favicon.ico" sizes="48x48">
   <link rel="icon" href="assets/icon-192.png" type="image/png" sizes="192x192">
   <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
@@ -108,1652 +108,595 @@
 
   <style>
     :root {
-      --bg: #060810;
-      --surface: #0d1120;
-      --surface2: #111827;
-      --accent: #00e5ff;
-      --accent2: #7c3aed;
-      --accent3: #10b981;
-      --text: #e2e8f0;
-      --muted: #64748b;
-      --border: rgba(0, 229, 255, 0.12);
-      --glow: 0 0 30px rgba(0, 229, 255, 0.25);
-      --glow2: 0 0 30px rgba(124, 58, 237, 0.25);
+      --bg: #05070b;
+      --bg-2: #090c13;
+      --surface: rgba(255, 255, 255, .028);
+      --surface-2: rgba(255, 255, 255, .05);
+      --line: rgba(255, 255, 255, .08);
+      --line-2: rgba(255, 255, 255, .14);
+      --text: #eef1f6;
+      --muted: #8d96a8;
+      --dim: #5d6679;
+      --lime: #c8ff4d;
+      --lime-soft: rgba(200, 255, 77, .12);
+      --violet: #8b6cff;
+      --violet-soft: rgba(139, 108, 255, .14);
+      --red: #ff5470;
+      --grad: linear-gradient(100deg, var(--lime) 0%, #7dffb0 38%, var(--violet) 100%);
+      --display: 'Space Grotesk', system-ui, sans-serif;
+      --body: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+      --mono: 'JetBrains Mono', ui-monospace, monospace;
+      --r: 20px;
+      --r-sm: 12px;
+      --wrap: 1180px;
+      --nav-h: 56px;
+      --ease: cubic-bezier(.2, .7, .1, 1);
     }
 
-    *,
-    *::before,
-    *::after {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0
-    }
-
-    html {
-      scroll-behavior: smooth;
-      font-size: 16px
-    }
-
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0 }
+    html { scroll-behavior: smooth; scroll-padding-top: calc(var(--nav-h) + 16px); -webkit-text-size-adjust: 100% }
     body {
       background: var(--bg);
       color: var(--text);
-      font-family: 'DM Mono', monospace;
+      font-family: var(--body);
+      font-size: 17px;
+      line-height: 1.6;
       overflow-x: hidden;
-      cursor: none;
-    }
-
-    /* CUSTOM CURSOR */
-    .cursor {
-      position: fixed;
-      width: 12px;
-      height: 12px;
-      background: var(--accent);
-      border-radius: 50%;
-      pointer-events: none;
-      z-index: 9999;
-      transform: translate(-50%, -50%);
-      transition: transform .1s, width .2s, height .2s, opacity .2s;
-      mix-blend-mode: screen;
-    }
-
-    .cursor-ring {
-      position: fixed;
-      width: 40px;
-      height: 40px;
-      border: 1px solid rgba(0, 229, 255, 0.5);
-      border-radius: 50%;
-      pointer-events: none;
-      z-index: 9998;
-      transform: translate(-50%, -50%);
-      transition: transform .25s cubic-bezier(.25, .46, .45, .94), width .3s, height .3s;
-    }
-
-    body:hover .cursor {
-      opacity: 1
-    }
-
-    /* CANVAS BG */
-    #neural-canvas {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: 0;
-      opacity: 0.4;
-      pointer-events: none;
-    }
-
-    /* NOISE OVERLAY */
-    body::before {
-      content: '';
-      position: fixed;
-      inset: 0;
-      z-index: 1;
-      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
-      pointer-events: none;
-      opacity: 0.5;
-    }
-
-    /* LAYOUT */
-    .wrap {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 24px;
-      position: relative;
-      z-index: 2
-    }
-
-    /* ═══ NAV ═══ */
-    nav {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      z-index: 100;
-      padding: 16px 0;
-      backdrop-filter: blur(20px);
-      background: rgba(6, 8, 16, 0.7);
-      border-bottom: 1px solid var(--border);
-      transition: all .3s;
-    }
-
-    nav .wrap {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 16px
-    }
-
-    .nav-logo {
-      font-family: 'Syne', sans-serif;
-      font-weight: 800;
-      font-size: 1.1rem;
-      color: var(--accent);
-      letter-spacing: -.02em;
-      white-space: nowrap;
-    }
-
-    .nav-logo span {
-      color: var(--text);
-      opacity: .5
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 24px;
-      list-style: none;
-      font-size: .72rem;
-      letter-spacing: .1em;
-      text-transform: uppercase;
-    }
-
-    .nav-links a {
-      color: var(--muted);
-      text-decoration: none;
-      transition: color .2s;
-      position: relative;
-    }
-
-    .nav-links a::after {
-      content: '';
-      position: absolute;
-      left: 0;
-      bottom: -4px;
-      width: 0;
-      height: 1px;
-      background: var(--accent);
-      transition: width .3s;
-    }
-
-    .nav-links a:hover {
-      color: var(--accent)
-    }
-
-    .nav-links a:hover::after {
-      width: 100%
-    }
-
-    .nav-badge {
-      font-size: .65rem;
-      padding: 4px 10px;
-      border: 1px solid var(--accent);
-      color: var(--accent);
-      border-radius: 2px;
-      letter-spacing: .1em;
-      animation: pulse-border 2s infinite;
-    }
-
-    @keyframes pulse-border {
-
-      0%,
-      100% {
-        box-shadow: 0 0 0 0 rgba(0, 229, 255, .3)
-      }
-
-      50% {
-        box-shadow: 0 0 0 6px rgba(0, 229, 255, .0)
-      }
-    }
-
-    .hamburger {
-      display: none;
-      flex-direction: column;
-      gap: 5px;
-      cursor: pointer;
-      padding: 8px
-    }
-
-    .hamburger span {
-      width: 24px;
-      height: 1.5px;
-      background: var(--accent);
-      transition: .3s;
-      display: block
-    }
-
-    /* ═══ HERO ═══ */
-    #hero {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      padding: 100px 0 60px;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 60px;
-      align-items: center;
-    }
-
-    .hero-eyebrow {
-      font-size: .7rem;
-      letter-spacing: .2em;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 20px;
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-
-    .hero-eyebrow::before {
-      content: '//';
-      opacity: .5
-    }
-
-    .hero-name {
-      font-family: 'Syne', sans-serif;
-      font-weight: 800;
-      font-size: clamp(2.8rem, 6vw, 5rem);
-      line-height: .95;
-      letter-spacing: -.04em;
-      margin-bottom: 8px;
-      color: var(--text);
-    }
-
-    .hero-name .first {
-      display: block;
-      color: var(--text)
-    }
-
-    .hero-name .last {
-      display: block;
-      background: linear-gradient(135deg, var(--accent), var(--accent2));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-
-    .hero-title {
-      font-size: .85rem;
-      color: var(--muted);
-      margin: 20px 0 32px;
-      line-height: 1.8;
-      max-width: 480px;
-    }
-
-    .hero-title .typed-cursor {
-      display: inline-block;
-      width: 2px;
-      height: 1em;
-      background: var(--accent);
-      animation: blink 1s step-end infinite;
-      vertical-align: text-bottom;
-      margin-left: 2px;
-    }
-
-    @keyframes blink {
-
-      0%,
-      100% {
-        opacity: 1
-      }
-
-      50% {
-        opacity: 0
-      }
-    }
-
-    .hero-cta {
-      display: flex;
-      gap: 16px;
-      flex-wrap: wrap;
-      margin-top: 8px;
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 12px 24px;
-      font-family: 'Space Mono', monospace;
-      font-size: .75rem;
-      letter-spacing: .08em;
-      text-decoration: none;
-      border-radius: 2px;
-      transition: all .25s;
-      position: relative;
-      overflow: hidden;
-      cursor: none;
-    }
-
-    .btn-primary {
-      background: var(--accent);
-      color: var(--bg);
-      font-weight: 700;
-    }
-
-    .btn-primary:hover {
-      box-shadow: var(--glow);
-      transform: translateY(-2px);
-      background: #33eeff;
-    }
-
-    .btn-ghost {
-      border: 1px solid var(--border);
-      color: var(--text);
-      background: transparent;
-    }
-
-    .btn-ghost:hover {
-      border-color: var(--accent);
-      color: var(--accent);
-      box-shadow: var(--glow);
-      transform: translateY(-2px);
-    }
-
-    .hero-visual {
-      position: relative;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .photo-frame {
-      position: relative;
-      width: 280px;
-      height: 280px;
-    }
-
-    .photo-frame img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      border-radius: 4px;
-      filter: grayscale(30%)contrast(1.05);
-    }
-
-    .photo-border {
-      position: absolute;
-      inset: -12px;
-      border: 1px solid var(--accent);
-      border-radius: 4px;
-      opacity: .4;
-      animation: rotate-slow 20s linear infinite;
-    }
-
-    .photo-border2 {
-      position: absolute;
-      inset: -24px;
-      border: 1px solid var(--accent2);
-      border-radius: 4px;
-      opacity: .2;
-      animation: rotate-slow 30s linear infinite reverse;
-    }
-
-    @keyframes rotate-slow {
-      0% {
-        transform: rotate(0deg)
-      }
-
-      100% {
-        transform: rotate(360deg)
-      }
-    }
-
-    .photo-scan {
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 2px;
-      background: linear-gradient(90deg, transparent, var(--accent), transparent);
-      animation: scan 3s ease-in-out infinite;
-      mix-blend-mode: screen;
-    }
-
-    @keyframes scan {
-      0% {
-        top: 0;
-        opacity: 1
-      }
-
-      100% {
-        top: 100%;
-        opacity: 0
-      }
-    }
-
-    .photo-tag {
-      position: absolute;
-      bottom: -40px;
-      right: -20px;
-      font-size: .62rem;
-      color: var(--accent);
-      border: 1px solid var(--border);
-      background: var(--surface);
-      padding: 6px 12px;
-      letter-spacing: .08em;
-      border-radius: 2px;
-    }
-
-    .hero-orbit {
-      position: absolute;
-      width: 420px;
-      height: 420px;
-      border: 1px dashed rgba(0, 229, 255, .06);
-      border-radius: 50%;
-      animation: rotate-slow 40s linear infinite;
-    }
-
-    .hero-orbit::before {
-      content: '';
-      position: absolute;
-      top: -4px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: var(--accent);
-      box-shadow: 0 0 12px var(--accent);
-    }
-
-    /* ═══ SECTION BASE ═══ */
-    section {
-      padding: 100px 0;
-      position: relative;
-      z-index: 2
-    }
-
-    .section-tag {
-      font-size: .65rem;
-      color: var(--accent);
-      letter-spacing: .2em;
-      text-transform: uppercase;
-      margin-bottom: 12px;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    .section-tag::before {
-      content: '[ ';
-      opacity: .5
-    }
-
-    .section-tag::after {
-      content: ' ]';
-      opacity: .5
-    }
-
-    .section-title {
-      font-family: 'Syne', sans-serif;
-      font-weight: 800;
-      font-size: clamp(1.8rem, 4vw, 3rem);
-      line-height: 1.05;
-      letter-spacing: -.03em;
-      margin-bottom: 48px;
-    }
-
-    .section-divider {
-      border: none;
-      border-top: 1px solid var(--border);
-      margin-bottom: 80px;
-    }
-
-    /* ═══ ABOUT ═══ */
-    #about .grid {
-      display: grid;
-      grid-template-columns: 1.5fr 1fr;
-      gap: 80px;
-      align-items: start;
-    }
-
-    .about-bio {
-      font-size: .95rem;
-      line-height: 1.9;
-      color: #94a3b8;
-    }
-
-    .about-bio p {
-      margin-bottom: 20px
-    }
-
-    .about-bio strong {
-      color: var(--text)
-    }
-
-    .research-interests {
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-      margin-top: 32px;
-    }
-
-    .ri-item {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      padding: 10px 16px;
-      border: 1px solid var(--border);
-      border-radius: 2px;
-      font-size: .78rem;
-      letter-spacing: .05em;
-      transition: all .2s;
-      background: var(--surface);
-    }
-
-    .ri-item:hover {
-      border-color: var(--accent);
-      background: rgba(0, 229, 255, .05);
-      transform: translateX(4px);
-    }
-
-    .ri-dot {
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      background: var(--accent);
-      flex-shrink: 0;
-      box-shadow: 0 0 8px var(--accent);
-    }
-
-    .info-card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 4px;
-      padding: 28px;
-    }
-
-    .info-row {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      gap: 16px;
-      padding: 14px 0;
-      border-bottom: 1px solid var(--border);
-      font-size: .78rem;
-    }
-
-    .info-row:last-child {
-      border-bottom: none
-    }
-
-    .info-key {
-      color: var(--muted);
-      letter-spacing: .05em;
-      flex-shrink: 0
-    }
-
-    .info-val {
-      color: var(--text);
-      text-align: right
-    }
-
-    .info-val a {
-      color: var(--accent);
-      text-decoration: none
-    }
-
-    /* ═══ PUBLICATIONS METRICS ═══ */
-    #metrics {
-      padding: 60px 0
-    }
-
-    .metrics-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 1px;
-      background: var(--border);
-      border: 1px solid var(--border);
-      border-radius: 4px;
-    }
-
-    .metric-card {
-      background: var(--surface);
-      padding: 36px 24px;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .metric-card::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(135deg, rgba(0, 229, 255, .03), transparent);
-    }
-
-    .metric-num {
-      font-family: 'Syne', sans-serif;
-      font-weight: 800;
-      font-size: 3rem;
-      color: var(--accent);
-      display: block;
-      line-height: 1;
-    }
-
-    .metric-num.purple {
-      color: var(--accent2)
-    }
-
-    .metric-num.green {
-      color: var(--accent3)
-    }
-
-    .metric-label {
-      font-size: .65rem;
-      color: var(--muted);
-      letter-spacing: .12em;
-      text-transform: uppercase;
-      margin-top: 8px;
-      display: block;
-    }
-
-    /* ═══ TIMELINE ═══ */
-    #experience .timeline {
-      position: relative;
-      padding-left: 32px;
-    }
-
-    #experience .timeline::before {
-      content: '';
-      position: absolute;
-      left: 0;
-      top: 0;
-      bottom: 0;
-      width: 1px;
-      background: linear-gradient(to bottom, var(--accent), var(--accent2), transparent);
-    }
-
-    .tl-entry {
-      position: relative;
-      margin-bottom: 48px;
-      opacity: 0;
-      transform: translateX(-20px);
-      transition: all .6s cubic-bezier(.25, .46, .45, .94);
-    }
-
-    .tl-entry.visible {
-      opacity: 1;
-      transform: translateX(0)
-    }
-
-    .tl-dot {
-      position: absolute;
-      left: -37px;
-      top: 6px;
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-      background: var(--accent);
-      box-shadow: 0 0 12px var(--accent);
-      border: 2px solid var(--bg);
-    }
-
-    .tl-dot.purple {
-      background: var(--accent2);
-      box-shadow: 0 0 12px var(--accent2)
-    }
-
-    .tl-date {
-      font-size: .65rem;
-      color: var(--accent);
-      letter-spacing: .1em;
-      text-transform: uppercase;
-      margin-bottom: 6px;
-    }
-
-    .tl-title {
-      font-family: 'Syne', sans-serif;
-      font-weight: 700;
-      font-size: 1rem;
-      margin-bottom: 4px;
-    }
-
-    .tl-org {
-      font-size: .75rem;
-      color: var(--muted);
-      margin-bottom: 10px;
-    }
-
-    .tl-desc {
-      font-size: .8rem;
-      color: #64748b;
-      line-height: 1.7;
-    }
-
-    .tl-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-      margin-top: 12px;
-    }
-
-    .thesis-lang-wrap {
-      margin-bottom: 32px;
-    }
-
-    .tag {
-      font-size: .6rem;
-      padding: 3px 10px;
-      border: 1px solid var(--border);
-      border-radius: 2px;
-      color: var(--muted);
-      letter-spacing: .08em;
-      text-transform: uppercase;
-      transition: .2s;
-    }
-
-    .tag:hover {
-      border-color: var(--accent);
-      color: var(--accent)
-    }
-
-    .tag.accent {
-      border-color: rgba(0, 229, 255, .3);
-      color: var(--accent)
-    }
-
-    /* ═══ PUBLICATIONS ═══ */
-    #publications .pub-filter {
-      display: flex;
-      gap: 8px;
-      flex-wrap: wrap;
-      margin-bottom: 40px;
-    }
-
-    .filter-btn {
-      padding: 8px 18px;
-      font-family: 'Space Mono', monospace;
-      font-size: .68rem;
-      letter-spacing: .08em;
-      text-transform: uppercase;
-      border: 1px solid var(--border);
-      background: transparent;
-      color: var(--muted);
-      border-radius: 2px;
-      cursor: none;
-      transition: all .2s;
-    }
-
-    .filter-btn:hover,
-    .filter-btn.active {
-      border-color: var(--accent);
-      color: var(--accent);
-      background: rgba(0, 229, 255, .05);
-    }
-
-    .pub-list {
-      display: flex;
-      flex-direction: column;
-      gap: 12px
-    }
-
-    .pub-card {
-      border: 1px solid var(--border);
-      border-radius: 4px;
-      background: var(--surface);
-      padding: 20px 24px;
-      transition: all .25s;
-      position: relative;
-      overflow: hidden;
-      opacity: 0;
-      transform: translateY(16px);
-      cursor: default;
-    }
-
-    .pub-card.visible {
-      opacity: 1;
-      transform: translateY(0)
-    }
-
-    .pub-card::before {
-      content: '';
-      position: absolute;
-      left: 0;
-      top: 0;
-      bottom: 0;
-      width: 3px;
-      background: var(--accent);
-      transform: scaleY(0);
-      transform-origin: bottom;
-      transition: transform .3s;
-    }
-
-    .pub-card:hover {
-      border-color: rgba(0, 229, 255, .25);
-      background: rgba(13, 17, 32, 0.95);
-      transform: translateX(4px);
-    }
-
-    .pub-card:hover::before {
-      transform: scaleY(1)
-    }
-
-    .pub-year {
-      font-size: .6rem;
-      color: var(--accent);
-      letter-spacing: .12em;
-      text-transform: uppercase;
-      margin-bottom: 6px;
-    }
-
-    .pub-title {
-      font-family: 'Syne', sans-serif;
-      font-weight: 600;
-      font-size: .9rem;
-      line-height: 1.4;
-      margin-bottom: 8px;
-      color: var(--text);
-    }
-
-    .pub-venue {
-      font-size: .72rem;
-      color: var(--muted);
-      margin-bottom: 8px;
-      font-style: italic;
-    }
-
-    .pub-authors {
-      font-size: .72rem;
-      color: #475569
-    }
-
-    .pub-citations {
-      position: absolute;
-      top: 20px;
-      right: 20px;
-      font-size: .6rem;
-      color: var(--accent);
-      border: 1px solid rgba(0, 229, 255, .2);
-      padding: 2px 8px;
-      border-radius: 2px;
-    }
-
-    .pub-type-header {
-      font-family: 'Syne', sans-serif;
-      font-weight: 700;
-      font-size: 1rem;
-      color: var(--muted);
-      letter-spacing: .1em;
-      text-transform: uppercase;
-      padding: 24px 0 16px;
-      border-bottom: 1px solid var(--border);
-      margin-bottom: 20px;
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-
-    .pub-type-header::before {
-      content: '';
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: var(--accent);
-      flex-shrink: 0;
-    }
-
-    /* ═══ SKILLS ═══ */
-    #skills .skills-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
-    }
-
-    .skill-group {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 4px;
-      padding: 24px;
-      transition: all .3s;
-      opacity: 0;
-      transform: translateY(20px);
-    }
-
-    .skill-group.visible {
-      opacity: 1;
-      transform: translateY(0)
-    }
-
-    .skill-group:hover {
-      border-color: var(--accent);
-      box-shadow: var(--glow);
-    }
-
-    .skill-group-title {
-      font-size: .65rem;
-      color: var(--accent);
-      letter-spacing: .15em;
-      text-transform: uppercase;
-      margin-bottom: 16px;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    .skill-group-title::before {
-      content: '';
-      flex: 1;
-      height: 1px;
-      background: var(--border);
-    }
-
-    .skill-pills {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px
-    }
-
-    .skill-pill {
-      font-size: .68rem;
-      padding: 4px 12px;
-      border: 1px solid var(--border);
-      border-radius: 2px;
-      color: var(--muted);
-      letter-spacing: .05em;
-      transition: .2s;
-    }
-
-    .skill-pill:hover {
-      border-color: var(--accent);
-      color: var(--accent);
-      background: rgba(0, 229, 255, .05);
-    }
-
-    /* ═══ PROJECTS ═══ */
-    /* Research Lab: interactive toy models of the research lines */
-    .lab-intro { color: var(--muted); font-size: .85rem; max-width: 62ch; margin-bottom: 24px }
-    .lab-tabs { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 16px }
-    .lab-stage { position: relative; background: var(--surface); border: 1px solid var(--border); border-radius: 4px; overflow: hidden }
-    #lab-canvas { display: block; width: 100%; height: 380px; touch-action: manipulation }
-    .lab-reset { position: absolute; top: 12px; right: 12px; padding: 6px 12px; font-family: 'Space Mono', monospace; font-size: .62rem;
-      letter-spacing: .08em; text-transform: uppercase; background: rgba(6, 8, 16, .7); color: var(--muted); border: 1px solid var(--border); cursor: none }
-    .lab-reset:hover { color: var(--accent); border-color: var(--accent) }
-    .lab-status { margin-top: 14px; font-size: .82rem; line-height: 1.6; min-height: 3.2em }
-    .lab-caption { margin-top: 6px; color: var(--muted); font-size: .78rem; line-height: 1.7; max-width: 80ch }
-    .lab-caption strong { color: var(--text) }
-    .lab-caption a { color: var(--accent); text-decoration: none; white-space: nowrap }
-    .lab-caption a:hover { text-decoration: underline }
-    @media (max-width: 640px) { #lab-canvas { height: 300px } }
-
-    #projects .proj-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-    }
-
-    .proj-card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 4px;
-      padding: 24px;
-      transition: all .3s;
-      opacity: 0;
-      transform: translateY(20px);
-      text-decoration: none;
-      color: var(--text);
-      display: block;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .proj-card.visible {
-      opacity: 1;
-      transform: translateY(0)
-    }
-
-    .proj-card::after {
-      content: '↗';
-      position: absolute;
-      top: 20px;
-      right: 20px;
-      font-size: 1rem;
-      color: var(--accent);
-      opacity: 0;
-      transition: .2s;
-      transform: translateY(4px);
-    }
-
-    .proj-card:hover {
-      border-color: var(--accent);
-      box-shadow: var(--glow);
-      transform: translateY(-4px);
-    }
-
-    .proj-card:hover::after {
-      opacity: 1;
-      transform: translateY(0)
-    }
-
-    .proj-icon {
-      width: 40px;
-      height: 40px;
-      border-radius: 8px;
-      background: linear-gradient(135deg, rgba(0, 229, 255, .15), rgba(124, 58, 237, .15));
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.2rem;
-      margin-bottom: 16px;
-      border: 1px solid var(--border);
-    }
-
-    .proj-name {
-      font-family: 'Syne', sans-serif;
-      font-weight: 700;
-      font-size: .95rem;
-      margin-bottom: 8px;
-    }
-
-    .proj-desc {
-      font-size: .75rem;
-      color: var(--muted);
-      line-height: 1.6
-    }
-
-    /* ═══ CONTACT ═══ */
-    #contact {
-      background: var(--surface);
-      border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
-    }
-
-    .contact-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 80px;
-      align-items: center;
-    }
-
-    .contact-heading {
-      font-family: 'Syne', sans-serif;
-      font-weight: 800;
-      font-size: clamp(2rem, 4vw, 3.5rem);
-      line-height: 1;
-      letter-spacing: -.04em;
-    }
-
-    .contact-heading span {
-      background: linear-gradient(135deg, var(--accent), var(--accent2));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-
-    .contact-links {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-    }
-
-    .contact-link {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-      padding: 16px 20px;
-      border: 1px solid var(--border);
-      border-radius: 4px;
-      text-decoration: none;
-      color: var(--text);
-      transition: all .2s;
-      font-size: .82rem;
-      background: rgba(6, 8, 16, .5);
-    }
-
-    .contact-link:hover {
-      border-color: var(--accent);
-      background: rgba(0, 229, 255, .05);
-      transform: translateX(8px);
-    }
-
-    .contact-link-icon {
-      width: 36px;
-      height: 36px;
-      border-radius: 4px;
-      background: rgba(0, 229, 255, .1);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1rem;
-      flex-shrink: 0;
-      border: 1px solid rgba(0, 229, 255, .2);
-    }
-
-    .contact-link-text {
-      flex: 1
-    }
-
-    .contact-link-label {
-      font-size: .6rem;
-      color: var(--muted);
-      letter-spacing: .1em;
-      text-transform: uppercase
-    }
-
-    .contact-link-val {
-      font-size: .78rem;
-      color: var(--text)
-    }
-
-    .contact-link-arrow {
-      color: var(--muted);
-      font-size: .8rem;
-      transition: .2s
-    }
-
-    .contact-link:hover .contact-link-arrow {
-      color: var(--accent)
-    }
-
-    /* ═══ FOOTER ═══ */
-    footer {
-      padding: 40px 0;
-      text-align: center;
-      font-size: .68rem;
-      color: var(--muted);
-      letter-spacing: .08em;
-      z-index: 2;
-      position: relative;
-    }
-
-    footer a {
-      color: var(--accent);
-      text-decoration: none
-    }
-
-    /* GLITCH EFFECT */
-    .glitch {
-      position: relative
-    }
-
-    .glitch::before,
-    .glitch::after {
-      content: attr(data-text);
-      position: absolute;
-      left: 0;
-      top: 0;
-      width: 100%;
-      overflow: hidden;
-    }
-
-    .glitch::before {
-      color: var(--accent);
-      animation: glitch1 4s infinite;
-      clip-path: polygon(0 0, 100% 0, 100% 35%, 0 35%);
-    }
-
-    .glitch::after {
-      color: var(--accent2);
-      animation: glitch2 4s infinite;
-      clip-path: polygon(0 65%, 100% 65%, 100% 100%, 0 100%);
-    }
-
-    @keyframes glitch1 {
-
-      0%,
-      90%,
-      100% {
-        transform: translateX(0)
-      }
-
-      92% {
-        transform: translateX(-3px)
-      }
-
-      94% {
-        transform: translateX(3px)
-      }
-
-      96% {
-        transform: translateX(0)
-      }
-    }
-
-    @keyframes glitch2 {
-
-      0%,
-      90%,
-      100% {
-        transform: translateX(0)
-      }
-
-      93% {
-        transform: translateX(2px)
-      }
-
-      95% {
-        transform: translateX(-2px)
-      }
-
-      97% {
-        transform: translateX(0)
-      }
-    }
-
-    /* SCROLLBAR */
-    ::-webkit-scrollbar {
-      width: 4px
-    }
-
-    ::-webkit-scrollbar-track {
-      background: var(--bg)
-    }
-
-    ::-webkit-scrollbar-thumb {
-      background: var(--accent);
-      border-radius: 2px
-    }
-
-    /* MOBILE MENU */
-    .mobile-menu {
-      display: none;
-      position: fixed;
-      inset: 0;
-      z-index: 99;
-      background: rgba(6, 8, 16, .97);
-      backdrop-filter: blur(20px);
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 32px;
-    }
-
-    .mobile-menu.open {
-      display: flex
-    }
-
-    .mobile-menu a {
-      font-family: 'Syne', sans-serif;
-      font-weight: 700;
-      font-size: 1.6rem;
-      color: var(--muted);
-      text-decoration: none;
-      transition: .2s;
-    }
-
-    .mobile-menu a:hover {
-      color: var(--accent)
-    }
-
-    .mobile-close {
-      position: absolute;
-      top: 24px;
-      right: 24px;
-      background: none;
-      border: none;
-      color: var(--accent);
-      font-size: 1.5rem;
-      cursor: pointer;
-    }
-
-    /* FADE IN */
-    .fade-in {
-      opacity: 0;
-      transform: translateY(24px);
-      transition: opacity .7s ease, transform .7s ease;
-    }
-
-    .fade-in.visible {
-      opacity: 1;
-      transform: translateY(0)
-    }
-
-    /* ═══════════════════════════════════════════
-     RESPONSIVE — MOBILE FIXES
-     ═══════════════════════════════════════════ */
-    @media(max-width:900px) {
-
-      /* — Layout base — */
-      .hero-grid {
-        grid-template-columns: 1fr;
-        gap: 40px
-      }
-
-      .hero-visual {
-        order: -1
-      }
-
-      .hero-orbit {
-        display: none
-      }
-
-      /* Spazio extra tra la foto (order:-1) e il testo dell'eyebrow */
-      .hero-left {
-        margin-top: 24px
-      }
-
-      #about .grid {
-        grid-template-columns: 1fr
-      }
-
-      #skills .skills-grid {
-        grid-template-columns: repeat(2, 1fr)
-      }
-
-      #projects .proj-grid {
-        grid-template-columns: repeat(2, 1fr)
-      }
-
-      .contact-grid {
-        grid-template-columns: 1fr
-      }
-
-      .nav-links,
-      .nav-badge {
-        display: none
-      }
-
-      .hamburger {
-        display: flex
-      }
-
-      /* ── FIX 1: #metrics è ora l'unico banner statistiche (4 box). Layout 2x2 su mobile ── */
-      .metrics-grid {
-        grid-template-columns: repeat(2, 1fr)
-      }
-
-
-      /* ── FIX 2: Hero name — scaling fluido, zero overflow.
-       Il clamp originale aveva 2.8rem come floor, sufficiente
-       su desktop ma troppo ampio per viewport < 420 px con
-       il cognome "Sammartino" (10 caratteri larghi).
-       Nuovo range: 1.7 rem → 9 vw → 3.4 rem. ── */
-      .hero-name {
-        font-size: clamp(1.7rem, 9vw, 3.4rem);
-        word-break: break-word;
-        hyphens: auto;
-        letter-spacing: -.03em;
-      }
-
-      /* ── FIX 3: CTA buttons — layout verticale su mobile
-       per evitare overflow orizzontale o troncatura del testo. ── */
-      .hero-cta {
-        flex-direction: column;
-        gap: 10px;
-        flex-wrap: nowrap
-      }
-
-      .hero-cta .btn {
-        width: 100%;
-        justify-content: center;
-        font-size: .7rem;
-        padding: 12px 20px;
-      }
-
-      /* ── FIX 4: Publication filter bar — scroll orizzontale.
-       Con flex-wrap i pulsanti si distribuivano su più righe
-       occupando >120px di altezza su schermi stretti.
-       Ora scorrono orizzontalmente, scrollbar nascosta. ── */
-      #publications .pub-filter {
-        flex-wrap: nowrap;
-        overflow-x: auto;
-        -webkit-overflow-scrolling: touch;
-        scrollbar-width: none;
-        padding-bottom: 6px;
-        margin-bottom: 32px;
-      }
-
-      #publications .pub-filter::-webkit-scrollbar {
-        display: none
-      }
-
-      .filter-btn {
-        flex-shrink: 0;
-        white-space: nowrap;
-        font-size: .62rem;
-        padding: 7px 14px;
-      }
-
-      /* — Hero stats: rimossi dal DOM — */
-
-      /* — Pub citations badge: torna nel flusso su mobile
-       per evitare sovrapposizioni con il titolo — */
-      .pub-citations {
-        position: static;
-        display: inline-block;
-        margin-top: 8px;
-        font-size: .58rem;
-      }
-    }
-
-    @media(max-width:600px) {
-      section {
-        padding: 70px 0
-      }
-
-      /* Padding laterale minimo garantito su ogni viewport */
-      .wrap {
-        padding: 0 16px
-      }
-
-      /* Nome ultra-compatto su 320–375 px */
-      .hero-name {
-        font-size: clamp(1.4rem, 11vw, 2.2rem);
-        letter-spacing: -.02em;
-      }
-
-      .hero-eyebrow {
-        font-size: .6rem
-      }
-
-      .hero-title {
-        font-size: .76rem;
-        margin: 14px 0 22px
-      }
-
-      /* Photo: frame ridotto, tag rimesso nel flusso */
-      .photo-frame {
-        width: 160px;
-        height: 160px
-      }
-
-      .photo-tag {
-        position: static;
-        display: inline-block;
-        margin-top: 14px;
-        font-size: .58rem;
-      }
-
-      /* grid a colonna singola */
-      #skills .skills-grid {
-        grid-template-columns: 1fr
-      }
-
-      #projects .proj-grid {
-        grid-template-columns: 1fr
-      }
-
-      /* Info card: label sopra, valore sotto
-       (su schermi molto stretti il flex row causa overflow) */
-      .info-row {
-        flex-direction: column;
-        gap: 3px
-      }
-
-      .info-val {
-        text-align: left
-      }
-
-      /* Contact heading ridotto */
-      .contact-heading {
-        font-size: clamp(1.6rem, 8vw, 2.6rem)
-      }
-
-      .contact-grid {
-        gap: 40px
-      }
-    }
-
-    /* ═══════════════════════════════════════════
-     ENHANCEMENTS — Sep 2026
-     ═══════════════════════════════════════════ */
-    /* Custom cursor only for fine pointers (enabled by JS via html.has-cursor) */
-    body { cursor: auto }
-    .btn, .filter-btn { cursor: pointer }
-    .cursor, .cursor-ring { display: none }
-    html.has-cursor .cursor, html.has-cursor .cursor-ring { display: block }
-    html.has-cursor body, html.has-cursor a, html.has-cursor button, html.has-cursor .btn,
-    html.has-cursor .filter-btn, html.has-cursor select { cursor: none }
-
-    /* Content stays visible if JavaScript is unavailable */
-    html:not(.js) .tl-entry, html:not(.js) .pub-card, html:not(.js) .skill-group,
-    html:not(.js) .proj-card, html:not(.js) .fade-in { opacity: 1; transform: none }
-
-    section[id] { scroll-margin-top: 64px }
-    a.nav-logo { text-decoration: none }
-    .nav-links a.active { color: var(--accent) }
-    .nav-links a.active::after { width: 100% }
-    .hamburger { background: none; border: none }
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+    img { max-width: 100%; display: block }
+    a { color: inherit }
+    button, input, select { font: inherit; color: inherit }
+    ::selection { background: var(--lime); color: #05070b }
+    strong { color: #fff; font-weight: 600 }
 
     .sr-only {
-      position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
-      overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0;
+      position: absolute !important; width: 1px; height: 1px; padding: 0; margin: -1px;
+      overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0
     }
     .skip-link {
-      position: fixed; top: -100px; left: 16px; z-index: 10000;
-      background: var(--accent); color: var(--bg); padding: 10px 16px; border-radius: 2px;
-      font-family: 'Space Mono', monospace; font-size: .75rem; text-decoration: none;
+      position: fixed; left: 16px; top: -60px; z-index: 300; padding: 10px 18px; border-radius: 999px;
+      background: var(--lime); color: #05070b; font-weight: 600; text-decoration: none; transition: top .2s
     }
     .skip-link:focus { top: 12px }
-    :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px }
+    :focus-visible { outline: 2px solid var(--lime); outline-offset: 3px; border-radius: 6px }
 
-    /* ── Scholar impact panel ── */
-    .metrics-grid { border-radius: 4px 4px 0 0 }
-    .scholar-panel {
-      display: grid; grid-template-columns: 1fr 1.3fr; gap: 1px;
-      background: var(--border); border: 1px solid var(--border); border-top: none;
-      border-radius: 0 0 4px 4px; overflow: hidden;
+    /* ── ambient backdrop: faint grid + two colour blooms ── */
+    .backdrop { position: fixed; inset: 0; z-index: -1; pointer-events: none; overflow: hidden }
+    .backdrop::before {
+      content: ""; position: absolute; inset: 0;
+      background-image: linear-gradient(rgba(255, 255, 255, .025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, .025) 1px, transparent 1px);
+      background-size: 64px 64px;
+      mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, #000 30%, transparent 100%);
+      -webkit-mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, #000 30%, transparent 100%);
     }
-    .panel { background: var(--surface); padding: 28px }
+    .bloom { position: absolute; border-radius: 50%; filter: blur(110px); opacity: .5 }
+    .bloom.a { width: 620px; height: 620px; left: -180px; top: -200px; background: rgba(200, 255, 77, .16) }
+    .bloom.b { width: 720px; height: 720px; right: -260px; top: 30vh; background: rgba(139, 108, 255, .2) }
+
+    .progress {
+      position: fixed; top: 0; left: 0; right: 0; height: 2px; z-index: 210; transform-origin: 0 50%;
+      transform: scaleX(0); background: var(--grad)
+    }
+
+    .wrap { max-width: var(--wrap); margin: 0 auto; padding: 0 28px }
+
+    /* ── navigation: thin glass bar ── */
+    nav {
+      position: fixed; inset: 0 0 auto 0; height: var(--nav-h); z-index: 200;
+      background: rgba(5, 7, 11, .62);
+      backdrop-filter: saturate(180%) blur(20px); -webkit-backdrop-filter: saturate(180%) blur(20px);
+      border-bottom: 1px solid transparent; transition: border-color .3s, background .3s
+    }
+    nav.scrolled { border-bottom-color: var(--line); background: rgba(5, 7, 11, .8) }
+    nav .wrap { height: 100%; display: flex; align-items: center; gap: 28px }
+    .nav-logo {
+      font-family: var(--display); font-weight: 700; font-size: 1.1rem; letter-spacing: -.02em;
+      text-decoration: none; display: flex; align-items: center; gap: 8px
+    }
+    .nav-logo i {
+      width: 9px; height: 9px; border-radius: 50%; background: var(--lime);
+      box-shadow: 0 0 12px var(--lime); display: inline-block
+    }
+    .nav-links { list-style: none; display: flex; gap: 4px; margin-left: auto }
+    .nav-links a {
+      display: block; padding: 6px 12px; border-radius: 999px; font-size: .8rem; color: var(--muted);
+      text-decoration: none; transition: color .2s, background .2s
+    }
+    .nav-links a:hover { color: var(--text) }
+    .nav-links a.active { color: var(--text); background: var(--surface-2) }
+    .nav-cta {
+      padding: 7px 16px; border-radius: 999px; background: var(--lime); color: #05070b; font-size: .8rem;
+      font-weight: 600; text-decoration: none; transition: transform .2s var(--ease), box-shadow .2s
+    }
+    .nav-cta:hover { transform: translateY(-1px); box-shadow: 0 6px 24px rgba(200, 255, 77, .35) }
+    .hamburger {
+      display: none; margin-left: auto; width: 40px; height: 40px; border: 0; background: none;
+      cursor: pointer; flex-direction: column; justify-content: center; align-items: center; gap: 5px
+    }
+    .hamburger span { width: 20px; height: 1.5px; background: var(--text); border-radius: 2px }
+
+    .mobile-menu {
+      position: fixed; inset: 0; z-index: 250; background: rgba(5, 7, 11, .97);
+      backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+      display: flex; flex-direction: column; justify-content: center; padding: 0 32px; gap: 4px;
+      opacity: 0; visibility: hidden; transition: opacity .3s, visibility .3s
+    }
+    .mobile-menu.open { opacity: 1; visibility: visible }
+    .mobile-menu a {
+      font-family: var(--display); font-size: 2rem; font-weight: 600; letter-spacing: -.03em;
+      text-decoration: none; padding: 6px 0; color: var(--text)
+    }
+    .mobile-menu a:hover { color: var(--lime) }
+    .mobile-close {
+      position: absolute; top: 12px; right: 18px; width: 44px; height: 44px; border: 0; background: none;
+      font-size: 1.4rem; cursor: pointer; color: var(--text)
+    }
+
+    /* ── shared type ── */
+    .kicker {
+      font-family: var(--mono); font-size: .72rem; letter-spacing: .14em; text-transform: uppercase;
+      color: var(--lime); display: inline-flex; align-items: center; gap: 10px
+    }
+    .kicker::before { content: ""; width: 18px; height: 1px; background: currentColor }
+    .section { padding: 140px 0 0 }
+    .section-head { max-width: 820px; margin-bottom: 56px }
+    .section-title {
+      font-family: var(--display); font-weight: 700; font-size: clamp(2.6rem, 6.4vw, 5.2rem);
+      line-height: .98; letter-spacing: -.045em; margin-top: 18px
+    }
+    .section-lead { color: var(--muted); font-size: clamp(1.05rem, 1.6vw, 1.3rem); margin-top: 22px; max-width: 640px; line-height: 1.55 }
+    .grad { background: var(--grad); -webkit-background-clip: text; background-clip: text; color: transparent }
+    .muted { color: var(--muted) }
+
+    /* ── buttons ── */
+    .btn {
+      display: inline-flex; align-items: center; gap: 8px; padding: 13px 24px; border-radius: 999px;
+      font-size: .92rem; font-weight: 500; text-decoration: none; border: 1px solid var(--line-2);
+      transition: transform .25s var(--ease), background .25s, border-color .25s, box-shadow .25s; cursor: pointer
+    }
+    .btn:hover { transform: translateY(-2px) }
+    .btn-primary { background: var(--lime); color: #05070b; border-color: var(--lime); font-weight: 600 }
+    .btn-primary:hover { box-shadow: 0 10px 34px rgba(200, 255, 77, .32) }
+    .btn-ghost { background: var(--surface) }
+    .btn-ghost:hover { border-color: var(--text); background: var(--surface-2) }
+    .link-arrow { color: var(--lime); text-decoration: none; font-weight: 500 }
+    .link-arrow:hover { text-decoration: underline; text-underline-offset: 4px }
+
+    /* ── panels with pointer spotlight ── */
+    .panel, .spot {
+      position: relative; background: var(--surface); border: 1px solid var(--line); border-radius: var(--r);
+      overflow: hidden; isolation: isolate
+    }
+    .spot::after {
+      content: ""; position: absolute; inset: 0; z-index: -1; opacity: 0; transition: opacity .35s;
+      background: radial-gradient(420px circle at var(--mx, 50%) var(--my, 50%), rgba(200, 255, 77, .09), transparent 60%)
+    }
+    .spot:hover::after { opacity: 1 }
+    .spot:hover { border-color: var(--line-2) }
+
+    /* ═════════ HERO ═════════ */
+    #hero { position: relative; min-height: 100svh; display: flex; align-items: center; padding: calc(var(--nav-h) + 40px) 0 80px; overflow: hidden }
+    #hero-canvas { position: absolute; inset: 0; width: 100%; height: 100%; z-index: 0; opacity: .9 }
+    #hero .wrap { position: relative; z-index: 1; width: 100% }
+    .hero-grid { display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(0, .65fr); gap: 56px; align-items: center }
+    .hero-status {
+      display: inline-flex; align-items: center; gap: 10px; padding: 6px 14px 6px 8px; border-radius: 999px;
+      border: 1px solid var(--line-2); background: rgba(5, 7, 11, .5); font-size: .8rem; color: var(--muted);
+      backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px)
+    }
+    .hero-status b {
+      font-family: var(--mono); font-weight: 500; font-size: .68rem; letter-spacing: .08em; text-transform: uppercase;
+      padding: 3px 8px; border-radius: 999px; background: var(--lime-soft); color: var(--lime)
+    }
+    .hero-name {
+      font-family: var(--display); font-weight: 700; letter-spacing: -.055em; line-height: .9;
+      font-size: clamp(3.4rem, 9.6vw, 8.6rem); margin: 26px 0 0
+    }
+    .hero-name span { display: block }
+    .hero-name .last { padding-bottom: .06em }
+    .hero-title {
+      font-family: var(--display); font-size: clamp(1.25rem, 2.4vw, 1.9rem); font-weight: 500; letter-spacing: -.02em;
+      color: var(--muted); margin-top: 26px; min-height: 1.4em
+    }
+    #typed-text { color: var(--text) }
+    .typed-cursor {
+      display: inline-block; width: 3px; height: 1em; background: var(--lime); margin-left: 4px;
+      vertical-align: -.12em; animation: blink 1s steps(1) infinite
+    }
+    @keyframes blink { 50% { opacity: 0 } }
+    .hero-cta { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 40px }
+    .hero-meta {
+      display: flex; flex-wrap: wrap; gap: 8px 22px; margin-top: 34px; font-family: var(--mono); font-size: .74rem;
+      color: var(--dim); letter-spacing: .04em
+    }
+    .hero-meta a { color: var(--muted); text-decoration: none }
+    .hero-meta a:hover { color: var(--lime) }
+
+    .hero-visual { position: relative; justify-self: end; width: 100%; max-width: 380px }
+    .photo-frame {
+      position: relative; aspect-ratio: 4 / 5; border-radius: 28px; overflow: hidden; border: 1px solid var(--line-2);
+      box-shadow: 0 40px 120px -30px rgba(139, 108, 255, .45), 0 0 0 1px rgba(200, 255, 77, .06);
+      transform: perspective(900px) rotateY(var(--ry, 0deg)) rotateX(var(--rx, 0deg)); transition: transform .4s var(--ease)
+    }
+    .photo-frame img { width: 100%; height: 100%; object-fit: cover; filter: saturate(.92) contrast(1.04) }
+    .photo-frame::after {
+      content: ""; position: absolute; inset: 0;
+      background: linear-gradient(180deg, transparent 55%, rgba(5, 7, 11, .85) 100%)
+    }
+    .photo-tag {
+      position: absolute; left: 16px; right: 16px; bottom: 16px; z-index: 1; display: flex; justify-content: space-between;
+      align-items: center; font-family: var(--mono); font-size: .68rem; letter-spacing: .08em; text-transform: uppercase; color: var(--muted)
+    }
+    .photo-tag span:first-child { color: var(--lime) }
+    .hero-float {
+      position: absolute; z-index: 2; padding: 12px 16px; border-radius: 16px; border: 1px solid var(--line-2);
+      background: rgba(9, 12, 19, .78); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+      font-size: .78rem; color: var(--muted); line-height: 1.35; animation: float 7s ease-in-out infinite
+    }
+    .hero-float b { display: block; font-family: var(--display); font-size: 1.5rem; color: var(--text); letter-spacing: -.03em }
+    .hero-float.f1 { left: -46px; top: 14%; }
+    .hero-float.f2 { right: -26px; bottom: 22%; animation-delay: -3.5s }
+    .hero-float.f2 b { color: var(--lime) }
+    @keyframes float { 50% { transform: translateY(-10px) } }
+    .scroll-cue {
+      position: absolute; left: 50%; bottom: 26px; transform: translateX(-50%); z-index: 1; font-family: var(--mono);
+      font-size: .66rem; letter-spacing: .2em; text-transform: uppercase; color: var(--dim); display: flex; flex-direction: column;
+      align-items: center; gap: 10px; text-decoration: none
+    }
+    .scroll-cue::after { content: ""; width: 1px; height: 36px; background: linear-gradient(var(--lime), transparent); animation: cue 2s ease-in-out infinite }
+    @keyframes cue { 0% { transform: scaleY(0); transform-origin: top } 50% { transform: scaleY(1); transform-origin: top } 51% { transform-origin: bottom } 100% { transform: scaleY(0); transform-origin: bottom } }
+
+    /* ── keyword marquee ── */
+    .marquee { border-block: 1px solid var(--line); overflow: hidden; padding: 18px 0; background: var(--bg-2) }
+    .marquee-track { display: flex; gap: 48px; width: max-content; animation: marquee 48s linear infinite }
+    .marquee span {
+      font-family: var(--display); font-size: 1.15rem; font-weight: 500; letter-spacing: -.01em; color: var(--muted);
+      white-space: nowrap; display: inline-flex; align-items: center; gap: 48px
+    }
+    .marquee span::after { content: "✦"; color: var(--lime); font-size: .8rem }
+    @keyframes marquee { to { transform: translateX(-50%) } }
+
+    /* ═════════ STATEMENT (scroll-filled text) ═════════ */
+    .statement { padding: 160px 0 20px }
+    .statement p {
+      font-family: var(--display); font-weight: 600; font-size: clamp(1.9rem, 4.6vw, 3.9rem); line-height: 1.08;
+      letter-spacing: -.035em; max-width: 1040px
+    }
+    .statement .w { color: rgba(238, 241, 246, .14); transition: color .25s }
+    .statement .w.on { color: var(--text) }
+    .statement .w.hl.on { color: var(--lime) }
+
+    /* ═════════ IMPACT ═════════ */
+    .metrics-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px }
+    .metric-card { padding: 30px 28px 26px; display: flex; flex-direction: column; gap: 6px }
+    .metric-num {
+      font-family: var(--display); font-weight: 700; font-size: clamp(2.8rem, 5.6vw, 4.6rem); letter-spacing: -.05em;
+      line-height: 1; font-variant-numeric: tabular-nums; color: var(--text)
+    }
+    .metric-card:first-child .metric-num { background: var(--grad); -webkit-background-clip: text; background-clip: text; color: transparent }
+    .metric-num.purple { color: var(--violet) }
+    .metric-num.green { color: var(--lime) }
+    .metric-label { font-family: var(--mono); font-size: .72rem; letter-spacing: .12em; text-transform: uppercase; color: var(--muted) }
+    .scholar-panel { display: grid; grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr); gap: 16px; margin-top: 16px }
+    .scholar-panel > .panel { padding: 28px; display: flex; flex-direction: column }
     .panel-title {
-      font-size: .65rem; color: var(--accent); letter-spacing: .15em; text-transform: uppercase;
-      margin-bottom: 24px; display: flex; justify-content: space-between; align-items: baseline; gap: 12px;
+      font-family: var(--mono); font-size: .72rem; letter-spacing: .12em; text-transform: uppercase; color: var(--muted);
+      display: flex; justify-content: space-between; gap: 12px; margin-bottom: 22px
     }
-    .panel-title small { color: var(--muted); letter-spacing: .04em; text-transform: none; font-size: .62rem }
-    .cite-chart {
-      display: flex; align-items: flex-end; justify-content: space-around; gap: 20px;
-      height: 170px; margin: 0 4px 30px; border-bottom: 1px solid rgba(100, 116, 139, .35);
-    }
-    .bar-col {
-      flex: 1; max-width: 76px; height: 100%; position: relative;
-      display: flex; flex-direction: column; justify-content: flex-end; align-items: center;
-    }
-    .bar-val { font-family: 'Syne', sans-serif; font-weight: 700; font-size: .85rem; color: var(--text); margin-bottom: 6px }
+    .panel-title small { color: var(--dim); font-size: inherit; letter-spacing: .06em; text-transform: none }
+    .cite-chart { display: flex; align-items: flex-end; justify-content: space-around; gap: 18px; flex: 1; min-height: 280px; padding-top: 10px }
+    .bar-col { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: flex-end; gap: 8px; height: 100% }
+    .bar-val { font-family: var(--display); font-weight: 600; font-size: 1.05rem }
     .bar {
-      position: relative; width: 100%; height: var(--h); min-height: 2px;
-      background: var(--accent); opacity: .85; border-radius: 4px 4px 0 0;
-      transition: opacity .2s, height 1.1s cubic-bezier(.25, .46, .45, .94);
+      position: relative; width: 100%; max-width: 64px; height: calc(var(--h) * 1.6); min-height: 4px; border-radius: 10px 10px 4px 4px;
+      background: linear-gradient(180deg, var(--lime), rgba(139, 108, 255, .7)); transform-origin: bottom;
+      transition: transform 1.1s var(--ease), filter .2s
     }
-    html.js .fade-in:not(.visible) .bar { height: 2px }
-    .bar-year { position: absolute; bottom: -24px; font-size: .65rem; color: var(--muted); letter-spacing: .06em }
-    .bar-col:hover .bar { opacity: 1 }
+    html.js .cite-chart:not(.in) .bar { transform: scaleY(0) }
+    .bar:hover { filter: brightness(1.15) }
     .bar-tip {
-      position: absolute; left: 50%; bottom: calc(100% + 30px); transform: translateX(-50%);
-      background: var(--bg); border: 1px solid var(--border); color: var(--text);
-      font-size: .65rem; padding: 6px 10px; white-space: nowrap; border-radius: 2px;
-      opacity: 0; pointer-events: none; transition: opacity .15s; z-index: 3;
+      position: absolute; bottom: calc(100% + 8px); left: 50%; transform: translate(-50%, 4px); white-space: nowrap; pointer-events: none;
+      padding: 5px 9px; border-radius: 8px; background: var(--text); color: #05070b; font-size: .7rem; opacity: 0; transition: .2s
     }
-    .bar-col:hover .bar-tip { opacity: 1 }
-    .top-cited { list-style: none; counter-reset: tc; display: flex; flex-direction: column; gap: 12px }
+    .bar:hover .bar-tip { opacity: 1; transform: translate(-50%, 0) }
+    .bar-year { font-family: var(--mono); font-size: .72rem; color: var(--dim) }
+    .top-cited { list-style: none; counter-reset: tc }
     .top-cited li {
-      display: grid; grid-template-columns: auto 1fr auto; gap: 14px; align-items: baseline;
-      font-size: .75rem; line-height: 1.5; padding-bottom: 12px; border-bottom: 1px solid var(--border);
+      counter-increment: tc; display: grid; grid-template-columns: 28px minmax(0, 1fr) auto; gap: 14px; align-items: center;
+      padding: 13px 0; border-top: 1px solid var(--line)
     }
-    .top-cited li:last-child { border-bottom: none; padding-bottom: 0 }
-    .top-cited li::before { counter-increment: tc; content: counter(tc, decimal-leading-zero); color: var(--accent); font-size: .62rem }
-    .tc-title { color: var(--text) }
-    .tc-venue { display: block; color: var(--muted); font-size: .65rem }
-    .tc-count { font-family: 'Syne', sans-serif; font-weight: 700; color: var(--text); font-size: .8rem; white-space: nowrap }
+    .top-cited li:first-child { border-top: 0; padding-top: 0 }
+    .top-cited li::before { content: counter(tc, decimal-leading-zero); font-family: var(--mono); font-size: .72rem; color: var(--dim) }
+    .top-cited li > span:first-of-type { display: flex; flex-direction: column; min-width: 0 }
+    .tc-title { font-size: .92rem; font-weight: 500; line-height: 1.35 }
+    .tc-venue { font-size: .76rem; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis }
+    .tc-count {
+      font-family: var(--display); font-weight: 600; font-size: 1rem; color: var(--lime); min-width: 44px; text-align: right
+    }
     .panel-foot {
-      grid-column: 1 / -1; background: var(--surface); padding: 12px 28px;
-      font-size: .62rem; color: var(--muted); letter-spacing: .05em;
-      display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap;
+      grid-column: 1 / -1; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; font-family: var(--mono);
+      font-size: .7rem; color: var(--dim); letter-spacing: .04em; padding: 4px 4px 0
     }
-    .panel-foot a { color: var(--accent); text-decoration: none }
+    .panel-foot a { color: var(--lime); text-decoration: none }
 
-    /* ── Publications toolbar ── */
-    .pub-toolbar { display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; margin-bottom: 16px }
-    #publications .pub-filter { margin-bottom: 0 }
-    .filter-btn .count { opacity: .55; margin-left: 4px }
+    /* ═════════ RESEARCH (bento) ═════════ */
+    .bento { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 16px }
+    .bento > * { padding: 30px; min-height: 220px; display: flex; flex-direction: column }
+    .b-wide { grid-column: span 4 }
+    .b-mid { grid-column: span 3 }
+    .b-small { grid-column: span 2 }
+    .b-icon {
+      width: 44px; height: 44px; border-radius: 12px; display: grid; place-items: center; margin-bottom: auto;
+      background: var(--lime-soft); color: var(--lime); font-family: var(--mono); font-size: .8rem; font-weight: 600
+    }
+    .b-icon.v { background: var(--violet-soft); color: var(--violet) }
+    .bento h3 { font-family: var(--display); font-size: 1.45rem; font-weight: 600; letter-spacing: -.025em; line-height: 1.15; margin-top: 34px }
+    .bento p { color: var(--muted); font-size: .94rem; margin-top: 10px; line-height: 1.55 }
+    .b-hero {
+      background: radial-gradient(120% 120% at 100% 0%, rgba(200, 255, 77, .14), transparent 55%), var(--surface);
+    }
+    .b-hero h3 { font-size: clamp(1.8rem, 3vw, 2.5rem); max-width: 520px }
+    .b-hero .b-links { margin-top: 20px; display: flex; flex-wrap: wrap; gap: 8px 22px; font-size: .9rem }
+
+    /* ═════════ ABOUT ═════════ */
+    .about-grid { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, .75fr); gap: 56px; align-items: start }
+    .about-bio p { color: var(--muted); font-size: 1.08rem; line-height: 1.75; margin-bottom: 20px }
+    .about-bio p:first-child { color: var(--text); font-size: clamp(1.2rem, 1.8vw, 1.42rem); line-height: 1.55; font-family: var(--display); letter-spacing: -.01em }
+    .info-card { padding: 8px 24px }
+    .info-row { display: flex; justify-content: space-between; gap: 18px; padding: 13px 0; border-top: 1px solid var(--line); font-size: .88rem }
+    .info-row:first-child { border-top: 0 }
+    .info-key { color: var(--dim); font-family: var(--mono); font-size: .72rem; letter-spacing: .06em; text-transform: uppercase; padding-top: 2px; white-space: nowrap }
+    .info-val { text-align: right; min-width: 0; overflow-wrap: anywhere }
+    .info-val a { color: var(--text); text-decoration: none; border-bottom: 1px solid var(--line-2) }
+    .info-val a:hover { color: var(--lime); border-color: var(--lime) }
+    .collab { margin-top: 36px }
+    .sub-label { font-family: var(--mono); font-size: .72rem; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); margin-bottom: 16px }
+    .collab-list { list-style: none; display: flex; flex-wrap: wrap; gap: 8px }
+    .collab-list li {
+      padding: 8px 14px; border-radius: 999px; border: 1px solid var(--line); background: var(--surface); font-size: .86rem;
+      display: inline-flex; gap: 8px; align-items: baseline
+    }
+    .collab-list li span { font-family: var(--mono); font-size: .66rem; color: var(--lime); letter-spacing: .04em }
+
+    /* ═════════ LAB console ═════════ */
+    .console { padding: 0; border-color: rgba(200, 255, 77, .2); box-shadow: 0 0 0 1px rgba(200, 255, 77, .04), 0 40px 120px -40px rgba(200, 255, 77, .22) }
+    .console-bar {
+      display: flex; align-items: center; gap: 14px; flex-wrap: wrap; padding: 14px 16px; border-bottom: 1px solid var(--line);
+      background: rgba(255, 255, 255, .02)
+    }
+    .dots { display: flex; gap: 6px }
+    .dots i { width: 10px; height: 10px; border-radius: 50%; background: var(--line-2); display: block }
+    .dots i:first-child { background: var(--red) }
+    .dots i:nth-child(2) { background: #ffbd4a }
+    .dots i:nth-child(3) { background: var(--lime) }
+    .lab-tabs { display: flex; gap: 6px; flex-wrap: wrap; margin-left: auto }
+    .lab-stage { position: relative }
+    #lab-canvas { display: block; width: 100%; height: clamp(320px, 52vw, 520px); cursor: crosshair }
+    .lab-reset {
+      position: absolute; right: 14px; bottom: 14px; padding: 7px 14px; border-radius: 999px; border: 1px solid var(--line-2);
+      background: rgba(5, 7, 11, .7); font-family: var(--mono); font-size: .72rem; cursor: pointer; letter-spacing: .06em
+    }
+    .lab-reset:hover { border-color: var(--lime); color: var(--lime) }
+    .lab-readout { padding: 18px 22px 22px; border-top: 1px solid var(--line); display: grid; gap: 8px }
+    .lab-status { font-family: var(--mono); font-size: .8rem; color: var(--lime); line-height: 1.6 }
+    .lab-status::before { content: "› "; color: var(--dim) }
+    .lab-caption { color: var(--muted); font-size: .92rem }
+    .lab-caption a { color: var(--text) }
+
+    /* ── pill toggles (filters, tabs) ── */
+    .filter-btn {
+      padding: 8px 15px; border-radius: 999px; border: 1px solid var(--line); background: var(--surface); font-size: .82rem;
+      cursor: pointer; color: var(--muted); transition: .2s; display: inline-flex; align-items: center; gap: 8px; white-space: nowrap
+    }
+    .filter-btn:hover { color: var(--text); border-color: var(--line-2) }
+    .filter-btn.active { background: var(--text); color: #05070b; border-color: var(--text) }
+    .filter-btn .count { font-family: var(--mono); font-size: .68rem; opacity: .6 }
+
+    /* ═════════ PUBLICATIONS ═════════ */
+    .pub-toolbar { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 14px; align-items: center }
+    .pub-filter { display: flex; flex-wrap: wrap; gap: 6px }
     .pub-controls { display: flex; gap: 8px; flex-wrap: wrap }
     .pub-search, .pub-sort {
-      font-family: 'DM Mono', monospace; font-size: .72rem; min-height: 36px;
-      background: var(--surface); color: var(--text); border: 1px solid var(--border); border-radius: 2px; padding: 8px 12px;
+      height: 40px; border-radius: 999px; border: 1px solid var(--line); background: var(--surface); padding: 0 16px; font-size: .86rem
     }
-    .pub-search { width: 260px; max-width: 100% }
-    .pub-search::placeholder { color: var(--muted) }
-    .pub-search:focus, .pub-sort:focus { border-color: var(--accent); outline: none; box-shadow: 0 0 0 1px var(--accent) }
-    .pub-status { font-size: .65rem; color: var(--muted); letter-spacing: .08em; margin-bottom: 24px }
-    .pub-empty { font-size: .8rem; color: var(--muted); padding: 32px 0; text-align: center }
-    .pub-card[hidden] { display: none }
-    .pub-card .pub-title { padding-right: 110px }
+    .pub-search { width: 280px; max-width: 100% }
+    .pub-search:focus, .pub-sort:focus { outline: none; border-color: var(--lime) }
+    .pub-sort option { background: var(--bg-2) }
+    .pub-status { font-family: var(--mono); font-size: .72rem; color: var(--dim); margin: 22px 0 14px; letter-spacing: .04em }
+    .pub-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px }
+    .pub-card {
+      position: relative; padding: 24px 24px 20px; border-radius: var(--r); background: var(--surface); border: 1px solid var(--line);
+      display: flex; flex-direction: column; gap: 8px; transition: border-color .25s, transform .25s var(--ease), background .25s
+    }
+    .pub-card:hover { border-color: var(--line-2); background: var(--surface-2); transform: translateY(-2px) }
+    .pub-card:target { border-color: var(--lime) }
+    .pub-card[hidden], .is-collapsed { display: none !important }
+    .pub-year { font-family: var(--mono); font-size: .7rem; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); padding-right: 110px }
+    .pub-card[data-type="journal"] .pub-year { color: var(--lime) }
+    .pub-card[data-type="conference"] .pub-year { color: #7dffb0 }
+    .pub-card[data-type="book"] .pub-year { color: #ffbd4a }
+    .pub-card[data-type="preprint"] .pub-year { color: var(--violet) }
+    .pub-citations {
+      position: absolute; top: 20px; right: 20px; font-family: var(--mono); font-size: .68rem; padding: 4px 10px; border-radius: 999px;
+      border: 1px solid var(--line-2); color: var(--muted)
+    }
+    .pub-citations.hot { border-color: rgba(200, 255, 77, .4); color: var(--lime); background: var(--lime-soft) }
+    .pub-title { font-family: var(--display); font-size: 1.12rem; font-weight: 600; line-height: 1.3; letter-spacing: -.015em; margin-top: 4px }
+    .pub-venue { font-size: .86rem; color: var(--muted) }
+    .pub-authors { font-size: .82rem; color: var(--dim) }
     .pub-authors strong { color: var(--text); font-weight: 500 }
-    .pub-links { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 10px }
+    .pub-links { display: flex; flex-wrap: wrap; gap: 6px; margin-top: auto; padding-top: 8px }
     .pub-links a {
-      font-size: .62rem; letter-spacing: .08em; color: var(--accent); text-decoration: none;
-      border: 1px solid rgba(0, 229, 255, .2); padding: 2px 8px; border-radius: 2px; transition: .2s;
+      font-family: var(--mono); font-size: .7rem; text-decoration: none; padding: 4px 10px; border-radius: 999px;
+      border: 1px solid var(--line); color: var(--muted); transition: .2s
     }
-    .pub-links a:hover { background: rgba(0, 229, 255, .08); border-color: var(--accent) }
-    .pub-citations.hot { background: rgba(0, 229, 255, .1); border-color: rgba(0, 229, 255, .45) }
+    .pub-links a:hover { color: #05070b; background: var(--lime); border-color: var(--lime) }
+    .pub-empty { color: var(--muted); padding: 40px 0; text-align: center }
+    .more-wrap { display: flex; justify-content: center; margin-top: 30px }
+    .more-btn { min-width: 220px; justify-content: center }
+    .more-btn::after { content: "↓"; transition: transform .25s }
+    .more-btn[aria-expanded="true"]::after { transform: rotate(180deg) }
 
-    /* ── Collaborators ── */
-    .collab { margin-top: 24px }
-    .collab-title { font-size: .65rem; color: var(--accent); letter-spacing: .15em; text-transform: uppercase; margin-bottom: 12px }
-    .collab-list { display: flex; flex-wrap: wrap; gap: 6px; list-style: none }
-    .collab-list li {
-      font-size: .68rem; padding: 6px 10px; border: 1px solid var(--border);
-      border-radius: 2px; background: var(--surface); color: var(--text);
+    /* ═════════ EXPERIENCE timeline ═════════ */
+    .timeline { position: relative; display: grid; gap: 14px }
+    .tl-entry {
+      position: relative; display: grid; grid-template-columns: 210px minmax(0, 1fr); gap: 6px 36px; padding: 28px 30px;
+      border-radius: var(--r); background: var(--surface); border: 1px solid var(--line); transition: border-color .25s
     }
-    .collab-list li span { color: var(--muted); margin-left: 6px }
+    .tl-entry:hover { border-color: var(--line-2) }
+    .tl-entry > * { grid-column: 2 }
+    .tl-dot { display: none }
+    .tl-date {
+      grid-column: 1; grid-row: 1 / span 4; font-family: var(--mono); font-size: .74rem; letter-spacing: .04em; color: var(--lime);
+      padding-top: 5px
+    }
+    .tl-entry:has(.tl-dot.purple) .tl-date { color: var(--violet) }
+    .tl-title { font-family: var(--display); font-size: 1.3rem; font-weight: 600; letter-spacing: -.02em; line-height: 1.25 }
+    .tl-org { color: var(--muted); font-size: .9rem }
+    .tl-org a { color: var(--text) }
+    .tl-desc { color: var(--muted); font-size: .94rem; margin-top: 6px; line-height: 1.65 }
+    .tl-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 12px }
+    .tag {
+      font-family: var(--mono); font-size: .66rem; letter-spacing: .03em; padding: 4px 10px; border-radius: 999px;
+      border: 1px solid var(--line); color: var(--muted)
+    }
+    .tag.accent { color: var(--lime); border-color: rgba(200, 255, 77, .3) }
 
-    .proj-card.no-link::after { display: none }
+    /* ═════════ SERVICE ═════════ */
+    .service-top { display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: 16px; align-items: stretch }
+    .service-stats { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0; padding: 30px 10px }
+    .service-stats > div { display: flex; flex-direction: column; gap: 6px; padding: 0 20px; border-left: 1px solid var(--line) }
+    .service-stats > div:first-child { border-left: 0 }
+    .service-intro { padding: 30px; color: var(--muted); font-size: 1rem; line-height: 1.7 }
+    .service-intro a { color: var(--lime) }
+    .service-sub { margin: 48px 0 16px }
+    .review-grid { list-style: none; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px }
+    .review-card {
+      display: flex; justify-content: space-between; align-items: center; gap: 14px; padding: 16px 18px; border-radius: var(--r-sm);
+      background: var(--surface); border: 1px solid var(--line); transition: border-color .2s
+    }
+    .review-card:hover { border-color: var(--line-2) }
+    .review-card > span:first-child { display: flex; flex-direction: column; min-width: 0 }
+    .rv-name { font-size: .9rem; font-weight: 500; line-height: 1.3 }
+    .rv-pub { font-size: .72rem; color: var(--dim); font-family: var(--mono); margin-top: 3px }
+    .rv-count { font-family: var(--mono); font-size: .7rem; color: var(--lime); white-space: nowrap }
+    .grant-card {
+      padding: 34px; border-radius: var(--r); border: 1px solid rgba(139, 108, 255, .35);
+      background: radial-gradient(100% 140% at 0% 0%, rgba(139, 108, 255, .2), transparent 60%), var(--surface);
+      display: grid; gap: 8px
+    }
+    .grant-card .tl-date { color: var(--violet); padding: 0 }
+    .grant-card .tl-title { font-size: clamp(1.3rem, 2.4vw, 1.9rem); max-width: 820px }
+    .grant-card .pub-links { padding-top: 10px }
 
-    @media(max-width:900px) {
-      .scholar-panel { grid-template-columns: 1fr }
-      .pub-toolbar { flex-direction: column; align-items: stretch }
+    /* ═════════ THESES ═════════ */
+    .thesis-head { max-width: none; display: flex; justify-content: space-between; align-items: end; gap: 20px; flex-wrap: wrap }
+    .thesis-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px }
+    .thesis-grid .tl-entry { display: flex; flex-direction: column; gap: 8px; padding: 28px }
+    .thesis-grid .tl-date { font-size: .68rem; text-transform: uppercase; letter-spacing: .1em; color: var(--dim); padding: 0 }
+    .thesis-grid .tl-title { font-size: 1.18rem }
+    .thesis-grid .tl-tags { margin-top: auto; padding-top: 10px }
+
+    /* ═════════ PROJECTS + SKILLS ═════════ */
+    .proj-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px }
+    .proj-card {
+      padding: 28px; text-decoration: none; display: flex; flex-direction: column; gap: 10px; min-height: 210px;
+      transition: transform .3s var(--ease), border-color .25s
+    }
+    a.proj-card:hover { transform: translateY(-4px) }
+    .proj-card:first-child { grid-column: span 2; background: radial-gradient(120% 140% at 100% 100%, rgba(139, 108, 255, .18), transparent 60%), var(--surface) }
+    @media (min-width: 901px) { .proj-card:last-child { grid-column: span 2 } }
+    .proj-icon { font-size: 1.6rem; line-height: 1 }
+    .proj-name { font-family: var(--display); font-size: 1.3rem; font-weight: 600; letter-spacing: -.02em; margin-top: auto }
+    .proj-desc { color: var(--muted); font-size: .9rem; line-height: 1.55 }
+    a.proj-card .proj-name::after { content: " ↗"; color: var(--lime); font-size: .9em }
+    .skills-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; margin-top: 14px }
+    .skill-group { padding: 24px }
+    .skill-group-title { font-family: var(--mono); font-size: .7rem; letter-spacing: .12em; text-transform: uppercase; color: var(--lime); margin-bottom: 14px }
+    .skill-pills { display: flex; flex-wrap: wrap; gap: 6px }
+    .skill-pill { padding: 5px 12px; border-radius: 999px; background: var(--surface-2); font-size: .82rem; color: var(--text) }
+
+    /* ═════════ CONTACT ═════════ */
+    #contact { padding: 160px 0 120px }
+    .contact-heading {
+      font-family: var(--display); font-weight: 700; font-size: clamp(3.4rem, 10vw, 9rem); letter-spacing: -.06em; line-height: .9; margin-top: 18px
+    }
+    .contact-heading span { display: block }
+    .contact-lead { color: var(--muted); font-size: clamp(1.05rem, 1.6vw, 1.3rem); margin-top: 26px; max-width: 560px }
+    .contact-cta { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 36px }
+    .contact-links { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; margin-top: 72px }
+    .contact-link {
+      display: flex; align-items: center; gap: 14px; padding: 18px; border-radius: var(--r-sm); background: var(--surface);
+      border: 1px solid var(--line); text-decoration: none; transition: border-color .2s, transform .25s var(--ease)
+    }
+    .contact-link:hover { border-color: var(--lime); transform: translateY(-2px) }
+    .contact-link-icon {
+      flex: none; width: 40px; height: 40px; border-radius: 10px; display: grid; place-items: center; background: var(--surface-2);
+      font-family: var(--mono); font-size: .76rem; font-weight: 600; color: var(--lime)
+    }
+    .contact-link-text { min-width: 0; flex: 1 }
+    .contact-link-label { font-size: .7rem; font-family: var(--mono); color: var(--dim); letter-spacing: .04em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis }
+    .contact-link-val { font-size: .86rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis }
+    .contact-link-arrow { color: var(--dim); transition: transform .2s, color .2s }
+    .contact-link:hover .contact-link-arrow { color: var(--lime); transform: translateX(3px) }
+
+    footer { border-top: 1px solid var(--line); padding: 36px 0 48px; font-family: var(--mono); font-size: .72rem; color: var(--dim) }
+    footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 10px 30px }
+    footer a { color: var(--muted); text-decoration: none }
+    footer a:hover { color: var(--lime) }
+
+    /* ── scroll reveals (only when JS runs) ── */
+    html.js .reveal { opacity: 0; transform: translateY(28px); transition: opacity .9s var(--ease), transform .9s var(--ease) }
+    html.js .reveal.visible { opacity: 1; transform: none }
+
+    /* ═════════ responsive ═════════ */
+    @media (max-width: 1080px) {
+      .nav-links { display: none }
+      .hamburger { display: flex; margin-left: 0 }
+      .nav-cta { margin-left: auto }
+      .review-grid { grid-template-columns: repeat(2, minmax(0, 1fr)) }
+    }
+    @media (max-width: 900px) {
+      .hero-grid, .about-grid, .scholar-panel, .service-top { grid-template-columns: 1fr }
+      .hero-visual { justify-self: start; max-width: 300px }
+      .hero-float.f1 { left: auto; right: -20px; top: 8% }
+      .metrics-grid { grid-template-columns: repeat(2, minmax(0, 1fr)) }
+      .bento > *, .b-wide, .b-mid, .b-small { grid-column: span 6 }
+      .bento > * { min-height: 0 }
+      .pub-list, .thesis-grid { grid-template-columns: 1fr }
+      .proj-grid, .skills-grid { grid-template-columns: repeat(2, minmax(0, 1fr)) }
+      .proj-card:first-child { grid-column: span 2 }
+      .tl-entry { grid-template-columns: 1fr; padding: 24px }
+      .tl-entry > *, .tl-date { grid-column: 1; grid-row: auto }
+      .section { padding-top: 110px }
+    }
+    @media (max-width: 600px) {
+      body { font-size: 16px }
+      .wrap { padding: 0 16px }
+      .nav-cta { display: none }
+      .hamburger { margin-left: auto }
+      .metric-card { padding: 22px 18px }
+      .proj-grid, .skills-grid, .review-grid, .contact-links { grid-template-columns: 1fr }
+      .proj-card:first-child { grid-column: auto }
+      .service-stats > div { padding: 0 12px }
+      .pub-search { width: 100% }
       .pub-controls { width: 100% }
-      .pub-search { flex: 1; width: auto }
-      .pub-card .pub-title { padding-right: 0 }
-    }
-
-    @media(max-width:600px) {
-      .panel { padding: 20px }
-      .panel-foot { padding: 12px 20px }
+      .pub-controls .pub-search { flex: 1 }
+      .pub-year { padding-right: 96px }
+      .hero-float { display: none }
+      .statement { padding-top: 110px }
+      .console-bar .lab-tabs { margin-left: 0 }
     }
 
     @media (prefers-reduced-motion: reduce) {
-      *, *::before, *::after {
-        animation-duration: .001ms !important; animation-iteration-count: 1 !important;
-        transition-duration: .001ms !important; scroll-behavior: auto !important;
-      }
-      #neural-canvas, .glitch::before, .glitch::after, .typed-cursor { display: none }
-    }
-
-    /* ── Academic service: peer review & grants ── */
-    .service-stats {
-      display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; margin-bottom: 36px;
-      background: var(--border); border: 1px solid var(--border); border-radius: 4px;
-    }
-    .service-stats > div { background: var(--surface); padding: 28px 16px; text-align: center }
-    .service-intro { font-size: .9rem; line-height: 1.9; color: #94a3b8; max-width: 860px }
-    .service-intro strong { color: var(--text) }
-    .service-intro a { color: var(--accent); text-decoration: none }
-    .service-sub { font-size: .65rem; color: var(--accent); letter-spacing: .15em; text-transform: uppercase; margin: 44px 0 16px }
-    .review-grid { list-style: none; display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 10px }
-    .review-card {
-      display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 14px 16px;
-      background: var(--surface); border: 1px solid var(--border); border-radius: 4px; transition: border-color .2s;
-    }
-    .review-card:hover { border-color: rgba(0, 229, 255, .35) }
-    .rv-name { display: block; font-family: 'Syne', sans-serif; font-weight: 600; font-size: .82rem; color: var(--text); line-height: 1.35 }
-    .rv-pub { display: block; font-size: .62rem; color: var(--muted); margin-top: 4px; letter-spacing: .03em }
-    .rv-count {
-      flex-shrink: 0; font-size: .62rem; color: var(--accent); white-space: nowrap;
-      border: 1px solid rgba(0, 229, 255, .25); padding: 2px 8px; border-radius: 2px;
-    }
-    .grant-card { padding: 24px 28px; background: var(--surface); border: 1px solid var(--border); border-left: 3px solid var(--accent2); border-radius: 4px }
-    @media(max-width:1100px) { .nav-badge { display: none } }
-    @media(max-width:600px) {
-      .service-stats .metric-num { font-size: 2rem }
-      .review-grid { grid-template-columns: 1fr }
-      .grant-card { padding: 20px }
+      *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important }
+      html.js .reveal { opacity: 1; transform: none }
+      html.js .cite-chart:not(.in) .bar { transform: none }
+      .statement .w { color: var(--text) }
+      .statement .w.hl { color: var(--lime) }
     }
   </style>
 
@@ -3545,41 +2488,42 @@
 
 <body>
 
-  <canvas id="neural-canvas"></canvas>
-  <div class="cursor" id="cursor"></div>
-  <div class="cursor-ring" id="cursor-ring"></div>
+  <div class="backdrop" aria-hidden="true"><div class="bloom a"></div><div class="bloom b"></div></div>
+  <div class="progress" id="progress" aria-hidden="true"></div>
 
   <a class="skip-link" href="#main">Skip to content</a>
 
   <!-- MOBILE MENU -->
   <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
     <button class="mobile-close" id="mobile-close" aria-label="Close menu">✕</button>
-    <a href="#about">About</a>
+    <a href="#research">Research</a>
     <a href="#metrics">Impact</a>
-    <a href="#experience">Experience</a>
+    <a href="#lab">Lab</a>
     <a href="#publications">Publications</a>
+    <a href="#about">About</a>
+    <a href="#experience">Experience</a>
     <a href="#service">Peer Review</a>
     <a href="#theses">Theses</a>
     <a href="#projects">Projects</a>
-    <a href="#skills">Skills</a>
     <a href="#contact">Contact</a>
   </div>
 
   <!-- NAV -->
   <nav aria-label="Main">
     <div class="wrap">
-      <a href="#hero" class="nav-logo" aria-label="Back to top">VS<span>.</span></a>
+      <a href="#hero" class="nav-logo" aria-label="Back to top"><i></i>Sammartino</a>
       <ul class="nav-links">
-        <li><a href="#about">About</a></li>
-        <li><a href="#experience">Research</a></li>
+        <li><a href="#research">Research</a></li>
+        <li><a href="#metrics">Impact</a></li>
+        <li><a href="#lab">Lab</a></li>
         <li><a href="#publications">Publications</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#experience">Experience</a></li>
         <li><a href="#service">Reviewing</a></li>
         <li><a href="#theses">Theses</a></li>
         <li><a href="#projects">Projects</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#contact">Contact</a></li>
       </ul>
-      <span class="nav-badge">PhD Candidate @ UniPi</span>
+      <a href="#contact" class="nav-cta">Get in touch</a>
       <button class="hamburger" id="hamburger" aria-label="Open menu" aria-controls="mobile-menu" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
@@ -3590,65 +2534,87 @@
 
   <!-- HERO -->
   <section id="hero">
+    <canvas id="hero-canvas" aria-hidden="true"></canvas>
     <div class="wrap">
       <div class="hero-grid">
         <div class="hero-left">
-          <div class="hero-eyebrow">PhD Candidate · AI Researcher</div>
-          <h1 class="hero-name glitch" data-text="Vincenzo Sammartino">
+          <div class="hero-status"><b>PhD · AI</b>University of Pisa · ex-VSRP Intern at KAUST</div>
+          <h1 class="hero-name">
             <span class="first">Vincenzo</span>
-            <span class="last">Sammartino</span>
+            <span class="last grad">Sammartino</span>
           </h1>
           <p class="hero-title">
             <span id="typed-text">Security Twin Researcher @ UniPi &amp; KAUST</span><span class="typed-cursor" aria-hidden="true"></span>
           </p>
           <div class="hero-cta">
-            <a href="#publications" class="btn btn-primary">Publications</a>
-            <a href="https://scholar.google.com/citations?user=lQig7SEAAAAJ" target="_blank" rel="me noopener" class="btn btn-ghost">Google Scholar ↗</a>
-            <a href="https://github.com/ilsamaritano" target="_blank" rel="me noopener" class="btn btn-ghost">GitHub</a>
-            <a href="https://www.linkedin.com/in/vincenzo-sammartino-0339191a1" target="_blank" rel="me noopener"
-              class="btn btn-ghost">LinkedIn</a>
-            <a href="https://people.unipi.it/vincenzo_sammartino/" target="_blank" rel="me noopener"
-              class="btn btn-ghost">UniPi Profile ↗</a>
+            <a href="#publications" class="btn btn-primary">Explore the research</a>
+            <a href="#lab" class="btn btn-ghost">Try the live demos</a>
+          </div>
+          <div class="hero-meta">
+            <a href="https://scholar.google.com/citations?user=lQig7SEAAAAJ" target="_blank" rel="me noopener">Google Scholar ↗</a>
+            <a href="https://orcid.org/0009-0002-4632-1179" target="_blank" rel="me noopener">ORCID ↗</a>
+            <a href="https://github.com/ilsamaritano" target="_blank" rel="me noopener">GitHub ↗</a>
+            <a href="https://www.linkedin.com/in/vincenzo-sammartino-0339191a1" target="_blank" rel="me noopener">LinkedIn ↗</a>
+            <a href="https://people.unipi.it/vincenzo_sammartino/" target="_blank" rel="me noopener">UniPi Profile ↗</a>
           </div>
         </div>
         <div class="hero-visual">
-          <div class="hero-orbit"></div>
-          <div class="photo-frame">
-            <img src="assets/photo.jpg" width="280" height="280" alt="Portrait of Vincenzo Sammartino"
+          <div class="photo-frame" id="photo-frame">
+            <img src="assets/photo.jpg" width="380" height="475" alt="Portrait of Vincenzo Sammartino"
               onerror="this.onerror=null;this.src='foto_forum_ict.jpg'" loading="eager" fetchpriority="high">
-            <div class="photo-scan"></div>
-            <div class="photo-border"></div>
-            <div class="photo-border2"></div>
-            <div class="photo-tag">KAUST · UniPi · 2026</div>
+            <div class="photo-tag"><span>● Pisa · Thuwal</span><span>2026</span></div>
           </div>
+          <div class="hero-float f1"><b>Scholar</b><span>221 citations · h-index 10</span></div>
+          <div class="hero-float f2"><b>Peer review</b><span>72 reviews · 31 journals</span></div>
         </div>
       </div>
     </div>
+    <a href="#statement" class="scroll-cue">Scroll</a>
   </section>
 
-  <!-- METRICS BAR -->
-  <section id="metrics" style="padding:0 0 80px" aria-label="Research impact">
-    <div class="wrap fade-in">
-      <div class="metrics-grid">
-        <div class="metric-card">
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-track">
+      <span>Security Twins</span><span>Digital Twins</span><span>Cyber-Physical Systems</span><span>Quantum ML</span><span>Post-Quantum Security</span><span>6G Edge Twins</span><span>UAV Swarms</span><span>TinyML</span><span>LLM Agents</span><span>Synthetic Data</span>
+      <span>Security Twins</span><span>Digital Twins</span><span>Cyber-Physical Systems</span><span>Quantum ML</span><span>Post-Quantum Security</span><span>6G Edge Twins</span><span>UAV Swarms</span><span>TinyML</span><span>LLM Agents</span><span>Synthetic Data</span>
+    </div>
+  </div>
+
+  <!-- STATEMENT -->
+  <section class="statement" id="statement" aria-label="Research statement">
+    <div class="wrap">
+      <p data-words>I build <span class="hl">Security Twins</span>: digital replicas of real infrastructures that
+        think like an attacker, so a defence can be tried out <span class="hl">before anything in production is
+        touched.</span></p>
+    </div>
+  </section>
+
+  <!-- IMPACT -->
+  <section id="metrics" class="section" aria-label="Research impact">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div class="kicker">Impact</div>
+        <h2 class="section-title">Cited. Measured.<br><span class="grad">Growing fast.</span></h2>
+      </div>
+      <div class="metrics-grid reveal">
+        <div class="metric-card panel spot">
           <span class="metric-num" data-count="221">221</span>
           <span class="metric-label">Citations</span>
         </div>
-        <div class="metric-card">
+        <div class="metric-card panel spot">
           <span class="metric-num purple" data-count="10">10</span>
           <span class="metric-label">h-index</span>
         </div>
-        <div class="metric-card">
+        <div class="metric-card panel spot">
           <span class="metric-num green" data-count="10">10</span>
           <span class="metric-label">i10-index</span>
         </div>
-        <div class="metric-card">
+        <div class="metric-card panel spot">
           <span class="metric-num" data-count="39">39</span>
           <span class="metric-label">Publications</span>
         </div>
       </div>
-      <div class="scholar-panel">
-        <div class="panel">
+      <div class="scholar-panel reveal">
+        <div class="panel spot">
           <div class="panel-title">Citations per year <small>2026 = year to date</small></div>
           <div class="cite-chart" aria-hidden="true">
             <div class="bar-col">
@@ -3675,7 +2641,7 @@
             <tr><td>2026</td><td>198</td></tr>
           </table>
         </div>
-        <div class="panel">
+        <div class="panel spot">
           <div class="panel-title">Most cited works</div>
           <ol class="top-cited">
             <li><span><span class="tc-title">AI-Enabled Cybersecurity Using Synthetic Data</span><span class="tc-venue">IEEE PerCom 2025</span></span><span class="tc-count">19</span></li>
@@ -3693,309 +2659,317 @@
     </div>
   </section>
 
-  <!-- ABOUT -->
-  <section id="about">
+  <!-- RESEARCH THEMES -->
+  <section id="research" class="section">
     <div class="wrap">
-      <div class="section-tag">About</div>
-      <h2 class="section-title">Researcher.<br>Engineer.<br>Builder.</h2>
-      <div class="grid">
-        <div>
-          <div class="about-bio">
-            <p>I am a <strong>PhD candidate in Artificial Intelligence</strong> at the University of Pisa, working at
-              the intersection of cybersecurity, AI, and distributed systems. My doctoral research focuses on
-              <strong>Security Twins</strong> — digital twin architectures for real-time, non-intrusive threat
-              assessment, what-if analysis and attack-path reasoning in cyber-physical systems.</p>
-            <p>From January to June 2026 I was a <strong>Visiting PhD Student (VSRP Intern)</strong> at
-              <strong>KAUST</strong> (King Abdullah University of Science and Technology) under the supervision of
-              Prof. Roberto Di Pietro, contributing to the <em>ResilientGuard</em> project on UAV swarm security with
-              TinyML and Edge AI.</p>
-            <p>My research also spans <strong>quantum machine learning</strong>, post-quantum security, 6G far-edge
-              digital twins and the security of LLM-driven multi-agent systems. To date I have authored
-              <strong>39 publications</strong> — the 39 indexed by Google Scholar are cited
-              <strong>221 times (h-index 10)</strong> — including IEEE, Springer and Elsevier journals and
-              proceedings, CRC/Taylor &amp; Francis book chapters, and arXiv preprints.</p>
-            <p>I also serve as a <strong>peer reviewer for 31 international journals</strong> (72 reviews in 2026),
-              including IEEE Transactions on Neural Networks and Learning Systems, ACM Computing Surveys, Scientific
-              Reports and Computers &amp; Security.</p>
+      <div class="section-head reveal">
+        <div class="kicker">Research</div>
+        <h2 class="section-title">Where AI meets<br><span class="grad">cyber defence.</span></h2>
+        <p class="section-lead">Eight lines of work, one question underneath them all: how do we know a system is
+          safe before an attacker tells us otherwise?</p>
+      </div>
+      <div class="bento">
+        <article class="spot b-wide b-hero reveal">
+          <div class="b-icon">ST</div>
+          <h3>Digital Twin &amp; Security Twin architectures</h3>
+          <p>Real-time, non-intrusive threat assessment, what-if analysis and attack-path reasoning for
+            cyber-physical systems — the core of my PhD.</p>
+          <div class="b-links">
+            <a class="link-arrow" href="#pub-1">Anticipating Disasters →</a>
+            <a class="link-arrow" href="#pub-22">NotLine →</a>
+            <a class="link-arrow" href="#lab">Play with it →</a>
           </div>
-          <div class="research-interests">
-            <div class="ri-item">
-              <div class="ri-dot"></div>Digital Twin &amp; Security Twin Architectures
-            </div>
-            <div class="ri-item">
-              <div class="ri-dot"></div>Cyber-Physical Systems Resilience &amp; Attack-Path Analysis
-            </div>
-            <div class="ri-item">
-              <div class="ri-dot"></div>Quantum Machine Learning &amp; Post-Quantum Security
-            </div>
-            <div class="ri-item">
-              <div class="ri-dot"></div>6G &amp; Far-Edge Digital Twins
-            </div>
-            <div class="ri-item">
-              <div class="ri-dot"></div>UAV Swarm Security &amp; TinyML / Edge AI
-            </div>
-            <div class="ri-item">
-              <div class="ri-dot"></div>AI-enabled Cybersecurity, Synthetic Data &amp; LLM Agents
-            </div>
-            <div class="ri-item">
-              <div class="ri-dot"></div>Least Privilege &amp; GDPR-compliant Data Systems
-            </div>
-            <div class="ri-item">
-              <div class="ri-dot"></div>Natural Language Processing
-            </div>
-          </div>
-        </div>
-        <div>
-          <div class="info-card">
-            <div class="info-row">
-              <span class="info-key">Position</span>
-              <span class="info-val">PhD Candidate, AI</span>
-            </div>
-            <div class="info-row">
-              <span class="info-key">Institution</span>
-              <span class="info-val">University of Pisa</span>
-            </div>
-            <div class="info-row">
-              <span class="info-key">Visiting</span>
-              <span class="info-val">KAUST, Saudi Arabia (Jan–Jun 2026)</span>
-            </div>
-            <div class="info-row">
-              <span class="info-key">KAUST Supervisor</span>
-              <span class="info-val">Prof. R. Di Pietro</span>
-            </div>
-            <div class="info-row">
-              <span class="info-key">UniPi Supervisor</span>
-              <span class="info-val">Prof. F. Baiardi</span>
-            </div>
-            <div class="info-row">
-              <span class="info-key">UniPi Co-supervisor</span>
-              <span class="info-val">Prof. S. Ruggieri</span>
-            </div>
-            <div class="info-row">
-              <span class="info-key">ORCID</span>
-              <span class="info-val"><a href="https://orcid.org/0009-0002-4632-1179" rel="me noopener" target="_blank">0009-0002-4632-1179</a></span>
-            </div>
-            <div class="info-row">
-              <span class="info-key">Location</span>
-              <span class="info-val">Pisa, Italy / Thuwal, KSA</span>
-            </div>
-            <div class="info-row">
-              <span class="info-key">Email</span>
-              <span class="info-val"><a href="mailto:vincesammartino@gmail.com">vincesammartino@gmail.com</a></span>
-            </div>
-            <div class="info-row">
-              <span class="info-key">Scholar</span>
-              <span class="info-val"><a href="https://scholar.google.com/citations?user=lQig7SEAAAAJ" rel="me noopener" target="_blank">221 citations · h-index 10 ↗</a></span>
-            </div>
-            <div class="info-row">
-              <span class="info-key">Scopus ID</span>
-              <span class="info-val"><a href="https://www.scopus.com/authid/detail.uri?authorId=59166600100" rel="me noopener" target="_blank">59166600100 ↗</a></span>
-            </div>
-            <div class="info-row">
-              <span class="info-key">Peer Review</span>
-              <span class="info-val"><a href="#service">72 reviews · 31 journals</a></span>
-            </div>
-            <div class="info-row">
-              <span class="info-key">UniPi Profile</span>
-              <span class="info-val"><a href="https://people.unipi.it/vincenzo_sammartino/" rel="me noopener" target="_blank">people.unipi.it ↗</a></span>
-            </div>
-          </div>
-          <div class="collab">
-            <div class="collab-title">Collaborators</div>
-            <ul class="collab-list">
-              <li>Fabrizio Baiardi<span>UniPi</span></li>
-              <li>Salvatore Ruggieri<span>UniPi</span></li>
-              <li>Roberto Di Pietro<span>KAUST</span></li>
-              <li>Nathanael Denis<span>KAUST</span></li>
-              <li>Omar Adel Ibrahim<span>KAUST</span></li>
-              <li>Ashok Kumar Das<span>IIIT Hyderabad</span></li>
-              <li>Abhishek Kumar Pandey<span>IIIT Hyderabad</span></li>
-              <li>Anusha Vangala<span>NITW</span></li>
-              <li>Michael Schneider</li>
-              <li>Corrado Baccheschi<span>UniPi</span></li>
-            </ul>
-          </div>
-        </div>
+        </article>
+        <article class="spot b-small reveal">
+          <div class="b-icon v">CPS</div>
+          <h3>Cyber-physical resilience</h3>
+          <p>Attack-path analysis and autonomous defence for industrial and critical systems.</p>
+        </article>
+        <article class="spot b-small reveal">
+          <div class="b-icon v">QML</div>
+          <h3>Quantum ML &amp; post-quantum security</h3>
+          <p>Hybrid quantum-classical networks for detection and physical-layer authentication.</p>
+        </article>
+        <article class="spot b-small reveal">
+          <div class="b-icon">6G</div>
+          <h3>6G &amp; far-edge digital twins</h3>
+          <p>Twins that live at the network edge, close to the devices they mirror.</p>
+        </article>
+        <article class="spot b-small reveal">
+          <div class="b-icon v">UAV</div>
+          <h3>UAV swarm security</h3>
+          <p>ResilientGuard at KAUST: Byzantine-resilient detection with TinyML on every drone.</p>
+        </article>
+        <article class="spot b-mid reveal">
+          <div class="b-icon">LLM</div>
+          <h3>AI-enabled cybersecurity</h3>
+          <p>Synthetic data for training defences, and the security of LLM-driven multi-agent systems.</p>
+        </article>
+        <article class="spot b-mid reveal">
+          <div class="b-icon v">DB</div>
+          <h3>Least privilege, GDPR &amp; NLP</h3>
+          <p>GDPR-compliant data systems, database decomposition for least privilege, and natural language
+            processing — where my research started.</p>
+        </article>
       </div>
     </div>
   </section>
 
-  <!-- EXPERIENCE / RESEARCH TIMELINE -->
-  <section id="experience">
+  <!-- RESEARCH LAB (interactive toy models of the research lines) -->
+  <section id="lab" class="section">
     <div class="wrap">
-      <div class="section-tag">Research & Experience</div>
-      <h2 class="section-title">Timeline</h2>
-      <div class="timeline">
-
-        <div class="tl-entry">
-          <div class="tl-dot purple"></div>
-          <div class="tl-date">Oct 2026 — Mar 2027</div>
-          <div class="tl-title">Data &amp; Digital Monitoring Specialist — Water Quality (Freelance)</div>
-          <div class="tl-org">Università di Pisa — Amministrazione Centrale · Pisa, Italy</div>
-          <div class="tl-desc">Self-employed engagement focused on IT and digital activities: monitoring, collection,
-            reorganisation and dissemination of quality data for the drinking water delivered by the
-            microfiltration plants installed across University of Pisa buildings, plus support to the technical
-            supervision of the plants.</div>
-          <div class="tl-tags">
-            <span class="tag">Data Management</span>
-            <span class="tag">Monitoring</span>
-            <span class="tag">Water Quality</span>
-            <span class="tag">Microfiltration</span>
-            <span class="tag">UniPi</span>
+      <div class="section-head reveal">
+        <div class="kicker">Research Lab</div>
+        <h2 class="section-title">Don't read it.<br><span class="grad">Play with it.</span></h2>
+        <p class="section-lead lab-intro">Three toy models of what I work on. They run in your browser: pick one and click around.</p>
+      </div>
+      <div class="panel console reveal">
+        <div class="console-bar">
+          <div class="dots" aria-hidden="true"><i></i><i></i><i></i></div>
+          <div class="lab-tabs" role="tablist" aria-label="Research demos">
+            <button class="filter-btn active" type="button" role="tab" aria-selected="true" data-lab="twin">Security Twin</button>
+            <button class="filter-btn" type="button" role="tab" aria-selected="false" data-lab="swarm">UAV Swarm</button>
+            <button class="filter-btn" type="button" role="tab" aria-selected="false" data-lab="notline">NotLine</button>
           </div>
         </div>
-
-        <div class="tl-entry">
-          <div class="tl-dot purple"></div>
-          <div class="tl-date">Aug 2026 — Oct 2026</div>
-          <div class="tl-title">Cybersecurity &amp; Data Protection Trainer (Docente Formatore) — NIS2 · GDPR</div>
-          <div class="tl-org">Casa di Cura San Rossore · Pisa, Italy · via the training agency SOCIP</div>
-          <div class="tl-desc">Lecturer for staff training on cybersecurity and data protection compliance in
-            healthcare: the <strong>NIS2 Directive</strong> (EU 2022/2555, transposed in Italy by D.Lgs. 138/2024),
-            the <strong>GDPR</strong> (EU Regulation 2016/679) and the handling of health data, cyber risk
-            management, incident handling and security awareness for clinical and administrative personnel.</div>
-          <div class="tl-tags">
-            <span class="tag accent">NIS2</span>
-            <span class="tag accent">GDPR</span>
-            <span class="tag">Data Protection</span>
-            <span class="tag">Security Awareness</span>
-            <span class="tag">Healthcare</span>
-            <span class="tag">Training</span>
-          </div>
+        <div class="lab-stage">
+          <canvas id="lab-canvas" role="img" aria-label="Interactive research demo; its state is described in the text below"></canvas>
+          <button class="lab-reset" id="lab-reset" type="button">Reset</button>
         </div>
-
-        <div class="tl-entry">
-          <div class="tl-dot"></div>
-          <div class="tl-date">Jan 2026 — Jun 2026</div>
-          <div class="tl-title">Visiting PhD Student — VSRP Intern</div>
-          <div class="tl-org">King Abdullah University of Science and Technology (KAUST) · Thuwal, Saudi Arabia</div>
-          <div class="tl-desc">Research on <em>ResilientGuard</em>: security framework for UAV swarms. Development of a
-            decentralised anomaly-detection framework based on TinyML/Edge AI models. Design and simulation of
-            distributed consensus mechanisms against Byzantine attacks and internal threats.</div>
-          <div class="tl-tags">
-            <span class="tag accent">UAV Security</span>
-            <span class="tag accent">TinyML</span>
-            <span class="tag">Edge AI</span>
-            <span class="tag">Byzantine Fault Tolerance</span>
-            <span class="tag">KAUST</span>
-          </div>
+        <div class="lab-readout">
+          <p class="lab-status" id="lab-status" aria-live="polite"></p>
+          <p class="lab-caption" id="lab-caption"></p>
         </div>
-
-        <div class="tl-entry">
-          <div class="tl-dot"></div>
-          <div class="tl-date">Sep 2024 — Present · expected end Oct 2027</div>
-          <div class="tl-title">PhD Candidate in Artificial Intelligence</div>
-          <div class="tl-org">Università di Pisa · Pisa, Italy · <a
-              href="https://people.unipi.it/vincenzo_sammartino/" target="_blank" rel="me noopener">institutional
-              profile ↗</a></div>
-          <div class="tl-desc">National PhD Programme in Artificial Intelligence. Research focused on Security Twins,
-            non-intrusive cyber-physical systems modelling, and AI-enabled cybersecurity via synthetic data generation
-            and adversarial simulation.</div>
-          <div class="tl-tags">
-            <span class="tag accent">Digital Twin</span>
-            <span class="tag accent">Cybersecurity</span>
-            <span class="tag">AI</span>
-            <span class="tag">PhD</span>
-          </div>
-        </div>
-
-        <div class="tl-entry">
-          <div class="tl-dot purple"></div>
-          <div class="tl-date">Jun 2025 — Dec 2025</div>
-          <div class="tl-title">Digital Twin Engineer — Infrastructure Modeling</div>
-          <div class="tl-org">Consorzio Metis</div>
-          <div class="tl-desc">Collection and analysis of structural/operational data for the construction of precise
-            digital models of existing infrastructure. Integration of IoT sensors for real-time monitoring and
-            synchronisation between digital model and physical environment. Simulation for predictive failure analysis
-            and proactive optimisation.</div>
-          <div class="tl-tags">
-            <span class="tag">IoT</span>
-            <span class="tag">Digital Twin</span>
-            <span class="tag">Infrastructure</span>
-            <span class="tag">Simulation</span>
-          </div>
-        </div>
-
-        <div class="tl-entry">
-          <div class="tl-dot purple"></div>
-          <div class="tl-date">Mar 2024 — Sep 2024</div>
-          <div class="tl-title">Research Fellow — Distributed Systems & GDPR</div>
-          <div class="tl-org">Università di Pisa — Dipartimento di Informatica</div>
-          <div class="tl-desc">Research on GDPR-compliant distributed information systems. Database decomposition for
-            least-privilege confinement. Digital Twin application in AI/Cybersecurity contexts.</div>
-          <div class="tl-tags">
-            <span class="tag">GDPR</span>
-            <span class="tag">Database</span>
-            <span class="tag">Distributed Systems</span>
-          </div>
-        </div>
-
-        <div class="tl-entry">
-          <div class="tl-dot purple"></div>
-          <div class="tl-date">Nov 2023 — Mar 2024</div>
-          <div class="tl-title">Research Fellow</div>
-          <div class="tl-org">Università di Pisa — Dipartimento di Filologia, Letteratura e Linguistica</div>
-          <div class="tl-desc">Research fellowship (borsa di ricerca) at the Department of Philology, Literature and
-            Linguistics.</div>
-          <div class="tl-tags">
-            <span class="tag">Research Fellowship</span>
-            <span class="tag">UniPi</span>
-          </div>
-        </div>
-
-        <div class="tl-entry">
-          <div class="tl-dot"></div>
-          <div class="tl-date">Dec 2022 — Dec 2023</div>
-          <div class="tl-title">Research Fellow — Platform Development</div>
-          <div class="tl-org">Università di Pisa — Dipartimento di Informatica</div>
-          <div class="tl-desc">Development of the <em>StudentInForma</em> platform (Python, SQL, HTML, CSS): a
-            questionnaire compilation and response-processing system with focus on cybersecurity hardening against
-            web-based attack vectors.</div>
-          <div class="tl-tags">
-            <span class="tag">Python</span>
-            <span class="tag">SQL</span>
-            <span class="tag">Cybersecurity</span>
-            <span class="tag">Full-Stack</span>
-          </div>
-        </div>
-
-        <div class="tl-entry">
-          <div class="tl-dot"></div>
-          <div class="tl-date">Jan 2022 — Dec 2022</div>
-          <div class="tl-title">Research Fellow</div>
-          <div class="tl-org">Università di Pisa — Dipartimento di Filologia, Letteratura e Linguistica</div>
-          <div class="tl-desc">Research fellowship (borsa di ricerca) at the Department of Philology, Literature and
-            Linguistics.</div>
-          <div class="tl-tags">
-            <span class="tag">Research Fellowship</span>
-            <span class="tag">UniPi</span>
-          </div>
-        </div>
-
-        <div class="tl-entry">
-          <div class="tl-dot purple"></div>
-          <div class="tl-date">Oct 2021 — May 2022</div>
-          <div class="tl-title">Research Internship — NLP & Computational Linguistics</div>
-          <div class="tl-org">Istituto di Linguistica Computazionale "A. Zampolli" — CNR Pisa</div>
-          <div class="tl-desc">Sentiment analysis research: domain and genre effects on classifiers based on n-gram
-            features and deep learning (word embeddings). Technologies: Scikit-Learn, BERT, Python.</div>
-          <div class="tl-tags">
-            <span class="tag">NLP</span>
-            <span class="tag">Sentiment Analysis</span>
-            <span class="tag">BERT</span>
-            <span class="tag">CNR</span>
-          </div>
-        </div>
-
       </div>
     </div>
   </section>
+  <script>
+    (function () {
+      const cv = document.getElementById('lab-canvas');
+      if (!cv || !cv.getContext) return;
+      const ctx = cv.getContext('2d'), statusEl = document.getElementById('lab-status'), capEl = document.getElementById('lab-caption');
+      const still = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+      const C = { cyan: '#c8ff4d', violet: '#8b6cff', green: '#7dffb0', red: '#ff5470', text: '#eef1f6', muted: '#5d6679', line: 'rgba(200,255,77,.16)', bg: '#0a0d14' };
+      let W = 0, H = 0, demo = null, raf = 0, visible = false, last = 0;
+      const X = x => 34 + x * (W - 68), Y = y => 30 + y * (H - 60);
+      const say = s => { statusEl.textContent = s; };
+      function seg(x1, y1, x2, y2, color, width, dash) {
+        ctx.beginPath(); ctx.setLineDash(dash || []); ctx.moveTo(x1, y1); ctx.lineTo(x2, y2);
+        ctx.strokeStyle = color; ctx.lineWidth = width || 1; ctx.stroke(); ctx.setLineDash([]);
+      }
+      function dot(x, y, r, fill, stroke, width) {
+        ctx.beginPath(); ctx.arc(x, y, r, 0, 6.2832);
+        if (fill) { ctx.fillStyle = fill; ctx.fill(); }
+        if (stroke) { ctx.strokeStyle = stroke; ctx.lineWidth = width || 1.5; ctx.stroke(); }
+      }
+      function label(s, x, y, color) {
+        ctx.font = "11px 'JetBrains Mono', monospace"; ctx.textAlign = 'center'; ctx.fillStyle = color; ctx.fillText(s, x, y);
+      }
+      const nearest = (pts, x, y, max) => {
+        let best = -1, bd = max * max;
+        pts.forEach((p, i) => { const d = (p[0] - x) * (p[0] - x) + (p[1] - y) * (p[1] - y); if (d < bd) { bd = d; best = i; } });
+        return best;
+      };
+
+      // ── Security Twin: the attacker always takes the cheapest path; patch hosts and watch it re-plan ──
+      function twin() {
+        const N = [['Internet', .03, .5], ['Web', .2, .22], ['VPN', .2, .78], ['App', .4, .1], ['WS-1', .4, .5], ['WS-2', .4, .9],
+                   ['Mail', .6, .28], ['AD', .62, .72], ['DB', .8, .16], ['HMI', .82, .66], ['PLC', .97, .42]];
+        const E = [[0, 1, 2], [0, 2, 3], [1, 3, 2], [1, 4, 3], [2, 4, 2], [2, 5, 2], [3, 6, 2], [3, 8, 4], [4, 6, 2], [4, 7, 2],
+                   [5, 7, 3], [6, 8, 2], [6, 7, 3], [7, 9, 2], [8, 10, 4], [9, 10, 2], [8, 9, 3]];
+        const TARGET = 10, BUDGET = 2, patched = new Set();
+        let path = [], cost = 0, t = 0;
+        function solve(note) {
+          const d = N.map(() => Infinity), prev = N.map(() => -1), done = new Set();
+          d[0] = 0;
+          for (;;) {
+            let u = -1;
+            d.forEach((v, i) => { if (!done.has(i) && v < Infinity && (u < 0 || v < d[u])) u = i; });
+            if (u < 0 || u === TARGET) break;
+            done.add(u);
+            for (const [a, b, w] of E) {
+              const v = a === u ? b : b === u ? a : -1;
+              if (v < 0 || patched.has(v) || done.has(v)) continue;
+              if (d[u] + w < d[v]) { d[v] = d[u] + w; prev[v] = u; }
+            }
+          }
+          path = []; cost = d[TARGET];
+          if (cost < Infinity) for (let v = TARGET; v >= 0; v = prev[v]) path.unshift(v);
+          const left = BUDGET - patched.size;
+          say(note || (path.length
+            ? 'Cheapest attack path: ' + path.map(i => N[i][0]).join(' → ') + ' (effort ' + cost + '). ' +
+              (left ? 'Click a host to patch it — ' + left + ' patch' + (left > 1 ? 'es' : '') + ' left — and watch the attacker re-plan.'
+                    : 'Both patches spent and the PLC is still reachable: click a patched host to take the patch back and try elsewhere.')
+            : 'Contained: with these ' + patched.size + ' patches no path reaches the PLC. This is the what-if question a Security Twin answers before anything is touched in production.'));
+        }
+        solve();
+        return {
+          state: () => ({ path, cost, patched }),
+          click(x, y) {
+            const i = nearest(N.map(n => [X(n[1]), Y(n[2])]), x, y, 26);
+            if (i <= 0 || i === TARGET) return;
+            if (patched.has(i)) patched.delete(i);
+            else if (patched.size < BUDGET) patched.add(i);
+            else return solve('Only ' + BUDGET + ' patches in the budget: click a patched host to take one back first.');
+            solve();
+          },
+          draw(dt) {
+            t += dt;
+            const on = new Set(path.slice(1).map((v, k) => Math.min(path[k], v) + '-' + Math.max(path[k], v)));
+            for (const [a, b] of E) {
+              const hot = on.has(a + '-' + b), cut = patched.has(a) || patched.has(b);
+              seg(X(N[a][1]), Y(N[a][2]), X(N[b][1]), Y(N[b][2]), hot ? C.red : cut ? 'rgba(100,116,139,.25)' : C.line, hot ? 2 : 1, cut ? [3, 5] : null);
+            }
+            if (path.length > 1) {   // the attacker, moving along its plan
+              const f = (still ? .5 : (t * .28) % 1) * (path.length - 1), k = Math.min(Math.floor(f), path.length - 2), r = f - k;
+              const a = N[path[k]], b = N[path[k + 1]];
+              dot(X(a[1] + (b[1] - a[1]) * r), Y(a[2] + (b[2] - a[2]) * r), 5, C.red);
+              dot(X(a[1] + (b[1] - a[1]) * r), Y(a[2] + (b[2] - a[2]) * r), 10, null, 'rgba(255,84,112,.35)');
+            }
+            N.forEach((n, i) => {
+              const x = X(n[1]), y = Y(n[2]), hit = path.includes(i);
+              if (patched.has(i)) { dot(x, y, 10, C.bg, C.green, 3); label('✓', x, y + 4, C.green); }
+              else dot(x, y, i === TARGET ? 11 : 9, C.bg, i === 0 ? C.violet : hit ? C.red : C.cyan, i === TARGET ? 3 : 1.5);
+              label(n[0], x, y + 26, patched.has(i) ? C.green : hit ? C.text : C.muted);
+            });
+          }
+        };
+      }
+
+      // ── UAV swarm: a compromised drone misbehaves, its neighbours cross-check it and vote it out ──
+      function swarm() {
+        const D = [];
+        for (let i = 0; i < 14; i++) D.push({ a: (i < 5 ? i / 5 : (i - 5) / 9) * 6.2832, r: i < 5 ? .1 : .2, st: 0, s: 0, ox: 0, oy: 0, x: 0, y: 0 });
+        let t = 0;
+        function tell() {
+          const n = k => D.filter(d => d.st === k).length;
+          say(n(0) + ' drones in formation · ' + n(1) + ' compromised, under vote · ' + n(2) + ' isolated. ' +
+            (n(0) > 4 ? 'Click a drone to compromise it: its neighbours cross-check its behaviour and vote it out of the formation.'
+                      : 'The swarm is running thin — press Reset to relaunch it.'));
+        }
+        tell();
+        return {
+          click(x, y) {
+            const i = nearest(D.map(d => [d.x, d.y]), x, y, 24);
+            if (i < 0 || D[i].st !== 0) return;
+            D[i].st = still ? 2 : 1; tell();
+          },
+          draw(dt) {
+            t += dt;
+            const S = Math.min(W, H * 1.5), cx = X(.5 + .25 * Math.sin(t * .23)), cy = Y(.5 + .16 * Math.sin(t * .37));
+            for (const d of D) {
+              if (d.st === 1) {            // erratic behaviour; suspicion grows with every neighbour that can observe it
+                d.ox = Math.max(-60, Math.min(60, d.ox + (Math.random() - .5) * dt * 260));
+                d.oy = Math.max(-60, Math.min(60, d.oy + (Math.random() - .5) * dt * 260));
+                const nb = D.filter(o => o.st === 0 && Math.hypot(o.x - d.x, o.y - d.y) < .24 * S).length;
+                d.s += dt * Math.min(nb, 4) / 4 / 1.8;
+                if (d.s >= 1) { d.st = 2; tell(); }
+              } else if (d.st === 2) d.oy = Math.min(d.oy + dt * 14, 90);   // drops out of the formation
+              d.x = cx + Math.cos(d.a + t * .3) * d.r * S + d.ox;
+              d.y = cy + Math.sin(d.a + t * .3) * d.r * S + d.oy;
+            }
+            for (let i = 0; i < D.length; i++) for (let j = i + 1; j < D.length; j++) {
+              const a = D[i], b = D[j];
+              if (a.st === 2 || b.st === 2 || Math.hypot(a.x - b.x, a.y - b.y) > .15 * S) continue;
+              seg(a.x, a.y, b.x, b.y, a.st || b.st ? 'rgba(255,84,112,.45)' : C.line, 1);
+            }
+            for (const d of D) {
+              if (d.st === 2) { dot(d.x, d.y, 5, null, C.muted, 1); seg(d.x - 4, d.y - 4, d.x + 4, d.y + 4, C.muted, 1); continue; }
+              dot(d.x, d.y, 5, d.st ? C.red : C.cyan);
+              dot(d.x, d.y, 9, null, d.st ? 'rgba(255,84,112,.25)' : 'rgba(200,255,77,.2)', 1);
+              if (d.st === 1) { ctx.beginPath(); ctx.arc(d.x, d.y, 13, -1.5708, -1.5708 + d.s * 6.2832); ctx.strokeStyle = C.red; ctx.lineWidth = 2; ctx.stroke(); }
+            }
+          }
+        };
+      }
+
+      // ── NotLine: the topology appears only as traffic is observed; nothing is ever sent ──
+      function notline() {
+        const N = [[.5, .5], [.28, .3], [.28, .72], [.72, .3], [.72, .7], [.08, .14], [.08, .42], [.06, .86], [.3, .96],
+                   [.92, .12], [.94, .44], [.92, .84], [.5, .1], [.52, .9]];
+        const E = [[0, 1], [0, 2], [0, 3], [0, 4], [1, 5], [1, 6], [2, 7], [2, 8], [3, 9], [3, 10], [4, 11], [1, 12], [3, 12], [2, 13], [4, 13], [1, 2], [3, 4]];
+        const seenN = new Map(), seenE = new Map(), P = [];
+        let t = 0, next = 0, sent = 0;
+        function emit() {
+          const fresh = E.map((e, i) => i).filter(i => !seenE.has(i));
+          const i = fresh.length && Math.random() < .6 ? fresh[Math.floor(Math.random() * fresh.length)] : Math.floor(Math.random() * E.length);
+          P.push({ e: i, back: Math.random() < .5, p: 0 }); sent++;
+          if (!seenE.has(i)) seenE.set(i, t);
+          E[i].forEach(n => { if (!seenN.has(n)) seenN.set(n, t); });
+          say(seenE.size < E.length
+            ? 'Listening… ' + seenN.size + '/' + N.length + ' hosts and ' + seenE.size + '/' + E.length + ' links reconstructed from ' + sent + ' observed packets — 0 probes sent. Click the canvas to let more traffic through.'
+            : 'Topology complete: ' + N.length + ' hosts and ' + E.length + ' links rebuilt from ' + sent + ' observed packets, without sending a single one. Press Reset to listen again.');
+        }
+        say('Listening… nothing observed yet.');
+        if (still) while (seenE.size < E.length) emit();
+        return {
+          click() { for (let k = 0; k < 3; k++) emit(); },
+          draw(dt) {
+            t += dt;
+            if (!still && t >= next && seenE.size < E.length) { emit(); next = t + .5; }
+            const fade = t0 => still ? 1 : Math.min(1, (t - t0) / .7);
+            seenE.forEach((t0, i) => {
+              const a = N[E[i][0]], b = N[E[i][1]];
+              ctx.globalAlpha = fade(t0); seg(X(a[0]), Y(a[1]), X(b[0]), Y(b[1]), 'rgba(200,255,77,.32)', 1);
+            });
+            seenN.forEach((t0, i) => {
+              ctx.globalAlpha = fade(t0);
+              dot(X(N[i][0]), Y(N[i][1]), i < 5 ? 8 : 5, C.bg, i === 0 ? C.violet : i < 5 ? C.cyan : C.green, i < 5 ? 2 : 1.5);
+            });
+            ctx.globalAlpha = 1;
+            for (let k = P.length - 1; k >= 0; k--) {
+              const q = P[k]; q.p += dt * 1.3;
+              if (q.p >= 1) { P.splice(k, 1); continue; }
+              const a = N[E[q.e][q.back ? 1 : 0]], b = N[E[q.e][q.back ? 0 : 1]];
+              dot(X(a[0] + (b[0] - a[0]) * q.p), Y(a[1] + (b[1] - a[1]) * q.p), 2.5, C.text);
+            }
+          }
+        };
+      }
+
+      const DEMOS = {
+        twin: [twin, 'A <strong>Security Twin</strong> is a digital twin of an infrastructure built for security: it simulates how an attacker would move, so a defence can be tried out before it is deployed. <a href="#pub-1">Anticipating Disasters through a Security Twin →</a>'],
+        swarm: [swarm, '<strong>ResilientGuard</strong> (KAUST): Byzantine-resilient anomaly detection for UAV swarms, with TinyML models running on each drone so that the swarm does not depend on a ground station to notice that one of its members has been taken over.'],
+        notline: [notline, '<strong>NotLine</strong> builds the digital twin of a network by passive discovery only: it listens to the traffic that is already there, so it can be used on industrial systems that must not be scanned. <a href="#pub-22">NotLine: A Non-Intrusive Automated Platform →</a>']
+      };
+      let current = 'twin';
+      function frame(now) {
+        raf = 0;
+        const dt = Math.max(0, Math.min((now - last) / 1000, .05)); last = now;   // rAF time can precede the performance.now() taken in kick()
+        ctx.clearRect(0, 0, W, H);
+        demo.draw(still ? 0 : dt);
+        if (visible && !still) raf = requestAnimationFrame(frame);
+      }
+      function kick() { if (!raf && W) { last = performance.now(); raf = requestAnimationFrame(frame); } }
+      function load(name) { current = name; demo = DEMOS[name][0](); capEl.innerHTML = DEMOS[name][1]; kick(); }
+      function resize() {
+        const r = cv.getBoundingClientRect(), dpr = window.devicePixelRatio || 1;
+        if (!r.width) return;
+        W = r.width; H = r.height; cv.width = Math.round(W * dpr); cv.height = Math.round(H * dpr);
+        ctx.setTransform(dpr, 0, 0, dpr, 0, 0); kick();
+      }
+      document.querySelectorAll('[data-lab]').forEach(b => b.addEventListener('click', () => {
+        document.querySelectorAll('[data-lab]').forEach(o => { o.classList.toggle('active', o === b); o.setAttribute('aria-selected', o === b); });
+        load(b.dataset.lab);
+      }));
+      document.getElementById('lab-reset').addEventListener('click', () => load(current));
+      cv.addEventListener('click', e => { const r = cv.getBoundingClientRect(); demo.click(e.clientX - r.left, e.clientY - r.top); kick(); });
+      window.addEventListener('resize', resize);
+      if ('IntersectionObserver' in window) new IntersectionObserver(en => { visible = en[0].isIntersecting; if (visible) kick(); }).observe(cv);
+      else visible = true;
+      load('twin'); resize();
+    })();
+  </script>
 
   <!-- PUBLICATIONS -->
-  <section id="publications">
+  <section id="publications" class="section">
     <div class="wrap">
-      <div class="section-tag">Publications</div>
-      <h2 class="section-title">Research Output</h2>
+      <div class="section-head reveal">
+        <div class="kicker">Publications</div>
+        <h2 class="section-title">Research output.</h2>
+        <p class="section-lead">Journals, conferences, book chapters and preprints — filter by type, search by
+          title, venue or co-author, or sort by citations.</p>
+      </div>
 
 	      <!-- PUBS:START (generated from Google Scholar, synced 2026-10-25) -->
       <div class="pub-toolbar">
@@ -4366,29 +3340,311 @@
       </div>
       <p class="pub-empty" id="pub-empty" hidden>No publications match your search.</p>
       <!-- PUBS:END -->
+      <div class="more-wrap"><button class="btn btn-ghost more-btn" id="pub-more" type="button" hidden aria-expanded="false" aria-controls="pub-list">Show all</button></div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="section">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div class="kicker">About</div>
+        <h2 class="section-title">Researcher.<br>Engineer.<br><span class="grad">Builder.</span></h2>
+      </div>
+      <div class="about-grid">
+        <div class="reveal">
+          <div class="about-bio">
+            <p>I am a <strong>PhD candidate in Artificial Intelligence</strong> at the University of Pisa, working at
+              the intersection of cybersecurity, AI, and distributed systems. My doctoral research focuses on
+              <strong>Security Twins</strong> — digital twin architectures for real-time, non-intrusive threat
+              assessment, what-if analysis and attack-path reasoning in cyber-physical systems.</p>
+            <p>From January to June 2026 I was a <strong>Visiting PhD Student (VSRP Intern)</strong> at
+              <strong>KAUST</strong> (King Abdullah University of Science and Technology) under the supervision of
+              Prof. Roberto Di Pietro, contributing to the <em>ResilientGuard</em> project on UAV swarm security with
+              TinyML and Edge AI.</p>
+            <p>My research also spans <strong>quantum machine learning</strong>, post-quantum security, 6G far-edge
+              digital twins and the security of LLM-driven multi-agent systems. To date I have authored
+              <strong>39 publications</strong> — the 39 indexed by Google Scholar are cited
+              <strong>221 times (h-index 10)</strong> — including IEEE, Springer and Elsevier journals and
+              proceedings, CRC/Taylor &amp; Francis book chapters, and arXiv preprints.</p>
+            <p>I also serve as a <strong>peer reviewer for 31 international journals</strong> (72 reviews in 2026),
+              including IEEE Transactions on Neural Networks and Learning Systems, ACM Computing Surveys, Scientific
+              Reports and Computers &amp; Security.</p>
+          </div>
+          <div class="collab">
+            <div class="sub-label">Collaborators</div>
+            <ul class="collab-list">
+              <li>Fabrizio Baiardi<span>UniPi</span></li>
+              <li>Salvatore Ruggieri<span>UniPi</span></li>
+              <li>Roberto Di Pietro<span>KAUST</span></li>
+              <li>Nathanael Denis<span>KAUST</span></li>
+              <li>Omar Adel Ibrahim<span>KAUST</span></li>
+              <li>Ashok Kumar Das<span>IIIT Hyderabad</span></li>
+              <li>Abhishek Kumar Pandey<span>IIIT Hyderabad</span></li>
+              <li>Anusha Vangala<span>NITW</span></li>
+              <li>Michael Schneider</li>
+              <li>Corrado Baccheschi<span>UniPi</span></li>
+            </ul>
+          </div>
+        </div>
+        <div class="reveal">
+          <div class="info-card panel">
+            <div class="info-row">
+              <span class="info-key">Position</span>
+              <span class="info-val">PhD Candidate, AI</span>
+            </div>
+            <div class="info-row">
+              <span class="info-key">Institution</span>
+              <span class="info-val">University of Pisa</span>
+            </div>
+            <div class="info-row">
+              <span class="info-key">Visiting</span>
+              <span class="info-val">KAUST, Saudi Arabia (Jan–Jun 2026)</span>
+            </div>
+            <div class="info-row">
+              <span class="info-key">KAUST Supervisor</span>
+              <span class="info-val">Prof. R. Di Pietro</span>
+            </div>
+            <div class="info-row">
+              <span class="info-key">UniPi Supervisor</span>
+              <span class="info-val">Prof. F. Baiardi</span>
+            </div>
+            <div class="info-row">
+              <span class="info-key">UniPi Co-supervisor</span>
+              <span class="info-val">Prof. S. Ruggieri</span>
+            </div>
+            <div class="info-row">
+              <span class="info-key">ORCID</span>
+              <span class="info-val"><a href="https://orcid.org/0009-0002-4632-1179" rel="me noopener" target="_blank">0009-0002-4632-1179</a></span>
+            </div>
+            <div class="info-row">
+              <span class="info-key">Location</span>
+              <span class="info-val">Pisa, Italy / Thuwal, KSA</span>
+            </div>
+            <div class="info-row">
+              <span class="info-key">Email</span>
+              <span class="info-val"><a href="mailto:vincesammartino@gmail.com">vincesammartino@gmail.com</a></span>
+            </div>
+            <div class="info-row">
+              <span class="info-key">Scholar</span>
+              <span class="info-val"><a href="https://scholar.google.com/citations?user=lQig7SEAAAAJ" rel="me noopener" target="_blank">221 citations · h-index 10 ↗</a></span>
+            </div>
+            <div class="info-row">
+              <span class="info-key">Scopus ID</span>
+              <span class="info-val"><a href="https://www.scopus.com/authid/detail.uri?authorId=59166600100" rel="me noopener" target="_blank">59166600100 ↗</a></span>
+            </div>
+            <div class="info-row">
+              <span class="info-key">Peer Review</span>
+              <span class="info-val"><a href="#service">72 reviews · 31 journals</a></span>
+            </div>
+            <div class="info-row">
+              <span class="info-key">UniPi Profile</span>
+              <span class="info-val"><a href="https://people.unipi.it/vincenzo_sammartino/" rel="me noopener" target="_blank">people.unipi.it ↗</a></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE / RESEARCH TIMELINE -->
+  <section id="experience" class="section">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div class="kicker">Research &amp; Experience</div>
+        <h2 class="section-title">The path<br><span class="grad">so far.</span></h2>
+      </div>
+      <div class="timeline" id="tl-list" data-collapse="5" data-more="earlier roles">
+
+        <div class="tl-entry">
+          <div class="tl-dot purple"></div>
+          <div class="tl-date">Oct 2026 — Mar 2027</div>
+          <div class="tl-title">Data &amp; Digital Monitoring Specialist — Water Quality (Freelance)</div>
+          <div class="tl-org">Università di Pisa — Amministrazione Centrale · Pisa, Italy</div>
+          <div class="tl-desc">Self-employed engagement focused on IT and digital activities: monitoring, collection,
+            reorganisation and dissemination of quality data for the drinking water delivered by the
+            microfiltration plants installed across University of Pisa buildings, plus support to the technical
+            supervision of the plants.</div>
+          <div class="tl-tags">
+            <span class="tag">Data Management</span>
+            <span class="tag">Monitoring</span>
+            <span class="tag">Water Quality</span>
+            <span class="tag">Microfiltration</span>
+            <span class="tag">UniPi</span>
+          </div>
+        </div>
+
+        <div class="tl-entry">
+          <div class="tl-dot purple"></div>
+          <div class="tl-date">Aug 2026 — Oct 2026</div>
+          <div class="tl-title">Cybersecurity &amp; Data Protection Trainer (Docente Formatore) — NIS2 · GDPR</div>
+          <div class="tl-org">Casa di Cura San Rossore · Pisa, Italy · via the training agency SOCIP</div>
+          <div class="tl-desc">Lecturer for staff training on cybersecurity and data protection compliance in
+            healthcare: the <strong>NIS2 Directive</strong> (EU 2022/2555, transposed in Italy by D.Lgs. 138/2024),
+            the <strong>GDPR</strong> (EU Regulation 2016/679) and the handling of health data, cyber risk
+            management, incident handling and security awareness for clinical and administrative personnel.</div>
+          <div class="tl-tags">
+            <span class="tag accent">NIS2</span>
+            <span class="tag accent">GDPR</span>
+            <span class="tag">Data Protection</span>
+            <span class="tag">Security Awareness</span>
+            <span class="tag">Healthcare</span>
+            <span class="tag">Training</span>
+          </div>
+        </div>
+
+        <div class="tl-entry">
+          <div class="tl-dot"></div>
+          <div class="tl-date">Jan 2026 — Jun 2026</div>
+          <div class="tl-title">Visiting PhD Student — VSRP Intern</div>
+          <div class="tl-org">King Abdullah University of Science and Technology (KAUST) · Thuwal, Saudi Arabia</div>
+          <div class="tl-desc">Research on <em>ResilientGuard</em>: security framework for UAV swarms. Development of a
+            decentralised anomaly-detection framework based on TinyML/Edge AI models. Design and simulation of
+            distributed consensus mechanisms against Byzantine attacks and internal threats.</div>
+          <div class="tl-tags">
+            <span class="tag accent">UAV Security</span>
+            <span class="tag accent">TinyML</span>
+            <span class="tag">Edge AI</span>
+            <span class="tag">Byzantine Fault Tolerance</span>
+            <span class="tag">KAUST</span>
+          </div>
+        </div>
+
+        <div class="tl-entry">
+          <div class="tl-dot"></div>
+          <div class="tl-date">Sep 2024 — Present · expected end Oct 2027</div>
+          <div class="tl-title">PhD Candidate in Artificial Intelligence</div>
+          <div class="tl-org">Università di Pisa · Pisa, Italy · <a
+              href="https://people.unipi.it/vincenzo_sammartino/" target="_blank" rel="me noopener">institutional
+              profile ↗</a></div>
+          <div class="tl-desc">National PhD Programme in Artificial Intelligence. Research focused on Security Twins,
+            non-intrusive cyber-physical systems modelling, and AI-enabled cybersecurity via synthetic data generation
+            and adversarial simulation.</div>
+          <div class="tl-tags">
+            <span class="tag accent">Digital Twin</span>
+            <span class="tag accent">Cybersecurity</span>
+            <span class="tag">AI</span>
+            <span class="tag">PhD</span>
+          </div>
+        </div>
+
+        <div class="tl-entry">
+          <div class="tl-dot purple"></div>
+          <div class="tl-date">Jun 2025 — Dec 2025</div>
+          <div class="tl-title">Digital Twin Engineer — Infrastructure Modeling</div>
+          <div class="tl-org">Consorzio Metis</div>
+          <div class="tl-desc">Collection and analysis of structural/operational data for the construction of precise
+            digital models of existing infrastructure. Integration of IoT sensors for real-time monitoring and
+            synchronisation between digital model and physical environment. Simulation for predictive failure analysis
+            and proactive optimisation.</div>
+          <div class="tl-tags">
+            <span class="tag">IoT</span>
+            <span class="tag">Digital Twin</span>
+            <span class="tag">Infrastructure</span>
+            <span class="tag">Simulation</span>
+          </div>
+        </div>
+
+        <div class="tl-entry">
+          <div class="tl-dot purple"></div>
+          <div class="tl-date">Mar 2024 — Sep 2024</div>
+          <div class="tl-title">Research Fellow — Distributed Systems & GDPR</div>
+          <div class="tl-org">Università di Pisa — Dipartimento di Informatica</div>
+          <div class="tl-desc">Research on GDPR-compliant distributed information systems. Database decomposition for
+            least-privilege confinement. Digital Twin application in AI/Cybersecurity contexts.</div>
+          <div class="tl-tags">
+            <span class="tag">GDPR</span>
+            <span class="tag">Database</span>
+            <span class="tag">Distributed Systems</span>
+          </div>
+        </div>
+
+        <div class="tl-entry">
+          <div class="tl-dot purple"></div>
+          <div class="tl-date">Nov 2023 — Mar 2024</div>
+          <div class="tl-title">Research Fellow</div>
+          <div class="tl-org">Università di Pisa — Dipartimento di Filologia, Letteratura e Linguistica</div>
+          <div class="tl-desc">Research fellowship (borsa di ricerca) at the Department of Philology, Literature and
+            Linguistics.</div>
+          <div class="tl-tags">
+            <span class="tag">Research Fellowship</span>
+            <span class="tag">UniPi</span>
+          </div>
+        </div>
+
+        <div class="tl-entry">
+          <div class="tl-dot"></div>
+          <div class="tl-date">Dec 2022 — Dec 2023</div>
+          <div class="tl-title">Research Fellow — Platform Development</div>
+          <div class="tl-org">Università di Pisa — Dipartimento di Informatica</div>
+          <div class="tl-desc">Development of the <em>StudentInForma</em> platform (Python, SQL, HTML, CSS): a
+            questionnaire compilation and response-processing system with focus on cybersecurity hardening against
+            web-based attack vectors.</div>
+          <div class="tl-tags">
+            <span class="tag">Python</span>
+            <span class="tag">SQL</span>
+            <span class="tag">Cybersecurity</span>
+            <span class="tag">Full-Stack</span>
+          </div>
+        </div>
+
+        <div class="tl-entry">
+          <div class="tl-dot"></div>
+          <div class="tl-date">Jan 2022 — Dec 2022</div>
+          <div class="tl-title">Research Fellow</div>
+          <div class="tl-org">Università di Pisa — Dipartimento di Filologia, Letteratura e Linguistica</div>
+          <div class="tl-desc">Research fellowship (borsa di ricerca) at the Department of Philology, Literature and
+            Linguistics.</div>
+          <div class="tl-tags">
+            <span class="tag">Research Fellowship</span>
+            <span class="tag">UniPi</span>
+          </div>
+        </div>
+
+        <div class="tl-entry">
+          <div class="tl-dot purple"></div>
+          <div class="tl-date">Oct 2021 — May 2022</div>
+          <div class="tl-title">Research Internship — NLP & Computational Linguistics</div>
+          <div class="tl-org">Istituto di Linguistica Computazionale "A. Zampolli" — CNR Pisa</div>
+          <div class="tl-desc">Sentiment analysis research: domain and genre effects on classifiers based on n-gram
+            features and deep learning (word embeddings). Technologies: Scikit-Learn, BERT, Python.</div>
+          <div class="tl-tags">
+            <span class="tag">NLP</span>
+            <span class="tag">Sentiment Analysis</span>
+            <span class="tag">BERT</span>
+            <span class="tag">CNR</span>
+          </div>
+        </div>
+
+      </div>
     </div>
   </section>
 
   <!-- PEER REVIEW & ACADEMIC SERVICE (source: ORCID, synced 2026-10-25) -->
-  <section id="service">
+  <section id="service" class="section">
     <div class="wrap">
-      <div class="section-tag">Academic Service</div>
-      <h2 class="section-title">Peer Review<br>&amp; Grants</h2>
+      <div class="section-head reveal">
+        <div class="kicker">Academic Service</div>
+        <h2 class="section-title">Peer review<br><span class="grad">&amp; grants.</span></h2>
+      </div>
 
-      <div class="service-stats fade-in">
+      <div class="service-top reveal">
+        <div class="service-stats panel">
         <div><span class="metric-num">72</span><span class="metric-label">Reviews</span></div>
         <div><span class="metric-num purple">31</span><span class="metric-label">Journals</span></div>
         <div><span class="metric-num green">12</span><span class="metric-label">Publishers</span></div>
-      </div>
-
+        </div>
+        <div class="panel spot">
       <p class="service-intro">I serve as a reviewer for international journals in artificial intelligence,
         cybersecurity and distributed computing, including <strong>IEEE Transactions on Neural Networks and Learning
           Systems</strong>, <strong>ACM Computing Surveys</strong>, <strong>Scientific Reports</strong>,
         <strong>Computers &amp; Security</strong> and <strong>Future Generation Computer Systems</strong>. All reviews
         are recorded on <a href="https://orcid.org/0009-0002-4632-1179" target="_blank" rel="noopener">ORCID ↗</a>.</p>
+        </div>
+      </div>
 
-      <div class="service-sub">Reviewer for</div>
-      <ul class="review-grid">
+      <div class="service-sub sub-label">Reviewer for</div>
+      <ul class="review-grid" id="review-list" data-collapse="12" data-more="journals">
         <li class="review-card"><span><span class="rv-name">Discover Artificial Intelligence</span><span class="rv-pub">Springer Nature · ISSN 2731-0809</span></span><span class="rv-count">11 reviews</span></li>
         <li class="review-card"><span><span class="rv-name">Scientific Reports</span><span class="rv-pub">Springer Nature · ISSN 2045-2322</span></span><span class="rv-count">11 reviews</span></li>
         <li class="review-card"><span><span class="rv-name">Pervasive and Mobile Computing</span><span class="rv-pub">Elsevier · ISSN 1574-1192</span></span><span class="rv-count">5 reviews</span></li>
@@ -4422,7 +3678,7 @@
         <li class="review-card"><span><span class="rv-name">IET Quantum Communication</span><span class="rv-pub">Institution of Engineering and Technology · ISSN 2632-8925</span></span><span class="rv-count">1 review</span></li>
       </ul>
 
-      <div class="service-sub">Research Grant</div>
+      <div class="service-sub sub-label">Research Grant</div>
       <div class="grant-card">
         <div class="tl-date">Grant · Università di Pisa · 2026</div>
         <div class="tl-title">Smart Security for Connected Cyber-Physical Systems: Paradigms, Threats and AI-based Defenses</div>
@@ -4433,14 +3689,16 @@
   </section>
 
   <!-- THESIS SUPERVISION -->
-  <section id="theses">
+  <section id="theses" class="section">
     <div class="wrap">
-      <div class="section-tag">Thesis Supervision</div>
-      <h2 class="section-title">Supervised<br>Theses</h2>
-      <div class="thesis-lang-wrap">
+      <div class="thesis-head section-head reveal">
+        <div>
+          <div class="kicker">Thesis Supervision</div>
+          <h2 class="section-title">Supervised<br><span class="grad">theses.</span></h2>
+        </div>
         <button class="filter-btn" id="thesis-lang-toggle" aria-label="Toggle thesis language">IT</button>
       </div>
-      <div class="timeline">
+      <div class="thesis-grid" id="thesis-list" data-collapse="4" data-more="theses">
 
         <div class="tl-entry">
           <div class="tl-dot"></div>
@@ -4614,311 +3872,73 @@
     </div>
   </section>
 
-  <!-- RESEARCH LAB (interactive toy models of the research lines) -->
-  <section id="lab">
-    <div class="wrap">
-      <div class="section-tag">Research Lab</div>
-      <h2 class="section-title">Play With the Ideas</h2>
-      <p class="lab-intro">Three toy models of what I work on. They run in your browser: pick one and click around.</p>
-      <div class="lab-tabs" role="tablist" aria-label="Research demos">
-        <button class="filter-btn active" type="button" role="tab" aria-selected="true" data-lab="twin">Security Twin</button>
-        <button class="filter-btn" type="button" role="tab" aria-selected="false" data-lab="swarm">UAV Swarm</button>
-        <button class="filter-btn" type="button" role="tab" aria-selected="false" data-lab="notline">NotLine</button>
-      </div>
-      <div class="lab-stage">
-        <canvas id="lab-canvas" role="img" aria-label="Interactive research demo; its state is described in the text below"></canvas>
-        <button class="lab-reset" id="lab-reset" type="button">Reset</button>
-      </div>
-      <p class="lab-status" id="lab-status" aria-live="polite"></p>
-      <p class="lab-caption" id="lab-caption"></p>
-    </div>
-  </section>
-  <script>
-    (function () {
-      const cv = document.getElementById('lab-canvas');
-      if (!cv || !cv.getContext) return;
-      const ctx = cv.getContext('2d'), statusEl = document.getElementById('lab-status'), capEl = document.getElementById('lab-caption');
-      const still = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
-      const C = { cyan: '#00e5ff', violet: '#a78bfa', green: '#10b981', red: '#ff5470', text: '#e2e8f0', muted: '#64748b', line: 'rgba(0,229,255,.2)', bg: '#0d1120' };
-      let W = 0, H = 0, demo = null, raf = 0, visible = false, last = 0;
-      const X = x => 34 + x * (W - 68), Y = y => 30 + y * (H - 60);
-      const say = s => { statusEl.textContent = s; };
-      function seg(x1, y1, x2, y2, color, width, dash) {
-        ctx.beginPath(); ctx.setLineDash(dash || []); ctx.moveTo(x1, y1); ctx.lineTo(x2, y2);
-        ctx.strokeStyle = color; ctx.lineWidth = width || 1; ctx.stroke(); ctx.setLineDash([]);
-      }
-      function dot(x, y, r, fill, stroke, width) {
-        ctx.beginPath(); ctx.arc(x, y, r, 0, 6.2832);
-        if (fill) { ctx.fillStyle = fill; ctx.fill(); }
-        if (stroke) { ctx.strokeStyle = stroke; ctx.lineWidth = width || 1.5; ctx.stroke(); }
-      }
-      function label(s, x, y, color) {
-        ctx.font = "11px 'DM Mono', monospace"; ctx.textAlign = 'center'; ctx.fillStyle = color; ctx.fillText(s, x, y);
-      }
-      const nearest = (pts, x, y, max) => {
-        let best = -1, bd = max * max;
-        pts.forEach((p, i) => { const d = (p[0] - x) * (p[0] - x) + (p[1] - y) * (p[1] - y); if (d < bd) { bd = d; best = i; } });
-        return best;
-      };
-
-      // ── Security Twin: the attacker always takes the cheapest path; patch hosts and watch it re-plan ──
-      function twin() {
-        const N = [['Internet', .03, .5], ['Web', .2, .22], ['VPN', .2, .78], ['App', .4, .1], ['WS-1', .4, .5], ['WS-2', .4, .9],
-                   ['Mail', .6, .28], ['AD', .62, .72], ['DB', .8, .16], ['HMI', .82, .66], ['PLC', .97, .42]];
-        const E = [[0, 1, 2], [0, 2, 3], [1, 3, 2], [1, 4, 3], [2, 4, 2], [2, 5, 2], [3, 6, 2], [3, 8, 4], [4, 6, 2], [4, 7, 2],
-                   [5, 7, 3], [6, 8, 2], [6, 7, 3], [7, 9, 2], [8, 10, 4], [9, 10, 2], [8, 9, 3]];
-        const TARGET = 10, BUDGET = 2, patched = new Set();
-        let path = [], cost = 0, t = 0;
-        function solve(note) {
-          const d = N.map(() => Infinity), prev = N.map(() => -1), done = new Set();
-          d[0] = 0;
-          for (;;) {
-            let u = -1;
-            d.forEach((v, i) => { if (!done.has(i) && v < Infinity && (u < 0 || v < d[u])) u = i; });
-            if (u < 0 || u === TARGET) break;
-            done.add(u);
-            for (const [a, b, w] of E) {
-              const v = a === u ? b : b === u ? a : -1;
-              if (v < 0 || patched.has(v) || done.has(v)) continue;
-              if (d[u] + w < d[v]) { d[v] = d[u] + w; prev[v] = u; }
-            }
-          }
-          path = []; cost = d[TARGET];
-          if (cost < Infinity) for (let v = TARGET; v >= 0; v = prev[v]) path.unshift(v);
-          const left = BUDGET - patched.size;
-          say(note || (path.length
-            ? 'Cheapest attack path: ' + path.map(i => N[i][0]).join(' → ') + ' (effort ' + cost + '). ' +
-              (left ? 'Click a host to patch it — ' + left + ' patch' + (left > 1 ? 'es' : '') + ' left — and watch the attacker re-plan.'
-                    : 'Both patches spent and the PLC is still reachable: click a patched host to take the patch back and try elsewhere.')
-            : 'Contained: with these ' + patched.size + ' patches no path reaches the PLC. This is the what-if question a Security Twin answers before anything is touched in production.'));
-        }
-        solve();
-        return {
-          state: () => ({ path, cost, patched }),
-          click(x, y) {
-            const i = nearest(N.map(n => [X(n[1]), Y(n[2])]), x, y, 26);
-            if (i <= 0 || i === TARGET) return;
-            if (patched.has(i)) patched.delete(i);
-            else if (patched.size < BUDGET) patched.add(i);
-            else return solve('Only ' + BUDGET + ' patches in the budget: click a patched host to take one back first.');
-            solve();
-          },
-          draw(dt) {
-            t += dt;
-            const on = new Set(path.slice(1).map((v, k) => Math.min(path[k], v) + '-' + Math.max(path[k], v)));
-            for (const [a, b] of E) {
-              const hot = on.has(a + '-' + b), cut = patched.has(a) || patched.has(b);
-              seg(X(N[a][1]), Y(N[a][2]), X(N[b][1]), Y(N[b][2]), hot ? C.red : cut ? 'rgba(100,116,139,.25)' : C.line, hot ? 2 : 1, cut ? [3, 5] : null);
-            }
-            if (path.length > 1) {   // the attacker, moving along its plan
-              const f = (still ? .5 : (t * .28) % 1) * (path.length - 1), k = Math.min(Math.floor(f), path.length - 2), r = f - k;
-              const a = N[path[k]], b = N[path[k + 1]];
-              dot(X(a[1] + (b[1] - a[1]) * r), Y(a[2] + (b[2] - a[2]) * r), 5, C.red);
-              dot(X(a[1] + (b[1] - a[1]) * r), Y(a[2] + (b[2] - a[2]) * r), 10, null, 'rgba(255,84,112,.35)');
-            }
-            N.forEach((n, i) => {
-              const x = X(n[1]), y = Y(n[2]), hit = path.includes(i);
-              if (patched.has(i)) { dot(x, y, 10, C.bg, C.green, 3); label('✓', x, y + 4, C.green); }
-              else dot(x, y, i === TARGET ? 11 : 9, C.bg, i === 0 ? C.violet : hit ? C.red : C.cyan, i === TARGET ? 3 : 1.5);
-              label(n[0], x, y + 26, patched.has(i) ? C.green : hit ? C.text : C.muted);
-            });
-          }
-        };
-      }
-
-      // ── UAV swarm: a compromised drone misbehaves, its neighbours cross-check it and vote it out ──
-      function swarm() {
-        const D = [];
-        for (let i = 0; i < 14; i++) D.push({ a: (i < 5 ? i / 5 : (i - 5) / 9) * 6.2832, r: i < 5 ? .1 : .2, st: 0, s: 0, ox: 0, oy: 0, x: 0, y: 0 });
-        let t = 0;
-        function tell() {
-          const n = k => D.filter(d => d.st === k).length;
-          say(n(0) + ' drones in formation · ' + n(1) + ' compromised, under vote · ' + n(2) + ' isolated. ' +
-            (n(0) > 4 ? 'Click a drone to compromise it: its neighbours cross-check its behaviour and vote it out of the formation.'
-                      : 'The swarm is running thin — press Reset to relaunch it.'));
-        }
-        tell();
-        return {
-          click(x, y) {
-            const i = nearest(D.map(d => [d.x, d.y]), x, y, 24);
-            if (i < 0 || D[i].st !== 0) return;
-            D[i].st = still ? 2 : 1; tell();
-          },
-          draw(dt) {
-            t += dt;
-            const S = Math.min(W, H * 1.5), cx = X(.5 + .25 * Math.sin(t * .23)), cy = Y(.5 + .16 * Math.sin(t * .37));
-            for (const d of D) {
-              if (d.st === 1) {            // erratic behaviour; suspicion grows with every neighbour that can observe it
-                d.ox = Math.max(-60, Math.min(60, d.ox + (Math.random() - .5) * dt * 260));
-                d.oy = Math.max(-60, Math.min(60, d.oy + (Math.random() - .5) * dt * 260));
-                const nb = D.filter(o => o.st === 0 && Math.hypot(o.x - d.x, o.y - d.y) < .24 * S).length;
-                d.s += dt * Math.min(nb, 4) / 4 / 1.8;
-                if (d.s >= 1) { d.st = 2; tell(); }
-              } else if (d.st === 2) d.oy = Math.min(d.oy + dt * 14, 90);   // drops out of the formation
-              d.x = cx + Math.cos(d.a + t * .3) * d.r * S + d.ox;
-              d.y = cy + Math.sin(d.a + t * .3) * d.r * S + d.oy;
-            }
-            for (let i = 0; i < D.length; i++) for (let j = i + 1; j < D.length; j++) {
-              const a = D[i], b = D[j];
-              if (a.st === 2 || b.st === 2 || Math.hypot(a.x - b.x, a.y - b.y) > .15 * S) continue;
-              seg(a.x, a.y, b.x, b.y, a.st || b.st ? 'rgba(255,84,112,.45)' : C.line, 1);
-            }
-            for (const d of D) {
-              if (d.st === 2) { dot(d.x, d.y, 5, null, C.muted, 1); seg(d.x - 4, d.y - 4, d.x + 4, d.y + 4, C.muted, 1); continue; }
-              dot(d.x, d.y, 5, d.st ? C.red : C.cyan);
-              dot(d.x, d.y, 9, null, d.st ? 'rgba(255,84,112,.25)' : 'rgba(0,229,255,.2)', 1);
-              if (d.st === 1) { ctx.beginPath(); ctx.arc(d.x, d.y, 13, -1.5708, -1.5708 + d.s * 6.2832); ctx.strokeStyle = C.red; ctx.lineWidth = 2; ctx.stroke(); }
-            }
-          }
-        };
-      }
-
-      // ── NotLine: the topology appears only as traffic is observed; nothing is ever sent ──
-      function notline() {
-        const N = [[.5, .5], [.28, .3], [.28, .72], [.72, .3], [.72, .7], [.08, .14], [.08, .42], [.06, .86], [.3, .96],
-                   [.92, .12], [.94, .44], [.92, .84], [.5, .1], [.52, .9]];
-        const E = [[0, 1], [0, 2], [0, 3], [0, 4], [1, 5], [1, 6], [2, 7], [2, 8], [3, 9], [3, 10], [4, 11], [1, 12], [3, 12], [2, 13], [4, 13], [1, 2], [3, 4]];
-        const seenN = new Map(), seenE = new Map(), P = [];
-        let t = 0, next = 0, sent = 0;
-        function emit() {
-          const fresh = E.map((e, i) => i).filter(i => !seenE.has(i));
-          const i = fresh.length && Math.random() < .6 ? fresh[Math.floor(Math.random() * fresh.length)] : Math.floor(Math.random() * E.length);
-          P.push({ e: i, back: Math.random() < .5, p: 0 }); sent++;
-          if (!seenE.has(i)) seenE.set(i, t);
-          E[i].forEach(n => { if (!seenN.has(n)) seenN.set(n, t); });
-          say(seenE.size < E.length
-            ? 'Listening… ' + seenN.size + '/' + N.length + ' hosts and ' + seenE.size + '/' + E.length + ' links reconstructed from ' + sent + ' observed packets — 0 probes sent. Click the canvas to let more traffic through.'
-            : 'Topology complete: ' + N.length + ' hosts and ' + E.length + ' links rebuilt from ' + sent + ' observed packets, without sending a single one. Press Reset to listen again.');
-        }
-        say('Listening… nothing observed yet.');
-        if (still) while (seenE.size < E.length) emit();
-        return {
-          click() { for (let k = 0; k < 3; k++) emit(); },
-          draw(dt) {
-            t += dt;
-            if (!still && t >= next && seenE.size < E.length) { emit(); next = t + .5; }
-            const fade = t0 => still ? 1 : Math.min(1, (t - t0) / .7);
-            seenE.forEach((t0, i) => {
-              const a = N[E[i][0]], b = N[E[i][1]];
-              ctx.globalAlpha = fade(t0); seg(X(a[0]), Y(a[1]), X(b[0]), Y(b[1]), 'rgba(0,229,255,.35)', 1);
-            });
-            seenN.forEach((t0, i) => {
-              ctx.globalAlpha = fade(t0);
-              dot(X(N[i][0]), Y(N[i][1]), i < 5 ? 8 : 5, C.bg, i === 0 ? C.violet : i < 5 ? C.cyan : C.green, i < 5 ? 2 : 1.5);
-            });
-            ctx.globalAlpha = 1;
-            for (let k = P.length - 1; k >= 0; k--) {
-              const q = P[k]; q.p += dt * 1.3;
-              if (q.p >= 1) { P.splice(k, 1); continue; }
-              const a = N[E[q.e][q.back ? 1 : 0]], b = N[E[q.e][q.back ? 0 : 1]];
-              dot(X(a[0] + (b[0] - a[0]) * q.p), Y(a[1] + (b[1] - a[1]) * q.p), 2.5, C.text);
-            }
-          }
-        };
-      }
-
-      const DEMOS = {
-        twin: [twin, 'A <strong>Security Twin</strong> is a digital twin of an infrastructure built for security: it simulates how an attacker would move, so a defence can be tried out before it is deployed. <a href="#pub-1">Anticipating Disasters through a Security Twin →</a>'],
-        swarm: [swarm, '<strong>ResilientGuard</strong> (KAUST): Byzantine-resilient anomaly detection for UAV swarms, with TinyML models running on each drone so that the swarm does not depend on a ground station to notice that one of its members has been taken over.'],
-        notline: [notline, '<strong>NotLine</strong> builds the digital twin of a network by passive discovery only: it listens to the traffic that is already there, so it can be used on industrial systems that must not be scanned. <a href="#pub-22">NotLine: A Non-Intrusive Automated Platform →</a>']
-      };
-      let current = 'twin';
-      function frame(now) {
-        raf = 0;
-        const dt = Math.max(0, Math.min((now - last) / 1000, .05)); last = now;   // rAF time can precede the performance.now() taken in kick()
-        ctx.clearRect(0, 0, W, H);
-        demo.draw(still ? 0 : dt);
-        if (visible && !still) raf = requestAnimationFrame(frame);
-      }
-      function kick() { if (!raf && W) { last = performance.now(); raf = requestAnimationFrame(frame); } }
-      function load(name) { current = name; demo = DEMOS[name][0](); capEl.innerHTML = DEMOS[name][1]; kick(); }
-      function resize() {
-        const r = cv.getBoundingClientRect(), dpr = window.devicePixelRatio || 1;
-        if (!r.width) return;
-        W = r.width; H = r.height; cv.width = Math.round(W * dpr); cv.height = Math.round(H * dpr);
-        ctx.setTransform(dpr, 0, 0, dpr, 0, 0); kick();
-      }
-      document.querySelectorAll('[data-lab]').forEach(b => b.addEventListener('click', () => {
-        document.querySelectorAll('[data-lab]').forEach(o => { o.classList.toggle('active', o === b); o.setAttribute('aria-selected', o === b); });
-        load(b.dataset.lab);
-      }));
-      document.getElementById('lab-reset').addEventListener('click', () => load(current));
-      cv.addEventListener('click', e => { const r = cv.getBoundingClientRect(); demo.click(e.clientX - r.left, e.clientY - r.top); kick(); });
-      window.addEventListener('resize', resize);
-      if ('IntersectionObserver' in window) new IntersectionObserver(en => { visible = en[0].isIntersecting; if (visible) kick(); }).observe(cv);
-      else visible = true;
-      load('twin'); resize();
-    })();
-  </script>
-
   <!-- PROJECTS -->
-  <section id="projects">
+  <section id="projects" class="section">
     <div class="wrap">
-      <div class="section-tag">Projects</div>
-      <h2 class="section-title">Built Things</h2>
+      <div class="section-head reveal">
+        <div class="kicker">Projects</div>
+        <h2 class="section-title">Built things.</h2>
+      </div>
       <div class="proj-grid">
 
-        <a href="https://ilsamaritano.github.io/sv-webstudio/" target="_blank" rel="noopener" class="proj-card">
+        <a href="https://ilsamaritano.github.io/sv-webstudio/" target="_blank" rel="noopener" class="proj-card panel spot">
           <div class="proj-icon">💻</div>
           <div class="proj-name">SV WebStudio</div>
           <div class="proj-desc">My web studio — custom websites, perfect on every screen: showcase sites, e-commerce,
             restyling, and performance &amp; SEO optimisation. Free quotes.</div>
         </a>
 
-        <a href="https://www.broly.it/" target="_blank" rel="noopener" class="proj-card">
+        <a href="https://www.broly.it/" target="_blank" rel="noopener" class="proj-card panel spot">
           <div class="proj-icon">🛒</div>
           <div class="proj-name">Broly.it</div>
           <div class="proj-desc">Full-stack proprietary e-commerce platform with dynamic catalogue management, shopping
             cart, and secure payment gateway integration. Mobile-optimised UX/UI.</div>
         </a>
 
-        <div class="proj-card no-link">
+        <div class="proj-card panel spot no-link">
           <div class="proj-icon">🔒</div>
           <div class="proj-name">StudentInForma</div>
           <div class="proj-desc">Academic questionnaire platform built in Python, SQL, HTML/CSS with cyber-hardening
             against web attack vectors (SQL injection, XSS, CSRF).</div>
         </div>
 
-        <a href="https://github.com/ilsamaritano/TextAnalytics" target="_blank" rel="noopener" class="proj-card">
+        <a href="https://github.com/ilsamaritano/TextAnalytics" target="_blank" rel="noopener" class="proj-card panel spot">
           <div class="proj-icon">🧠</div>
           <div class="proj-name">Text Analytics</div>
           <div class="proj-desc">Text analysis pipeline leveraging neural networks and BERT-based transformers for
             classification tasks including sentiment analysis and hate speech detection.</div>
         </a>
 
-        <a href="https://github.com/ilsamaritano/datamining1" target="_blank" rel="noopener" class="proj-card">
+        <a href="https://github.com/ilsamaritano/datamining1" target="_blank" rel="noopener" class="proj-card panel spot">
           <div class="proj-icon">📊</div>
           <div class="proj-name">Data Mining Suite</div>
           <div class="proj-desc">Projects covering classification, regression, clustering, and advanced feature
             engineering techniques using Scikit-Learn, XGBoost, and Python analytics stack.</div>
         </a>
 
-        <a href="https://github.com/ilsamaritano/ProgettoSviluppoServiziWeb" target="_blank" rel="noopener" class="proj-card">
+        <a href="https://github.com/ilsamaritano/ProgettoSviluppoServiziWeb" target="_blank" rel="noopener" class="proj-card panel spot">
           <div class="proj-icon">📚</div>
           <div class="proj-name">Library Web App</div>
           <div class="proj-desc">Angular-based web application functioning as a full library management system —
             catalogue, loans, reservations, and administrative back-end.</div>
         </a>
 
-        <a href="https://github.com/ilsamaritano" target="_blank" rel="noopener" class="proj-card">
+        <a href="https://github.com/ilsamaritano" target="_blank" rel="noopener" class="proj-card panel spot">
           <div class="proj-icon">🌐</div>
           <div class="proj-name">Web Scrapers</div>
           <div class="proj-desc">Automated data-extraction algorithms targeting Amazon, Twitter, and generic web
             sources. Python-based with custom parsing and anti-bot bypass strategies.</div>
         </a>
 
+
       </div>
-    </div>
-  </section>
 
-  <!-- SKILLS -->
-  <section id="skills">
-    <div class="wrap">
-      <div class="section-tag">Technical Skills</div>
-      <h2 class="section-title">Capabilities</h2>
-      <div class="skills-grid">
+      <!-- SKILLS -->
+      <div id="skills">
+        <div class="service-sub sub-label">Capabilities</div>
+        <div class="skills-grid">
 
-        <div class="skill-group">
+        <div class="skill-group panel spot">
           <div class="skill-group-title">Machine Learning / AI</div>
           <div class="skill-pills">
             <span class="skill-pill">TensorFlow</span>
@@ -4931,7 +3951,7 @@
           </div>
         </div>
 
-        <div class="skill-group">
+        <div class="skill-group panel spot">
           <div class="skill-group-title">NLP & Text</div>
           <div class="skill-pills">
             <span class="skill-pill">NLTK</span>
@@ -4943,7 +3963,7 @@
           </div>
         </div>
 
-        <div class="skill-group">
+        <div class="skill-group panel spot">
           <div class="skill-group-title">Programming</div>
           <div class="skill-pills">
             <span class="skill-pill">Python</span>
@@ -4955,7 +3975,7 @@
           </div>
         </div>
 
-        <div class="skill-group">
+        <div class="skill-group panel spot">
           <div class="skill-group-title">Data & Databases</div>
           <div class="skill-pills">
             <span class="skill-pill">Pandas</span>
@@ -4967,7 +3987,7 @@
           </div>
         </div>
 
-        <div class="skill-group">
+        <div class="skill-group panel spot">
           <div class="skill-group-title">Web & DevOps</div>
           <div class="skill-pills">
             <span class="skill-pill">HTML5</span>
@@ -4979,7 +3999,7 @@
           </div>
         </div>
 
-        <div class="skill-group">
+        <div class="skill-group panel spot">
           <div class="skill-group-title">Research & Standards</div>
           <div class="skill-pills">
             <span class="skill-pill">XML-TEI</span>
@@ -4991,6 +4011,8 @@
           </div>
         </div>
 
+
+        </div>
       </div>
     </div>
   </section>
@@ -4998,15 +4020,17 @@
   <!-- CONTACT -->
   <section id="contact">
     <div class="wrap">
-      <div class="contact-grid">
-        <div>
-          <div class="section-tag">Contact</div>
-          <h2 class="contact-heading">Let's<br><span>collaborate.</span></h2>
-          <p style="color:var(--muted);font-size:.82rem;margin-top:24px;line-height:1.8;max-width:400px">Open to
-            research collaborations, visiting positions, and industry partnerships in the areas of AI, cybersecurity,
-            and digital twin architectures.</p>
+      <div class="reveal">
+        <div class="kicker">Contact</div>
+        <h2 class="contact-heading">Let's <span class="grad">collaborate.</span></h2>
+        <p class="contact-lead">Open to research collaborations, visiting positions, and industry partnerships in the
+          areas of AI, cybersecurity, and digital twin architectures.</p>
+        <div class="contact-cta">
+          <a href="mailto:vincesammartino@gmail.com" class="btn btn-primary">vincesammartino@gmail.com</a>
+          <a href="https://scholar.google.com/citations?user=lQig7SEAAAAJ" target="_blank" rel="noopener" class="btn btn-ghost">Google Scholar ↗</a>
         </div>
-        <div class="contact-links">
+      </div>
+      <div class="contact-links reveal">
           <a href="mailto:vincesammartino@gmail.com" class="contact-link">
             <div class="contact-link-icon">✉</div>
             <div class="contact-link-text">
@@ -5071,7 +4095,6 @@
             </div>
             <div class="contact-link-arrow">→</div>
           </a>
-        </div>
       </div>
     </div>
   </section>
@@ -5085,8 +4108,7 @@
           href="https://scholar.google.com/citations?user=lQig7SEAAAAJ">Google Scholar</a> · <a
           href="https://orcid.org/0009-0002-4632-1179">ORCID</a> · <a
           href="https://people.unipi.it/vincenzo_sammartino/" rel="me">University of Pisa</a> · <a href="sv-webstudio/">SV WebStudio</a> · <a href="llms.txt">llms.txt</a> · <a href="profile.json">profile.json</a></p>
-      <p style="margin-top:8px;font-size:.6rem;opacity:.7">PhD in AI · Università di Pisa · KAUST Visiting Researcher ·
-        Bibliometrics updated 25 October 2026</p>
+      <p>PhD in AI · Università di Pisa · KAUST Visiting Researcher · Bibliometrics updated 25 October 2026</p>
     </div>
   </footer>
 
@@ -5095,74 +4117,85 @@
       const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
       const finePointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
 
-      // CUSTOM CURSOR — mouse users only, and only when motion is allowed
-      if (finePointer && !reduceMotion) {
-        document.documentElement.classList.add('has-cursor');
-        const cursor = document.getElementById('cursor');
-        const ring = document.getElementById('cursor-ring');
-        let mx = -100, my = -100, rx = -100, ry = -100;
-        document.addEventListener('mousemove', e => {
-          mx = e.clientX; my = e.clientY;
-          cursor.style.left = mx + 'px'; cursor.style.top = my + 'px';
-        });
-        (function animRing() {
-          rx += (mx - rx) * .15; ry += (my - ry) * .15;
-          ring.style.left = rx + 'px'; ring.style.top = ry + 'px';
-          requestAnimationFrame(animRing);
-        })();
-        document.addEventListener('mouseover', e => {
-          const hot = !!e.target.closest('a,button,select,.btn');
-          cursor.style.width = cursor.style.height = hot ? '20px' : '12px';
-          ring.style.width = ring.style.height = hot ? '60px' : '40px';
-        });
-      }
-
-      // NEURAL CANVAS — deferred until load, skipped for reduced motion, paused in background tabs
-      window.addEventListener('load', function () {
-        if (reduceMotion) return;
-        const canvas = document.getElementById('neural-canvas');
-        const ctx = canvas.getContext('2d');
-        const nodes = [];
-        function resize() { canvas.width = window.innerWidth; canvas.height = window.innerHeight }
-        resize(); window.addEventListener('resize', resize);
-        const count = window.innerWidth < 600 ? 35 : 70;
-        for (let i = 0; i < count; i++) {
-          nodes.push({
-            x: Math.random() * canvas.width, y: Math.random() * canvas.height,
-            vx: (Math.random() - .5) * .4, vy: (Math.random() - .5) * .4, r: Math.random() * 2 + 1
-          });
+      // HERO CANVAS — a node graph that reaches for the pointer; skipped for reduced motion, paused off-screen
+      (function () {
+        const canvas = document.getElementById('hero-canvas');
+        if (reduceMotion || !canvas || !canvas.getContext) return;
+        const ctx = canvas.getContext('2d'), hero = document.getElementById('hero');
+        let W = 0, H = 0, nodes = [], px = -999, py = -999, running = false, inView = true;
+        function resize() {
+          const dpr = Math.min(window.devicePixelRatio || 1, 2);
+          W = hero.clientWidth; H = hero.clientHeight;
+          canvas.width = W * dpr; canvas.height = H * dpr;
+          ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+          const count = W < 600 ? 34 : 80;
+          nodes = Array.from({ length: count }, () => ({
+            x: Math.random() * W, y: Math.random() * H,
+            vx: (Math.random() - .5) * .35, vy: (Math.random() - .5) * .35,
+            r: Math.random() * 1.6 + .8, v: Math.random() < .25
+          }));
         }
-        let running = true;
-        function drawNeural() {
+        function draw() {
           if (!running) return;
-          ctx.clearRect(0, 0, canvas.width, canvas.height);
-          nodes.forEach(n => {
+          ctx.clearRect(0, 0, W, H);
+          for (const n of nodes) {
             n.x += n.vx; n.y += n.vy;
-            if (n.x < 0 || n.x > canvas.width) n.vx *= -1;
-            if (n.y < 0 || n.y > canvas.height) n.vy *= -1;
-            ctx.beginPath(); ctx.arc(n.x, n.y, n.r, 0, Math.PI * 2);
-            ctx.fillStyle = 'rgba(0,229,255,.5)'; ctx.fill();
-          });
+            if (n.x < 0 || n.x > W) n.vx *= -1;
+            if (n.y < 0 || n.y > H) n.vy *= -1;
+            const d = Math.hypot(n.x - px, n.y - py);
+            if (d < 160) { n.x += (n.x - px) / d * .6; n.y += (n.y - py) / d * .6; }
+          }
           for (let i = 0; i < nodes.length; i++) {
+            const a = nodes[i];
             for (let j = i + 1; j < nodes.length; j++) {
-              const d = Math.hypot(nodes[i].x - nodes[j].x, nodes[i].y - nodes[j].y);
-              if (d < 130) {
-                ctx.beginPath();
-                ctx.moveTo(nodes[i].x, nodes[i].y);
-                ctx.lineTo(nodes[j].x, nodes[j].y);
-                ctx.strokeStyle = `rgba(0,229,255,${(1 - d / 130) * .15})`;
-                ctx.lineWidth = .5; ctx.stroke();
+              const b = nodes[j], d = Math.hypot(a.x - b.x, a.y - b.y);
+              if (d < 120) {
+                ctx.beginPath(); ctx.moveTo(a.x, a.y); ctx.lineTo(b.x, b.y);
+                ctx.strokeStyle = `rgba(200,255,77,${(1 - d / 120) * .12})`; ctx.lineWidth = .6; ctx.stroke();
               }
             }
+            const dp = Math.hypot(a.x - px, a.y - py);
+            if (dp < 220) {
+              ctx.beginPath(); ctx.moveTo(a.x, a.y); ctx.lineTo(px, py);
+              ctx.strokeStyle = `rgba(139,108,255,${(1 - dp / 220) * .35})`; ctx.lineWidth = .8; ctx.stroke();
+            }
+            ctx.beginPath(); ctx.arc(a.x, a.y, a.r, 0, 6.2832);
+            ctx.fillStyle = a.v ? 'rgba(139,108,255,.8)' : 'rgba(200,255,77,.6)'; ctx.fill();
           }
-          requestAnimationFrame(drawNeural);
+          requestAnimationFrame(draw);
         }
-        document.addEventListener('visibilitychange', () => {
-          running = !document.hidden;
-          if (running) requestAnimationFrame(drawNeural);
+        function sync() {
+          const want = inView && !document.hidden;
+          if (want && !running) { running = true; requestAnimationFrame(draw); }
+          else if (!want) running = false;
+        }
+        hero.addEventListener('pointermove', e => { const r = hero.getBoundingClientRect(); px = e.clientX - r.left; py = e.clientY - r.top; });
+        hero.addEventListener('pointerleave', () => { px = py = -999; });
+        window.addEventListener('resize', resize);
+        document.addEventListener('visibilitychange', sync);
+        new IntersectionObserver(en => { inView = en[0].isIntersecting; sync(); }).observe(hero);
+        resize(); sync();
+      })();
+
+      // PHOTO TILT
+      const frame = document.getElementById('photo-frame');
+      if (frame && finePointer && !reduceMotion) {
+        frame.addEventListener('pointermove', e => {
+          const r = frame.getBoundingClientRect();
+          frame.style.setProperty('--ry', ((e.clientX - r.left) / r.width - .5) * 10 + 'deg');
+          frame.style.setProperty('--rx', ((e.clientY - r.top) / r.height - .5) * -10 + 'deg');
         });
-        drawNeural();
-      });
+        frame.addEventListener('pointerleave', () => { frame.style.setProperty('--ry', '0deg'); frame.style.setProperty('--rx', '0deg'); });
+      }
+
+      // SPOTLIGHT that follows the pointer on cards
+      if (finePointer) document.addEventListener('pointermove', e => {
+        const el = e.target.closest && e.target.closest('.spot');
+        if (!el) return;
+        const r = el.getBoundingClientRect();
+        el.style.setProperty('--mx', e.clientX - r.left + 'px');
+        el.style.setProperty('--my', e.clientY - r.top + 'px');
+      }, { passive: true });
 
       // TYPED TEXT
       const phrases = [
@@ -5179,65 +4212,137 @@
           const phrase = phrases[pi];
           if (!del) {
             typed.textContent = phrase.slice(0, ++ci);
-            if (ci === phrase.length) { del = true; setTimeout(type, 2000); return }
+            if (ci === phrase.length) { del = true; setTimeout(type, 2200); return }
           } else {
             typed.textContent = phrase.slice(0, --ci);
             if (ci === 0) { del = false; pi = (pi + 1) % phrases.length; setTimeout(type, 400); return }
           }
-          setTimeout(type, del ? 40 : 60);
+          setTimeout(type, del ? 35 : 60);
         })();
       }
+
+      // STATEMENT — split into words that light up as the paragraph scrolls through the viewport
+      const words = [];
+      document.querySelectorAll('[data-words]').forEach(p => {
+        (function split(node, hl) {
+          Array.from(node.childNodes).forEach(ch => {
+            if (ch.nodeType === 3) {
+              const frag = document.createDocumentFragment();
+              ch.textContent.split(/(\s+)/).forEach(t => {
+                if (!t) return;
+                if (/^\s+$/.test(t)) { frag.appendChild(document.createTextNode(t)); return; }
+                const s = document.createElement('span');
+                s.className = 'w' + (hl ? ' hl' : ''); s.textContent = t;
+                frag.appendChild(s); words.push(s);
+              });
+              node.replaceChild(frag, ch);
+            } else if (ch.nodeType === 1) split(ch, hl || ch.classList.contains('hl'));
+          });
+        })(p, false);
+      });
+
+      // SCROLL: progress bar, nav state, statement fill
+      const nav = document.querySelector('nav'), bar = document.getElementById('progress');
+      const stmt = document.querySelector('.statement p');
+      let ticking = false;
+      function onScroll() {
+        ticking = false;
+        const y = window.scrollY, max = document.documentElement.scrollHeight - innerHeight;
+        bar.style.transform = `scaleX(${max > 0 ? y / max : 0})`;
+        nav.classList.toggle('scrolled', y > 20);
+        if (stmt && words.length && !reduceMotion) {
+          const r = stmt.getBoundingClientRect();
+          const k = Math.max(0, Math.min(1, (innerHeight * .85 - r.top) / (r.height + innerHeight * .35)));
+          const lit = Math.round(k * words.length);
+          words.forEach((w, i) => w.classList.toggle('on', i < lit));
+        }
+      }
+      window.addEventListener('scroll', () => { if (!ticking) { ticking = true; requestAnimationFrame(onScroll); } }, { passive: true });
+      onScroll();
 
       // SCROLL REVEALS
       const io = new IntersectionObserver(entries => {
         entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target) } });
-      }, { threshold: .1 });
-      document.querySelectorAll('.tl-entry,.pub-card,.skill-group,.proj-card,.fade-in').forEach(el => io.observe(el));
+      }, { threshold: .08, rootMargin: '0px 0px -40px 0px' });
+      document.querySelectorAll('.tl-entry,.pub-card,.review-card,.proj-card,.skill-group,.grant-card,.contact-link')
+        .forEach(el => { if (!el.closest('.reveal')) el.classList.add('reveal'); });
+      document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 
-      // METRIC COUNTERS
+      // METRIC COUNTERS + chart bars
       const metrics = document.getElementById('metrics');
-      if (metrics && !reduceMotion) {
-        const nums = metrics.querySelectorAll('[data-count]');
+      if (metrics) {
+        const nums = metrics.querySelectorAll('[data-count]'), chart = metrics.querySelector('.cite-chart');
         // Real values stay in the HTML until the counters actually start
         const mo = new IntersectionObserver(entries => {
           if (!entries[0].isIntersecting) return;
           mo.disconnect();
+          if (chart) chart.classList.add('in');
+          if (reduceMotion) return;
           nums.forEach(el => el.textContent = '0');
-          const t0 = performance.now(), dur = 1400;
+          const t0 = performance.now(), dur = 1600;
           (function tick(now) {
-            const k = Math.min(1, (now - t0) / dur), ease = 1 - Math.pow(1 - k, 3);
+            const k = Math.min(1, (now - t0) / dur), ease = 1 - Math.pow(1 - k, 4);
             nums.forEach(el => el.textContent = Math.round(+el.dataset.count * ease));
             if (k < 1) requestAnimationFrame(tick);
           })(t0);
-        }, { threshold: .15 });
-        mo.observe(metrics);
+        }, { threshold: .25 });
+        mo.observe(metrics.querySelector('.metrics-grid'));
       }
 
-      // PUBLICATIONS: filter · search · sort
+      // COLLAPSIBLE LISTS — first n items, then a "show all" button (everything stays in the HTML)
+      document.querySelectorAll('[data-collapse]').forEach(listEl => {
+        const n = +listEl.dataset.collapse, items = Array.from(listEl.children);
+        if (items.length <= n) return;
+        const btn = document.createElement('button');
+        btn.type = 'button'; btn.className = 'btn btn-ghost more-btn';
+        btn.setAttribute('aria-controls', listEl.id); btn.setAttribute('aria-expanded', 'false');
+        const wrap = document.createElement('div'); wrap.className = 'more-wrap'; wrap.appendChild(btn);
+        listEl.after(wrap);
+        let open = false;
+        function set(o) {
+          open = o;
+          items.forEach((it, i) => it.classList.toggle('is-collapsed', !o && i >= n));
+          btn.textContent = o ? 'Show less' : `Show ${items.length - n} more ${listEl.dataset.more || ''}`.trim();
+          btn.setAttribute('aria-expanded', o);
+        }
+        btn.addEventListener('click', () => {
+          set(!open);
+          if (!open) listEl.scrollIntoView({ block: 'nearest' });
+        });
+        set(false);
+      });
+
+      // PUBLICATIONS: filter · search · sort · show more
       const list = document.getElementById('pub-list');
       if (list) {
+        const LIMIT = 10;
         const cards = Array.from(list.querySelectorAll('.pub-card'));
         const search = document.getElementById('pub-search');
         const sort = document.getElementById('pub-sort');
         const status = document.getElementById('pub-status');
         const empty = document.getElementById('pub-empty');
+        const more = document.getElementById('pub-more');
         const buttons = document.querySelectorAll('#publications .filter-btn');
         const haystack = new Map(cards.map(c => [c, c.textContent.toLowerCase().replace(/\s+/g, ' ')]));
-        let filter = 'all';
+        let filter = 'all', expanded = false;
+        // a link straight to one card (#pub-n) must find it on screen
+        if (/^#pub-\d+$/.test(location.hash)) expanded = true;
         function apply() {
           const terms = search.value.trim().toLowerCase().split(/\s+/).filter(Boolean);
-          let shown = 0;
-          cards.forEach(c => {
-            const ok = (filter === 'all' || c.dataset.type === filter) && terms.every(t => haystack.get(c).includes(t));
-            c.hidden = !ok;
-            if (ok) shown++;
-          });
           const byCites = sort.value === 'cites';
-          cards.slice()
-            .sort((a, b) => (byCites ? b.dataset.cites - a.dataset.cites : 0) || a.dataset.order - b.dataset.order)
-            .forEach(c => list.appendChild(c));
-          status.textContent = `Showing ${shown} of ${cards.length} publications`;
-          empty.hidden = shown > 0;
+          const ordered = cards.slice()
+            .sort((a, b) => (byCites ? b.dataset.cites - a.dataset.cites : 0) || a.dataset.order - b.dataset.order);
+          ordered.forEach(c => list.appendChild(c));
+          const matches = ordered.filter(c => (filter === 'all' || c.dataset.type === filter) && terms.every(t => haystack.get(c).includes(t)));
+          const limit = expanded ? Infinity : LIMIT;
+          cards.forEach(c => { c.hidden = true; });
+          matches.forEach((c, i) => { c.hidden = i >= limit; });
+          const shown = Math.min(matches.length, limit);
+          status.textContent = `Showing ${shown} of ${matches.length === cards.length ? cards.length : matches.length + ' matching'} publications`;
+          empty.hidden = matches.length > 0;
+          more.hidden = matches.length <= LIMIT;
+          more.textContent = expanded ? 'Show less' : `Show all ${matches.length}`;
+          more.setAttribute('aria-expanded', expanded);
         }
         buttons.forEach(b => b.addEventListener('click', () => {
           filter = b.dataset.filter;
@@ -5246,6 +4351,17 @@
         }));
         search.addEventListener('input', apply);
         sort.addEventListener('change', apply);
+        more.addEventListener('click', () => {
+          expanded = !expanded; apply();
+          if (!expanded) document.getElementById('publications').scrollIntoView({ block: 'start' });
+        });
+        // in-page links to a card (e.g. from the lab captions) open the full list first
+        document.addEventListener('click', e => {
+          const a = e.target.closest && e.target.closest('a[href^="#pub-"]');
+          const card = a && document.getElementById(a.getAttribute('href').slice(1));
+          if (card && card.hidden) { expanded = true; filter = 'all'; search.value = ''; buttons.forEach(x => { x.classList.toggle('active', x.dataset.filter === 'all'); x.setAttribute('aria-pressed', x.dataset.filter === 'all') }); apply(); }
+        });
+        apply();
       }
 
       // MOBILE MENU
@@ -5262,11 +4378,7 @@
       menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setMenu(false)));
       document.addEventListener('keydown', e => { if (e.key === 'Escape' && menu.classList.contains('open')) setMenu(false) });
 
-      // NAV: background on scroll + active section link
-      const nav = document.querySelector('nav');
-      window.addEventListener('scroll', () => {
-        nav.style.background = window.scrollY > 50 ? 'rgba(6,8,16,.95)' : 'rgba(6,8,16,.7)';
-      }, { passive: true });
+      // NAV: active section link
       const navLinks = new Map(Array.from(document.querySelectorAll('.nav-links a')).map(a => [a.getAttribute('href').slice(1), a]));
       const so = new IntersectionObserver(entries => {
         entries.forEach(e => {
@@ -5285,7 +4397,7 @@
         try { lang = localStorage.getItem('thesis-lang') || 'en' } catch (e) { }
         function applyLang(l) {
           document.querySelectorAll('#theses [data-en]').forEach(el => { el.textContent = el.dataset[l] });
-          langBtn.textContent = l === 'en' ? 'IT' : 'EN';
+          langBtn.textContent = l === 'en' ? 'Italiano' : 'English';
           langBtn.setAttribute('aria-label', l === 'en' ? 'Mostra titoli in italiano' : 'Show titles in English');
           langBtn.classList.toggle('active', l === 'it');
           lang = l;

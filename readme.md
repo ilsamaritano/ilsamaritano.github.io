@@ -13,7 +13,7 @@
 
 ## Overview
 
-Static single-page academic portfolio deployed via **GitHub Pages**, aggregating bibliometric indicators, research activities, institutional affiliations, and technical competencies into a single responsive interface. The visual design adheres to a terminal-inspired aesthetic commensurate with the research domains of cybersecurity and systems engineering.
+Static single-page academic portfolio deployed via **GitHub Pages**, aggregating bibliometric indicators, research activities, institutional affiliations, and technical competencies into a single responsive interface. The visual design is a dark, product-launch style page: oversized Space Grotesk headlines with a lime-to-violet gradient, bento card grids, a scroll-driven research statement and an interactive hero canvas.
 
 The implementation is intentionally dependency-free at the deployment level — no build pipeline, no module bundler, no framework runtime — constituting a single self-contained `index.html` document with embedded CSS and vanilla JavaScript.
 
@@ -71,9 +71,9 @@ ilsamaritano.github.io/
 
 The site is a **static HTML5 document** with no external JavaScript dependencies.
 
-**CSS Custom Properties** provide a centralised design-token system (`--accent`, `--bg`, `--surface`, `--glow`, etc.). Motion effects — glitch displacement, scan-line traversal, orbital rotation — are implemented via `@keyframes` and CSS transitions and are disabled under `prefers-reduced-motion`.
+**CSS Custom Properties** provide a centralised design-token system (`--lime`, `--violet`, `--bg`, `--surface`, `--line`, etc.). Motion effects — scroll reveals, keyword marquee, scroll progress bar, pointer spotlight on cards — are implemented via CSS transitions and `@keyframes` and are disabled under `prefers-reduced-motion`.
 
-**Vanilla JavaScript** governs behaviours requiring dynamic state: custom cursor (fine pointers only), neural-network canvas background (paused in background tabs), typed-text hero, `IntersectionObserver` scroll reveals, animated Scholar metrics, active-section navigation, and the publications explorer (type filter, full-text search, sort by year or citations).
+**Vanilla JavaScript** governs behaviours requiring dynamic state: the hero node-graph canvas that reacts to the pointer (paused off-screen and in background tabs), typed-text hero, the research statement whose words light up on scroll, `IntersectionObserver` scroll reveals, animated Scholar metrics and chart, active-section navigation, collapsible long lists, and the publications explorer (type filter, full-text search, sort by year or citations, first 10 shown with "Show all").
 
 **Progressive enhancement.** All content is present in the static HTML; reveal animations are gated behind an `html.js` class so the page is fully readable without JavaScript.
 
@@ -81,10 +81,12 @@ The site is a **static HTML5 document** with no external JavaScript dependencies
 
 | Component | Implementation Detail |
 |---|---|
-| Neural background | HTML5 Canvas 2D — 70-node proximity graph (35 on small screens); skipped under reduced motion, paused when the tab is hidden |
-| Custom cursor | Dual-layer cursor, enabled only for `(hover: hover) and (pointer: fine)` devices |
+| Hero canvas | HTML5 Canvas 2D — 80-node proximity graph (34 on small screens) that links to the pointer; skipped under reduced motion, paused off-screen and when the tab is hidden |
 | Scholar impact panel | Citations / h-index / i10-index / publications counters, citations-per-year bar chart (with screen-reader table), and top-cited works |
-| Publications explorer | Type filter with counts, multi-term search over title/venue/authors, sort by newest or most cited, live result count (`aria-live`) |
+| Research bento | The research lines as a card grid, linking into the publications and the lab |
+| Research lab | Three interactive toy models (Security Twin, UAV swarm, NotLine) in a console panel |
+| Publications explorer | Type filter with counts, multi-term search over title/venue/authors, sort by newest or most cited, first 10 results with "Show all", live result count (`aria-live`) |
+| Collapsible lists | Timeline, reviewed journals and theses show their first entries with a "Show more" button; all content stays in the static HTML |
 | Theses | Supervised theses with EN/IT language toggle (persisted in `localStorage`) |
 | Accessibility | Skip link, `:focus-visible` outlines, semantic `<main>`/`<nav>`, accessible mobile menu (Escape to close, `aria-expanded`) |
 
