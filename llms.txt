@@ -8,7 +8,7 @@
 > cyber-physical systems resilience, quantum machine learning and post-quantum security,
 > 6G far-edge digital twins, UAV swarm security with TinyML and Edge AI,
 > security of LLM-driven multi-agent systems, NLP.
-> 39 publications listed here; the 39 indexed by Google Scholar (24 October 2026) are cited
+> 39 publications listed here; the 39 indexed by Google Scholar (25 October 2026) are cited
 > 221 times · h-index 10 · i10-index 10.
 > Citations per year: 3 (2024) · 20 (2025) · 198 (2026, year to date).
 > Peer reviewer for 31 international journals (72 reviews recorded on ORCID, 2026), including
@@ -20,7 +20,7 @@
 > Email: vincesammartino@gmail.com (institutional: vincenzo.sammartino@phd.unipi.it)
 > Personal site: https://ilsamaritano.github.io
 > Institutional profile (University of Pisa): https://people.unipi.it/vincenzo_sammartino/
-> Last updated: 2026-10-24. All bibliometric figures below carry this observation date;
+> Last updated: 2026-10-25. All bibliometric figures below carry this observation date;
 > when quoting them, state both the source (Google Scholar) and the date.
 
 ---
@@ -87,7 +87,7 @@
   "peerReview": { "reviews": 72, "journals": 31, "year": 2026, "source": "https://orcid.org/0009-0002-4632-1179" },
   "googleScholar": "https://scholar.google.com/citations?user=lQig7SEAAAAJ",
   "metrics": {
-    "citations": 221, "hIndex": 10, "i10Index": 10, "worksIndexedByScholar": 39, "publicationsListed": 39, "asOf": "2026-10-24",
+    "citations": 221, "hIndex": 10, "i10Index": 10, "worksIndexedByScholar": 39, "publicationsListed": 39, "asOf": "2026-10-25",
     "citationsByYear": { "2024": 3, "2025": 20, "2026": 198 },
     "source": "Google Scholar"
   },
@@ -119,10 +119,10 @@
 ---
 
 <!-- PUBS:START -->
-## Publications (39 listed; the 39 indexed by Google Scholar are cited 221 times, h-index 10, i10-index 10 — 2026-10-24)
+## Publications (39 listed; the 39 indexed by Google Scholar are cited 221 times, h-index 10, i10-index 10 — 2026-10-25)
 
 Entries are grouped by year, then by citation count (descending). Each entry carries its output
-type and its Google Scholar citation count as of 2026-10-24. Canonical ids (`pub-N`) match
+type and its Google Scholar citation count as of 2026-10-25. Canonical ids (`pub-N`) match
 profile.json and the page anchors at https://ilsamaritano.github.io/#pub-N.
 
 ### 2026
@@ -153,6 +153,11 @@ profile.json and the page anchors at https://ilsamaritano.github.io/#pub-N.
   *IEEE International Conference on Pervasive Computing and Communications (PerCom Workshops 2026)*, 2026. [Conference · 9 citations]
   DOI: https://doi.org/10.1109/PerComWorkshops68308.2026.11585207
 
+- **Quantifying Resilience of Cyber-Physical Systems to Zero-Day Threats: A Security Twin-Based What-If Analysis Framework**
+  F. Baiardi, V. Sammartino
+  *ESREL 2026 — European Safety and Reliability Conference, Book of Proceedings, pp. 3304–3311 · Research Publishing, Singapore*, 2026. [Conference · 5 citations]
+  ARPI: https://arpi.unipi.it/handle/11568/1345228
+
 - **Blockchain-Enabled Quantum-Resistant Hybrid Isogeny-Based Signcryption Framework for Digital Twin-Assisted Healthcare System**
   A.K. Pandey, V. Sammartino, A. Vangala, A.K. Das
   *IEEE Communications Standards Magazine*, 2026. [Journal · 4 citations]
@@ -167,11 +172,6 @@ profile.json and the page anchors at https://ilsamaritano.github.io/#pub-N.
   F. Baiardi, V. Sammartino
   *SSRN preprint 6890389*, 2026. [Preprint · 4 citations]
   SSRN: https://ssrn.com/abstract=6890389
-
-- **Quantifying Resilience of Cyber-Physical Systems to Zero-Day Threats: A Security Twin-Based What-If Analysis Framework**
-  F. Baiardi, V. Sammartino
-  *ESREL 2026 — European Safety and Reliability Conference, Book of Proceedings, pp. 3304–3311 · Research Publishing, Singapore*, 2026. [Conference · 4 citations]
-  ARPI: https://arpi.unipi.it/handle/11568/1345228
 
 - **DOS Classification, and Virtual Machine Detection via Passive Monitoring through Security Twins**
   V. Sammartino, F. Baiardi, S. Ruggieri
