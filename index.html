@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <script>document.documentElement.classList.add('js')</script>
   <title>Vincenzo Sammartino — AI &amp; Cybersecurity Researcher · University of Pisa</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -821,6 +821,146 @@
       .timeline::before { left: 4px }
       .timeline .tl-dot { left: -26px; top: 30px; width: 11px; height: 11px }
     }
+
+    /* ═════════ mobile: thumb dock, carousels, lighter effects ═════════ */
+    .dock { display: none }
+    @media (max-width: 900px) {
+      .dock {
+        display: flex; position: fixed; left: 50%; bottom: calc(14px + env(safe-area-inset-bottom)); z-index: 190; gap: 2px; padding: 5px;
+        border-radius: 999px; background: rgba(10, 13, 20, .8); border: 1px solid var(--line-2);
+        backdrop-filter: saturate(180%) blur(18px); -webkit-backdrop-filter: saturate(180%) blur(18px);
+        box-shadow: 0 20px 50px -18px rgba(0, 0, 0, .95), 0 0 30px -10px rgba(41, 151, 255, .35);
+        transform: translate(-50%, 160%); opacity: 0; pointer-events: none; transition: transform .5s var(--ease), opacity .3s
+      }
+      .dock.show { transform: translate(-50%, 0); opacity: 1; pointer-events: auto }
+      .dock a {
+        padding: 10px 13px; border-radius: 999px; font-size: .78rem; font-weight: 500; color: var(--muted); text-decoration: none;
+        white-space: nowrap; transition: color .2s, background .2s
+      }
+      .dock a.active { color: var(--text); background: var(--surface-2) }
+      .dock a.dock-cta { background: var(--accent); color: var(--ink); font-weight: 600; margin-left: 2px }
+      /* expensive full-screen effects off on phones and tablets */
+      .backdrop::after { display: none }
+      .bloom { filter: blur(70px) }
+      .bloom.a { width: 380px; height: 380px }
+      .bloom.b { width: 420px; height: 420px }
+      .hero-visual::before { animation: none }
+      html.js .reveal, html.js .reveal.visible { filter: none }
+      footer { padding-bottom: calc(96px + env(safe-area-inset-bottom)) }
+    }
+
+    @media (max-width: 600px) {
+      nav { top: calc(10px + env(safe-area-inset-top)) }
+
+      /* hero: oversized name, app-style buttons, swipeable profile chips */
+      #hero { padding: calc(var(--nav-h) + 36px + env(safe-area-inset-top)) 0 48px; align-items: flex-start }
+      .hero-grid { gap: 26px; grid-template-columns: minmax(0, 1fr) }
+      .hero-visual { max-width: 116px }
+      .hero-visual::before { inset: -30% }
+      .photo-frame { aspect-ratio: 1; border-radius: 30px; box-shadow: 0 24px 60px -20px rgba(139, 108, 255, .6), 0 0 0 5px rgba(255, 255, 255, .03) }
+      .photo-tag { display: none }
+      .hero-status { font-size: .74rem; padding-right: 12px; line-height: 1.35 }
+      .hero-name { font-size: 19.5vw; margin-top: 22px; line-height: .9 }
+      .hero-name .last { font-size: 1em }
+      .hero-title { font-size: 1.08rem; min-height: 2.7em; margin-top: 20px }
+      .hero-cta { display: grid; grid-template-columns: 1fr; gap: 10px; margin-top: 28px }
+      .hero-cta .btn { justify-content: center; padding: 16px 20px; font-size: .95rem }
+      .hero-meta {
+        flex-wrap: nowrap; overflow-x: auto; gap: 8px; margin: 26px -16px 0; padding: 0 16px 4px; border-top: 0;
+        scrollbar-width: none; -webkit-overflow-scrolling: touch
+      }
+      .hero-meta::-webkit-scrollbar { display: none }
+      .hero-meta a { flex: none; padding: 9px 14px; border-radius: 999px; border: 1px solid var(--line); background: rgba(255, 255, 255, .03) }
+      .scroll-cue { display: none }
+
+      .marquee { padding: 16px 0 }
+      .statement { padding: 96px 0 10px }
+      .statement p { font-size: 1.85rem; line-height: 1.12 }
+      .section { padding-top: 96px }
+      .section-head { margin-bottom: 34px }
+      .section-title { font-size: clamp(2.5rem, 12.5vw, 3.4rem) }
+      .section-lead { font-size: 1.02rem; margin-top: 18px }
+
+      .metrics-grid { gap: 10px }
+      .metric-card { gap: 4px }
+      .scholar-panel { gap: 10px; margin-top: 10px }
+      .scholar-panel > .panel { padding: 22px 20px }
+      .cite-chart { min-height: 220px }
+
+      /* swipeable carousels instead of very long stacks */
+      .bento, .proj-grid, .skills-grid {
+        display: flex; gap: 12px; overflow-x: auto; scroll-snap-type: x mandatory; overscroll-behavior-x: contain;
+        margin: 0 -16px; padding: 4px 16px 20px; scroll-padding: 0 16px; scrollbar-width: none; -webkit-overflow-scrolling: touch
+      }
+      .bento::-webkit-scrollbar, .proj-grid::-webkit-scrollbar, .skills-grid::-webkit-scrollbar { display: none }
+      .bento > *, .proj-grid > *, .skills-grid > * { flex: 0 0 84%; scroll-snap-align: start; min-height: 0 }
+      .skills-grid > * { flex-basis: 74% }
+      .bento > * { padding: 24px }
+      .b-icon { margin-bottom: 0 }
+      .bento h3 { margin-top: 22px; font-size: 1.3rem }
+      .b-hero h3 { font-size: 1.55rem }
+      .proj-card { padding: 24px; min-height: 230px }
+      #research .section-head::after, #projects .section-head::after {
+        content: "Swipe  →"; display: block; margin-top: 18px; font-family: var(--mono); font-size: .68rem; letter-spacing: .16em;
+        text-transform: uppercase; color: var(--dim); white-space: pre
+      }
+
+      #lab-canvas { height: 340px }
+      .console-bar { padding: 12px }
+      .lab-tabs { flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none }
+      .lab-readout { padding: 16px 18px 18px }
+
+      .pub-toolbar { border-radius: 20px; padding: 8px }
+      .pub-filter { flex-wrap: nowrap; overflow-x: auto; margin: 0 -8px; padding: 0 8px; scrollbar-width: none; width: calc(100% + 16px) }
+      .pub-filter::-webkit-scrollbar, .lab-tabs::-webkit-scrollbar { display: none }
+      .pub-filter .filter-btn { flex: none }
+      .pub-card { padding: 20px 20px 18px; gap: 6px }
+      .pub-title { font-size: 1.04rem }
+      .pub-venue { font-size: .82rem }
+      .pub-citations { top: 18px; right: 18px }
+
+      .about-grid { gap: 36px }
+      .about-bio p { font-size: 1rem; line-height: 1.72 }
+      .about-bio p:first-child { font-size: 1.18rem }
+      .collab-list li { padding: 6px 12px; font-size: .8rem }
+      .info-card { padding: 4px 18px }
+
+      .tl-entry { padding: 20px }
+      .tl-title { font-size: 1.12rem }
+      .tl-desc { font-size: .9rem }
+      .service-stats { padding: 24px 4px }
+      .service-intro { padding: 22px; font-size: .95rem }
+      .grant-card { padding: 24px }
+      .thesis-grid .tl-entry { padding: 20px }
+
+      #contact { padding: 110px 0 90px }
+      #contact::before { top: 40px; height: 360px }
+      .contact-heading { font-size: 17vw }
+      .contact-cta { display: grid; grid-template-columns: 1fr }
+      .contact-cta .btn { justify-content: center }
+      .contact-links { margin-top: 48px; grid-template-columns: minmax(0, 1fr) }
+      .footer-mark { padding: 44px 0 28px; font-size: 15.5vw }
+    }
+
+    /* touch screens: no sticky hover states, tactile press feedback, bigger targets */
+    @media (hover: none) {
+      body { -webkit-tap-highlight-color: transparent }
+      .spot::before, .spot::after { display: none }
+      .btn:hover, .pub-card:hover, a.proj-card:hover, .contact-link:hover, .nav-cta:hover { transform: none }
+      .pub-card:hover::before { top: 24px; bottom: 24px; opacity: .55 }
+      .btn:active, .contact-link:active, a.proj-card:active, .filter-btn:active, .dock a:active { transform: scale(.97); transition-duration: .1s }
+      .filter-btn { min-height: 40px }
+      .pub-links a { padding: 8px 12px }
+    }
+
+    /* mobile menu: links cascade in */
+    .mobile-menu a { opacity: 0; transform: translateY(16px); transition: opacity .4s var(--ease), transform .5s var(--ease), color .2s }
+    .mobile-menu.open a { opacity: 1; transform: none }
+    .mobile-menu.open a:nth-child(3) { transition-delay: .04s } .mobile-menu.open a:nth-child(4) { transition-delay: .08s }
+    .mobile-menu.open a:nth-child(5) { transition-delay: .12s } .mobile-menu.open a:nth-child(6) { transition-delay: .16s }
+    .mobile-menu.open a:nth-child(7) { transition-delay: .2s } .mobile-menu.open a:nth-child(8) { transition-delay: .24s }
+    .mobile-menu.open a:nth-child(9) { transition-delay: .28s } .mobile-menu.open a:nth-child(10) { transition-delay: .32s }
+    .mobile-menu.open a:nth-child(11) { transition-delay: .36s }
 
     @media (prefers-reduced-motion: reduce) {
       *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important }
@@ -2661,6 +2801,14 @@
     </div>
   </nav>
 
+  <!-- MOBILE DOCK (thumb navigation, shown after the hero on small screens) -->
+  <div class="dock" id="dock" role="navigation" aria-label="Quick">
+    <a href="#research">Research</a>
+    <a href="#publications">Papers</a>
+    <a href="#lab">Lab</a>
+    <a href="#contact" class="dock-cta">Contact</a>
+  </div>
+
   <main id="main">
 
   <!-- HERO -->
@@ -3583,7 +3731,7 @@
         <div class="kicker">Research &amp; Experience</div>
         <h2 class="section-title">The path<br><span class="grad">so far.</span></h2>
       </div>
-      <div class="timeline" id="tl-list" data-collapse="5" data-more="earlier roles">
+      <div class="timeline" id="tl-list" data-collapse="5" data-collapse-m="3" data-more="earlier roles">
 
         <div class="tl-entry">
           <div class="tl-dot purple"></div>
@@ -3788,7 +3936,7 @@
       </div>
 
       <div class="service-sub sub-label">Reviewer for</div>
-      <ul class="review-grid" id="review-list" data-collapse="12" data-more="journals">
+      <ul class="review-grid" id="review-list" data-collapse="12" data-collapse-m="6" data-more="journals">
         <li class="review-card"><span><span class="rv-name">Discover Artificial Intelligence</span><span class="rv-pub">Springer Nature · ISSN 2731-0809</span></span><span class="rv-count">11 reviews</span></li>
         <li class="review-card"><span><span class="rv-name">Scientific Reports</span><span class="rv-pub">Springer Nature · ISSN 2045-2322</span></span><span class="rv-count">11 reviews</span></li>
         <li class="review-card"><span><span class="rv-name">Pervasive and Mobile Computing</span><span class="rv-pub">Elsevier · ISSN 1574-1192</span></span><span class="rv-count">5 reviews</span></li>
@@ -3842,7 +3990,7 @@
         </div>
         <button class="filter-btn" id="thesis-lang-toggle" aria-label="Toggle thesis language">IT</button>
       </div>
-      <div class="thesis-grid" id="thesis-list" data-collapse="4" data-more="theses">
+      <div class="thesis-grid" id="thesis-list" data-collapse="4" data-collapse-m="2" data-more="theses">
 
         <div class="tl-entry">
           <div class="tl-dot purple"></div>
@@ -4282,6 +4430,7 @@
     (function () {
       const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
       const finePointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+      const small = window.matchMedia('(max-width: 600px)').matches;
 
       // HERO CANVAS — a node graph that reaches for the pointer; skipped for reduced motion, paused off-screen
       (function () {
@@ -4408,7 +4557,7 @@
       });
 
       // SCROLL: progress bar, nav state, statement fill
-      const nav = document.querySelector('nav'), bar = document.getElementById('progress');
+      const nav = document.querySelector('nav'), bar = document.getElementById('progress'), dock = document.getElementById('dock');
       const stmt = document.querySelector('.statement p');
       let ticking = false;
       function onScroll() {
@@ -4416,6 +4565,7 @@
         const y = window.scrollY, max = document.documentElement.scrollHeight - innerHeight;
         bar.style.transform = `scaleX(${max > 0 ? y / max : 0})`;
         nav.classList.toggle('scrolled', y > 20);
+        if (dock) dock.classList.toggle('show', y > innerHeight * .75 && y < max - 160);
         if (stmt && words.length && !reduceMotion) {
           const r = stmt.getBoundingClientRect();
           const k = Math.max(0, Math.min(1, (innerHeight * .85 - r.top) / (r.height + innerHeight * .35)));
@@ -4457,7 +4607,7 @@
 
       // COLLAPSIBLE LISTS — first n items, then a "show all" button (everything stays in the HTML)
       document.querySelectorAll('[data-collapse]').forEach(listEl => {
-        const n = +listEl.dataset.collapse, items = Array.from(listEl.children);
+        const n = +((small && listEl.dataset.collapseM) || listEl.dataset.collapse), items = Array.from(listEl.children);
         if (items.length <= n) return;
         const btn = document.createElement('button');
         btn.type = 'button'; btn.className = 'btn btn-ghost more-btn';
@@ -4481,7 +4631,7 @@
       // PUBLICATIONS: filter · search · sort · show more
       const list = document.getElementById('pub-list');
       if (list) {
-        const LIMIT = 10;
+        const LIMIT = small ? 6 : 10;
         const cards = Array.from(list.querySelectorAll('.pub-card'));
         const search = document.getElementById('pub-search');
         const sort = document.getElementById('pub-sort');
@@ -4552,6 +4702,7 @@
           navLinks.forEach(a => a.classList.remove('active'));
           const link = navLinks.get(e.target.id);
           if (link) link.classList.add('active');
+          if (dock) dock.querySelectorAll('a').forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + e.target.id));
         });
       }, { rootMargin: '-45% 0px -50% 0px' });
       document.querySelectorAll('section[id]').forEach(s => so.observe(s));
