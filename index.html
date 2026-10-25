@@ -149,6 +149,20 @@
     a { color: inherit }
     button, input, select { font: inherit; color: inherit }
     ::selection { background: var(--lime); color: #05070b }
+
+    /* ── scrollbar: thin dark track, gradient thumb that glows on hover ── */
+    /* Chromium drops the ::-webkit-scrollbar styles once scrollbar-color is set, so that is Firefox-only */
+    @supports not selector(::-webkit-scrollbar) {
+      html { scrollbar-width: thin; scrollbar-color: rgba(200, 255, 77, .45) var(--bg) }
+    }
+    ::-webkit-scrollbar { width: 10px; height: 10px }
+    ::-webkit-scrollbar-track { background: var(--bg) }
+    ::-webkit-scrollbar-thumb {
+      background: linear-gradient(180deg, var(--lime), var(--violet)); border-radius: 999px;
+      border: 3px solid var(--bg); background-clip: padding-box
+    }
+    ::-webkit-scrollbar-thumb:hover { border-width: 2px; box-shadow: 0 0 10px rgba(200, 255, 77, .5) }
+    ::-webkit-scrollbar-corner { background: var(--bg) }
     strong { color: #fff; font-weight: 600 }
 
     .sr-only {
@@ -193,13 +207,10 @@
     nav.scrolled { border-bottom-color: var(--line); background: rgba(5, 7, 11, .8) }
     nav .wrap { height: 100%; display: flex; align-items: center; gap: 28px }
     .nav-logo {
-      font-family: var(--display); font-weight: 700; font-size: 1.1rem; letter-spacing: -.02em;
-      text-decoration: none; display: flex; align-items: center; gap: 8px
+      font-family: var(--display); font-weight: 700; font-size: 1.35rem; letter-spacing: -.04em;
+      text-decoration: none
     }
-    .nav-logo i {
-      width: 9px; height: 9px; border-radius: 50%; background: var(--lime);
-      box-shadow: 0 0 12px var(--lime); display: inline-block
-    }
+    .nav-logo span { color: var(--lime); text-shadow: 0 0 14px rgba(200, 255, 77, .6) }
     .nav-links { list-style: none; display: flex; gap: 4px; margin-left: auto }
     .nav-links a {
       display: block; padding: 6px 12px; border-radius: 999px; font-size: .8rem; color: var(--muted);
@@ -2511,7 +2522,7 @@
   <!-- NAV -->
   <nav aria-label="Main">
     <div class="wrap">
-      <a href="#hero" class="nav-logo" aria-label="Back to top"><i></i>Sammartino</a>
+      <a href="#hero" class="nav-logo" aria-label="Back to top">VS<span>.</span></a>
       <ul class="nav-links">
         <li><a href="#research">Research</a></li>
         <li><a href="#metrics">Impact</a></li>
