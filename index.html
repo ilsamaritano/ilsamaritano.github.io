@@ -852,21 +852,30 @@
     @media (max-width: 600px) {
       nav { top: calc(10px + env(safe-area-inset-top)) }
 
-      /* hero: oversized name, app-style buttons, swipeable profile chips */
-      #hero { padding: calc(var(--nav-h) + 36px + env(safe-area-inset-top)) 0 48px; align-items: flex-start }
-      .hero-grid { gap: 26px; grid-template-columns: minmax(0, 1fr) }
-      .hero-visual { max-width: 116px }
-      .hero-visual::before { inset: -30% }
-      .photo-frame { aspect-ratio: 1; border-radius: 30px; box-shadow: 0 24px 60px -20px rgba(139, 108, 255, .6), 0 0 0 5px rgba(255, 255, 255, .03) }
+      /* hero: compact, content-sized — avatar beside the status, oversized name, app-style buttons */
+      #hero { min-height: 0; padding: calc(var(--nav-h) + 22px + env(safe-area-inset-top)) 0 34px; align-items: flex-start }
+      #hero::after { height: 90px }
+      .hero-grid {
+        gap: 0 14px; grid-template-columns: 72px minmax(0, 1fr); align-items: center;
+        grid-template-areas: "photo status" "name name" "title title" "cta cta" "meta meta"
+      }
+      .hero-left { display: contents }
+      .hero-visual { grid-area: photo; order: 0; max-width: none; width: 72px; justify-self: start }
+      .hero-visual::before { inset: -35% }
+      .photo-frame { aspect-ratio: 1; border-radius: 22px; box-shadow: 0 16px 40px -14px rgba(139, 108, 255, .7), 0 0 0 4px rgba(255, 255, 255, .03) }
       .photo-tag { display: none }
-      .hero-status { font-size: .74rem; padding-right: 12px; line-height: 1.35 }
-      .hero-name { font-size: 19.5vw; margin-top: 22px; line-height: .9 }
+      .hero-status {
+        grid-area: status; justify-self: start; flex-direction: column; align-items: flex-start; gap: 6px;
+        padding: 0; border: 0; background: none; backdrop-filter: none; -webkit-backdrop-filter: none;
+        font-size: .76rem; line-height: 1.35; color: var(--muted)
+      }
+      .hero-name { grid-area: name; font-size: 19.5vw; margin-top: 22px; line-height: .9 }
       .hero-name .last { font-size: 1em }
-      .hero-title { font-size: 1.08rem; min-height: 2.7em; margin-top: 20px }
-      .hero-cta { display: grid; grid-template-columns: 1fr; gap: 10px; margin-top: 28px }
-      .hero-cta .btn { justify-content: center; padding: 16px 20px; font-size: .95rem }
+      .hero-title { grid-area: title; font-size: .95rem; white-space: nowrap; min-height: 1.4em; margin-top: 14px }
+      .hero-cta { grid-area: cta; display: grid; grid-template-columns: 1fr; gap: 10px; margin-top: 22px }
+      .hero-cta .btn { justify-content: center; padding: 15px 20px; font-size: .95rem }
       .hero-meta {
-        flex-wrap: nowrap; overflow-x: auto; gap: 8px; margin: 26px -16px 0; padding: 0 16px 4px; border-top: 0;
+        grid-area: meta; flex-wrap: nowrap; overflow-x: auto; gap: 8px; margin: 18px -16px 0; padding: 0 16px 4px; border-top: 0;
         scrollbar-width: none; -webkit-overflow-scrolling: touch
       }
       .hero-meta::-webkit-scrollbar { display: none }
@@ -874,7 +883,7 @@
       .scroll-cue { display: none }
 
       .marquee { padding: 16px 0 }
-      .statement { padding: 96px 0 10px }
+      .statement { padding: 64px 0 0 }
       .statement p { font-size: 1.85rem; line-height: 1.12 }
       .section { padding-top: 96px }
       .section-head { margin-bottom: 34px }
