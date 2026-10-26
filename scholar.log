@@ -1,8 +1,8 @@
-Scholar 2026-10-25 — 221 citations · h-index 10 · i10-index 10 · 41 indexed works
+Scholar 2026-10-26 — 222 citations · h-index 10 · i10-index 10 · 41 indexed works
 indexed works: 41 Scholar records → 39 distinct works
 
 Per-publication citation changes: 1
-  pub-6      4 → 5   Quantifying Resilience of Cyber-Physical Systems to Zero-Day
+  pub-7      4 → 5   Blockchain-Enabled Quantum-Resistant Hybrid Isogeny-Based Si
 
 updated: index.html, llms.txt, readme.md, sitemap.xml, tools/build-profile.ps1
-now run:  pwsh tools/build-profile.ps1 -AsOf 2026-10-25 && python tools/build-llms-pubs.py && python tools/validate.py
+now run:  pwsh tools/build-profile.ps1 -AsOf 2026-10-26 && python tools/build-llms-pubs.py && python tools/validate.py

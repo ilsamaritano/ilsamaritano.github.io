@@ -1,11 +1,11 @@
-ORCID 0009-0002-4632-1179 — 38 work groups, 31 review journals, 72 reviews
+ORCID 0009-0002-4632-1179 — 38 work groups, 31 review journals, 73 reviews
 
-Peer review: site total 72 → ORCID total 72
-  (in sync)
+Peer review: site total 72 → ORCID total 73
+  2213-1248  1 → 2   Journal of King Saud University – Computer and Information Sciences
 
 Identifier links to add: 0
 
 ON THE SITE BUT NOT ON ORCID (6): pub-10, pub-14, pub-15, pub-35, pub-39, pub-9
   (fine for preprints ORCID doesn't list; otherwise add them to ORCID)
 
-applied: nothing to do
+applied: llms.txt peer-review figures; readme.md peer-review figures; build-profile.ps1 peer-review table; index.html peer review → 73 reviews / 31 journals; sync date → 2026-10-26

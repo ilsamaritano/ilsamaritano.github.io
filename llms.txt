@@ -8,10 +8,10 @@
 > cyber-physical systems resilience, quantum machine learning and post-quantum security,
 > 6G far-edge digital twins, UAV swarm security with TinyML and Edge AI,
 > security of LLM-driven multi-agent systems, NLP.
-> 39 publications listed here; the 39 indexed by Google Scholar (25 October 2026) are cited
-> 221 times · h-index 10 · i10-index 10.
-> Citations per year: 3 (2024) · 20 (2025) · 198 (2026, year to date).
-> Peer reviewer for 31 international journals (72 reviews recorded on ORCID, 2026), including
+> 39 publications listed here; the 39 indexed by Google Scholar (26 October 2026) are cited
+> 222 times · h-index 10 · i10-index 10.
+> Citations per year: 3 (2024) · 20 (2025) · 199 (2026, year to date).
+> Peer reviewer for 31 international journals (73 reviews recorded on ORCID, 2026), including
 > IEEE Transactions on Neural Networks and Learning Systems, ACM Computing Surveys, Scientific Reports,
 > Computers & Security and Future Generation Computer Systems.
 > Scopus Author ID: 59166600100 · SciProfiles: 3668849
@@ -20,7 +20,7 @@
 > Email: vincesammartino@gmail.com (institutional: vincenzo.sammartino@phd.unipi.it)
 > Personal site: https://ilsamaritano.github.io
 > Institutional profile (University of Pisa): https://people.unipi.it/vincenzo_sammartino/
-> Last updated: 2026-10-25. All bibliometric figures below carry this observation date;
+> Last updated: 2026-10-26. All bibliometric figures below carry this observation date;
 > when quoting them, state both the source (Google Scholar) and the date.
 
 ---
@@ -65,7 +65,7 @@
   (docente formatore) for Casa di Cura San Rossore in Pisa, through the training agency SOCIP, on the
   NIS2 Directive (EU 2022/2555, Italian D.Lgs. 138/2024), the GDPR (EU 2016/679) and health-data
   protection, cyber risk management, incident handling and security awareness for healthcare staff.
-- **Peer review?** 72 reviews for 31 journals in 2026, recorded on ORCID.
+- **Peer review?** 73 reviews for 31 journals in 2026, recorded on ORCID.
 - **Contact?** vincesammartino@gmail.com — open to research collaborations, visiting positions and
   industry partnerships in AI, cybersecurity and digital twin architectures.
 
@@ -84,11 +84,11 @@
   "orcid": "0009-0002-4632-1179",
   "scopusAuthorId": "59166600100",
   "sciProfilesId": "3668849",
-  "peerReview": { "reviews": 72, "journals": 31, "year": 2026, "source": "https://orcid.org/0009-0002-4632-1179" },
+  "peerReview": { "reviews": 73, "journals": 31, "year": 2026, "source": "https://orcid.org/0009-0002-4632-1179" },
   "googleScholar": "https://scholar.google.com/citations?user=lQig7SEAAAAJ",
   "metrics": {
-    "citations": 221, "hIndex": 10, "i10Index": 10, "worksIndexedByScholar": 39, "publicationsListed": 39, "asOf": "2026-10-25",
-    "citationsByYear": { "2024": 3, "2025": 20, "2026": 198 },
+    "citations": 222, "hIndex": 10, "i10Index": 10, "worksIndexedByScholar": 39, "publicationsListed": 39, "asOf": "2026-10-26",
+    "citationsByYear": { "2024": 3, "2025": 20, "2026": 199 },
     "source": "Google Scholar"
   },
   "website": "https://ilsamaritano.github.io",
@@ -119,10 +119,10 @@
 ---
 
 <!-- PUBS:START -->
-## Publications (39 listed; the 39 indexed by Google Scholar are cited 221 times, h-index 10, i10-index 10 — 2026-10-25)
+## Publications (39 listed; the 39 indexed by Google Scholar are cited 222 times, h-index 10, i10-index 10 — 2026-10-26)
 
 Entries are grouped by year, then by citation count (descending). Each entry carries its output
-type and its Google Scholar citation count as of 2026-10-25. Canonical ids (`pub-N`) match
+type and its Google Scholar citation count as of 2026-10-26. Canonical ids (`pub-N`) match
 profile.json and the page anchors at https://ilsamaritano.github.io/#pub-N.
 
 ### 2026
@@ -153,15 +153,15 @@ profile.json and the page anchors at https://ilsamaritano.github.io/#pub-N.
   *IEEE International Conference on Pervasive Computing and Communications (PerCom Workshops 2026)*, 2026. [Conference · 9 citations]
   DOI: https://doi.org/10.1109/PerComWorkshops68308.2026.11585207
 
+- **Blockchain-Enabled Quantum-Resistant Hybrid Isogeny-Based Signcryption Framework for Digital Twin-Assisted Healthcare System**
+  A.K. Pandey, V. Sammartino, A. Vangala, A.K. Das
+  *IEEE Communications Standards Magazine*, 2026. [Journal · 5 citations]
+  DOI: https://doi.org/10.1109/MCOMSTD.2026.3665935
+
 - **Quantifying Resilience of Cyber-Physical Systems to Zero-Day Threats: A Security Twin-Based What-If Analysis Framework**
   F. Baiardi, V. Sammartino
   *ESREL 2026 — European Safety and Reliability Conference, Book of Proceedings, pp. 3304–3311 · Research Publishing, Singapore*, 2026. [Conference · 5 citations]
   ARPI: https://arpi.unipi.it/handle/11568/1345228
-
-- **Blockchain-Enabled Quantum-Resistant Hybrid Isogeny-Based Signcryption Framework for Digital Twin-Assisted Healthcare System**
-  A.K. Pandey, V. Sammartino, A. Vangala, A.K. Das
-  *IEEE Communications Standards Magazine*, 2026. [Journal · 4 citations]
-  DOI: https://doi.org/10.1109/MCOMSTD.2026.3665935
 
 - **HAVE: Host Active Verification Engine for Closing the Contextual Reality Gap in Security Digital Twins**
   V. Sammartino, M. Pasquini
@@ -337,7 +337,7 @@ profile.json and the page anchors at https://ilsamaritano.github.io/#pub-N.
 
 ---
 
-## Peer Review (72 reviews for 31 journals, all 2026 — recorded on ORCID)
+## Peer Review (73 reviews for 31 journals, all 2026 — recorded on ORCID)
 
 | Journal | Publisher | ISSN | Reviews |
 |---|---|---|---|
@@ -357,7 +357,7 @@ profile.json and the page anchors at https://ilsamaritano.github.io/#pub-N.
 | Journal of Big Data | Springer Nature | 2196-1115 | 1 |
 | Discover Computing | Springer Nature | 2948-2992 | 1 |
 | International Journal of Data Science and Analytics | Springer Nature | 2364-4168 | 1 |
-| Journal of King Saud University – Computer and Information Sciences | Springer Nature | 2213-1248 | 1 |
+| Journal of King Saud University – Computer and Information Sciences | Springer Nature | 2213-1248 | 2 |
 | PeerJ Computer Science | PeerJ | 2376-5992 | 1 |
 | Computers, Materials & Continua | Tech Science Press | 1546-2218 | 4 |
 | Computer Systems Science and Engineering | Tech Science Press | 0267-6192 | 1 |

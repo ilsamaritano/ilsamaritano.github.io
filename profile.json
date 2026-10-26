@@ -2,7 +2,7 @@
   "document": "Machine-readable academic profile of Vincenzo Sammartino",
   "canonicalUrl": "https://ilsamaritano.github.io/profile.json",
   "generatedFrom": "https://ilsamaritano.github.io/ (index.html publication record)",
-  "lastUpdated": "2026-10-25",
+  "lastUpdated": "2026-10-26",
   "license": "CC BY 4.0 — attribution: Vincenzo Sammartino, https://ilsamaritano.github.io/",
   "usage": {
     "audience": "Search engines, AI assistants, research-indexing agents and scripts.",
@@ -69,17 +69,17 @@
   "metrics": {
     "source": "Google Scholar",
     "sourceUrl": "https://scholar.google.com/citations?user=lQig7SEAAAAJ",
-    "asOf": "2026-10-25",
-    "citations": 221,
+    "asOf": "2026-10-26",
+    "citations": 222,
     "hIndex": 10,
     "i10Index": 10,
     "indexedWorks": 39,
     "citationsByYear": {
       "2024": 3,
       "2025": 20,
-      "2026": 198
+      "2026": 199
     },
-    "note": "Metrics cover the 39 publications listed here, of which 39 are indexed by Google Scholar. 2026 is year to date. Sum of per-publication citation counts in this file: 215 (Google Scholar's profile total may differ slightly because of merged or duplicate records)."
+    "note": "Metrics cover the 39 publications listed here, of which 39 are indexed by Google Scholar. 2026 is year to date. Sum of per-publication citation counts in this file: 216 (Google Scholar's profile total may differ slightly because of merged or duplicate records)."
   },
   "positions": [
     {
@@ -384,7 +384,7 @@
       "type": "journal",
       "outputForm": "Journal",
       "year": 2026,
-      "citations": 4,
+      "citations": 5,
       "url": "https://ilsamaritano.github.io/#pub-7",
       "identifiers": [
         {
@@ -1097,7 +1097,7 @@
   "peerReview": {
     "source": "https://orcid.org/0009-0002-4632-1179",
     "year": 2026,
-    "reviews": 72,
+    "reviews": 73,
     "journals": 31,
     "detail": [
       {
@@ -1200,7 +1200,7 @@
         "journal": "Journal of King Saud University – Computer and Information Sciences",
         "publisher": "Springer Nature",
         "issn": "2213-1248",
-        "reviews": 1
+        "reviews": 2
       },
       {
         "journal": "PeerJ Computer Science",

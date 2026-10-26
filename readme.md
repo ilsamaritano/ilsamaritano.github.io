@@ -5,7 +5,7 @@
 [![Live](https://img.shields.io/badge/Live-ilsamaritano.github.io-00e5ff?style=flat-square&logo=github)](https://ilsamaritano.github.io)
 [![License](https://img.shields.io/badge/License-MIT-7c3aed?style=flat-square)](LICENSE)
 [![ORCID](https://img.shields.io/badge/ORCID-0009--0002--4632--1179-a6ce39?style=flat-square&logo=orcid)](https://orcid.org/0009-0002-4632-1179)
-[![Citations](https://img.shields.io/badge/Citations-221-10b981?style=flat-square)](https://scholar.google.com/citations?user=lQig7SEAAAAJ)
+[![Citations](https://img.shields.io/badge/Citations-222-10b981?style=flat-square)](https://scholar.google.com/citations?user=lQig7SEAAAAJ)
 [![H-Index](https://img.shields.io/badge/H--Index-10-10b981?style=flat-square)](https://scholar.google.com/citations?user=lQig7SEAAAAJ)
 [![i10-Index](https://img.shields.io/badge/i10--Index-10-10b981?style=flat-square)](https://scholar.google.com/citations?user=lQig7SEAAAAJ)
 
@@ -27,10 +27,10 @@ The implementation is intentionally dependency-free at the deployment level — 
 | **Visiting Position** | VSRP Intern, KAUST · Thuwal, Saudi Arabia (Jan–Jun 2026) |
 | **Supervisors** | Prof. Fabrizio Baiardi (UniPi) · Prof. Salvatore Ruggieri (UniPi) · Prof. Roberto Di Pietro (KAUST) |
 | **Research Areas** | Security Twin · Digital Twin Architectures · Cyber-Physical Systems Resilience · Quantum ML & Post-Quantum Security · 6G Edge Digital Twins · UAV Swarm Security · TinyML / Edge AI · NLP |
-| **Total Citations** | 221 (Google Scholar, 25 October 2026) |
+| **Total Citations** | 222 (Google Scholar, 26 October 2026) |
 | **H-Index / i10-Index** | 10 / 10 |
 | **Publications** | 39 — 39 indexed by Google Scholar (IEEE · Springer · Elsevier · CRC/Taylor & Francis · arXiv / SSRN preprints) |
-| **Peer Review** | 72 reviews for 31 journals (2026, ORCID) — incl. IEEE TNNLS, ACM Computing Surveys, Scientific Reports, Computers & Security, FGCS |
+| **Peer Review** | 73 reviews for 31 journals (2026, ORCID) — incl. IEEE TNNLS, ACM Computing Surveys, Scientific Reports, Computers & Security, FGCS |
 | **Research Grant** | *Smart Security for Connected Cyber-Physical Systems: Paradigms, Threats and AI-based Defenses* — Università di Pisa (2026) · [event website](https://connected-skies.github.io/) |
 | **Identifiers** | ORCID 0009-0002-4632-1179 · Scopus 59166600100 · SciProfiles 3668849 |
 
@@ -192,7 +192,7 @@ The canonical live endpoint is: **[https://ilsamaritano.github.io](https://ilsam
 
 ## Selected Publications
 
-Most-cited works (Google Scholar, 25 October 2026). The complete record is on the website, in [`profile.json`](profile.json) and [`llms.txt`](llms.txt), on [Google Scholar](https://scholar.google.com/citations?user=lQig7SEAAAAJ) and [ORCID](https://orcid.org/0009-0002-4632-1179).
+Most-cited works (Google Scholar, 26 October 2026). The complete record is on the website, in [`profile.json`](profile.json) and [`llms.txt`](llms.txt), on [Google Scholar](https://scholar.google.com/citations?user=lQig7SEAAAAJ) and [ORCID](https://orcid.org/0009-0002-4632-1179).
 
 - *AI-Enabled Cybersecurity Using Synthetic Data* — **IEEE PerCom 2025** · 17 citations
 - *Anticipating Disasters through a Security Twin* — Dynamics of Disasters: Hybrid Threats, Springer, 2026 · 14 citations
