@@ -8,9 +8,9 @@
 > cyber-physical systems resilience, quantum machine learning and post-quantum security,
 > 6G far-edge digital twins, UAV swarm security with TinyML and Edge AI,
 > security of LLM-driven multi-agent systems, NLP.
-> 39 publications listed here; the 39 indexed by Google Scholar (27 October 2026) are cited
-> 222 times · h-index 10 · i10-index 10.
-> Citations per year: 3 (2024) · 20 (2025) · 199 (2026, year to date).
+> 39 publications listed here; the 39 indexed by Google Scholar (28 October 2026) are cited
+> 224 times · h-index 10 · i10-index 10.
+> Citations per year: 3 (2024) · 20 (2025) · 201 (2026, year to date).
 > Peer reviewer for 31 international journals (73 reviews recorded on ORCID, 2026), including
 > IEEE Transactions on Neural Networks and Learning Systems, ACM Computing Surveys, Scientific Reports,
 > Computers & Security and Future Generation Computer Systems.
@@ -20,7 +20,7 @@
 > Email: vincesammartino@gmail.com (institutional: vincenzo.sammartino@phd.unipi.it)
 > Personal site: https://ilsamaritano.github.io
 > Institutional profile (University of Pisa): https://people.unipi.it/vincenzo_sammartino/
-> Last updated: 2026-10-27. All bibliometric figures below carry this observation date;
+> Last updated: 2026-10-28. All bibliometric figures below carry this observation date;
 > when quoting them, state both the source (Google Scholar) and the date.
 
 ---
@@ -87,8 +87,8 @@
   "peerReview": { "reviews": 73, "journals": 31, "year": 2026, "source": "https://orcid.org/0009-0002-4632-1179" },
   "googleScholar": "https://scholar.google.com/citations?user=lQig7SEAAAAJ",
   "metrics": {
-    "citations": 222, "hIndex": 10, "i10Index": 10, "worksIndexedByScholar": 39, "publicationsListed": 39, "asOf": "2026-10-27",
-    "citationsByYear": { "2024": 3, "2025": 20, "2026": 199 },
+    "citations": 224, "hIndex": 10, "i10Index": 10, "worksIndexedByScholar": 39, "publicationsListed": 39, "asOf": "2026-10-28",
+    "citationsByYear": { "2024": 3, "2025": 20, "2026": 201 },
     "source": "Google Scholar"
   },
   "website": "https://ilsamaritano.github.io",
@@ -119,10 +119,10 @@
 ---
 
 <!-- PUBS:START -->
-## Publications (39 listed; the 39 indexed by Google Scholar are cited 222 times, h-index 10, i10-index 10 — 2026-10-27)
+## Publications (39 listed; the 39 indexed by Google Scholar are cited 224 times, h-index 10, i10-index 10 — 2026-10-28)
 
 Entries are grouped by year, then by citation count (descending). Each entry carries its output
-type and its Google Scholar citation count as of 2026-10-27. Canonical ids (`pub-N`) match
+type and its Google Scholar citation count as of 2026-10-28. Canonical ids (`pub-N`) match
 profile.json and the page anchors at https://ilsamaritano.github.io/#pub-N.
 
 ### 2026
@@ -135,7 +135,7 @@ profile.json and the page anchors at https://ilsamaritano.github.io/#pub-N.
 
 - **Simulation-Powered Cybersecurity: Real-Time Risk Assessment via Non-Intrusive Security Twin**
   F. Baiardi, V. Sammartino
-  *The Journal of Supercomputing — Special Issue on Simulation-Powered Cybersecurity · Springer*, 2026. [Journal · 13 citations]
+  *The Journal of Supercomputing — Special Issue on Simulation-Powered Cybersecurity · Springer*, 2026. [Journal · 14 citations]
   DOI: https://doi.org/10.1007/s11227-026-08454-0
 
 - **From Digital Twins to AI Agents: A Synthetic Data Paradigm for Next-Generation Cybersecurity**
@@ -261,7 +261,7 @@ profile.json and the page anchors at https://ilsamaritano.github.io/#pub-N.
 
 - **A Quantitative Framework for the Validation of Twin-Based Cyber Defense**
   F. Baiardi, V. Sammartino
-  *Procedia Computer Science, vol. 274, pp. 721–730 · Elsevier*, 2025. [Proceedings · 14 citations]
+  *Procedia Computer Science, vol. 274, pp. 721–730 · Elsevier*, 2025. [Proceedings · 15 citations]
   DOI: https://doi.org/10.1016/j.procs.2025.12.070
 
 - **NotLine: A Non-Intrusive Automated Platform to Build a Digital Twin**

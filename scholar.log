@@ -1,7 +1,9 @@
-Scholar 2026-10-27 — 222 citations · h-index 10 · i10-index 10 · 41 indexed works
+Scholar 2026-10-28 — 224 citations · h-index 10 · i10-index 10 · 41 indexed works
 indexed works: 41 Scholar records → 39 distinct works
 
-Per-publication citation changes: 0
+Per-publication citation changes: 2
+  pub-23    14 → 15  A Quantitative Framework for the Validation of Twin-Based Cy
+  pub-2     13 → 14  Simulation-Powered Cybersecurity: Real-Time Risk Assessment 
 
 updated: index.html, llms.txt, readme.md, sitemap.xml, tools/build-profile.ps1
-now run:  pwsh tools/build-profile.ps1 -AsOf 2026-10-27 && python tools/build-llms-pubs.py && python tools/validate.py
+now run:  pwsh tools/build-profile.ps1 -AsOf 2026-10-28 && python tools/build-llms-pubs.py && python tools/validate.py
