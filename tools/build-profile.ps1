@@ -12,7 +12,7 @@
 
 param(
   [string]$Root = (Split-Path -Parent $PSScriptRoot),
-  [string]$AsOf = "2026-10-28"
+  [string]$AsOf = "2026-10-29"
 )
 
 $src = Join-Path $Root "index.html"
