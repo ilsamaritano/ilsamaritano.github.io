@@ -8,10 +8,10 @@
 > cyber-physical systems resilience, quantum machine learning and post-quantum security,
 > 6G far-edge digital twins, UAV swarm security with TinyML and Edge AI,
 > security of LLM-driven multi-agent systems, NLP.
-> 39 publications listed here; the 39 indexed by Google Scholar (29 October 2026) are cited
+> 39 publications listed here; the 39 indexed by Google Scholar (30 October 2026) are cited
 > 224 times · h-index 10 · i10-index 10.
 > Citations per year: 3 (2024) · 20 (2025) · 201 (2026, year to date).
-> Peer reviewer for 31 international journals (73 reviews recorded on ORCID, 2026), including
+> Peer reviewer for 31 international journals (75 reviews recorded on ORCID, 2026), including
 > IEEE Transactions on Neural Networks and Learning Systems, ACM Computing Surveys, Scientific Reports,
 > Computers & Security and Future Generation Computer Systems.
 > Scopus Author ID: 59166600100 · SciProfiles: 3668849
@@ -20,7 +20,7 @@
 > Email: vincesammartino@gmail.com (institutional: vincenzo.sammartino@phd.unipi.it)
 > Personal site: https://ilsamaritano.github.io
 > Institutional profile (University of Pisa): https://people.unipi.it/vincenzo_sammartino/
-> Last updated: 2026-10-29. All bibliometric figures below carry this observation date;
+> Last updated: 2026-10-30. All bibliometric figures below carry this observation date;
 > when quoting them, state both the source (Google Scholar) and the date.
 
 ---
@@ -65,7 +65,7 @@
   (docente formatore) for Casa di Cura San Rossore in Pisa, through the training agency SOCIP, on the
   NIS2 Directive (EU 2022/2555, Italian D.Lgs. 138/2024), the GDPR (EU 2016/679) and health-data
   protection, cyber risk management, incident handling and security awareness for healthcare staff.
-- **Peer review?** 73 reviews for 31 journals in 2026, recorded on ORCID.
+- **Peer review?** 75 reviews for 31 journals in 2026, recorded on ORCID.
 - **Contact?** vincesammartino@gmail.com — open to research collaborations, visiting positions and
   industry partnerships in AI, cybersecurity and digital twin architectures.
 
@@ -84,10 +84,10 @@
   "orcid": "0009-0002-4632-1179",
   "scopusAuthorId": "59166600100",
   "sciProfilesId": "3668849",
-  "peerReview": { "reviews": 73, "journals": 31, "year": 2026, "source": "https://orcid.org/0009-0002-4632-1179" },
+  "peerReview": { "reviews": 75, "journals": 31, "year": 2026, "source": "https://orcid.org/0009-0002-4632-1179" },
   "googleScholar": "https://scholar.google.com/citations?user=lQig7SEAAAAJ",
   "metrics": {
-    "citations": 224, "hIndex": 10, "i10Index": 10, "worksIndexedByScholar": 39, "publicationsListed": 39, "asOf": "2026-10-29",
+    "citations": 224, "hIndex": 10, "i10Index": 10, "worksIndexedByScholar": 39, "publicationsListed": 39, "asOf": "2026-10-30",
     "citationsByYear": { "2024": 3, "2025": 20, "2026": 201 },
     "source": "Google Scholar"
   },
@@ -119,10 +119,10 @@
 ---
 
 <!-- PUBS:START -->
-## Publications (39 listed; the 39 indexed by Google Scholar are cited 224 times, h-index 10, i10-index 10 — 2026-10-29)
+## Publications (39 listed; the 39 indexed by Google Scholar are cited 224 times, h-index 10, i10-index 10 — 2026-10-30)
 
 Entries are grouped by year, then by citation count (descending). Each entry carries its output
-type and its Google Scholar citation count as of 2026-10-29. Canonical ids (`pub-N`) match
+type and its Google Scholar citation count as of 2026-10-30. Canonical ids (`pub-N`) match
 profile.json and the page anchors at https://ilsamaritano.github.io/#pub-N.
 
 ### 2026
@@ -337,11 +337,11 @@ profile.json and the page anchors at https://ilsamaritano.github.io/#pub-N.
 
 ---
 
-## Peer Review (73 reviews for 31 journals, all 2026 — recorded on ORCID)
+## Peer Review (75 reviews for 31 journals, all 2026 — recorded on ORCID)
 
 | Journal | Publisher | ISSN | Reviews |
 |---|---|---|---|
-| Discover Artificial Intelligence | Springer Nature | 2731-0809 | 11 |
+| Discover Artificial Intelligence | Springer Nature | 2731-0809 | 12 |
 | Scientific Reports | Springer Nature | 2045-2322 | 11 |
 | Pervasive and Mobile Computing | Elsevier | 1574-1192 | 5 |
 | IEEE Transactions on Neural Networks and Learning Systems | IEEE | 2162-2388 | 2 |
@@ -354,7 +354,7 @@ profile.json and the page anchors at https://ilsamaritano.github.io/#pub-N.
 | Journal of Computer Security | SAGE Publications | 1875-8924 | 1 |
 | Cluster Computing | Springer Nature | 1573-7543 | 1 |
 | Journal of Cloud Computing | Springer Nature | 2192-113X | 1 |
-| Journal of Big Data | Springer Nature | 2196-1115 | 1 |
+| Journal of Big Data | Springer Nature | 2196-1115 | 2 |
 | Discover Computing | Springer Nature | 2948-2992 | 1 |
 | International Journal of Data Science and Analytics | Springer Nature | 2364-4168 | 1 |
 | Journal of King Saud University – Computer and Information Sciences | Springer Nature | 2213-1248 | 2 |
