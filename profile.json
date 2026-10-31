@@ -2,7 +2,7 @@
   "document": "Machine-readable academic profile of Vincenzo Sammartino",
   "canonicalUrl": "https://ilsamaritano.github.io/profile.json",
   "generatedFrom": "https://ilsamaritano.github.io/ (index.html publication record)",
-  "lastUpdated": "2026-10-30",
+  "lastUpdated": "2026-10-31",
   "license": "CC BY 4.0 — attribution: Vincenzo Sammartino, https://ilsamaritano.github.io/",
   "usage": {
     "audience": "Search engines, AI assistants, research-indexing agents and scripts.",
@@ -69,17 +69,17 @@
   "metrics": {
     "source": "Google Scholar",
     "sourceUrl": "https://scholar.google.com/citations?user=lQig7SEAAAAJ",
-    "asOf": "2026-10-30",
-    "citations": 224,
+    "asOf": "2026-10-31",
+    "citations": 225,
     "hIndex": 10,
     "i10Index": 10,
     "indexedWorks": 39,
     "citationsByYear": {
       "2024": 3,
       "2025": 20,
-      "2026": 201
+      "2026": 202
     },
-    "note": "Metrics cover the 39 publications listed here, of which 39 are indexed by Google Scholar. 2026 is year to date. Sum of per-publication citation counts in this file: 218 (Google Scholar's profile total may differ slightly because of merged or duplicate records)."
+    "note": "Metrics cover the 39 publications listed here, of which 39 are indexed by Google Scholar. 2026 is year to date. Sum of per-publication citation counts in this file: 219 (Google Scholar's profile total may differ slightly because of merged or duplicate records)."
   },
   "positions": [
     {
@@ -350,6 +350,29 @@
       ]
     },
     {
+      "id": "pub-7",
+      "title": "Blockchain-Enabled Quantum-Resistant Hybrid Isogeny-Based Signcryption Framework for Digital Twin-Assisted Healthcare System",
+      "authors": [
+        "A.K. Pandey",
+        "V. Sammartino",
+        "A. Vangala",
+        "A.K. Das"
+      ],
+      "authorPosition": 2,
+      "venue": "IEEE Communications Standards Magazine",
+      "type": "journal",
+      "outputForm": "Journal",
+      "year": 2026,
+      "citations": 6,
+      "url": "https://ilsamaritano.github.io/#pub-7",
+      "identifiers": [
+        {
+          "label": "DOI",
+          "url": "https://doi.org/10.1109/MCOMSTD.2026.3665935"
+        }
+      ]
+    },
+    {
       "id": "pub-6",
       "title": "Quantifying Resilience of Cyber-Physical Systems to Zero-Day Threats: A Security Twin-Based What-If Analysis Framework",
       "authors": [
@@ -367,29 +390,6 @@
         {
           "label": "ARPI",
           "url": "https://arpi.unipi.it/handle/11568/1345228"
-        }
-      ]
-    },
-    {
-      "id": "pub-7",
-      "title": "Blockchain-Enabled Quantum-Resistant Hybrid Isogeny-Based Signcryption Framework for Digital Twin-Assisted Healthcare System",
-      "authors": [
-        "A.K. Pandey",
-        "V. Sammartino",
-        "A. Vangala",
-        "A.K. Das"
-      ],
-      "authorPosition": 2,
-      "venue": "IEEE Communications Standards Magazine",
-      "type": "journal",
-      "outputForm": "Journal",
-      "year": 2026,
-      "citations": 5,
-      "url": "https://ilsamaritano.github.io/#pub-7",
-      "identifiers": [
-        {
-          "label": "DOI",
-          "url": "https://doi.org/10.1109/MCOMSTD.2026.3665935"
         }
       ]
     },

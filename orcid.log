@@ -1,12 +1,11 @@
 ORCID 0009-0002-4632-1179 — 38 work groups, 31 review journals, 75 reviews
 
-Peer review: site total 73 → ORCID total 75
-  2196-1115  1 → 2   Journal of Big Data
-  2731-0809  11 → 12   Discover Artificial Intelligence
+Peer review: site total 75 → ORCID total 75
+  (in sync)
 
 Identifier links to add: 0
 
 ON THE SITE BUT NOT ON ORCID (6): pub-10, pub-14, pub-15, pub-35, pub-39, pub-9
   (fine for preprints ORCID doesn't list; otherwise add them to ORCID)
 
-applied: llms.txt peer-review figures; readme.md peer-review figures; build-profile.ps1 peer-review table; index.html peer review → 75 reviews / 31 journals; sync date → 2026-10-30
+applied: nothing to do

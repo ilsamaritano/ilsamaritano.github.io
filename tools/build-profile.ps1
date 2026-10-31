@@ -12,7 +12,7 @@
 
 param(
   [string]$Root = (Split-Path -Parent $PSScriptRoot),
-  [string]$AsOf = "2026-10-30"
+  [string]$AsOf = "2026-10-31"
 )
 
 $src = Join-Path $Root "index.html"
@@ -116,11 +116,11 @@ $profile = [ordered]@{
     source           = "Google Scholar"
     sourceUrl        = "https://scholar.google.com/citations?user=lQig7SEAAAAJ"
     asOf             = $asOf
-    citations        = 224
+    citations        = 225
     hIndex           = 10
     i10Index         = 10
     indexedWorks     = 39
-    citationsByYear  = [ordered]@{ '2024' = 3; '2025' = 20; '2026' = 201 }
+    citationsByYear  = [ordered]@{ '2024' = 3; '2025' = 20; '2026' = 202 }
     note             = "Metrics cover the $($pubs.Count) publications listed here, of which 39 are indexed by Google Scholar. 2026 is year to date. Sum of per-publication citation counts in this file: $total (Google Scholar's profile total may differ slightly because of merged or duplicate records)."
   }
   positions      = @(
