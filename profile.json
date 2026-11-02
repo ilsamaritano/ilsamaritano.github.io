@@ -2,7 +2,7 @@
   "document": "Machine-readable academic profile of Vincenzo Sammartino",
   "canonicalUrl": "https://ilsamaritano.github.io/profile.json",
   "generatedFrom": "https://ilsamaritano.github.io/ (index.html publication record)",
-  "lastUpdated": "2026-11-01",
+  "lastUpdated": "2026-11-02",
   "license": "CC BY 4.0 — attribution: Vincenzo Sammartino, https://ilsamaritano.github.io/",
   "usage": {
     "audience": "Search engines, AI assistants, research-indexing agents and scripts.",
@@ -69,7 +69,7 @@
   "metrics": {
     "source": "Google Scholar",
     "sourceUrl": "https://scholar.google.com/citations?user=lQig7SEAAAAJ",
-    "asOf": "2026-11-01",
+    "asOf": "2026-11-02",
     "citations": 225,
     "hIndex": 10,
     "i10Index": 10,
@@ -1097,8 +1097,8 @@
   "peerReview": {
     "source": "https://orcid.org/0009-0002-4632-1179",
     "year": 2026,
-    "reviews": 76,
-    "journals": 32,
+    "reviews": 77,
+    "journals": 33,
     "detail": [
       {
         "journal": "Discover Artificial Intelligence",
@@ -1290,6 +1290,12 @@
         "journal": "The Journal of Supercomputing",
         "publisher": "Springer Nature",
         "issn": "1573-0484",
+        "reviews": 1
+      },
+      {
+        "journal": "IEEE Transactions on Mobile Computing",
+        "publisher": "IEEE Computer Society",
+        "issn": "1558-0660",
         "reviews": 1
       }
     ]

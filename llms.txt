@@ -8,10 +8,10 @@
 > cyber-physical systems resilience, quantum machine learning and post-quantum security,
 > 6G far-edge digital twins, UAV swarm security with TinyML and Edge AI,
 > security of LLM-driven multi-agent systems, NLP.
-> 39 publications listed here; the 39 indexed by Google Scholar (1 November 2026) are cited
+> 39 publications listed here; the 39 indexed by Google Scholar (2 November 2026) are cited
 > 225 times · h-index 10 · i10-index 10.
 > Citations per year: 3 (2024) · 20 (2025) · 202 (2026, year to date).
-> Peer reviewer for 32 international journals (76 reviews recorded on ORCID, 2026), including
+> Peer reviewer for 33 international journals (77 reviews recorded on ORCID, 2026), including
 > IEEE Transactions on Neural Networks and Learning Systems, ACM Computing Surveys, Scientific Reports,
 > Computers & Security and Future Generation Computer Systems.
 > Scopus Author ID: 59166600100 · SciProfiles: 3668849
@@ -20,7 +20,7 @@
 > Email: vincesammartino@gmail.com (institutional: vincenzo.sammartino@phd.unipi.it)
 > Personal site: https://ilsamaritano.github.io
 > Institutional profile (University of Pisa): https://people.unipi.it/vincenzo_sammartino/
-> Last updated: 2026-11-01. All bibliometric figures below carry this observation date;
+> Last updated: 2026-11-02. All bibliometric figures below carry this observation date;
 > when quoting them, state both the source (Google Scholar) and the date.
 
 ---
@@ -65,7 +65,7 @@
   (docente formatore) for Casa di Cura San Rossore in Pisa, through the training agency SOCIP, on the
   NIS2 Directive (EU 2022/2555, Italian D.Lgs. 138/2024), the GDPR (EU 2016/679) and health-data
   protection, cyber risk management, incident handling and security awareness for healthcare staff.
-- **Peer review?** 76 reviews for 32 journals in 2026, recorded on ORCID.
+- **Peer review?** 77 reviews for 33 journals in 2026, recorded on ORCID.
 - **Contact?** vincesammartino@gmail.com — open to research collaborations, visiting positions and
   industry partnerships in AI, cybersecurity and digital twin architectures.
 
@@ -84,10 +84,10 @@
   "orcid": "0009-0002-4632-1179",
   "scopusAuthorId": "59166600100",
   "sciProfilesId": "3668849",
-  "peerReview": { "reviews": 76, "journals": 32, "year": 2026, "source": "https://orcid.org/0009-0002-4632-1179" },
+  "peerReview": { "reviews": 77, "journals": 33, "year": 2026, "source": "https://orcid.org/0009-0002-4632-1179" },
   "googleScholar": "https://scholar.google.com/citations?user=lQig7SEAAAAJ",
   "metrics": {
-    "citations": 225, "hIndex": 10, "i10Index": 10, "worksIndexedByScholar": 39, "publicationsListed": 39, "asOf": "2026-11-01",
+    "citations": 225, "hIndex": 10, "i10Index": 10, "worksIndexedByScholar": 39, "publicationsListed": 39, "asOf": "2026-11-02",
     "citationsByYear": { "2024": 3, "2025": 20, "2026": 202 },
     "source": "Google Scholar"
   },
@@ -119,10 +119,10 @@
 ---
 
 <!-- PUBS:START -->
-## Publications (39 listed; the 39 indexed by Google Scholar are cited 225 times, h-index 10, i10-index 10 — 2026-11-01)
+## Publications (39 listed; the 39 indexed by Google Scholar are cited 225 times, h-index 10, i10-index 10 — 2026-11-02)
 
 Entries are grouped by year, then by citation count (descending). Each entry carries its output
-type and its Google Scholar citation count as of 2026-11-01. Canonical ids (`pub-N`) match
+type and its Google Scholar citation count as of 2026-11-02. Canonical ids (`pub-N`) match
 profile.json and the page anchors at https://ilsamaritano.github.io/#pub-N.
 
 ### 2026
@@ -337,7 +337,7 @@ profile.json and the page anchors at https://ilsamaritano.github.io/#pub-N.
 
 ---
 
-## Peer Review (76 reviews for 32 journals, all 2026 — recorded on ORCID)
+## Peer Review (77 reviews for 33 journals, all 2026 — recorded on ORCID)
 
 | Journal | Publisher | ISSN | Reviews |
 |---|---|---|---|
@@ -373,6 +373,7 @@ profile.json and the page anchors at https://ilsamaritano.github.io/#pub-N.
 | Computers | MDPI | 2073-431X | 2 |
 | IET Quantum Communication | Institution of Engineering and Technology | 2632-8925 | 1 |
 | The Journal of Supercomputing | Springer Nature | 1573-0484 | 1 |
+| IEEE Transactions on Mobile Computing | IEEE Computer Society | 1558-0660 | 1 |
 
 ## Research Grant
 
