@@ -2,7 +2,7 @@
   "document": "Machine-readable academic profile of Vincenzo Sammartino",
   "canonicalUrl": "https://ilsamaritano.github.io/profile.json",
   "generatedFrom": "https://ilsamaritano.github.io/ (index.html publication record)",
-  "lastUpdated": "2026-11-04",
+  "lastUpdated": "2026-11-05",
   "license": "CC BY 4.0 — attribution: Vincenzo Sammartino, https://ilsamaritano.github.io/",
   "usage": {
     "audience": "Search engines, AI assistants, research-indexing agents and scripts.",
@@ -69,7 +69,7 @@
   "metrics": {
     "source": "Google Scholar",
     "sourceUrl": "https://scholar.google.com/citations?user=lQig7SEAAAAJ",
-    "asOf": "2026-11-04",
+    "asOf": "2026-11-05",
     "citations": 225,
     "hIndex": 10,
     "i10Index": 10,
@@ -1097,8 +1097,8 @@
   "peerReview": {
     "source": "https://orcid.org/0009-0002-4632-1179",
     "year": 2026,
-    "reviews": 79,
-    "journals": 34,
+    "reviews": 82,
+    "journals": 36,
     "detail": [
       {
         "journal": "Discover Artificial Intelligence",
@@ -1212,7 +1212,7 @@
         "journal": "Computers, Materials & Continua",
         "publisher": "Tech Science Press",
         "issn": "1546-2218",
-        "reviews": 4
+        "reviews": 5
       },
       {
         "journal": "Computer Systems Science and Engineering",
@@ -1302,6 +1302,18 @@
         "journal": "International Journal of Computational Intelligence Systems",
         "publisher": "Springer Nature",
         "issn": "1875-6883",
+        "reviews": 1
+      },
+      {
+        "journal": "Computer Modeling in Engineering & Sciences",
+        "publisher": "Tech Science Press",
+        "issn": "1526-1492",
+        "reviews": 1
+      },
+      {
+        "journal": "Discover Applied Sciences",
+        "publisher": "Springer Nature",
+        "issn": "3004-9261",
         "reviews": 1
       }
     ]
