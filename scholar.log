@@ -1,7 +1,18 @@
-Scholar 2026-11-08 — 225 citations · h-index 10 · i10-index 10 · 41 indexed works
+Scholar 2026-11-09 — 236 citations · h-index 10 · i10-index 11 · 41 indexed works
 indexed works: 41 Scholar records → 39 distinct works
 
-Per-publication citation changes: 0
+Per-publication citation changes: 11
+  pub-19    19 → 20  AI-Enabled Cybersecurity Using Synthetic Data
+  pub-1     17 → 18  Anticipating Disasters through a Security Twin
+  pub-20    16 → 17  A Framework for Proactive Cyber-Resilience: Non-Intrusive Mo
+  pub-21    16 → 17  A Security Twin to Defeat Intrusions in Cyber Physical Syste
+  pub-23    15 → 16  A Quantitative Framework for the Validation of Twin-Based Cy
+  pub-2     14 → 15  Simulation-Powered Cybersecurity: Real-Time Risk Assessment 
+  pub-22    13 → 14  NotLine: A Non-Intrusive Automated Platform to Build a Digit
+  pub-3     12 → 13  From Digital Twins to AI Agents: A Synthetic Data Paradigm f
+  pub-4     11 → 12  Quantifying the Impact of CVSS Score Ordering on Attack Path
+  pub-5      9 → 10  Evaluating Adversary Strategies Through a Security Twin
+  pub-36     0 → 1   Vulnerabilities in Autonomous Execution: A Survey of Securit
 
 updated: index.html, llms.txt, readme.md, sitemap.xml, tools/build-profile.ps1
-now run:  pwsh tools/build-profile.ps1 -AsOf 2026-11-08 && python tools/build-llms-pubs.py && python tools/validate.py
+now run:  pwsh tools/build-profile.ps1 -AsOf 2026-11-09 && python tools/build-llms-pubs.py && python tools/validate.py

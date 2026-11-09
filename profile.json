@@ -2,7 +2,7 @@
   "document": "Machine-readable academic profile of Vincenzo Sammartino",
   "canonicalUrl": "https://ilsamaritano.github.io/profile.json",
   "generatedFrom": "https://ilsamaritano.github.io/ (index.html publication record)",
-  "lastUpdated": "2026-11-08",
+  "lastUpdated": "2026-11-09",
   "license": "CC BY 4.0 — attribution: Vincenzo Sammartino, https://ilsamaritano.github.io/",
   "usage": {
     "audience": "Search engines, AI assistants, research-indexing agents and scripts.",
@@ -69,17 +69,17 @@
   "metrics": {
     "source": "Google Scholar",
     "sourceUrl": "https://scholar.google.com/citations?user=lQig7SEAAAAJ",
-    "asOf": "2026-11-08",
-    "citations": 225,
+    "asOf": "2026-11-09",
+    "citations": 236,
     "hIndex": 10,
-    "i10Index": 10,
+    "i10Index": 11,
     "indexedWorks": 39,
     "citationsByYear": {
       "2024": 3,
       "2025": 20,
-      "2026": 202
+      "2026": 213
     },
-    "note": "Metrics cover the 39 publications listed here, of which 39 are indexed by Google Scholar. 2026 is year to date. Sum of per-publication citation counts in this file: 219 (Google Scholar's profile total may differ slightly because of merged or duplicate records)."
+    "note": "Metrics cover the 39 publications listed here, of which 39 are indexed by Google Scholar. 2026 is year to date. Sum of per-publication citation counts in this file: 230 (Google Scholar's profile total may differ slightly because of merged or duplicate records)."
   },
   "positions": [
     {
@@ -251,7 +251,7 @@
       "type": "book",
       "outputForm": "Book Chapter",
       "year": 2026,
-      "citations": 17,
+      "citations": 18,
       "url": "https://ilsamaritano.github.io/#pub-1",
       "identifiers": [
         {
@@ -276,7 +276,7 @@
       "type": "journal",
       "outputForm": "Journal",
       "year": 2026,
-      "citations": 14,
+      "citations": 15,
       "url": "https://ilsamaritano.github.io/#pub-2",
       "identifiers": [
         {
@@ -297,7 +297,7 @@
       "type": "book",
       "outputForm": "Book Chapter",
       "year": 2026,
-      "citations": 12,
+      "citations": 13,
       "url": "https://ilsamaritano.github.io/#pub-3",
       "identifiers": [
         {
@@ -318,7 +318,7 @@
       "type": "conference",
       "outputForm": "Conference",
       "year": 2026,
-      "citations": 11,
+      "citations": 12,
       "url": "https://ilsamaritano.github.io/#pub-4",
       "identifiers": [
         {
@@ -340,7 +340,7 @@
       "type": "conference",
       "outputForm": "Conference",
       "year": 2026,
-      "citations": 9,
+      "citations": 10,
       "url": "https://ilsamaritano.github.io/#pub-5",
       "identifiers": [
         {
@@ -607,6 +607,34 @@
       ]
     },
     {
+      "id": "pub-36",
+      "title": "Vulnerabilities in Autonomous Execution: A Survey of Security Threats and Defenses in LLM-Driven Agentic and Multi-Agent Systems",
+      "authors": [
+        "V. Sammartino"
+      ],
+      "authorPosition": 1,
+      "venue": "Knowledge-Based Systems · Elsevier (preprint: SSRN 7218206)",
+      "type": "journal",
+      "outputForm": "Journal",
+      "year": 2026,
+      "citations": 1,
+      "url": "https://ilsamaritano.github.io/#pub-36",
+      "identifiers": [
+        {
+          "label": "ARPI",
+          "url": "https://arpi.unipi.it/handle/11568/1369147"
+        },
+        {
+          "label": "DOI",
+          "url": "https://doi.org/10.2139/ssrn.7218206"
+        },
+        {
+          "label": "SSRN",
+          "url": "https://ssrn.com/abstract=7218206"
+        }
+      ]
+    },
+    {
       "id": "pub-16",
       "title": "SMCC-Empowered Digital Twins for Sensorless Monitoring in Large-Scale AI-Driven IoT Systems",
       "authors": [
@@ -676,34 +704,6 @@
       ]
     },
     {
-      "id": "pub-36",
-      "title": "Vulnerabilities in Autonomous Execution: A Survey of Security Threats and Defenses in LLM-Driven Agentic and Multi-Agent Systems",
-      "authors": [
-        "V. Sammartino"
-      ],
-      "authorPosition": 1,
-      "venue": "Knowledge-Based Systems · Elsevier (preprint: SSRN 7218206)",
-      "type": "journal",
-      "outputForm": "Journal",
-      "year": 2026,
-      "citations": 0,
-      "url": "https://ilsamaritano.github.io/#pub-36",
-      "identifiers": [
-        {
-          "label": "ARPI",
-          "url": "https://arpi.unipi.it/handle/11568/1369147"
-        },
-        {
-          "label": "DOI",
-          "url": "https://doi.org/10.2139/ssrn.7218206"
-        },
-        {
-          "label": "SSRN",
-          "url": "https://ssrn.com/abstract=7218206"
-        }
-      ]
-    },
-    {
       "id": "pub-39",
       "title": "Consensus and Factual Dynamics in Large Populations of Interacting Language Models",
       "authors": [
@@ -739,7 +739,7 @@
       "type": "conference",
       "outputForm": "Conference",
       "year": 2025,
-      "citations": 19,
+      "citations": 20,
       "url": "https://ilsamaritano.github.io/#pub-19",
       "identifiers": [
         {
@@ -761,7 +761,7 @@
       "type": "conference",
       "outputForm": "Conference",
       "year": 2025,
-      "citations": 16,
+      "citations": 17,
       "url": "https://ilsamaritano.github.io/#pub-21",
       "identifiers": [
         {
@@ -781,7 +781,7 @@
       "type": "conference",
       "outputForm": "Conference",
       "year": 2025,
-      "citations": 16,
+      "citations": 17,
       "url": "https://ilsamaritano.github.io/#pub-20",
       "identifiers": [
         {
@@ -802,7 +802,7 @@
       "type": "conference",
       "outputForm": "Proceedings",
       "year": 2025,
-      "citations": 15,
+      "citations": 16,
       "url": "https://ilsamaritano.github.io/#pub-23",
       "identifiers": [
         {
@@ -824,7 +824,7 @@
       "type": "conference",
       "outputForm": "Conference",
       "year": 2025,
-      "citations": 13,
+      "citations": 14,
       "url": "https://ilsamaritano.github.io/#pub-22",
       "identifiers": [
         {
@@ -1097,7 +1097,7 @@
   "peerReview": {
     "source": "https://orcid.org/0009-0002-4632-1179",
     "year": 2026,
-    "reviews": 82,
+    "reviews": 83,
     "journals": 36,
     "detail": [
       {
@@ -1188,7 +1188,7 @@
         "journal": "Discover Computing",
         "publisher": "Springer Nature",
         "issn": "2948-2992",
-        "reviews": 2
+        "reviews": 3
       },
       {
         "journal": "International Journal of Data Science and Analytics",

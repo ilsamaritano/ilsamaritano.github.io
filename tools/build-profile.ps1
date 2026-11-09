@@ -12,7 +12,7 @@
 
 param(
   [string]$Root = (Split-Path -Parent $PSScriptRoot),
-  [string]$AsOf = "2026-11-08"
+  [string]$AsOf = "2026-11-09"
 )
 
 $src = Join-Path $Root "index.html"
@@ -116,11 +116,11 @@ $profile = [ordered]@{
     source           = "Google Scholar"
     sourceUrl        = "https://scholar.google.com/citations?user=lQig7SEAAAAJ"
     asOf             = $asOf
-    citations        = 225
+    citations        = 236
     hIndex           = 10
-    i10Index         = 10
+    i10Index         = 11
     indexedWorks     = 39
-    citationsByYear  = [ordered]@{ '2024' = 3; '2025' = 20; '2026' = 202 }
+    citationsByYear  = [ordered]@{ '2024' = 3; '2025' = 20; '2026' = 213 }
     note             = "Metrics cover the $($pubs.Count) publications listed here, of which 39 are indexed by Google Scholar. 2026 is year to date. Sum of per-publication citation counts in this file: $total (Google Scholar's profile total may differ slightly because of merged or duplicate records)."
   }
   positions      = @(
@@ -154,7 +154,7 @@ $profile = [ordered]@{
   peerReview     = [ordered]@{
     source   = "https://orcid.org/0009-0002-4632-1179"
     year     = 2026
-    reviews  = 82
+    reviews  = 83
     journals = 36
     detail   = @(
       [ordered]@{ journal = "Discover Artificial Intelligence"; publisher = "Springer Nature"; issn = "2731-0809"; reviews = 12 },
@@ -171,7 +171,7 @@ $profile = [ordered]@{
       [ordered]@{ journal = "Cluster Computing"; publisher = "Springer Nature"; issn = "1573-7543"; reviews = 1 },
       [ordered]@{ journal = "Journal of Cloud Computing"; publisher = "Springer Nature"; issn = "2192-113X"; reviews = 1 },
       [ordered]@{ journal = "Journal of Big Data"; publisher = "Springer Nature"; issn = "2196-1115"; reviews = 2 },
-      [ordered]@{ journal = "Discover Computing"; publisher = "Springer Nature"; issn = "2948-2992"; reviews = 2 },
+      [ordered]@{ journal = "Discover Computing"; publisher = "Springer Nature"; issn = "2948-2992"; reviews = 3 },
       [ordered]@{ journal = "International Journal of Data Science and Analytics"; publisher = "Springer Nature"; issn = "2364-4168"; reviews = 1 },
       [ordered]@{ journal = "Journal of King Saud University – Computer and Information Sciences"; publisher = "Springer Nature"; issn = "2213-1248"; reviews = 2 },
       [ordered]@{ journal = "PeerJ Computer Science"; publisher = "PeerJ"; issn = "2376-5992"; reviews = 1 },
