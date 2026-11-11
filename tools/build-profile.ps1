@@ -12,7 +12,7 @@
 
 param(
   [string]$Root = (Split-Path -Parent $PSScriptRoot),
-  [string]$AsOf = "2026-11-10"
+  [string]$AsOf = "2026-11-11"
 )
 
 $src = Join-Path $Root "index.html"
@@ -154,7 +154,7 @@ $profile = [ordered]@{
   peerReview     = [ordered]@{
     source   = "https://orcid.org/0009-0002-4632-1179"
     year     = 2026
-    reviews  = 83
+    reviews  = 84
     journals = 36
     detail   = @(
       [ordered]@{ journal = "Discover Artificial Intelligence"; publisher = "Springer Nature"; issn = "2731-0809"; reviews = 12 },
@@ -170,7 +170,7 @@ $profile = [ordered]@{
       [ordered]@{ journal = "Journal of Computer Security"; publisher = "SAGE Publications"; issn = "1875-8924"; reviews = 1 },
       [ordered]@{ journal = "Cluster Computing"; publisher = "Springer Nature"; issn = "1573-7543"; reviews = 1 },
       [ordered]@{ journal = "Journal of Cloud Computing"; publisher = "Springer Nature"; issn = "2192-113X"; reviews = 1 },
-      [ordered]@{ journal = "Journal of Big Data"; publisher = "Springer Nature"; issn = "2196-1115"; reviews = 2 },
+      [ordered]@{ journal = "Journal of Big Data"; publisher = "Springer Nature"; issn = "2196-1115"; reviews = 3 },
       [ordered]@{ journal = "Discover Computing"; publisher = "Springer Nature"; issn = "2948-2992"; reviews = 3 },
       [ordered]@{ journal = "International Journal of Data Science and Analytics"; publisher = "Springer Nature"; issn = "2364-4168"; reviews = 1 },
       [ordered]@{ journal = "Journal of King Saud University – Computer and Information Sciences"; publisher = "Springer Nature"; issn = "2213-1248"; reviews = 2 },
