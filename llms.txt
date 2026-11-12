@@ -337,7 +337,17 @@ profile.json and the page anchors at https://ilsamaritano.github.io/#pub-N.
 
 ---
 
+<<<<<<< Updated upstream
 ## Peer Review (84 reviews for 36 journals, all 2026 — recorded on ORCID)
+=======
+## Editorial Role
+
+- **Guest Editor** (2026 – present), *Discover Analytics* — Springer Nature. Co-editor of the topical collection [“Resilience for ICT/OT Infrastructures in the AI era”](https://link.springer.com/collections/bhjjadhdgf), focusing on the evaluation and defense of critical IT/OT networks against AI-driven threats and automated exploits.
+
+---
+
+## Peer Review (82 reviews for 36 journals, all 2026 — recorded on ORCID)
+>>>>>>> Stashed changes
 
 | Journal | Publisher | ISSN | Reviews |
 |---|---|---|---|
