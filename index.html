@@ -505,6 +505,20 @@
     }
     .b-hero h3 { font-size: clamp(1.8rem, 3vw, 2.6rem); max-width: 540px; letter-spacing: -.04em }
     .b-hero .b-links { margin-top: 22px; display: flex; flex-wrap: wrap; gap: 8px 22px; font-size: .9rem }
+    /* line drawings in the corner of each research card; .flow marks the animated path */
+    .b-art {
+      position: absolute; top: 26px; right: 26px; width: 132px; height: 88px; color: var(--accent); opacity: .5;
+      pointer-events: none; overflow: visible; transition: opacity .4s, transform .6s var(--ease)
+    }
+    .b-art.v { color: var(--violet) }
+    .b-art * { fill: none; stroke: currentColor; stroke-width: 1.3; stroke-linecap: round; stroke-linejoin: round }
+    .b-art .f { fill: currentColor; stroke: none }
+    .b-art .d { stroke-dasharray: 2 5; opacity: .7 }
+    .b-art .flow { stroke-dasharray: 4 6; stroke-width: 1.6; animation: flow 1.8s linear infinite; animation-play-state: paused }
+    @keyframes flow { to { stroke-dashoffset: -20 } }
+    .spot:hover .b-art { opacity: 1; transform: translateY(-3px) }
+    .spot:hover .b-art .flow { animation-play-state: running }
+    .b-hero .b-art { width: 170px; height: 96px; top: 18px; right: 30px; opacity: .7 }
 
     /* ═════════ ABOUT ═════════ */
     .about-grid { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, .75fr); gap: 64px; align-items: start }
@@ -603,7 +617,8 @@
     }
     .pub-card:hover { border-color: var(--line-2); background: var(--surface-2); transform: translateY(-3px); box-shadow: 0 30px 60px -36px rgba(0, 0, 0, .9) }
     .pub-card:hover::before { opacity: 1; top: 0; bottom: 0 }
-    .pub-card:target { border-color: var(--accent) }
+    .pub-card:target { border-color: var(--accent); animation: target-pulse 1.4s var(--ease) 2 }
+    @keyframes target-pulse { from { box-shadow: 0 0 0 0 rgba(41, 151, 255, .5) } to { box-shadow: 0 0 0 16px rgba(41, 151, 255, 0) } }
     .pub-card[hidden], .is-collapsed { display: none !important }
     .pub-year { font-family: var(--mono); font-size: .7rem; letter-spacing: .1em; text-transform: uppercase; color: var(--tc); padding-right: 110px }
     .pub-card[data-type="conference"] { --tc: var(--mint) }
@@ -632,9 +647,12 @@
 
     /* ═════════ EXPERIENCE timeline: a rail with glowing nodes ═════════ */
     .timeline { position: relative; display: grid; gap: 14px; padding-left: 34px }
-    .timeline::before {
-      content: ""; position: absolute; left: 6px; top: 12px; bottom: 12px; width: 1px;
-      background: linear-gradient(180deg, var(--accent), var(--violet) 40%, var(--line) 100%)
+    .timeline::before, .timeline::after { content: ""; position: absolute; left: 6px; top: 12px; bottom: 12px; width: 1px }
+    .timeline::before { background: var(--line-2) }
+    /* the lit part of the rail follows the scroll (--tp, 0..1, set by the script; full without it) */
+    .timeline::after {
+      background: linear-gradient(180deg, var(--accent), var(--violet)); transform-origin: top; transform: scaleY(var(--tp, 1));
+      box-shadow: 0 0 12px rgba(41, 151, 255, .7)
     }
     .tl-entry {
       position: relative; display: grid; grid-template-columns: 200px minmax(0, 1fr); gap: 6px 36px; padding: 28px 30px;
@@ -773,7 +791,7 @@
     footer a:hover { color: var(--accent) }
 
     /* ── scroll reveals (only when JS runs) ── */
-    html.js .reveal { opacity: 0; transform: translateY(28px); filter: blur(6px); transition: opacity .9s var(--ease), transform .9s var(--ease), filter .9s var(--ease) }
+    html.js .reveal { opacity: 0; transform: translateY(24px); filter: blur(6px); transition: opacity .75s var(--ease), transform .75s var(--ease), filter .75s var(--ease) }
     html.js .reveal.visible { opacity: 1; transform: none; filter: none }
 
     /* ═════════ responsive ═════════ */
@@ -818,7 +836,8 @@
       .statement { padding-top: 110px }
       .console-bar .lab-tabs { margin-left: 0 }
       .timeline { padding-left: 24px }
-      .timeline::before { left: 4px }
+      .timeline::before, .timeline::after { left: 4px }
+      .b-art, .b-hero .b-art { width: 96px; height: 64px; top: 18px; right: 18px }
       .timeline .tl-dot { left: -26px; top: 30px; width: 11px; height: 11px }
     }
 
@@ -2788,8 +2807,8 @@
   <!-- MOBILE MENU -->
   <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
     <button class="mobile-close" id="mobile-close" aria-label="Close menu">✕</button>
-    <a href="#research">Research</a>
     <a href="#metrics">Impact</a>
+    <a href="#research">Research</a>
     <a href="#lab">Lab</a>
     <a href="#publications">Publications</a>
     <a href="#about">About</a>
@@ -2805,8 +2824,8 @@
     <div class="wrap">
       <a href="#hero" class="nav-logo" aria-label="Back to top">VS<span>.</span></a>
       <ul class="nav-links">
-        <li><a href="#research">Research</a></li>
         <li><a href="#metrics">Impact</a></li>
+        <li><a href="#research">Research</a></li>
         <li><a href="#lab">Lab</a></li>
         <li><a href="#publications">Publications</a></li>
         <li><a href="#about">About</a></li>
@@ -2969,6 +2988,15 @@
       <div class="bento">
         <article class="spot b-wide b-hero reveal">
           <div class="b-icon">ST</div>
+          <!-- a real network (solid) and its twin (dashed), with an attack path being tried on the twin -->
+          <svg class="b-art" viewBox="0 0 170 96" aria-hidden="true">
+            <path d="M16 48 44 22 72 48 44 74Z"/>
+            <circle class="f" cx="16" cy="48" r="3.5"/><circle class="f" cx="44" cy="22" r="3.5"/><circle class="f" cx="72" cy="48" r="3.5"/><circle class="f" cx="44" cy="74" r="3.5"/>
+            <path class="d" d="M76 48h18"/>
+            <path class="d" d="M98 48 126 74 154 48"/>
+            <path class="flow" d="M98 48 126 22 154 48"/>
+            <circle cx="98" cy="48" r="4"/><circle cx="126" cy="22" r="4"/><circle cx="154" cy="48" r="4"/><circle cx="126" cy="74" r="4"/>
+          </svg>
           <h3>Digital Twin &amp; Security Twin architectures</h3>
           <p>Real-time, non-intrusive threat assessment, what-if analysis and attack-path reasoning for
             cyber-physical systems — the core of my PhD.</p>
@@ -2980,31 +3008,75 @@
         </article>
         <article class="spot b-small reveal">
           <div class="b-icon v">CPS</div>
+          <svg class="b-art v" viewBox="0 0 132 88" aria-hidden="true">
+            <path d="M66 8 96 20v24c0 18-14 30-30 36-16-6-30-18-30-36V20Z"/>
+            <path class="flow" d="M66 39V24M61 47 52 58M71 47l9 11"/>
+            <circle cx="66" cy="44" r="5"/>
+            <circle class="f" cx="66" cy="22" r="2.5"/><circle class="f" cx="51" cy="60" r="2.5"/><circle class="f" cx="81" cy="60" r="2.5"/>
+          </svg>
           <h3>Cyber-physical resilience</h3>
           <p>Attack-path analysis and autonomous defence for industrial and critical systems.</p>
         </article>
         <article class="spot b-small reveal">
           <div class="b-icon v">QML</div>
+          <svg class="b-art v" viewBox="0 0 132 88" aria-hidden="true">
+            <circle cx="66" cy="44" r="32"/>
+            <ellipse class="d" cx="66" cy="44" rx="32" ry="10"/>
+            <path class="d" d="M66 8v72"/>
+            <path class="flow" d="M66 44 88 22"/>
+            <circle class="f" cx="88" cy="22" r="3.5"/><circle class="f" cx="66" cy="44" r="2"/>
+          </svg>
           <h3>Quantum ML &amp; post-quantum security</h3>
           <p>Hybrid quantum-classical networks for detection and physical-layer authentication.</p>
         </article>
         <article class="spot b-small reveal">
           <div class="b-icon">6G</div>
+          <svg class="b-art" viewBox="0 0 132 88" aria-hidden="true">
+            <path d="M22 58v22M14 80h16"/>
+            <circle class="f" cx="22" cy="56" r="3.5"/>
+            <path d="M34 44a17 17 0 0 1 0 24M44 36a28 28 0 0 1 0 40"/>
+            <path class="d" d="M54 28a40 40 0 0 1 0 56"/>
+            <rect x="94" y="16" width="24" height="16" rx="4"/><rect x="98" y="56" width="24" height="16" rx="4"/>
+            <path class="flow" d="M66 46 92 28M68 60l28 4"/>
+          </svg>
           <h3>6G &amp; far-edge digital twins</h3>
           <p>Twins that live at the network edge, close to the devices they mirror.</p>
         </article>
         <article class="spot b-small reveal">
           <div class="b-icon v">UAV</div>
+          <svg class="b-art v" viewBox="0 0 132 88" aria-hidden="true">
+            <path d="M58 40 38 24M74 40l20-16M58 50 38 64M74 50l20 14"/>
+            <rect x="56" y="37" width="20" height="15" rx="4"/>
+            <ellipse cx="38" cy="22" rx="14" ry="4"/><ellipse cx="94" cy="22" rx="14" ry="4"/>
+            <ellipse cx="38" cy="66" rx="14" ry="4"/><ellipse cx="94" cy="66" rx="14" ry="4"/>
+            <path class="flow" d="M110 40q10 4 0 12M22 40q-10 4 0 12"/>
+            <circle class="f" cx="66" cy="44.5" r="2.5"/>
+          </svg>
           <h3>UAV swarm security</h3>
           <p>ResilientGuard at KAUST: Byzantine-resilient detection with TinyML on every drone.</p>
         </article>
         <article class="spot b-mid reveal">
           <div class="b-icon">LLM</div>
+          <svg class="b-art" viewBox="0 0 132 88" aria-hidden="true">
+            <path class="d" d="M26 18 66 30M26 44 66 30M26 44 66 58M26 70 66 58M66 30l40-12M66 30l40 14M66 58l40-14M66 58l40 12"/>
+            <path class="flow" d="M26 18 66 58 106 44"/>
+            <circle cx="26" cy="18" r="4.5"/><circle cx="26" cy="44" r="4.5"/><circle cx="26" cy="70" r="4.5"/>
+            <circle class="f" cx="66" cy="30" r="4.5"/><circle class="f" cx="66" cy="58" r="4.5"/>
+            <circle cx="106" cy="18" r="4.5"/><circle cx="106" cy="44" r="4.5"/><circle cx="106" cy="70" r="4.5"/>
+          </svg>
           <h3>AI-enabled cybersecurity</h3>
           <p>Synthetic data for training defences, and the security of LLM-driven multi-agent systems.</p>
         </article>
         <article class="spot b-mid reveal">
           <div class="b-icon v">DB</div>
+          <svg class="b-art v" viewBox="0 0 132 88" aria-hidden="true">
+            <ellipse cx="50" cy="20" rx="28" ry="9"/>
+            <path d="M22 20v46c0 5 12.500 9 28 9s28-4 28-9V20"/>
+            <path class="d" d="M22 36c0 5 12.500 9 28 9s28-4 28-9M22 52c0 5 12.500 9 28 9s28-4 28-9"/>
+            <rect x="90" y="48" width="26" height="22" rx="5"/>
+            <path class="flow" d="M96 48v-7a7 7 0 0 1 14 0v7"/>
+            <circle class="f" cx="103" cy="59" r="2.500"/>
+          </svg>
           <h3>Least privilege, GDPR &amp; NLP</h3>
           <p>GDPR-compliant data systems, database decomposition for least privilege, and natural language
             processing — where my research started.</p>
@@ -4597,6 +4669,7 @@
       // SCROLL: progress bar, nav state, statement fill
       const nav = document.querySelector('nav'), bar = document.getElementById('progress'), dock = document.getElementById('dock');
       const stmt = document.querySelector('.statement p');
+      const rail = document.getElementById('tl-list');
       let ticking = false;
       function onScroll() {
         ticking = false;
@@ -4610,13 +4683,26 @@
           const lit = Math.round(k * words.length);
           words.forEach((w, i) => w.classList.toggle('on', i < lit));
         }
+        if (rail && !reduceMotion) {
+          const r = rail.getBoundingClientRect();
+          rail.style.setProperty('--tp', Math.max(0, Math.min(1, (innerHeight * .7 - r.top) / r.height)).toFixed(3));
+        }
       }
       window.addEventListener('scroll', () => { if (!ticking) { ticking = true; requestAnimationFrame(onScroll); } }, { passive: true });
       onScroll();
 
       // SCROLL REVEALS
+      // Cards that enter together cascade in. Once shown, the reveal classes come off again,
+      // so each card goes back to its own (quicker) hover transitions.
       const io = new IntersectionObserver(entries => {
-        entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target) } });
+        let i = 0;
+        entries.forEach(e => {
+          if (!e.isIntersecting) return;
+          const el = e.target, delay = reduceMotion ? 0 : Math.min(i++, 5) * 70;
+          el.style.transitionDelay = delay + 'ms';
+          el.classList.add('visible'); io.unobserve(el);
+          setTimeout(() => { el.classList.remove('reveal', 'visible'); el.style.transitionDelay = ''; }, delay + 900);
+        });
       }, { threshold: .08, rootMargin: '0px 0px -40px 0px' });
       document.querySelectorAll('.tl-entry,.pub-card,.review-card,.proj-card,.skill-group,.grant-card,.contact-link')
         .forEach(el => { if (!el.closest('.reveal')) el.classList.add('reveal'); });
