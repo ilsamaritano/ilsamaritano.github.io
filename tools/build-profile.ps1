@@ -213,9 +213,19 @@ $json = $json -replace '\\u0026', '&' -replace '\\u2013', '–' -replace '\\u201
 
 # Windows PowerShell 5.1 indents JSON by aligning to the parent key, which nests very deeply.
 # Re-emit with a plain 2-space indent when Python is available (cosmetic only).
+# The CI check expects this re-indent, so on Windows fall back to the py launcher when `python`
+# is missing or is only the Microsoft Store stub (which exits with code 9009 or 49).
+$reindent = "import io,json,sys;p=sys.argv[1];d=json.load(io.open(p,encoding='utf-8'));io.open(p,'w',encoding='utf-8',newline='\n').write(json.dumps(d,indent=2,ensure_ascii=False)+'\n')"
+$done = $false
 if (Get-Command python -ErrorAction SilentlyContinue) {
-  python -c "import io,json,sys;p=sys.argv[1];d=json.load(io.open(p,encoding='utf-8'));io.open(p,'w',encoding='utf-8',newline='\n').write(json.dumps(d,indent=2,ensure_ascii=False)+'\n')" $out
+  python -c $reindent $out 2>$null
+  $done = ($LASTEXITCODE -eq 0)
 }
+if (-not $done -and (Get-Command py -ErrorAction SilentlyContinue)) {
+  py -3 -c $reindent $out
+  $done = ($LASTEXITCODE -eq 0)
+}
+if (-not $done) { Write-Warning "Python not found: profile.json left in PowerShell's indentation, and the CI staleness check will fail" }
 
 "publications: $($pubs.Count) · citation sum: $total"
 "bytes: " + (Get-Item $out).Length
