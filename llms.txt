@@ -8,7 +8,7 @@
 > cyber-physical systems resilience, quantum machine learning and post-quantum security,
 > 6G far-edge digital twins, UAV swarm security with TinyML and Edge AI,
 > security of LLM-driven multi-agent systems, NLP.
-> 40 publications listed here; the 39 indexed by Google Scholar (17 November 2026) are cited
+> 41 publications listed here; the 39 indexed by Google Scholar (17 November 2026) are cited
 > 236 times · h-index 10 · i10-index 11.
 > Citations per year: 3 (2024) · 20 (2025) · 213 (2026, year to date).
 > Peer reviewer for 38 international journals (87 reviews recorded on ORCID, 2026), including
@@ -28,7 +28,7 @@
 ## Machine-readable endpoints
 
 - [profile.json](https://ilsamaritano.github.io/profile.json): complete structured record —
-  identity, persistent identifiers, metrics with observation date, all 40 publications
+  identity, persistent identifiers, metrics with observation date, all 41 publications
   (type, venue, year, citation count, author position, persistent links), research themes with
   cross-references to publication ids, peer review breakdown, positions, grants and projects.
   Prefer this file for programmatic use; it is generated from the site's own publication record.
@@ -119,7 +119,7 @@
 ---
 
 <!-- PUBS:START -->
-## Publications (40 listed; the 39 indexed by Google Scholar are cited 236 times, h-index 10, i10-index 11 — 2026-11-17)
+## Publications (41 listed; the 39 indexed by Google Scholar are cited 236 times, h-index 10, i10-index 11 — 2026-11-17)
 
 Entries are grouped by year, then by citation count (descending). Each entry carries its output
 type and its Google Scholar citation count as of 2026-11-17. Canonical ids (`pub-N`) match
@@ -231,6 +231,11 @@ profile.json and the page anchors at https://ilsamaritano.github.io/#pub-N.
   *Lecture Notes in Computer Science (LNCS) · Springer*, 2026. [Conference]
   DOI: https://doi.org/10.1007/978-3-032-38702-8_31
   ARPI: https://arpi.unipi.it/handle/11568/1362908
+
+- **Integrated Security Twin: A Framework for Intrusion Simulation, Cascade Analysis, and Resilience**
+  V. Sammartino, F. Baiardi, S. Ruggieri
+  *Future Generation Computer Systems · Elsevier (in press)*, 2026. [Journal]
+  ARPI: https://arpi.unipi.it/handle/11568/1378147
 
 - **QUASAR: A Quantum-Classical Neural Network for SAR Satellite Physical-Layer Authentication**
   V. Sammartino, N. Denis, R. Di Pietro

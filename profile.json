@@ -79,7 +79,7 @@
       "2025": 20,
       "2026": 213
     },
-    "note": "Metrics cover the 40 publications listed here, of which 39 are indexed by Google Scholar. 2026 is year to date. Sum of per-publication citation counts in this file: 230 (Google Scholar's profile total may differ slightly because of merged or duplicate records)."
+    "note": "Metrics cover the 41 publications listed here, of which 39 are indexed by Google Scholar. 2026 is year to date. Sum of per-publication citation counts in this file: 230 (Google Scholar's profile total may differ slightly because of merged or duplicate records)."
   },
   "positions": [
     {
@@ -723,6 +723,28 @@
         {
           "label": "arXiv",
           "url": "https://arxiv.org/abs/2609.39211"
+        }
+      ]
+    },
+    {
+      "id": "pub-41",
+      "title": "Integrated Security Twin: A Framework for Intrusion Simulation, Cascade Analysis, and Resilience",
+      "authors": [
+        "V. Sammartino",
+        "F. Baiardi",
+        "S. Ruggieri"
+      ],
+      "authorPosition": 1,
+      "venue": "Future Generation Computer Systems · Elsevier (in press)",
+      "type": "journal",
+      "outputForm": "Journal",
+      "year": 2026,
+      "citations": 0,
+      "url": "https://ilsamaritano.github.io/#pub-41",
+      "identifiers": [
+        {
+          "label": "ARPI",
+          "url": "https://arpi.unipi.it/handle/11568/1378147"
         }
       ]
     },
