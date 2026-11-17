@@ -12,7 +12,7 @@
 
 param(
   [string]$Root = (Split-Path -Parent $PSScriptRoot),
-  [string]$AsOf = "2026-11-16"
+  [string]$AsOf = "2026-11-17"
 )
 
 $src = Join-Path $Root "index.html"
@@ -154,8 +154,8 @@ $profile = [ordered]@{
   peerReview     = [ordered]@{
     source   = "https://orcid.org/0009-0002-4632-1179"
     year     = 2026
-    reviews  = 86
-    journals = 37
+    reviews  = 87
+    journals = 38
     detail   = @(
       [ordered]@{ journal = "Discover Artificial Intelligence"; publisher = "Springer Nature"; issn = "2731-0809"; reviews = 12 },
       [ordered]@{ journal = "Scientific Reports"; publisher = "Springer Nature"; issn = "2045-2322"; reviews = 12 },
@@ -193,7 +193,8 @@ $profile = [ordered]@{
       [ordered]@{ journal = "International Journal of Computational Intelligence Systems"; publisher = "Springer Nature"; issn = "1875-6883"; reviews = 1 },
       [ordered]@{ journal = "Computer Modeling in Engineering & Sciences"; publisher = "Tech Science Press"; issn = "1526-1492"; reviews = 1 },
       [ordered]@{ journal = "Discover Applied Sciences"; publisher = "Springer Nature"; issn = "3004-9261"; reviews = 1 },
-      [ordered]@{ journal = "Knowledge-Based Systems"; publisher = "Elsevier"; issn = "0950-7051"; reviews = 1 }
+      [ordered]@{ journal = "Knowledge-Based Systems"; publisher = "Elsevier"; issn = "0950-7051"; reviews = 1 },
+      [ordered]@{ journal = "Journal of Network and Systems Management"; publisher = "Springer Nature"; issn = "1573-7705"; reviews = 1 }
     )
   }
   grants         = @(

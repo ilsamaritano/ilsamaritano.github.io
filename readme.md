@@ -27,10 +27,10 @@ The implementation is intentionally dependency-free at the deployment level — 
 | **Visiting Position** | VSRP Intern, KAUST · Thuwal, Saudi Arabia (Jan–Jun 2026) |
 | **Supervisors** | Prof. Fabrizio Baiardi (UniPi) · Prof. Salvatore Ruggieri (UniPi) · Prof. Roberto Di Pietro (KAUST) |
 | **Research Areas** | Security Twin · Digital Twin Architectures · Cyber-Physical Systems Resilience · Quantum ML & Post-Quantum Security · 6G Edge Digital Twins · UAV Swarm Security · TinyML / Edge AI · NLP |
-| **Total Citations** | 236 (Google Scholar, 16 November 2026) |
+| **Total Citations** | 236 (Google Scholar, 17 November 2026) |
 | **H-Index / i10-Index** | 10 / 11 |
-| **Publications** | 39 — 39 indexed by Google Scholar (IEEE · Springer · Elsevier · CRC/Taylor & Francis · arXiv / SSRN preprints) |
-| **Peer Review** | 86 reviews for 37 journals (2026, ORCID) — incl. IEEE TNNLS, ACM Computing Surveys, Scientific Reports, Computers & Security, FGCS |
+| **Publications** | 40 — 39 indexed by Google Scholar (IEEE · Springer · Elsevier · CRC/Taylor & Francis · arXiv / SSRN preprints) |
+| **Peer Review** | 87 reviews for 38 journals (2026, ORCID) — incl. IEEE TNNLS, ACM Computing Surveys, Scientific Reports, Computers & Security, FGCS |
 | **Research Grant** | *Smart Security for Connected Cyber-Physical Systems: Paradigms, Threats and AI-based Defenses* — Università di Pisa (2026) · [event website](https://connected-skies.github.io/) |
 | **Identifiers** | ORCID 0009-0002-4632-1179 · Scopus 59166600100 · SciProfiles 3668849 |
 
@@ -96,7 +96,7 @@ The site is a **static HTML5 document** with no external JavaScript dependencies
 
 **Structured Data (JSON-LD).** Schema.org `Person`, `ProfilePage`, `ResearchProject`, a peer-review `ItemList`, and an `ItemList` of `ScholarlyArticle` entries — one per publication, with arXiv / SSRN / DOI / Zenodo identifiers where available and an `interactionStatistic` (`CiteAction`) citation counter carrying its `observationDate`. The `Person` node additionally exposes citations, h-index, i10-index, work count and review counts as dated `PropertyValue` entries, so an agent can read the bibliometrics without scraping the rendered page.
 
-**Machine-readable Profile.** `profile.json` is the canonical structured record: identity, persistent identifiers, metrics with observation date and citations-per-year, all 39 publications (id, title, authors, author position, venue, type, year, citation count, persistent links), research themes cross-referenced to publication ids, the peer-review breakdown, positions, grants and projects. It is *generated from* `index.html` (see **Staying in sync** below), so the page and the JSON cannot drift apart. Advertised via `<link rel="alternate" type="application/json">`, `sitemap.xml`, `robots.txt` and `llms.txt`.
+**Machine-readable Profile.** `profile.json` is the canonical structured record: identity, persistent identifiers, metrics with observation date and citations-per-year, all 40 publications (id, title, authors, author position, venue, type, year, citation count, persistent links), research themes cross-referenced to publication ids, the peer-review breakdown, positions, grants and projects. It is *generated from* `index.html` (see **Staying in sync** below), so the page and the JSON cannot drift apart. Advertised via `<link rel="alternate" type="application/json">`, `sitemap.xml`, `robots.txt` and `llms.txt`.
 
 **Crawler Directives.** `robots.txt` is allow-by-default and grants explicit `Allow` directives to four groups: generalist search engines (`Googlebot` and its variants, `Bingbot`, `Slurp`, `DuckDuckBot`, `YandexBot`, `Baiduspider`, `Applebot`, `SeznamBot`, `Qwantify`, `MojeekBot`), academic indexers and archives (`SemanticScholarBot`, `CiteSeerXBot`, `archive.org_bot`, `ia_archiver`), AI indexing crawlers (`GPTBot`, `ClaudeBot`, `anthropic-ai`, `Google-Extended`, `PerplexityBot`, `Applebot-Extended`, `CCBot`, `Meta-ExternalAgent`, `cohere-ai`, `Amazonbot`, `Bytespider`) and on-demand assistant fetchers (`OAI-SearchBot`, `ChatGPT-User`, `Claude-User`, `Claude-SearchBot`, `Perplexity-User`, `DuckAssistBot`, `MistralAI-User`, `YouBot`). Only four commercial SEO/backlink scrapers are disallowed.
 
@@ -192,7 +192,7 @@ The canonical live endpoint is: **[https://ilsamaritano.github.io](https://ilsam
 
 ## Selected Publications
 
-Most-cited works (Google Scholar, 16 November 2026). The complete record is on the website, in [`profile.json`](profile.json) and [`llms.txt`](llms.txt), on [Google Scholar](https://scholar.google.com/citations?user=lQig7SEAAAAJ) and [ORCID](https://orcid.org/0009-0002-4632-1179).
+Most-cited works (Google Scholar, 17 November 2026). The complete record is on the website, in [`profile.json`](profile.json) and [`llms.txt`](llms.txt), on [Google Scholar](https://scholar.google.com/citations?user=lQig7SEAAAAJ) and [ORCID](https://orcid.org/0009-0002-4632-1179).
 
 - *AI-Enabled Cybersecurity Using Synthetic Data* — **IEEE PerCom 2025** · 17 citations
 - *Anticipating Disasters through a Security Twin* — Dynamics of Disasters: Hybrid Threats, Springer, 2026 · 14 citations

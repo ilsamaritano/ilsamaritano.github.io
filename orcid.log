@@ -1,16 +1,17 @@
-ORCID 0009-0002-4632-1179 — 40 work groups, 37 review journals, 86 reviews
+new ISSN 1573-7705 → Journal of Network and Systems Management (Springer Nature), listed as 1573-7705
+ORCID 0009-0002-4632-1179 — 41 work groups, 38 review journals, 87 reviews
 
-Peer review: site total 86 → ORCID total 86
-  (in sync)
+Peer review: site total 86 → ORCID total 87
+  1573-7705  None → 1   Journal of Network and Systems Management
 
 Identifier links to add: 0
 
 ON ORCID BUT NOT ON THE SITE (1) — add these by hand:
-  · Digital hermeneutics: artificial intelligence as a methodological problem for the humanities (2025, journal-article)
-    ARPI https://arpi.unipi.it/handle/11568/1377968
+  · Integrated Security Twin: A Framework for Intrusion Simulation, Cascade Analysis, and Resilience (None, journal-article)
+    ARPI https://arpi.unipi.it/handle/11568/1378147
 
 ON THE SITE BUT NOT ON ORCID (5): pub-10, pub-14, pub-15, pub-35, pub-9
   (fine for preprints ORCID doesn't list; otherwise add them to ORCID)
 
-applied: nothing to do
+applied: new review journal: Journal of Network and Systems Management (1573-7705); llms.txt peer-review figures; readme.md peer-review figures; build-profile.ps1 peer-review table; index.html peer review → 87 reviews / 38 journals; sync date → 2026-11-17
 ACTION NEEDED: 1 ORCID work(s) not on the site
