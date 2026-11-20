@@ -2,7 +2,7 @@
   "document": "Machine-readable academic profile of Vincenzo Sammartino",
   "canonicalUrl": "https://ilsamaritano.github.io/profile.json",
   "generatedFrom": "https://ilsamaritano.github.io/ (index.html publication record)",
-  "lastUpdated": "2026-11-19",
+  "lastUpdated": "2026-11-20",
   "license": "CC BY 4.0 — attribution: Vincenzo Sammartino, https://ilsamaritano.github.io/",
   "usage": {
     "audience": "Search engines, AI assistants, research-indexing agents and scripts.",
@@ -69,17 +69,17 @@
   "metrics": {
     "source": "Google Scholar",
     "sourceUrl": "https://scholar.google.com/citations?user=lQig7SEAAAAJ",
-    "asOf": "2026-11-19",
-    "citations": 236,
+    "asOf": "2026-11-20",
+    "citations": 237,
     "hIndex": 10,
     "i10Index": 11,
     "indexedWorks": 39,
     "citationsByYear": {
       "2024": 3,
       "2025": 20,
-      "2026": 213
+      "2026": 214
     },
-    "note": "Metrics cover the 41 publications listed here, of which 39 are indexed by Google Scholar. 2026 is year to date. Sum of per-publication citation counts in this file: 230 (Google Scholar's profile total may differ slightly because of merged or duplicate records)."
+    "note": "Metrics cover the 41 publications listed here, of which 39 are indexed by Google Scholar. 2026 is year to date. Sum of per-publication citation counts in this file: 231 (Google Scholar's profile total may differ slightly because of merged or duplicate records)."
   },
   "positions": [
     {
@@ -549,7 +549,7 @@
       "type": "preprint",
       "outputForm": "Preprint",
       "year": 2026,
-      "citations": 2,
+      "citations": 3,
       "url": "https://ilsamaritano.github.io/#pub-13",
       "identifiers": [
         {
@@ -1139,7 +1139,7 @@
   "peerReview": {
     "source": "https://orcid.org/0009-0002-4632-1179",
     "year": 2026,
-    "reviews": 87,
+    "reviews": 90,
     "journals": 38,
     "detail": [
       {
@@ -1152,7 +1152,7 @@
         "journal": "Scientific Reports",
         "publisher": "Springer Nature",
         "issn": "2045-2322",
-        "reviews": 12
+        "reviews": 15
       },
       {
         "journal": "Pervasive and Mobile Computing",

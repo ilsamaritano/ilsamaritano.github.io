@@ -8,10 +8,10 @@
 > cyber-physical systems resilience, quantum machine learning and post-quantum security,
 > 6G far-edge digital twins, UAV swarm security with TinyML and Edge AI,
 > security of LLM-driven multi-agent systems, NLP.
-> 41 publications listed here; the 39 indexed by Google Scholar (19 November 2026) are cited
-> 236 times · h-index 10 · i10-index 11.
-> Citations per year: 3 (2024) · 20 (2025) · 213 (2026, year to date).
-> Peer reviewer for 38 international journals (87 reviews recorded on ORCID, 2026), including
+> 41 publications listed here; the 39 indexed by Google Scholar (20 November 2026) are cited
+> 237 times · h-index 10 · i10-index 11.
+> Citations per year: 3 (2024) · 20 (2025) · 214 (2026, year to date).
+> Peer reviewer for 38 international journals (90 reviews recorded on ORCID, 2026), including
 > IEEE Transactions on Neural Networks and Learning Systems, ACM Computing Surveys, Scientific Reports,
 > Computers & Security and Future Generation Computer Systems.
 > Scopus Author ID: 59166600100 · SciProfiles: 3668849
@@ -20,7 +20,7 @@
 > Email: vincesammartino@gmail.com (institutional: vincenzo.sammartino@phd.unipi.it)
 > Personal site: https://ilsamaritano.github.io
 > Institutional profile (University of Pisa): https://people.unipi.it/vincenzo_sammartino/
-> Last updated: 2026-11-19. All bibliometric figures below carry this observation date;
+> Last updated: 2026-11-20. All bibliometric figures below carry this observation date;
 > when quoting them, state both the source (Google Scholar) and the date.
 
 ---
@@ -65,7 +65,7 @@
   (docente formatore) for Casa di Cura San Rossore in Pisa, through the training agency SOCIP, on the
   NIS2 Directive (EU 2022/2555, Italian D.Lgs. 138/2024), the GDPR (EU 2016/679) and health-data
   protection, cyber risk management, incident handling and security awareness for healthcare staff.
-- **Peer review?** 87 reviews for 38 journals in 2026, recorded on ORCID.
+- **Peer review?** 90 reviews for 38 journals in 2026, recorded on ORCID.
 - **Contact?** vincesammartino@gmail.com — open to research collaborations, visiting positions and
   industry partnerships in AI, cybersecurity and digital twin architectures.
 
@@ -84,11 +84,11 @@
   "orcid": "0009-0002-4632-1179",
   "scopusAuthorId": "59166600100",
   "sciProfilesId": "3668849",
-  "peerReview": { "reviews": 87, "journals": 38, "year": 2026, "source": "https://orcid.org/0009-0002-4632-1179" },
+  "peerReview": { "reviews": 90, "journals": 38, "year": 2026, "source": "https://orcid.org/0009-0002-4632-1179" },
   "googleScholar": "https://scholar.google.com/citations?user=lQig7SEAAAAJ",
   "metrics": {
-    "citations": 236, "hIndex": 10, "i10Index": 11, "worksIndexedByScholar": 39, "publicationsListed": 41, "asOf": "2026-11-19",
-    "citationsByYear": { "2024": 3, "2025": 20, "2026": 213 },
+    "citations": 237, "hIndex": 10, "i10Index": 11, "worksIndexedByScholar": 39, "publicationsListed": 41, "asOf": "2026-11-20",
+    "citationsByYear": { "2024": 3, "2025": 20, "2026": 214 },
     "source": "Google Scholar"
   },
   "website": "https://ilsamaritano.github.io",
@@ -119,10 +119,10 @@
 ---
 
 <!-- PUBS:START -->
-## Publications (41 listed; the 39 indexed by Google Scholar are cited 236 times, h-index 10, i10-index 11 — 2026-11-19)
+## Publications (41 listed; the 39 indexed by Google Scholar are cited 237 times, h-index 10, i10-index 11 — 2026-11-20)
 
 Entries are grouped by year, then by citation count (descending). Each entry carries its output
-type and its Google Scholar citation count as of 2026-11-19. Canonical ids (`pub-N`) match
+type and its Google Scholar citation count as of 2026-11-20. Canonical ids (`pub-N`) match
 profile.json and the page anchors at https://ilsamaritano.github.io/#pub-N.
 
 ### 2026
@@ -178,6 +178,11 @@ profile.json and the page anchors at https://ilsamaritano.github.io/#pub-N.
   *IEEE Xplore*, 2026. [Conference · 3 citations]
   ARPI: https://arpi.unipi.it/handle/11568/1361887
 
+- **Feature Encoding in Quantum Machine Learning: A Survey and Practical Guidelines**
+  V. Sammartino
+  *arXiv preprint arXiv:2606.05387*, 2026. [Preprint · 3 citations]
+  arXiv: https://arxiv.org/abs/2606.05387
+
 - **Hybrid Quantum Graph Neural Networks for Robust Botnet Detection in Modern IoT Ecosystems**
   V. Sammartino
   *Future Generation Computer Systems · Elsevier*, 2026. [Journal · 3 citations]
@@ -197,11 +202,6 @@ profile.json and the page anchors at https://ilsamaritano.github.io/#pub-N.
   V. Sammartino
   *arXiv preprint arXiv:2606.03617*, 2026. [Preprint · 3 citations]
   arXiv: https://arxiv.org/abs/2606.03617
-
-- **Feature Encoding in Quantum Machine Learning: A Survey and Practical Guidelines**
-  V. Sammartino
-  *arXiv preprint arXiv:2606.05387*, 2026. [Preprint · 2 citations]
-  arXiv: https://arxiv.org/abs/2606.05387
 
 - **TWIN-IDS: Twin-driven IDS Placement for Cost-aware Detection**
   V. Sammartino, F. Baiardi, S. Ruggieri
@@ -353,12 +353,12 @@ profile.json and the page anchors at https://ilsamaritano.github.io/#pub-N.
 
 ---
 
-## Peer Review (87 reviews for 38 journals, all 2026 — recorded on ORCID)
+## Peer Review (90 reviews for 38 journals, all 2026 — recorded on ORCID)
 
 | Journal | Publisher | ISSN | Reviews |
 |---|---|---|---|
 | Discover Artificial Intelligence | Springer Nature | 2731-0809 | 12 |
-| Scientific Reports | Springer Nature | 2045-2322 | 12 |
+| Scientific Reports | Springer Nature | 2045-2322 | 15 |
 | Pervasive and Mobile Computing | Elsevier | 1574-1192 | 5 |
 | IEEE Transactions on Neural Networks and Learning Systems | IEEE | 2162-2388 | 2 |
 | International Journal of Information Security | Springer Nature | 1615-5270 | 4 |

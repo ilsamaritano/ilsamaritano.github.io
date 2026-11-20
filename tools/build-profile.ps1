@@ -12,7 +12,7 @@
 
 param(
   [string]$Root = (Split-Path -Parent $PSScriptRoot),
-  [string]$AsOf = "2026-11-19"
+  [string]$AsOf = "2026-11-20"
 )
 
 $src = Join-Path $Root "index.html"
@@ -116,11 +116,11 @@ $profile = [ordered]@{
     source           = "Google Scholar"
     sourceUrl        = "https://scholar.google.com/citations?user=lQig7SEAAAAJ"
     asOf             = $asOf
-    citations        = 236
+    citations        = 237
     hIndex           = 10
     i10Index         = 11
     indexedWorks     = 39
-    citationsByYear  = [ordered]@{ '2024' = 3; '2025' = 20; '2026' = 213 }
+    citationsByYear  = [ordered]@{ '2024' = 3; '2025' = 20; '2026' = 214 }
     note             = "Metrics cover the $($pubs.Count) publications listed here, of which 39 are indexed by Google Scholar. 2026 is year to date. Sum of per-publication citation counts in this file: $total (Google Scholar's profile total may differ slightly because of merged or duplicate records)."
   }
   positions      = @(
@@ -154,11 +154,11 @@ $profile = [ordered]@{
   peerReview     = [ordered]@{
     source   = "https://orcid.org/0009-0002-4632-1179"
     year     = 2026
-    reviews  = 87
+    reviews  = 90
     journals = 38
     detail   = @(
       [ordered]@{ journal = "Discover Artificial Intelligence"; publisher = "Springer Nature"; issn = "2731-0809"; reviews = 12 },
-      [ordered]@{ journal = "Scientific Reports"; publisher = "Springer Nature"; issn = "2045-2322"; reviews = 12 },
+      [ordered]@{ journal = "Scientific Reports"; publisher = "Springer Nature"; issn = "2045-2322"; reviews = 15 },
       [ordered]@{ journal = "Pervasive and Mobile Computing"; publisher = "Elsevier"; issn = "1574-1192"; reviews = 5 },
       [ordered]@{ journal = "IEEE Transactions on Neural Networks and Learning Systems"; publisher = "IEEE"; issn = "2162-2388"; reviews = 2 },
       [ordered]@{ journal = "International Journal of Information Security"; publisher = "Springer Nature"; issn = "1615-5270"; reviews = 4 },
