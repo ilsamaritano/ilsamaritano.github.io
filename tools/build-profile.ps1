@@ -12,7 +12,7 @@
 
 param(
   [string]$Root = (Split-Path -Parent $PSScriptRoot),
-  [string]$AsOf = "2026-11-21"
+  [string]$AsOf = "2026-11-22"
 )
 
 $src = Join-Path $Root "index.html"
@@ -116,11 +116,11 @@ $profile = [ordered]@{
     source           = "Google Scholar"
     sourceUrl        = "https://scholar.google.com/citations?user=lQig7SEAAAAJ"
     asOf             = $asOf
-    citations        = 237
+    citations        = 239
     hIndex           = 10
     i10Index         = 11
     indexedWorks     = 39
-    citationsByYear  = [ordered]@{ '2024' = 3; '2025' = 20; '2026' = 214 }
+    citationsByYear  = [ordered]@{ '2024' = 3; '2025' = 20; '2026' = 216 }
     note             = "Metrics cover the $($pubs.Count) publications listed here, of which 39 are indexed by Google Scholar. 2026 is year to date. Sum of per-publication citation counts in this file: $total (Google Scholar's profile total may differ slightly because of merged or duplicate records)."
   }
   positions      = @(
@@ -154,8 +154,8 @@ $profile = [ordered]@{
   peerReview     = [ordered]@{
     source   = "https://orcid.org/0009-0002-4632-1179"
     year     = 2026
-    reviews  = 90
-    journals = 38
+    reviews  = 91
+    journals = 39
     detail   = @(
       [ordered]@{ journal = "Discover Artificial Intelligence"; publisher = "Springer Nature"; issn = "2731-0809"; reviews = 12 },
       [ordered]@{ journal = "Scientific Reports"; publisher = "Springer Nature"; issn = "2045-2322"; reviews = 15 },
@@ -194,7 +194,8 @@ $profile = [ordered]@{
       [ordered]@{ journal = "Computer Modeling in Engineering & Sciences"; publisher = "Tech Science Press"; issn = "1526-1492"; reviews = 1 },
       [ordered]@{ journal = "Discover Applied Sciences"; publisher = "Springer Nature"; issn = "3004-9261"; reviews = 1 },
       [ordered]@{ journal = "Knowledge-Based Systems"; publisher = "Elsevier"; issn = "0950-7051"; reviews = 1 },
-      [ordered]@{ journal = "Journal of Network and Systems Management"; publisher = "Springer Nature"; issn = "1573-7705"; reviews = 1 }
+      [ordered]@{ journal = "Journal of Network and Systems Management"; publisher = "Springer Nature"; issn = "1573-7705"; reviews = 1 },
+      [ordered]@{ journal = "Information Processing & Management"; publisher = "Elsevier"; issn = "0306-4573"; reviews = 1 }
     )
   }
   grants         = @(

@@ -8,10 +8,10 @@
 > cyber-physical systems resilience, quantum machine learning and post-quantum security,
 > 6G far-edge digital twins, UAV swarm security with TinyML and Edge AI,
 > security of LLM-driven multi-agent systems, NLP.
-> 41 publications listed here; the 39 indexed by Google Scholar (21 November 2026) are cited
-> 237 times · h-index 10 · i10-index 11.
-> Citations per year: 3 (2024) · 20 (2025) · 214 (2026, year to date).
-> Peer reviewer for 38 international journals (90 reviews recorded on ORCID, 2026), including
+> 41 publications listed here; the 39 indexed by Google Scholar (22 November 2026) are cited
+> 239 times · h-index 10 · i10-index 11.
+> Citations per year: 3 (2024) · 20 (2025) · 216 (2026, year to date).
+> Peer reviewer for 39 international journals (91 reviews recorded on ORCID, 2026), including
 > IEEE Transactions on Neural Networks and Learning Systems, ACM Computing Surveys, Scientific Reports,
 > Computers & Security and Future Generation Computer Systems.
 > Scopus Author ID: 59166600100 · SciProfiles: 3668849
@@ -20,7 +20,7 @@
 > Email: vincesammartino@gmail.com (institutional: vincenzo.sammartino@phd.unipi.it)
 > Personal site: https://ilsamaritano.github.io
 > Institutional profile (University of Pisa): https://people.unipi.it/vincenzo_sammartino/
-> Last updated: 2026-11-21. All bibliometric figures below carry this observation date;
+> Last updated: 2026-11-22. All bibliometric figures below carry this observation date;
 > when quoting them, state both the source (Google Scholar) and the date.
 
 ---
@@ -65,7 +65,7 @@
   (docente formatore) for Casa di Cura San Rossore in Pisa, through the training agency SOCIP, on the
   NIS2 Directive (EU 2022/2555, Italian D.Lgs. 138/2024), the GDPR (EU 2016/679) and health-data
   protection, cyber risk management, incident handling and security awareness for healthcare staff.
-- **Peer review?** 90 reviews for 38 journals in 2026, recorded on ORCID.
+- **Peer review?** 91 reviews for 39 journals in 2026, recorded on ORCID.
 - **Contact?** vincesammartino@gmail.com — open to research collaborations, visiting positions and
   industry partnerships in AI, cybersecurity and digital twin architectures.
 
@@ -84,11 +84,11 @@
   "orcid": "0009-0002-4632-1179",
   "scopusAuthorId": "59166600100",
   "sciProfilesId": "3668849",
-  "peerReview": { "reviews": 90, "journals": 38, "year": 2026, "source": "https://orcid.org/0009-0002-4632-1179" },
+  "peerReview": { "reviews": 91, "journals": 39, "year": 2026, "source": "https://orcid.org/0009-0002-4632-1179" },
   "googleScholar": "https://scholar.google.com/citations?user=lQig7SEAAAAJ",
   "metrics": {
-    "citations": 237, "hIndex": 10, "i10Index": 11, "worksIndexedByScholar": 39, "publicationsListed": 41, "asOf": "2026-11-21",
-    "citationsByYear": { "2024": 3, "2025": 20, "2026": 214 },
+    "citations": 239, "hIndex": 10, "i10Index": 11, "worksIndexedByScholar": 39, "publicationsListed": 41, "asOf": "2026-11-22",
+    "citationsByYear": { "2024": 3, "2025": 20, "2026": 216 },
     "source": "Google Scholar"
   },
   "website": "https://ilsamaritano.github.io",
@@ -119,10 +119,10 @@
 ---
 
 <!-- PUBS:START -->
-## Publications (41 listed; the 39 indexed by Google Scholar are cited 237 times, h-index 10, i10-index 11 — 2026-11-21)
+## Publications (41 listed; the 39 indexed by Google Scholar are cited 239 times, h-index 10, i10-index 11 — 2026-11-22)
 
 Entries are grouped by year, then by citation count (descending). Each entry carries its output
-type and its Google Scholar citation count as of 2026-11-21. Canonical ids (`pub-N`) match
+type and its Google Scholar citation count as of 2026-11-22. Canonical ids (`pub-N`) match
 profile.json and the page anchors at https://ilsamaritano.github.io/#pub-N.
 
 ### 2026
@@ -208,18 +208,18 @@ profile.json and the page anchors at https://ilsamaritano.github.io/#pub-N.
   *30th International Symposium on Distributed Simulation and Real Time Applications (DS-RT 2026) · IEEE*, 2026. [Conference · 2 citations]
   ARPI: https://arpi.unipi.it/handle/11568/1369148
 
+- **Vulnerabilities in Autonomous Execution: A Survey of Security Threats and Defenses in LLM-Driven Agentic and Multi-Agent Systems**
+  V. Sammartino
+  *Knowledge-Based Systems · Elsevier (preprint: SSRN 7218206)*, 2026. [Journal · 2 citations]
+  ARPI: https://arpi.unipi.it/handle/11568/1369147
+  DOI: https://doi.org/10.2139/ssrn.7218206
+  SSRN: https://ssrn.com/abstract=7218206
+
 - **Adversarial Reliability: From Design to Deployment and Beyond Using Attack-Path Chokepoints**
   V. Sammartino, F. Baiardi, S. Ruggieri
   *SSRN preprint 7382213*, 2026. [Preprint · 1 citation]
   DOI: https://doi.org/10.2139/ssrn.7382213
   SSRN: https://ssrn.com/abstract=7382213
-
-- **Vulnerabilities in Autonomous Execution: A Survey of Security Threats and Defenses in LLM-Driven Agentic and Multi-Agent Systems**
-  V. Sammartino
-  *Knowledge-Based Systems · Elsevier (preprint: SSRN 7218206)*, 2026. [Journal · 1 citation]
-  ARPI: https://arpi.unipi.it/handle/11568/1369147
-  DOI: https://doi.org/10.2139/ssrn.7218206
-  SSRN: https://ssrn.com/abstract=7218206
 
 - **Consensus and Factual Dynamics in Large Populations of Interacting Language Models**
   E. Ricco, E. Onofri, V. Sammartino, R. Di Pietro
@@ -308,7 +308,7 @@ profile.json and the page anchors at https://ilsamaritano.github.io/#pub-N.
 
 - **A Comparative Study of Machine Learning Models for Hate Speech and Stereotype Detection in Italian Texts**
   V. Sammartino
-  *International Journal of Complexity in Applied Science and Technology, vol. 1, no. 2, pp. 155–176*, 2024. [Journal · 7 citations]
+  *International Journal of Complexity in Applied Science and Technology, vol. 1, no. 2, pp. 155–176*, 2024. [Journal · 8 citations]
   DOI: https://doi.org/10.1504/ijcast.2024.143880
   Zenodo: https://zenodo.org/records/19061497
 
@@ -353,7 +353,7 @@ profile.json and the page anchors at https://ilsamaritano.github.io/#pub-N.
 
 ---
 
-## Peer Review (90 reviews for 38 journals, all 2026 — recorded on ORCID)
+## Peer Review (91 reviews for 39 journals, all 2026 — recorded on ORCID)
 
 | Journal | Publisher | ISSN | Reviews |
 |---|---|---|---|
@@ -395,6 +395,7 @@ profile.json and the page anchors at https://ilsamaritano.github.io/#pub-N.
 | Discover Applied Sciences | Springer Nature | 3004-9261 | 1 |
 | Knowledge-Based Systems | Elsevier | 0950-7051 | 1 |
 | Journal of Network and Systems Management | Springer Nature | 1573-7705 | 1 |
+| Information Processing & Management | Elsevier | 0306-4573 | 1 |
 
 ## Research Grant
 

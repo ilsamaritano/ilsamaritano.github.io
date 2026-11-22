@@ -2,7 +2,7 @@
   "document": "Machine-readable academic profile of Vincenzo Sammartino",
   "canonicalUrl": "https://ilsamaritano.github.io/profile.json",
   "generatedFrom": "https://ilsamaritano.github.io/ (index.html publication record)",
-  "lastUpdated": "2026-11-21",
+  "lastUpdated": "2026-11-22",
   "license": "CC BY 4.0 — attribution: Vincenzo Sammartino, https://ilsamaritano.github.io/",
   "usage": {
     "audience": "Search engines, AI assistants, research-indexing agents and scripts.",
@@ -69,17 +69,17 @@
   "metrics": {
     "source": "Google Scholar",
     "sourceUrl": "https://scholar.google.com/citations?user=lQig7SEAAAAJ",
-    "asOf": "2026-11-21",
-    "citations": 237,
+    "asOf": "2026-11-22",
+    "citations": 239,
     "hIndex": 10,
     "i10Index": 11,
     "indexedWorks": 39,
     "citationsByYear": {
       "2024": 3,
       "2025": 20,
-      "2026": 214
+      "2026": 216
     },
-    "note": "Metrics cover the 41 publications listed here, of which 39 are indexed by Google Scholar. 2026 is year to date. Sum of per-publication citation counts in this file: 231 (Google Scholar's profile total may differ slightly because of merged or duplicate records)."
+    "note": "Metrics cover the 41 publications listed here, of which 39 are indexed by Google Scholar. 2026 is year to date. Sum of per-publication citation counts in this file: 233 (Google Scholar's profile total may differ slightly because of merged or duplicate records)."
   },
   "positions": [
     {
@@ -581,6 +581,34 @@
       ]
     },
     {
+      "id": "pub-36",
+      "title": "Vulnerabilities in Autonomous Execution: A Survey of Security Threats and Defenses in LLM-Driven Agentic and Multi-Agent Systems",
+      "authors": [
+        "V. Sammartino"
+      ],
+      "authorPosition": 1,
+      "venue": "Knowledge-Based Systems · Elsevier (preprint: SSRN 7218206)",
+      "type": "journal",
+      "outputForm": "Journal",
+      "year": 2026,
+      "citations": 2,
+      "url": "https://ilsamaritano.github.io/#pub-36",
+      "identifiers": [
+        {
+          "label": "ARPI",
+          "url": "https://arpi.unipi.it/handle/11568/1369147"
+        },
+        {
+          "label": "DOI",
+          "url": "https://doi.org/10.2139/ssrn.7218206"
+        },
+        {
+          "label": "SSRN",
+          "url": "https://ssrn.com/abstract=7218206"
+        }
+      ]
+    },
+    {
       "id": "pub-18",
       "title": "Adversarial Reliability: From Design to Deployment and Beyond Using Attack-Path Chokepoints",
       "authors": [
@@ -603,34 +631,6 @@
         {
           "label": "SSRN",
           "url": "https://ssrn.com/abstract=7382213"
-        }
-      ]
-    },
-    {
-      "id": "pub-36",
-      "title": "Vulnerabilities in Autonomous Execution: A Survey of Security Threats and Defenses in LLM-Driven Agentic and Multi-Agent Systems",
-      "authors": [
-        "V. Sammartino"
-      ],
-      "authorPosition": 1,
-      "venue": "Knowledge-Based Systems · Elsevier (preprint: SSRN 7218206)",
-      "type": "journal",
-      "outputForm": "Journal",
-      "year": 2026,
-      "citations": 1,
-      "url": "https://ilsamaritano.github.io/#pub-36",
-      "identifiers": [
-        {
-          "label": "ARPI",
-          "url": "https://arpi.unipi.it/handle/11568/1369147"
-        },
-        {
-          "label": "DOI",
-          "url": "https://doi.org/10.2139/ssrn.7218206"
-        },
-        {
-          "label": "SSRN",
-          "url": "https://ssrn.com/abstract=7218206"
         }
       ]
     },
@@ -991,7 +991,7 @@
       "type": "journal",
       "outputForm": "Journal",
       "year": 2024,
-      "citations": 7,
+      "citations": 8,
       "url": "https://ilsamaritano.github.io/#pub-29",
       "identifiers": [
         {
@@ -1139,8 +1139,8 @@
   "peerReview": {
     "source": "https://orcid.org/0009-0002-4632-1179",
     "year": 2026,
-    "reviews": 90,
-    "journals": 38,
+    "reviews": 91,
+    "journals": 39,
     "detail": [
       {
         "journal": "Discover Artificial Intelligence",
@@ -1368,6 +1368,12 @@
         "journal": "Journal of Network and Systems Management",
         "publisher": "Springer Nature",
         "issn": "1573-7705",
+        "reviews": 1
+      },
+      {
+        "journal": "Information Processing & Management",
+        "publisher": "Elsevier",
+        "issn": "0306-4573",
         "reviews": 1
       }
     ]
