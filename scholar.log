@@ -1,9 +1,8 @@
-Scholar 2026-11-22 — 239 citations · h-index 10 · i10-index 11 · 41 indexed works
+Scholar 2026-11-23 — 240 citations · h-index 10 · i10-index 11 · 41 indexed works
 indexed works: 41 Scholar records → 39 distinct works
 
-Per-publication citation changes: 2
-  pub-29     7 → 8   A Comparative Study of Machine Learning Models for Hate Spee
-  pub-36     1 → 2   Vulnerabilities in Autonomous Execution: A Survey of Securit
+Per-publication citation changes: 1
+  pub-13     3 → 4   Feature Encoding in Quantum Machine Learning: A Survey and P
 
 updated: index.html, llms.txt, readme.md, sitemap.xml, tools/build-profile.ps1
-now run:  pwsh tools/build-profile.ps1 -AsOf 2026-11-22 && python tools/build-llms-pubs.py && python tools/validate.py
+now run:  pwsh tools/build-profile.ps1 -AsOf 2026-11-23 && python tools/build-llms-pubs.py && python tools/validate.py

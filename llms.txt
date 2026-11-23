@@ -8,9 +8,9 @@
 > cyber-physical systems resilience, quantum machine learning and post-quantum security,
 > 6G far-edge digital twins, UAV swarm security with TinyML and Edge AI,
 > security of LLM-driven multi-agent systems, NLP.
-> 41 publications listed here; the 39 indexed by Google Scholar (22 November 2026) are cited
-> 239 times · h-index 10 · i10-index 11.
-> Citations per year: 3 (2024) · 20 (2025) · 216 (2026, year to date).
+> 41 publications listed here; the 39 indexed by Google Scholar (23 November 2026) are cited
+> 240 times · h-index 10 · i10-index 11.
+> Citations per year: 3 (2024) · 20 (2025) · 217 (2026, year to date).
 > Peer reviewer for 39 international journals (91 reviews recorded on ORCID, 2026), including
 > IEEE Transactions on Neural Networks and Learning Systems, ACM Computing Surveys, Scientific Reports,
 > Computers & Security and Future Generation Computer Systems.
@@ -20,7 +20,7 @@
 > Email: vincesammartino@gmail.com (institutional: vincenzo.sammartino@phd.unipi.it)
 > Personal site: https://ilsamaritano.github.io
 > Institutional profile (University of Pisa): https://people.unipi.it/vincenzo_sammartino/
-> Last updated: 2026-11-22. All bibliometric figures below carry this observation date;
+> Last updated: 2026-11-23. All bibliometric figures below carry this observation date;
 > when quoting them, state both the source (Google Scholar) and the date.
 
 ---
@@ -87,8 +87,8 @@
   "peerReview": { "reviews": 91, "journals": 39, "year": 2026, "source": "https://orcid.org/0009-0002-4632-1179" },
   "googleScholar": "https://scholar.google.com/citations?user=lQig7SEAAAAJ",
   "metrics": {
-    "citations": 239, "hIndex": 10, "i10Index": 11, "worksIndexedByScholar": 39, "publicationsListed": 41, "asOf": "2026-11-22",
-    "citationsByYear": { "2024": 3, "2025": 20, "2026": 216 },
+    "citations": 240, "hIndex": 10, "i10Index": 11, "worksIndexedByScholar": 39, "publicationsListed": 41, "asOf": "2026-11-23",
+    "citationsByYear": { "2024": 3, "2025": 20, "2026": 217 },
     "source": "Google Scholar"
   },
   "website": "https://ilsamaritano.github.io",
@@ -119,10 +119,10 @@
 ---
 
 <!-- PUBS:START -->
-## Publications (41 listed; the 39 indexed by Google Scholar are cited 239 times, h-index 10, i10-index 11 — 2026-11-22)
+## Publications (41 listed; the 39 indexed by Google Scholar are cited 240 times, h-index 10, i10-index 11 — 2026-11-23)
 
 Entries are grouped by year, then by citation count (descending). Each entry carries its output
-type and its Google Scholar citation count as of 2026-11-22. Canonical ids (`pub-N`) match
+type and its Google Scholar citation count as of 2026-11-23. Canonical ids (`pub-N`) match
 profile.json and the page anchors at https://ilsamaritano.github.io/#pub-N.
 
 ### 2026
@@ -163,6 +163,11 @@ profile.json and the page anchors at https://ilsamaritano.github.io/#pub-N.
   *ESREL 2026 — European Safety and Reliability Conference, Book of Proceedings, pp. 3304–3311 · Research Publishing, Singapore*, 2026. [Conference · 5 citations]
   ARPI: https://arpi.unipi.it/handle/11568/1345228
 
+- **Feature Encoding in Quantum Machine Learning: A Survey and Practical Guidelines**
+  V. Sammartino
+  *arXiv preprint arXiv:2606.05387*, 2026. [Preprint · 4 citations]
+  arXiv: https://arxiv.org/abs/2606.05387
+
 - **HAVE: Host Active Verification Engine for Closing the Contextual Reality Gap in Security Digital Twins**
   V. Sammartino, M. Pasquini
   *arXiv preprint arXiv:2606.06968*, 2026. [Preprint · 4 citations]
@@ -177,11 +182,6 @@ profile.json and the page anchors at https://ilsamaritano.github.io/#pub-N.
   V. Sammartino, F. Baiardi, S. Ruggieri
   *IEEE Xplore*, 2026. [Conference · 3 citations]
   ARPI: https://arpi.unipi.it/handle/11568/1361887
-
-- **Feature Encoding in Quantum Machine Learning: A Survey and Practical Guidelines**
-  V. Sammartino
-  *arXiv preprint arXiv:2606.05387*, 2026. [Preprint · 3 citations]
-  arXiv: https://arxiv.org/abs/2606.05387
 
 - **Hybrid Quantum Graph Neural Networks for Robust Botnet Detection in Modern IoT Ecosystems**
   V. Sammartino

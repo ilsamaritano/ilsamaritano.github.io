@@ -2,7 +2,7 @@
   "document": "Machine-readable academic profile of Vincenzo Sammartino",
   "canonicalUrl": "https://ilsamaritano.github.io/profile.json",
   "generatedFrom": "https://ilsamaritano.github.io/ (index.html publication record)",
-  "lastUpdated": "2026-11-22",
+  "lastUpdated": "2026-11-23",
   "license": "CC BY 4.0 — attribution: Vincenzo Sammartino, https://ilsamaritano.github.io/",
   "usage": {
     "audience": "Search engines, AI assistants, research-indexing agents and scripts.",
@@ -69,17 +69,17 @@
   "metrics": {
     "source": "Google Scholar",
     "sourceUrl": "https://scholar.google.com/citations?user=lQig7SEAAAAJ",
-    "asOf": "2026-11-22",
-    "citations": 239,
+    "asOf": "2026-11-23",
+    "citations": 240,
     "hIndex": 10,
     "i10Index": 11,
     "indexedWorks": 39,
     "citationsByYear": {
       "2024": 3,
       "2025": 20,
-      "2026": 216
+      "2026": 217
     },
-    "note": "Metrics cover the 41 publications listed here, of which 39 are indexed by Google Scholar. 2026 is year to date. Sum of per-publication citation counts in this file: 233 (Google Scholar's profile total may differ slightly because of merged or duplicate records)."
+    "note": "Metrics cover the 41 publications listed here, of which 39 are indexed by Google Scholar. 2026 is year to date. Sum of per-publication citation counts in this file: 234 (Google Scholar's profile total may differ slightly because of merged or duplicate records)."
   },
   "positions": [
     {
@@ -436,6 +436,26 @@
       ]
     },
     {
+      "id": "pub-13",
+      "title": "Feature Encoding in Quantum Machine Learning: A Survey and Practical Guidelines",
+      "authors": [
+        "V. Sammartino"
+      ],
+      "authorPosition": 1,
+      "venue": "arXiv preprint arXiv:2606.05387",
+      "type": "preprint",
+      "outputForm": "Preprint",
+      "year": 2026,
+      "citations": 4,
+      "url": "https://ilsamaritano.github.io/#pub-13",
+      "identifiers": [
+        {
+          "label": "arXiv",
+          "url": "https://arxiv.org/abs/2606.05387"
+        }
+      ]
+    },
+    {
       "id": "pub-8",
       "title": "DOS Classification, and Virtual Machine Detection via Passive Monitoring through Security Twins",
       "authors": [
@@ -535,26 +555,6 @@
         {
           "label": "arXiv",
           "url": "https://arxiv.org/abs/2606.03611"
-        }
-      ]
-    },
-    {
-      "id": "pub-13",
-      "title": "Feature Encoding in Quantum Machine Learning: A Survey and Practical Guidelines",
-      "authors": [
-        "V. Sammartino"
-      ],
-      "authorPosition": 1,
-      "venue": "arXiv preprint arXiv:2606.05387",
-      "type": "preprint",
-      "outputForm": "Preprint",
-      "year": 2026,
-      "citations": 3,
-      "url": "https://ilsamaritano.github.io/#pub-13",
-      "identifiers": [
-        {
-          "label": "arXiv",
-          "url": "https://arxiv.org/abs/2606.05387"
         }
       ]
     },
