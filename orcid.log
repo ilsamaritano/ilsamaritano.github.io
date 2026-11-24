@@ -1,11 +1,11 @@
-ORCID 0009-0002-4632-1179 — 41 work groups, 39 review journals, 91 reviews
+ORCID 0009-0002-4632-1179 — 41 work groups, 39 review journals, 92 reviews
 
-Peer review: site total 91 → ORCID total 91
-  (in sync)
+Peer review: site total 91 → ORCID total 92
+  2731-0809  12 → 13   Discover Artificial Intelligence
 
 Identifier links to add: 0
 
 ON THE SITE BUT NOT ON ORCID (5): pub-10, pub-14, pub-15, pub-35, pub-9
   (fine for preprints ORCID doesn't list; otherwise add them to ORCID)
 
-applied: nothing to do
+applied: llms.txt peer-review figures; readme.md peer-review figures; build-profile.ps1 peer-review table; index.html peer review → 92 reviews / 39 journals; sync date → 2026-11-24
