@@ -2,7 +2,7 @@
   "document": "Machine-readable academic profile of Vincenzo Sammartino",
   "canonicalUrl": "https://ilsamaritano.github.io/profile.json",
   "generatedFrom": "https://ilsamaritano.github.io/ (index.html publication record)",
-  "lastUpdated": "2026-11-24",
+  "lastUpdated": "2026-11-25",
   "license": "CC BY 4.0 — attribution: Vincenzo Sammartino, https://ilsamaritano.github.io/",
   "usage": {
     "audience": "Search engines, AI assistants, research-indexing agents and scripts.",
@@ -69,7 +69,7 @@
   "metrics": {
     "source": "Google Scholar",
     "sourceUrl": "https://scholar.google.com/citations?user=lQig7SEAAAAJ",
-    "asOf": "2026-11-24",
+    "asOf": "2026-11-25",
     "citations": 240,
     "hIndex": 10,
     "i10Index": 11,
@@ -1139,7 +1139,7 @@
   "peerReview": {
     "source": "https://orcid.org/0009-0002-4632-1179",
     "year": 2026,
-    "reviews": 92,
+    "reviews": 93,
     "journals": 39,
     "detail": [
       {
@@ -1188,7 +1188,7 @@
         "journal": "Computers & Security",
         "publisher": "Elsevier",
         "issn": "0167-4048",
-        "reviews": 3
+        "reviews": 4
       },
       {
         "journal": "Future Generation Computer Systems",
