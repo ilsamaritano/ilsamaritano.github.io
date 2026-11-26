@@ -1,11 +1,16 @@
-ORCID 0009-0002-4632-1179 — 41 work groups, 39 review journals, 93 reviews
+ORCID 0009-0002-4632-1179 — 42 work groups, 39 review journals, 94 reviews
 
-Peer review: site total 92 → ORCID total 93
-  0167-4048  3 → 4   Computers & Security
+Peer review: site total 93 → ORCID total 94
+  2045-2322  15 → 16   Scientific Reports
 
 Identifier links to add: 0
+
+ON ORCID BUT NOT ON THE SITE (1) — add these by hand:
+  · Improving Adversarial Reliability: from Design to Operation using Security Twins (2026, conference-paper)
+    ARPI https://arpi.unipi.it/handle/11568/1378988
 
 ON THE SITE BUT NOT ON ORCID (5): pub-10, pub-14, pub-15, pub-35, pub-9
   (fine for preprints ORCID doesn't list; otherwise add them to ORCID)
 
-applied: llms.txt peer-review figures; readme.md peer-review figures; build-profile.ps1 peer-review table; index.html peer review → 93 reviews / 39 journals; sync date → 2026-11-25
+applied: llms.txt peer-review figures; readme.md peer-review figures; build-profile.ps1 peer-review table; index.html peer review → 94 reviews / 39 journals; sync date → 2026-11-26
+ACTION NEEDED: 1 ORCID work(s) not on the site
