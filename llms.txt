@@ -8,7 +8,7 @@
 > cyber-physical systems resilience, quantum machine learning and post-quantum security,
 > 6G far-edge digital twins, UAV swarm security with TinyML and Edge AI,
 > security of LLM-driven multi-agent systems, NLP.
-> 41 publications listed here; the 39 indexed by Google Scholar (26 November 2026) are cited
+> 41 publications listed here; the 39 indexed by Google Scholar (27 November 2026) are cited
 > 240 times · h-index 10 · i10-index 11.
 > Citations per year: 3 (2024) · 20 (2025) · 217 (2026, year to date).
 > Peer reviewer for 39 international journals (94 reviews recorded on ORCID, 2026), including
@@ -20,7 +20,7 @@
 > Email: vincesammartino@gmail.com (institutional: vincenzo.sammartino@phd.unipi.it)
 > Personal site: https://ilsamaritano.github.io
 > Institutional profile (University of Pisa): https://people.unipi.it/vincenzo_sammartino/
-> Last updated: 2026-11-26. All bibliometric figures below carry this observation date;
+> Last updated: 2026-11-27. All bibliometric figures below carry this observation date;
 > when quoting them, state both the source (Google Scholar) and the date.
 
 ---
@@ -87,7 +87,7 @@
   "peerReview": { "reviews": 94, "journals": 39, "year": 2026, "source": "https://orcid.org/0009-0002-4632-1179" },
   "googleScholar": "https://scholar.google.com/citations?user=lQig7SEAAAAJ",
   "metrics": {
-    "citations": 240, "hIndex": 10, "i10Index": 11, "worksIndexedByScholar": 39, "publicationsListed": 41, "asOf": "2026-11-26",
+    "citations": 240, "hIndex": 10, "i10Index": 11, "worksIndexedByScholar": 39, "publicationsListed": 41, "asOf": "2026-11-27",
     "citationsByYear": { "2024": 3, "2025": 20, "2026": 217 },
     "source": "Google Scholar"
   },
@@ -119,10 +119,10 @@
 ---
 
 <!-- PUBS:START -->
-## Publications (41 listed; the 39 indexed by Google Scholar are cited 240 times, h-index 10, i10-index 11 — 2026-11-26)
+## Publications (41 listed; the 39 indexed by Google Scholar are cited 240 times, h-index 10, i10-index 11 — 2026-11-27)
 
 Entries are grouped by year, then by citation count (descending). Each entry carries its output
-type and its Google Scholar citation count as of 2026-11-26. Canonical ids (`pub-N`) match
+type and its Google Scholar citation count as of 2026-11-27. Canonical ids (`pub-N`) match
 profile.json and the page anchors at https://ilsamaritano.github.io/#pub-N.
 
 ### 2026
