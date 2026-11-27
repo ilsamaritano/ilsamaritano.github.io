@@ -79,7 +79,7 @@
       "2025": 20,
       "2026": 217
     },
-    "note": "Metrics cover the 41 publications listed here, of which 39 are indexed by Google Scholar. 2026 is year to date. Sum of per-publication citation counts in this file: 234 (Google Scholar's profile total may differ slightly because of merged or duplicate records)."
+    "note": "Metrics cover the 42 publications listed here, of which 39 are indexed by Google Scholar. 2026 is year to date. Sum of per-publication citation counts in this file: 234 (Google Scholar's profile total may differ slightly because of merged or duplicate records)."
   },
   "positions": [
     {
@@ -745,6 +745,27 @@
         {
           "label": "ARPI",
           "url": "https://arpi.unipi.it/handle/11568/1378147"
+        }
+      ]
+    },
+    {
+      "id": "pub-42",
+      "title": "Improving Adversarial Reliability: from Design to Operation using Security Twins",
+      "authors": [
+        "V. Sammartino",
+        "F. Baiardi"
+      ],
+      "authorPosition": 1,
+      "venue": "Conference proceedings, 2026",
+      "type": "conference",
+      "outputForm": "Conference",
+      "year": 2026,
+      "citations": 0,
+      "url": "https://ilsamaritano.github.io/#pub-42",
+      "identifiers": [
+        {
+          "label": "ARPI",
+          "url": "https://arpi.unipi.it/handle/11568/1378988"
         }
       ]
     },
