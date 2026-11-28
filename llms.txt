@@ -8,9 +8,9 @@
 > cyber-physical systems resilience, quantum machine learning and post-quantum security,
 > 6G far-edge digital twins, UAV swarm security with TinyML and Edge AI,
 > security of LLM-driven multi-agent systems, NLP.
-> 42 publications listed here; the 39 indexed by Google Scholar (27 November 2026) are cited
-> 240 times · h-index 10 · i10-index 11.
-> Citations per year: 3 (2024) · 20 (2025) · 217 (2026, year to date).
+> 42 publications listed here; the 40 indexed by Google Scholar (28 November 2026) are cited
+> 241 times · h-index 10 · i10-index 11.
+> Citations per year: 3 (2024) · 20 (2025) · 218 (2026, year to date).
 > Peer reviewer for 39 international journals (94 reviews recorded on ORCID, 2026), including
 > IEEE Transactions on Neural Networks and Learning Systems, ACM Computing Surveys, Scientific Reports,
 > Computers & Security and Future Generation Computer Systems.
@@ -20,7 +20,7 @@
 > Email: vincesammartino@gmail.com (institutional: vincenzo.sammartino@phd.unipi.it)
 > Personal site: https://ilsamaritano.github.io
 > Institutional profile (University of Pisa): https://people.unipi.it/vincenzo_sammartino/
-> Last updated: 2026-11-27. All bibliometric figures below carry this observation date;
+> Last updated: 2026-11-28. All bibliometric figures below carry this observation date;
 > when quoting them, state both the source (Google Scholar) and the date.
 
 ---
@@ -34,7 +34,7 @@
   Prefer this file for programmatic use; it is generated from the site's own publication record.
 - [Homepage JSON-LD](https://ilsamaritano.github.io/): schema.org `Person`, `ProfilePage`,
   `ResearchProject`, a `DefinedTerm` for "Security Twin", a peer-review `ItemList`
-  and an `ItemList` of 41
+  and an `ItemList` of 42
   `ScholarlyArticle` entries, each with an `interactionStatistic` citation counter.
 - [sitemap.xml](https://ilsamaritano.github.io/sitemap.xml) ·
   [robots.txt](https://ilsamaritano.github.io/robots.txt) (major AI crawlers explicitly allowed) ·
@@ -87,8 +87,8 @@
   "peerReview": { "reviews": 94, "journals": 39, "year": 2026, "source": "https://orcid.org/0009-0002-4632-1179" },
   "googleScholar": "https://scholar.google.com/citations?user=lQig7SEAAAAJ",
   "metrics": {
-    "citations": 240, "hIndex": 10, "i10Index": 11, "worksIndexedByScholar": 39, "publicationsListed": 41, "asOf": "2026-11-27",
-    "citationsByYear": { "2024": 3, "2025": 20, "2026": 217 },
+    "citations": 241, "hIndex": 10, "i10Index": 11, "worksIndexedByScholar": 40, "publicationsListed": 42, "asOf": "2026-11-28",
+    "citationsByYear": { "2024": 3, "2025": 20, "2026": 218 },
     "source": "Google Scholar"
   },
   "website": "https://ilsamaritano.github.io",
@@ -119,10 +119,10 @@
 ---
 
 <!-- PUBS:START -->
-## Publications (42 listed; the 39 indexed by Google Scholar are cited 240 times, h-index 10, i10-index 11 — 2026-11-27)
+## Publications (42 listed; the 40 indexed by Google Scholar are cited 241 times, h-index 10, i10-index 11 — 2026-11-28)
 
 Entries are grouped by year, then by citation count (descending). Each entry carries its output
-type and its Google Scholar citation count as of 2026-11-27. Canonical ids (`pub-N`) match
+type and its Google Scholar citation count as of 2026-11-28. Canonical ids (`pub-N`) match
 profile.json and the page anchors at https://ilsamaritano.github.io/#pub-N.
 
 ### 2026
@@ -339,7 +339,7 @@ profile.json and the page anchors at https://ilsamaritano.github.io/#pub-N.
 
 - **Feature Engineering and Semantic Enrichment for Enhanced Text Classification: A Case Study on Figurative Language in Tweets**
   V. Sammartino, C. Baccheschi, J. Gneri, V. Picchianti, A. Frasson
-  *Preprints*, 2024. [Preprint]
+  *Preprints*, 2024. [Preprint · 1 citation]
   DOI: https://doi.org/10.20944/preprints202407.1179.v1
 
 ### Undated preprints

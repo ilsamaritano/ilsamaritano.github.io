@@ -1,7 +1,11 @@
-Scholar 2026-11-27 — 240 citations · h-index 10 · i10-index 11 · 41 indexed works
-indexed works: 41 Scholar records → 39 distinct works
+Scholar 2026-11-28 — 241 citations · h-index 10 · i10-index 11 · 42 indexed works
+indexed works: 42 Scholar records → 40 distinct works
 
-Per-publication citation changes: 0
+Per-publication citation changes: 1
+  pub-33     0 → 1   Feature Engineering and Semantic Enrichment for Enhanced Tex
+
+ON SCHOLAR BUT NOT ON THE SITE (1) — add these by hand:
+  · Protezione dei Dati Personali su Servizi Web [0 citations]
 
 updated: index.html, llms.txt, readme.md, sitemap.xml, tools/build-profile.ps1
-now run:  pwsh tools/build-profile.ps1 -AsOf 2026-11-27 && python tools/build-llms-pubs.py && python tools/validate.py
+now run:  pwsh tools/build-profile.ps1 -AsOf 2026-11-28 && python tools/build-llms-pubs.py && python tools/validate.py
